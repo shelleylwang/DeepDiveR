@@ -26,14 +26,12 @@ create_config <- function(){
   minEX_SP <- 0  # minimum number of extinct lineages allowed
   minEXTANT_SP <- 3  # min number of living species
   maxEXTANT_SP <- 30
-  # root_r <- root_age  # root age
   rangeL <- c(0.02, 0.5)  # range of birth rates - range based on Cantalapiedra et al 2022
   rangeM <- c(0.02, 0.5)  # range of death rates
   log_uniform_rates <- F
   p_mass_extinction <- 0.01  # probability of mass extinction per my
   poiL <- 4  # expected number of birth rate shifts
   poiM <- 4  # expected number of death rate shifts
-  # seed <- rseed   # if > 0 fixes the random seed to make simulations reproducible
   
   
   # fossil simulator settings
