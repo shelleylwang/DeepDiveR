@@ -238,9 +238,9 @@ div_bins <- function(bin_type, begin, finish, t_res=NULL, n_bins=NA,
 }
 
 
-#' Make time bins
+#' Make time bins all options
 #'
-#' 'time_bins()' makes a table of time bin start, end and midpoint ages
+#' 'time_bins_all_opts()' makes a table of time bin start, end and midpoint ages
 #'
 #' @param bin_type Determines how bins will be made (equal bins, epochs, or
 #' stages) or whether "custom_bins" will be used.
@@ -256,22 +256,23 @@ div_bins <- function(bin_type, begin, finish, t_res=NULL, n_bins=NA,
 #' @returns A table of time bins with start, end and midpoint ages. Where epochs
 #' or stages specified names are stored as well.
 #' @examples
-#' time_bins(bin_type="equal_bins", begin=100, finish=0, n_bins=10)
-#' time_bins(bin_type="stages", begin=251.902, finish=66)
-#' time_bins(bin_type="epochs", begin=251.902, finish=66)
-#' time_bins(bin_type="stages", begin=66, finish=0, remove_bins="Danian")
-#' time_bins(bin_type="stages", begin=66, finish=0, use_q = T)
-#' time_bins(bin_type="stages", begin=66, finish=0, merge_holo = T)
-#' time_bins(bin_type="stages", begin=66, finish=0, merge_holo_ple = T)
-#' time_bins(bin_type="epochs", begin=66, finish=0, use_q = T)
-#' time_bins(bin_type="epochs", begin=66, finish=0, remove_bins = "Holocene")
-#' time_bins(bin_type="custom_bins", custom_bins = -c(10:0))
-#' time_bins(bin_type="stages", begin=66, finish=0, lr_hr_bins="low")
-#' time_bins(bin_type="stages", begin=66, finish=0, lr_hr_bins="high")
+#' time_bins_all_opts(bin_type="equal_bins", begin=100, finish=0, n_bins=10)
+#' time_bins_all_opts(bin_type="stages", begin=251.902, finish=66)
+#' time_bins_all_opts(bin_type="epochs", begin=251.902, finish=66)
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, remove_bins="Danian")
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, use_q = T)
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, merge_holo = T)
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, merge_holo_ple = T)
+#' time_bins_all_opts(bin_type="epochs", begin=66, finish=0, use_q = T)
+#' time_bins_all_opts(bin_type="epochs", begin=66, finish=0, remove_bins = "Holocene")
+#' time_bins_all_opts(bin_type="custom_bins", custom_bins = -c(10:0))
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, lr_hr_bins="low")
+#' time_bins_all_opts(bin_type="stages", begin=66, finish=0, lr_hr_bins="high")
 #' @export
-time_bins <- function(bin_type, begin, finish, n_bins = 100, custom_bins = NULL,
-                      lr_hr_bins = "", remove_bins = NULL, use_q = FALSE,
-                      merge_holo = FALSE, merge_holo_ple = FALSE){
+time_bins_all_opts <- function(bin_type, begin, finish, n_bins = 100, 
+                               custom_bins = NULL, lr_hr_bins = "", 
+                               remove_bins = NULL, use_q = FALSE,
+                               merge_holo = FALSE, merge_holo_ple = FALSE){
   if(bin_type == "equal_bins"){
     bins <- build_bins(start = begin, end = finish, n = n_bins)
   }
@@ -300,6 +301,58 @@ time_bins <- function(bin_type, begin, finish, n_bins = 100, custom_bins = NULL,
     bins <- lr_hr_bins(res="high", bin_type = bin_type, begin = begin,
                        finish = finish)
     # bins_0 <- -c(bins$start, min(bins$end))
+  }
+  return(bins)
+}
+
+
+#' Make time bins
+#'
+#' 'time_bins()' makes a table of time bin start, end and midpoint ages
+#'
+#' @param bin_type Determines how bins will be made (equal bins, epochs, or
+#' stages) or whether "custom_bins" will be used.
+#' @param begin Starting age of the oldest time bin
+#' @param finish Ending age of the youngest time bin
+#' @param n_bins Number of bins (used only when equal_bins are specified)
+#' @param remove_bins Specify named time bins to be removed (quote directly or
+#' use a list object)
+#' @param use_q Merge time bins in the Quaternary together
+#' @param merge_holo Merge time bins in the Holocene together
+#' @param merge_holo_ple Merge time bins in the Upper Pleistocene and Holocene
+#' @returns A table of time bins with start, end and midpoint ages. Where epochs
+#' or stages specified names are stored as well.
+#' @examples
+#' time_bins(bin_type="equal_bins", begin=100, finish=0, n_bins=10)
+#' time_bins(bin_type="stages", begin=251.902, finish=66)
+#' time_bins(bin_type="epochs", begin=251.902, finish=66)
+#' time_bins(bin_type="stages", begin=66, finish=0, remove_bins="Danian")
+#' time_bins(bin_type="stages", begin=66, finish=0, use_q = T)
+#' time_bins(bin_type="stages", begin=66, finish=0, merge_holo = T)
+#' time_bins(bin_type="stages", begin=66, finish=0, merge_holo_ple = T)
+#' time_bins(bin_type="epochs", begin=66, finish=0, use_q = T)
+#' time_bins(bin_type="epochs", begin=66, finish=0, remove_bins = "Holocene")
+#' time_bins(bin_type="custom_bins", custom_bins = -c(10:0))
+#' @export
+time_bins <- function(bin_type, begin, finish, n_bins = 100, custom_bins = NULL,
+                      remove_bins = NULL, use_q = FALSE, merge_holo = FALSE, 
+                      merge_holo_ple = FALSE){
+  if(bin_type == "equal_bins"){
+    bins <- build_bins(start = begin, end = finish, n = n_bins)
+  }
+  if(bin_type == "epochs"){
+    bins <- build_epochs(begin = begin, finish = finish)
+    bins <- adjust_epochs(bins, finish = finish, rmv_bins = remove_bins,
+                          quat = use_q)
+  }
+  if(bin_type == "stages"){
+    bins <- build_stages(begin = begin, finish = finish)
+    bins <- adjust_stages(bins, finish = finish, rmv_bins = remove_bins,
+                          quat = use_q, holo = merge_holo,
+                          holo_ple = merge_holo_ple)
+  }
+  if(bin_type == "custom_bins"){
+    bins <- customise_bins(custom_bins)
   }
   return(bins)
 }
