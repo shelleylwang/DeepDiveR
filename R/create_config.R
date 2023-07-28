@@ -61,7 +61,7 @@
     sims$fraction_skyline_sampling <- 0.5
     sims$maximum_localities_per_bin <- 200
     
-    config$data$simmulations <- sims
+    config$data$simulations <- sims
     
     # settings for areas appearing and disappearing 
   
