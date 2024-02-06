@@ -103,56 +103,44 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins)
 #' generated alongside the replicate number, the data type (either locs or occs)
 #' and the region ID.
 #' @examples
-#' prep_dd_input(dat=dat_res, scale="stages", begin=, finish=, r=replicates, age_m = age_method,
+#' prep_dd_input(dat=dat, scale="stages", begin=, finish=, r=replicates, age_m = age_method,
 #' taxon_level=taxonomic_level, all_lr=T)
 #' @export
-prep_dd_input <- function(dat=dat, bin_type=bins_scale, begin=begin_bins,
-                          finish=end_bins, n_bins=10, custom_bins=NULL,
-                          lr_hr_bins="", remove_bins=NULL, use_q=FALSE,
-                          merge_holo=FALSE, merge_holo_ple=FALSE, r=replicate,
-                          age_m=age_method, taxon_level=taxonomic_level,
-                          age_range_threshold=NA, all_lr=F, write_file=F){
-
-  # Make time bins
-  bins <- time_bins(bin_type=bin_type, begin=begin, finish=finish,
-                    n_bins=n_bins, custom_bins=custom_bins,
-                    lr_hr_bins=lr_hr_bins, remove_bins=remove_bins, use_q=use_q,
-                    merge_holo=merge_holo, merge_holo_ple=merge_holo_ple)
-
-
-  # Assign occurrences as high or low resolution
-  dat_res <- assign_res(dat, age_range_threshold=age_range_threshold,
-                        all_lr=all_lr)
-
+prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method, 
+                          taxon_level=taxonomic_level, output_file=NULL){
 
   deepdive_input <- data.frame()
   for(rep in 1:r){
-
+    
     sampled_dat <- ages(dat, method=age_m) # Get ages and append
     area_tables <- split(sampled_dat, f = sampled_dat$Area)  # Split data by area
 
     # Get species or genera level data
     occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins,
-                               taxon_level=taxon_level)
+                               taxonomic_level=taxon_level)
     cnames <- c(colnames(occs))
-
+    
     # Get locality data
     locs <- generate_locality_dataset(sampled_dat, bins=bins)
 
     # Get time bin data
-    tbins <- data.frame(cbind(c("bin_mid", "bin_dur"), NA,
-                              rbind(bins$midpoint, bins$start-bins$end)))
+    tbins <- data.frame(cbind(c("bin_start", "bin_mid", "bin_dur"), NA,
+                              rbind(bins[-length(bins)], 
+                                    rowMeans(cbind(bins[-length(bins)], bins[-1])), 
+                                    bins[-length(bins)]-bins[-1])))
     names(tbins) <- cnames
 
     dd_input <- rbind(tbins, locs, occs)
-    dd_input <- cbind(R=rep, dd_input)
+    dd_input <- cbind(Replicate=rep, dd_input)
     deepdive_input <- rbind(deepdive_input, dd_input)
   }
 
   # Get DeepDive input file
-  if(write_file ==T){
-    write.csv(deepdive_input, paste0(name, "empirical_data/deepdive_input.csv"),
+  if(!is.null(output_file)){
+    write.csv(deepdive_input, paste0(output_file,"/deepdive_input.csv"),
               row.names=FALSE)
   }
-  return(deepdive_input)
+  else{
+    return(deepdive_input)
+  }
 }

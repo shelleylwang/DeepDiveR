@@ -15,15 +15,14 @@
 #' @export
 generate_occurrence_dataset <- function(dat, area_tables, bins){
   list_areas <- unique(dat$Area)
-  n_occurrences <- data.frame(matrix(0, length(list_areas), nrow(bins)))
-  bins_0 <- -c(as.numeric(bins$start), 0) # add zero to bins (using negative values for time)
+  n_occurrences <- data.frame(matrix(0, length(list_areas), length(bins)-1))
   for (i in seq_len(length(list_areas))){
     indices_areas <- which(dat$Area == list_areas[i])
     total_occs_for_area <- length(indices_areas)
     area_dat <- dat[indices_areas,]
     age_occs <- area_dat$SampledAge
     # uni_age_occs <- unique(age_occs)
-    h <- hist(x = -as.numeric(age_occs), breaks=bins_0, plot=F)
+    h <- hist(x = -as.numeric(age_occs), breaks=bins, plot=F)
     n_occurrences[i,] <- h$counts
   }
   return(n_ocurrences)

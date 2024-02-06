@@ -14,8 +14,8 @@
 #' @export
 generate_locality_dataset <- function(dat, bins){
   list_areas <- unique(dat$Area)
-  localities <- data.frame(matrix(0, length(list_areas), nrow(bins)))
-  bins_0 <- -c(as.numeric(bins$start), 0) # add zero to bins (using negative values for time)
+  localities <- data.frame(matrix(0, length(list_areas), length(bins)-1))
+  bins <- sort(-abs(bins))
   for (i in seq_len(length(list_areas))){
     indices_areas <- which(dat$Area == list_areas[i])
     locality_ids <- dat[indices_areas,]$Locality
@@ -25,9 +25,10 @@ generate_locality_dataset <- function(dat, bins){
       t <- dat$SampledAge[which(dat$Locality == j)]
       no_loc_in_area <- c(no_loc_in_area, unique(t))
     }
-    h <- hist(x = -as.numeric(no_loc_in_area), breaks=bins_0, plot=F)
+    h <- hist(x = -as.numeric(no_loc_in_area), breaks=bins, plot=F)
     localities[i,] <- h$counts
   }
+  colnames(localities) <- sprintf("t%d", seq(length(bins)-1))
   locs <- cbind(Type="locs", Area=list_areas, localities)
   return(data.frame(locs))
 }
