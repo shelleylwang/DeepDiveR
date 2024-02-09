@@ -137,7 +137,7 @@ prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method,
 
   # Get DeepDive input file
   if(!is.null(output_file)){
-    write.csv(deepdive_input, paste0(output_file,"/deepdive_input.csv"),
+    write.csv(deepdive_input, output_file,
               row.names=FALSE)
   }
   else{
