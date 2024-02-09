@@ -32,12 +32,17 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
                           simulations_file = NULL,
                           add_test = F,
                           
+                          # for the training module
                           models_file = NULL,
                           feature_file = NULL, label_file = NULL, 
+                          
+                          # test section - might be redundant
                           feature_files_test = NULL, label_files_test = NULL,
-                          rnn_names = NULL, empirical_input_file = NULL,
-                          max_age = NULL, min_age = NULL, 
-                          include_present_diversity = TRUE, present_diversity = NULL){
+                          rnn_names = NULL, 
+                          
+                          empirical_input_file = dd_dataset,
+                          include_present_diversity = TRUE, present_diversity = NULL,
+                          output_file = NULL){
 ### use a function to turn TRUE and FALSE to True and False in python
   library(ConfigParser)
   config <- ConfigParser$new()
@@ -50,10 +55,6 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
   # directory
   general <- c()
   general$wd <- wd
-  folders <- c(simulations_file, "trained_models")
-  paths <- paste(wd, folders, sep="/")
-  sapply(folders, dir.create)
-  
   general$time_bins <- sort(paste(time_bins, collapse=" "))
   if(is.null(general$time_bins)){
     print("Warning: time_bins is set to NULL, please adjust using argument in create_config or using the set function below to provide values")
@@ -65,18 +66,23 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
   
   # simulations
   if(simulate == TRUE){
+    folders <- simulations_file
+    paths <- paste(wd, folders, sep="/")
+    sapply(folders, dir.create)
     sims$sim_name <- sim_name
     sims$n_CPUS <- 1  # number of CPUs used for simulations
     sims$n_training_simulations <- 2000  # simulations per CPU (total should be ~10,000)
-    sims$n_test_simulations <- 20  # simulations per CPU (the total should be e.g. 100 or 1000)
     sims$n_areas <- n_areas  # number of discrete regions
     if(is.null(sims$n_areas)){
       print("Warning: n_areas is set to NULL, please adjust using argument in create_config or using the set function below")
       }
     sims$training_seed <- 123
-    sims$test_seed <- 432
     sims$include_present_diversity <- include_present_diversity 
-    sims$add_test <- add_test
+    if(add_test == TRUE){
+      sims$test_seed <- 432
+      sims$n_test_simulations <- 100  # simulations per CPU (the total should be e.g. 100 or 1000)
+    }
+    
     
     sims$s_species <- 1  # number of starting species
     sims$rangeSP <- paste(100, 5000, collapse="")  # min/max size data set
@@ -136,12 +142,15 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
   if(model_training == TRUE){
     ## add if statement if no simulations run need to specify where the sims are
     # Settings for training models
+    folders <- models_file
+    paths <- paste(wd, folders, sep="/")
+    sapply(folders, dir.create)
     mt <- c()
     mt$sims_folder <- simulations_file
     mt$model_folder <- models_file
     mt$lstm_layers <- paste(64, 32, collapse="")
     mt$dense_layer <- paste(64, 32, collapse="")
-    mt$dropout <- 0.5
+    mt$dropout <- 0
     mt$max_epochs <- 1000
     mt$patience <- 10
     mt$batch_size <- 100
@@ -196,40 +205,28 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
   if(empirical_predictions == TRUE){
     e <- c()
     e$empirical_input_file <- empirical_input_file # ".\R\test_empirical_data" 
-    # if you want empirical but don't specify a file will give a warning, please use the output file prepared in the correct format for use in deepdive
     if(is.null(e$empirical_input_file)){
       print("Warning: empirical_input_file is set to NULL, please provide a file path using the argument in create_config or using the set() function")
     }
     e$model_folder <- models_file
     e$n_predictions <- 10  # number of predictions per input file 
     e$replicates <- 100  # number of age randomisation replicates used in data_pipeline.R
-    e$CI <- 0.95  # confidence intervals
-    
-#    e$max_age <- max_age  # -66
-#    if(is.null(e$max_age)){
-#      print("Warning: max_age is set to NULL, please provide max_age using the argument in create_config")
-#    }
-#    e$min_age <- min_age   # -0
-#    if(is.null(e$min_age)){
-#      print("Warning: min_age is set to NULL, please provide min_age using the argument in create_config")
-#    }
-#    if(e$min_age & e$max_age ){
-#        e$plotting_range <- paste(-e$max_age, -e$min_age, collapse="")  # age range used for plotting (truncates the predictions)
-#    }
-#    else{
-#      e$plotting_range <- NULL
-#      print("To set plotting range provide min_age and max_age arguments to create config, otherwise NULL")
-#    }
-  
-    e$random_seed <- 123
-    e$plot_mean_prediction <- FALSE  # if true add line with mean prediction (one line per replicate)
-    e$plot_median_prediction <- TRUE  # if true add line with median prediction across all models
-    e$plot_all_predictions <- FALSE 
-    e$alpha <- 0.2
-    e$prediction_color <- "b"
-    e$plot_shaded_area <- TRUE
+#    e$CI <- 0.95  # confidence intervals
+#    e$random_seed <- 123
+#    e$plot_mean_prediction <- FALSE  # if true add line with mean prediction (one line per replicate)
+#    e$plot_median_prediction <- TRUE  # if true add line with median prediction across all models
+#    e$plot_all_predictions <- FALSE 
+#    e$alpha <- 0.2
+#    e$prediction_color <- "b"
+#    e$plot_shaded_area <- TRUE
     e$scaling <- "1-mean"
-    e$models <- "None"  # or provide a list of file names which could have a single item ##NULL DOESNT READ CORRECLT IN PYTHON
+    e$include_present_diversity <- include_present_diversity
+    e$present_diversity <- present_diversity
+#    e$models <- "None"  # or provide a list of file names which could have a single item ##NULL DOESNT READ CORRECLT IN PYTHON
+    e$output_file <- output_file
+    folders <- output_file
+    paths <- paste(wd, folders, sep="/")
+    sapply(folders, dir.create)
     config$data$empirical_predictions <- e
   }
   
