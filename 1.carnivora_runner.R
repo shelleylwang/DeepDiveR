@@ -1,6 +1,8 @@
 library(devtools)
 load_all(".")
 library(DeepDiveR)
+library(readxl)  # if your occurrence data is in an xl file
+library(data.table)  # needed to assign localities from coordinates
 
 # load an occurrence table here
 # your_dat <- read.csv("your_file_path")
@@ -12,16 +14,16 @@ dat <- dat[-which(dat$Maximum_Age=="Unknown"),]
 # Organise your data in the expected format
 # In this case some 2496 of 15882 records are not identified to the species 
 # level, so here we will use genera
-dat <- data.frame(dat$Genus, dat$Species, dat$Continent, 
+dat <- data.frame(dat$Genus, dat$Continent, 
                   as.numeric(dat$Minimum_Age), as.numeric(dat$Maximum_Age), 
                   dat$Latitude, dat$Longitude)
-colnames(dat) <- c('Genus', 'Species', 'Area', 'MinAge', 'MaxAge', 
+colnames(dat) <- c('Taxon', 'Area', 'MinAge', 'MaxAge', 
                    'Latitude', 'Longitude')
 
 # re-code geography
 setDT(dat)[, Locality := .GRP, by =.(Latitude, Longitude, MinAge, MaxAge)]
 
-dat <- dat[!duplicated(dat), ]
+dat <- dat[!duplicated(dat), ]  # remove duplicated rows
 
 
 # Specify a vector of time bins
@@ -34,17 +36,12 @@ bins <- c(72.1, 66, 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 54.975, 
           13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 
           4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0.0117, 0.0082, 0.0042, 0)
 
-dd_dataset <- paste0(path_dat, "deepdive_input")
+dd_dataset <- paste0(path_dat, "deepdive_input.csv")
 
 # Prepare input file for deepdive, set output_file name to save
 prep_dd_input(dat = dat, bins = bins, r = 100, 
               age_m = "random_by_loc", taxon_level = "Genus", 
               output_file = dd_dataset)
-
-
-# Create config file with settings to run analysis
-#create_config(simulations=T, n_CPUS=20, p_mass_extinction=0.01,
-#              model_training=T, test=T, empirical_predictions=T)
 
 # Check the number of extant taxa
 summary_dat <- read_xlsx(paste0(path_dat, "/carnivora_data_cleaned.xlsx"), sheet="Species summary")
@@ -54,7 +51,6 @@ summary_dat <- data.frame(summary_dat$Genus, summary_dat$Status)
 colnames(summary_dat) <- c("Genus", "Status")
 summary_dat <- summary_dat[!duplicated(summary_dat), ]
 length(summary_dat$Status == "Extant")
-
 
 # Just the simulations
 config <- create_config(
@@ -102,28 +98,46 @@ config <- create_config(
   models_file = paste0(path_dat, "trained_models_1"), 
   time_bins = bins,
   include_present_diversity = T,
-  present_diversity = ,
+  present_diversity = 300,
   empirical_input_file = dd_dataset
 )
 config$write(paste0(path_dat, "try3.ini"))
 
 
+# Full config for the carnivorans
+sims_file <- paste0(path_dat, "simulations_carnivora")
+# To do everything in one
+config <- create_config(
+  simulate = T,  model_training = T, test_sim = F, empirical_predictions = T,
+  wd = getwd(),  
+  time_bins = bins,
+  sim_name="carnivora",
+  n_areas = length(unique(dat$Area)),
+  simulations_file = sims_file, 
+  add_test = T, 
+  models_file = paste0(path_dat, "trained_models_carnivora"), 
+  feature_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_features.npy"), 
+  label_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_labels.npy"),
+  include_present_diversity = T,
+  present_diversity = 137,
+  taxonomic_level = "Genus",
+  empirical_input_file = dd_dataset
+)
 
-config <- create_config(simulate = T, model_training = T, 
-                        test_sim = T, empirical_predictions = FALSE, 
-                        time_bins = c(0, 5, 10, 15, 20), 
-                        n_areas = 5, simulations_file = "simulations", 
-                        # feature_files = paste('sim_features20220617.npy', collapse=""),
-                        # label_files = 'sim_labels20220617.npy',
-                        # feature_files_test = paste('test_sim_features20220617.npy', collapse=""),
-                        label_files_test = 'test_sim_labels20220617.npy',
-                        rnn_names = paste('rnn20220617', collapse=""), 
-                        empirical_input_file = NULL,
-                        max_age = -66, min_age = -0)
+# edit number of living taxa
+set_value(attribute_name = "extant_sp", value=c(100,174), module="simulations", config)
 
-# use this syntax to edit entries in the config.ini file
-config$set(option="n_areas", value="6", section="simulations")
+# edit total number of simulated taxa (minimum and maximum) 
+set_value(attribute_name = "total_sp", value=c(50, 300), module="simulations", config)
 
-# move this so the user instead will call this in the run line.
-config$write("config.ini")
+# for 5 areas, specify 5 attributes that are the start and end of each which
+area_ages <- rbind(c(72, 70),  # Each row here is a discrete area.
+                   c(60, 58),  # The first value in each row is the time at
+                   c(50, 48),  # which migration to an area can begin.
+                   c(40, 39),  # By the second value, connection between areas
+                   c(30, 29))  # has definitely been established.
 
+areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
+
+
+config$write(paste0(path_dat, "carnivora.ini"))

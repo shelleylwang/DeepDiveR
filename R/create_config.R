@@ -2,26 +2,31 @@
 #'
 #' 'create_config()' generates config object with settings needed to launch
 #' DeepDive scripts in python. 
-#' @param train_sim A true or false statement that switches on and off the generation of simulated datasets used in model training.
+#' @param simulate A true or false statement that switches on and off the generation of simulated datasets used in model training and testing.
 #' @param model_training A true or false statement that switches on and off the training of new RNN models.
-#' @param test_sim A true or false statement that switches on and off the generation of simulated datasets used in testing the model.
 #' @param empirical_predictions A true or false statement that switches on and off the set up for empirical analyses. 
+#' @param wd The working directory where necessary files can be found.
 #' @param time_bins A vector of bin boundary ages.
+#' @param sim_name
 #' @param n_areas An integer number of discrete sampling regions e.g. continents, basins.
 #' @param simulations_file File path to where simulations will be saved.
-#' @param feature_files File name for training features.
-#' @param label_files File name for training labels.
-#' @param feature_files_test File name for test features.
-#' @param label_files_test File name for test labels.
-#' @param rnn_names Name of saved rnn file.
+#' @param add_test TRUE/FALSE statement, when T a test set with the same settings as the training set are generated.
+#' @param models_file Path to a folder where trained models can be saved and retrieved.
+#' @param feature_file File name for training features.
+#' @param label_file File name for training labels.
 #' @param empirical_input_file File path to empirical data in the input format for use in deepdive.
-#' @param max_age A negative number indicating the oldest age of the study interval.
-#' @param min_age A negative number indicating the youngest age of the study interval.
+#' @param include_present_diversity TRUE/FALSE statement, if T will condition predictions on modern diversity.
+#' @param present_diverstiy A number of extant taxa, which predictions will be conditioned on.
+#' @param taxonomic_level String of the name of the taxonomic data column, e.g. "Species", "Genus".
+#' @param output_file Path where outputs will be saved.
 #' @returns Creates config with settings to launch DeepDive.
 #' @examples
-#' 
-#' @export ###create_config and an edit_config
-create_config <- function(simulate = T, model_training = T, test_sim = T,
+#' config <- create_config(simulate = T,  model_training = F, 
+#' empirical_predictions = F, wd = paste0(getwd()), time_bins = bins, 
+#' sim_name="test", n_areas = length(unique(dat$Area)), 
+#' simulations_file = paste0(path_dat, "simulations"), add_test = F)
+#' @export 
+create_config <- function(simulate = T, model_training = T,
                           empirical_predictions = F, outputs=F,
                           
                           # settings needed for simulation module
@@ -37,11 +42,12 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
                           feature_file = NULL, label_file = NULL, 
                           
                           # test section - might be redundant
-                          feature_files_test = NULL, label_files_test = NULL,
-                          rnn_names = NULL, 
+                          #feature_files_test = NULL, label_files_test = NULL,
+                          #rnn_names = NULL, 
                           
                           empirical_input_file = dd_dataset,
                           include_present_diversity = TRUE, present_diversity = NULL,
+                          taxonomic_level = taxon_level,
                           output_file = NULL){
 ### use a function to turn TRUE and FALSE to True and False in python
   library(ConfigParser)
@@ -85,8 +91,8 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
     
     
     sims$s_species <- 1  # number of starting species
-    sims$rangeSP <- paste(100, 5000, collapse="")  # min/max size data set
-    sims$root_r <- paste(median(time_bins), max(time_bins), collapse="")  # range of ages for origin of clade
+    sims$total_sp <- paste(100, 5000, collapse="")  # min/max size data set
+    sims$root_r <- paste(0.8*(max(time_bins)-min(time_bins))+min(time_bins), max(time_bins), collapse="")  # range of ages for origin of clade
     sims$min_extinct_sp <- 0  # minimum number of extinct lineages allowed
     sims$extant_sp <- paste(0, 10000, collapse="")  # min/max number of living species  # MAYBE MAKE THESE VECTORS INSTEAD?
     sims$rangeL <- paste(0.02, 0.5, collapse="")  # range of birth rates - range based on Cantalapiedra et al 2022 for elephant example 
@@ -158,48 +164,44 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
     mt$f <- feature_file
     mt$l <- label_file
     mt$include_present_diversity <- include_present_diversity
-    # add if statement if none and it's just the mt block must specify by user,
-    # if there's also the sim module accept the none and resolve in python. In python
-    # ignore the none and take the simulation output. 
-    mt$l <- label_file 
     config$data$model_training <- mt
   }
   
   # For test simulations
   # ADD SPECIFYING THE DATA, SIMULATION OUTPUT FILES ARE.
   # CLARIFY USE PYTHON FOR FULL FELEXIBILITY.
-  if(test_sim == TRUE){
-    test <- c()
-    test$sim_wd <- simulations_file # "simulations"
-    if(is.null(simulations_file)){
-      print("Must specify where test simulations will be saved in simulations_file argument or using the set() function")
-    }
-    test$model_wd <- "trained_models" # in python path.join to get to folders
-    test$feat_files <- feature_file  # paste('sim_features20220617.npy', collapse="")
-    if(is.null(test$feat_files)){
-      print("Warning: feature_file is set to NULL, please adjust using argument in create_config or using the set() function")
-    }
-    test$lab_file <- label_file  # 'sim_labels20220617.npy'
-    if(is.null(test$lab_files)){
-      print("Warning: label_file is set to NULL, please adjust using argument in create_config or using the set() function")
-    }
-    test$feat_files_test <- feature_files_test # paste('test_sim_features20220617.npy', collapse="")
-    if(is.null(test$feat_files_test)){
-      print("Warning: feature_files_test is set to NULL, please adjust using argument in create_config or using the set() function")
-    }
-    test$lab_file_test <- label_files_test # 'test_sim_labels20220617.npy'
-    if(is.null(test$lab_file_test)){
-      print("Warning: lab_fle_test is set to NULL, please adjust using argument in create_config or using the set() function")
-    }
-    test$output_names <- rnn_names  # paste('rnn20220617', collapse="")
-    if(is.null(test$output_names)){
-      print("Warning: rnn_names is set to NULL, please adjust using argument in create_config or using the set() function")
-    }
-    test$n_predictions <- 100
-    # test$sqs_6 <- "" # file path
-    test$j <- 2  # index of the best performing model
-    config$data$test_predictions <- test
-  }
+  #if(test_sim == TRUE){
+  #  test <- c()
+  #  test$sim_wd <- simulations_file # "simulations"
+  #  if(is.null(simulations_file)){
+  #    print("Must specify where test simulations will be saved in simulations_file argument or using the set() function")
+  #  }
+  #  test$model_wd <- "trained_models" # in python path.join to get to folders
+  #  test$feat_files <- feature_file  # paste('sim_features20220617.npy', collapse="")
+  #  if(is.null(test$feat_files)){
+  #    print("Warning: feature_file is set to NULL, please adjust using argument in create_config or using the set() function")
+  #  }
+  #  test$lab_file <- label_file  # 'sim_labels20220617.npy'
+  #  if(is.null(test$lab_files)){
+  #    print("Warning: label_file is set to NULL, please adjust using argument in create_config or using the set() function")
+  #  }
+  #  test$feat_files_test <- feature_files_test # paste('test_sim_features20220617.npy', collapse="")
+  #  if(is.null(test$feat_files_test)){
+  #    print("Warning: feature_files_test is set to NULL, please adjust using argument in create_config or using the set() function")
+  #  }
+  #  test$lab_file_test <- label_files_test # 'test_sim_labels20220617.npy'
+  #  if(is.null(test$lab_file_test)){
+  #    print("Warning: lab_fle_test is set to NULL, please adjust using argument in create_config or using the set() function")
+  #  }
+  #  test$output_names <- rnn_names  # paste('rnn20220617', collapse="")
+  #  if(is.null(test$output_names)){
+  #    print("Warning: rnn_names is set to NULL, please adjust using argument in create_config or using the set() function")
+  #  }
+  #  test$n_predictions <- 100
+  #  # test$sqs_6 <- "" # file path
+  #  test$j <- 2  # index of the best performing model
+  #  config$data$test_predictions <- test
+  #}
   
   # For empirical predictions
   if(empirical_predictions == TRUE){
@@ -222,6 +224,7 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
     e$scaling <- "1-mean"
     e$include_present_diversity <- include_present_diversity
     e$present_diversity <- present_diversity
+    e$taxon_level <- taxonomic_level
 #    e$models <- "None"  # or provide a list of file names which could have a single item ##NULL DOESNT READ CORRECLT IN PYTHON
     e$output_file <- output_file
     folders <- output_file
@@ -230,16 +233,53 @@ create_config <- function(simulate = T, model_training = T, test_sim = T,
     config$data$empirical_predictions <- e
   }
   
-  if (outputs){
-      outputs <- c()
-      outputs$path <- ""  # folder where outputs will be saved
-      outputs$histograms <- TRUE
-      outputs$training_stats <- TRUE 
-      outputs$features <- TRUE  # if TRUE will save features
-      outputs$predictions <- TRUE  # if TRUE will save predictions
-      outputs$stats_results <- TRUE  # saves e.g. R2 and rMSE among other summary stats
-      config$data$outputs <- outputs       
-  }
+  #if (outputs){
+  #    outputs <- c()
+  #    outputs$path <- ""  # folder where outputs will be saved
+  #    outputs$histograms <- TRUE
+  #    outputs$training_stats <- TRUE 
+  #    outputs$features <- TRUE  # if TRUE will save features
+  #    outputs$predictions <- TRUE  # if TRUE will save predictions
+  #    outputs$stats_results <- TRUE  # saves e.g. R2 and rMSE among other summary stats
+  #    config$data$outputs <- outputs       
+  #}
 
   return(config)
 }  
+
+
+#' Edit values in config
+#'
+#' 'set_value()' accesses attributes in the config file and adjusts the assigned 
+#' value(s) to that of a provided integer or vector.
+#' @param attribute_name A string providing direction to the attribute you want to edit e.g. "total_sp"
+#' @param value An integer or vector value you want to assign to the attribute.
+#' @param module A string indicating the block of the config the attribute can be found within.
+#' @param config A config .ini file which can be generated in create_config(), that you will edit here. 
+#' @returns Edits settings in the config .ini file.
+#' @examples 
+#' set_value(attribute_name = "extant_sp", value=c(10, 10000), module="simulations", config)
+#' @export
+set_value <- function(attribute_name, value, module, config){
+  variable <- paste(value, collapse=" ")
+  config$data[module][[1]][attribute_name] <- variable
+  # pass lists, vectors etc and then turn into a string
+}
+
+
+#' Make discrete geographic regions appear or disappear
+#'
+#' 'areas_matrix()' adds attributes in the simulations module which provide a 
+#' maximum and minimum age range for regions becoming connected. 
+#' @param area_ages A matrix of minimum and maximum ages for areas appearing, with older ages in column one. Must have a number of rows = number of discrete areas.
+#' @param n_areas The number of unique discrete areas used in the analysis.
+#' @param config A config .ini file which can be generated in create_config(), that you will add attributes to here. 
+#' @returns Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
+#' @examples 
+#' areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
+#' @export
+areas_matrix <- function(area_ages, n_areas, config){
+  for(i in 1:n_areas){
+    set_value(attribute_name = paste0("area", i), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+  }
+}
