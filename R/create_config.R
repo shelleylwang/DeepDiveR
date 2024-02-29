@@ -7,7 +7,7 @@
 #' @param empirical_predictions A true or false statement that switches on and off the set up for empirical analyses. 
 #' @param wd The working directory where necessary files can be found.
 #' @param time_bins A vector of bin boundary ages.
-#' @param sim_name
+#' @param sim_name A string that identified a set of simulations.
 #' @param n_areas An integer number of discrete sampling regions e.g. continents, basins.
 #' @param simulations_file File path to where simulations will be saved.
 #' @param add_test TRUE/FALSE statement, when T a test set with the same settings as the training set are generated.
@@ -255,7 +255,7 @@ create_config <- function(simulate = T, model_training = T,
 #' @param attribute_name A string providing direction to the attribute you want to edit e.g. "total_sp"
 #' @param value An integer or vector value you want to assign to the attribute.
 #' @param module A string indicating the block of the config the attribute can be found within.
-#' @param config A config .ini file which can be generated in create_config(), that you will edit here. 
+#' @param config A config which can be generated in create_config(), that you will edit here. 
 #' @returns Edits settings in the config .ini file.
 #' @examples 
 #' set_value(attribute_name = "extant_sp", value=c(10, 10000), module="simulations", config)
@@ -273,7 +273,7 @@ set_value <- function(attribute_name, value, module, config){
 #' maximum and minimum age range for regions becoming connected. 
 #' @param area_ages A matrix of minimum and maximum ages for areas appearing, with older ages in column one. Must have a number of rows = number of discrete areas.
 #' @param n_areas The number of unique discrete areas used in the analysis.
-#' @param config A config .ini file which can be generated in create_config(), that you will add attributes to here. 
+#' @param config A config which can be generated in create_config(), that you will add attributes to here. 
 #' @returns Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
 #' @examples 
 #' areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
