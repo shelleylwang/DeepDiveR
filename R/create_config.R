@@ -65,7 +65,7 @@ create_config <- function(simulate = T, model_training = T,
   if(is.null(general$time_bins)){
     print("Warning: time_bins is set to NULL, please adjust using argument in create_config or using the set function below to provide values")
   }
-  general$include_present_diversity <- FALSE
+  general$include_present_diversity <- include_present_diversity
   
   
   config$data$general <- general
@@ -83,7 +83,6 @@ create_config <- function(simulate = T, model_training = T,
       print("Warning: n_areas is set to NULL, please adjust using argument in create_config or using the set function below")
       }
     sims$training_seed <- 123
-    sims$include_present_diversity <- include_present_diversity 
     if(add_test == TRUE){
       sims$test_seed <- 432
       sims$n_test_simulations <- 100  # simulations per CPU (the total should be e.g. 100 or 1000)
@@ -163,7 +162,6 @@ create_config <- function(simulate = T, model_training = T,
     mt$validation_split <- 0.2
     mt$f <- feature_file
     mt$l <- label_file
-    mt$include_present_diversity <- include_present_diversity
     config$data$model_training <- mt
   }
   
@@ -222,7 +220,6 @@ create_config <- function(simulate = T, model_training = T,
 #    e$prediction_color <- "b"
 #    e$plot_shaded_area <- TRUE
     e$scaling <- "1-mean"
-    e$include_present_diversity <- include_present_diversity
     e$present_diversity <- present_diversity
     e$taxon_level <- taxonomic_level
 #    e$models <- "None"  # or provide a list of file names which could have a single item ##NULL DOESNT READ CORRECLT IN PYTHON
@@ -278,8 +275,28 @@ set_value <- function(attribute_name, value, module, config){
 #' @examples 
 #' areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
 #' @export
-areas_matrix <- function(area_ages, n_areas, config){
-  for(i in 1:n_areas){
-    set_value(attribute_name = paste0("area", i), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+areas_matrix <- function(area_ages = NULL, n_areas, config, bins, label = "start"){
+  if(is.null(area_ages) & label=="start"){
+    # for each region, specify two ages between which connection to others will be established.
+    area_ages <- c()
+    for(i in 1:n_areas){
+      area_ages <- rbind(area_ages,
+                         c(max(bins), max(bins)))
+    }
+    set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+  }
+  if(is.null(area_ages) & label=="end"){
+    # for each region, specify two ages between which connection to others will be removed.
+    area_ages <- c()
+    for(i in 1:n_areas){
+      area_ages <- rbind(area_ages,
+                         c(min(bins), min(bins)))
+    }
+    set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+  }
+  if(!is.null(area_ages)){
+      for(i in 1:n_areas){
+        set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+      }
   }
 }

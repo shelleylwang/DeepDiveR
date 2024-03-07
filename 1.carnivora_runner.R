@@ -17,17 +17,17 @@ dat <- dat[-which(dat$Maximum_Age=="Unknown"),]
 dat <- data.frame(dat$Genus, dat$Continent, 
                   as.numeric(dat$Minimum_Age), as.numeric(dat$Maximum_Age), 
                   dat$Latitude, dat$Longitude)
-colnames(dat) <- c('Taxon', 'Area', 'MinAge', 'MaxAge', 
+colnames(dat) <- c('Genus', 'Area', 'MinAge', 'MaxAge', 
                    'Latitude', 'Longitude')
 
-# re-code geography
+# assign localities
 setDT(dat)[, Locality := .GRP, by =.(Latitude, Longitude, MinAge, MaxAge)]
 
 dat <- dat[!duplicated(dat), ]  # remove duplicated rows
 
 
 # Specify a vector of time bins
-bins <- c(72.1, 66, 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 54.975, 53.95, 
+bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 54.975, 53.95, 
           52.925, 51.9, 50.875, 49.85, 48.825, 47.8, 46.85714, 45.91429, 
           44.97143, 44.02857, 43.08571, 42.14286, 41.2, 40.03667, 38.87333, 
           37.71, 36.7575, 35.805, 34.8525, 33.9, 32.88667, 31.87333, 30.86, 
@@ -52,63 +52,64 @@ colnames(summary_dat) <- c("Genus", "Status")
 summary_dat <- summary_dat[!duplicated(summary_dat), ]
 length(summary_dat$Status == "Extant")
 
+
 # Just the simulations
-config <- create_config(
-  simulate = T,  model_training = F, test_sim = F, empirical_predictions = F,
-  wd = paste0(getwd()),  
-  time_bins = bins,
-  sim_name="try1",
-  n_areas = length(unique(dat$Area)),
-  simulations_file = paste0(path_dat, "simulations_1"), 
-  add_test = F
-)
-config$write(paste0(path_dat,"try1.ini"))
+#config <- create_config(
+#  simulate = T,  model_training = F, test_sim = F, empirical_predictions = F,
+#  wd = paste0(getwd()),  
+#  time_bins = bins,
+#  sim_name="try1",
+#  n_areas = length(unique(dat$Area)),
+#  simulations_file = paste0(path_dat, "simulations_1"), 
+#  add_test = F
+#)
+#config$write(paste0(path_dat,"try1.ini"))
 
 
 # Just simulations, with test batch of simulations with the same settings as training data
-config <- create_config(
-  simulate = T,  model_training = F, test_sim = F, empirical_predictions = F,
-  wd = getwd(),  
-  time_bins = bins,
-  sim_name="try1.2",
-  n_areas = length(unique(dat$Area)),
-  simulations_file = paste0(path_dat, "simulations_2"), 
-  add_test = T
-)
-config$write(paste0(path_dat, "try1.2.ini"))
+#config <- create_config(
+#  simulate = T,  model_training = F, test_sim = F, empirical_predictions = F,
+#  wd = getwd(),  
+#  time_bins = bins,
+#  sim_name="try1.2",
+#  n_areas = length(unique(dat$Area)),
+#  simulations_file = paste0(path_dat, "simulations_2"), 
+#  add_test = T
+#)
+#config$write(paste0(path_dat, "try1.2.ini"))
 
 
 # Just the model_training
-config <- create_config(
-  simulate = F,  model_training = T, test_sim = F, empirical_predictions = F, 
-  wd = getwd(),
-  time_bins = bins,
-  simulations_file = paste0(path_dat, "simulations_1"), 
-  models_file = paste0(path_dat, "trained_models_1"), 
-  feature_file = paste0(path_dat, "simulations_1/try1_20240208_training_features.npy") , 
-  label_file = paste0(path_dat, "simulations_1/try1_20240208_training_labels.npy")
-)
-config$write(paste0(path_dat, "try2.ini"))
+#config <- create_config(
+#  simulate = F,  model_training = T, test_sim = F, empirical_predictions = F, 
+#  wd = getwd(),
+#  time_bins = bins,
+#  simulations_file = paste0(path_dat, "simulations_1"), 
+#  models_file = paste0(path_dat, "trained_models_1"), 
+#  feature_file = paste0(path_dat, "simulations_1/try1_20240208_training_features.npy") , 
+#  label_file = paste0(path_dat, "simulations_1/try1_20240208_training_labels.npy")
+#)
+#config$write(paste0(path_dat, "try2.ini"))
 
 
 # Just the predictions
-config <- create_config(
-  simulate = F,  model_training = F, test_sim = F, empirical_predictions = T, 
-  wd = getwd(),
-  models_file = paste0(path_dat, "trained_models_1"), 
-  time_bins = bins,
-  include_present_diversity = T,
-  present_diversity = 300,
-  empirical_input_file = dd_dataset
-)
-config$write(paste0(path_dat, "try3.ini"))
+#config <- create_config(
+#  simulate = F,  model_training = F, test_sim = F, empirical_predictions = T, 
+#  wd = getwd(),
+#  models_file = paste0(path_dat, "trained_models_1"), 
+#  time_bins = bins,
+#  include_present_diversity = T,
+#  present_diversity = 300,
+#  empirical_input_file = dd_dataset
+#)
+#config$write(paste0(path_dat, "try3.ini"))
 
 
-# Full config for the carnivorans
+# Generate config for the carnivores
 sims_file <- paste0(path_dat, "simulations_carnivora")
 # To do everything in one
 config <- create_config(
-  simulate = T,  model_training = T, test_sim = F, empirical_predictions = T,
+  simulate = T,  model_training = T, empirical_predictions = T,
   wd = getwd(),  
   time_bins = bins,
   sim_name="carnivora",
@@ -118,25 +119,39 @@ config <- create_config(
   models_file = paste0(path_dat, "trained_models_carnivora"), 
   feature_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_features.npy"), 
   label_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_labels.npy"),
-  include_present_diversity = T,
+  include_present_diversity = FALSE,
   present_diversity = 137,
   taxonomic_level = "Genus",
   empirical_input_file = dd_dataset
 )
 
-# edit number of living taxa
-set_value(attribute_name = "extant_sp", value=c(100,174), module="simulations", config)
+# edit number of living taxa, present_diversity is 137
+set_value(attribute_name = "extant_sp", value=c(100, 174), module="simulations", config)
 
 # edit total number of simulated taxa (minimum and maximum) 
-set_value(attribute_name = "total_sp", value=c(50, 300), module="simulations", config)
+set_value(attribute_name = "total_sp", value=c(618, 2000), module="simulations", config)
 
-# for 5 areas, specify 5 attributes that are the start and end of each which
-area_ages <- rbind(c(72, 70),  # Each row here is a discrete area.
-                   c(60, 58),  # The first value in each row is the time at
-                   c(50, 48),  # which migration to an area can begin.
-                   c(40, 39),  # By the second value, connection between areas
-                   c(30, 29))  # has definitely been established.
 
+# From the data, find when areas must have been occupied by (MaxAge for oldest
+# fossil sampled per continent, in this case).
+area_tables <- split(dat, f = dat$Area)  # Split data by area
+Africa <- max(area_tables$Africa$MaxAge)
+Asia <- max(area_tables$Asia$MaxAge)
+Europe <- max(area_tables$Europe$MaxAge)
+N_America <- max(area_tables$NorthAmerica$MaxAge)
+S_America <- max(area_tables$SouthAmerica$MaxAge)
+
+
+## SUGGESTION FOR THE ABOVE
+area_ages <- rbind(c(max(bins), 64.8),  # North America - these have narrower, 0.2ma range for the oldest
+                   c(max(bins), 61.7),  # Asia - these have very coarse ages at the oldest end, around 5my  ### VIA BERING LAND BRIDGE
+                   c(61.6, 59.2),  # Africa - via arabian peninsula?
+                   c(59.2, 56),  # Europe - why is there a temporal delay before they are sampled in Europe? barrier to dispersal we can time?
+                   c(11.608, 7.3))  # South America - GABI, when is the oldest this could realistically happen? 
+
+# if entered as area_ages = NULL, also provide bins as an argument.
+# areas disapearing instead of connecting can be made via adding the argument
+# label = "end"
 areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
 
 
