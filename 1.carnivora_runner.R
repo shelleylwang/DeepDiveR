@@ -6,7 +6,7 @@ library(data.table)  # needed to assign localities from coordinates
 
 # load an occurrence table here
 # your_dat <- read.csv("your_file_path")
-path_dat <- "R/test_empirical_data/carnivora_analysis/"
+path_dat <- "C:/Users/CooperR/Documents/carnivora_analysis"
 dat <- read_xlsx(paste0(path_dat, "/carnivora_data_cleaned.xlsx"), sheet="Records")
 
 dat <- dat[-which(dat$Maximum_Age=="Unknown"),]
@@ -36,7 +36,7 @@ bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 5
           13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 
           4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0.0117, 0.0082, 0.0042, 0)
 
-dd_dataset <- paste0(path_dat, "deepdive_input.csv")
+dd_dataset <- paste(path_dat, "deepdive_input.csv", sep="/")
 
 # Prepare input file for deepdive, set output_file name to save
 prep_dd_input(dat = dat, bins = bins, r = 100, 
@@ -106,19 +106,16 @@ length(summary_dat$Status == "Extant")
 
 
 # Generate config for the carnivores
-sims_file <- paste0(path_dat, "simulations_carnivora")
 # To do everything in one
 config <- create_config(
   simulate = T,  model_training = T, empirical_predictions = T,
-  wd = getwd(),  
+  wd = path_dat,  
   time_bins = bins,
   sim_name="carnivora",
   n_areas = length(unique(dat$Area)),
-  simulations_file = sims_file, 
+  simulations_file = "simulations_carnivora", 
   add_test = T, 
-  models_file = paste0(path_dat, "trained_models_carnivora"), 
-  feature_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_features.npy"), 
-  label_file = paste0(path_dat, sims_file, "/carnivora_20240227_training_labels.npy"),
+  models_file = "trained_models_carnivora", 
   include_present_diversity = FALSE,
   present_diversity = 137,
   taxonomic_level = "Genus",
@@ -126,10 +123,19 @@ config <- create_config(
 )
 
 # edit number of living taxa, present_diversity is 137
-set_value(attribute_name = "extant_sp", value=c(100, 174), module="simulations", config)
+set_value(attribute_name = "extant_sp", value=c(13, 1300), module="simulations", config)
 
 # edit total number of simulated taxa (minimum and maximum) 
 set_value(attribute_name = "total_sp", value=c(618, 2000), module="simulations", config)
+
+# edit carrying capacity in equilibrium simulations
+set_value(attribute_name="dd_K", value=c(13, 1300), module="simulations", config)
+
+
+#set_value(attribute_name = "p_mass_extinction", value = 0.001, module="simulations", config)
+#set_value(attribute_name = "p_mass_speciation", value = 0.001, module="simulations", config)
+#set_value(attribute_name ="p_constant_bd", value = 0.001, module="simulations", config)
+#set_value(attribute_name = "p_equilibrium", value = 0.1, module="simulations", config)
 
 
 # From the data, find when areas must have been occupied by (MaxAge for oldest
@@ -155,4 +161,4 @@ area_ages <- rbind(c(max(bins), 64.8),  # North America - these have narrower, 0
 areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
 
 
-config$write(paste0(path_dat, "carnivora.ini"))
+config$write(paste(path_dat, "carnivora.ini", sep="/"))

@@ -98,9 +98,14 @@ create_config <- function(simulate = T, model_training = T,
     sims$rangeM <- paste(0.02, 0.5, collapse="")  # range of death rates
     sims$log_uniform_rates <- FALSE 
     sims$p_mass_extinction <- 0.01  # probability of mass extinction per my
+    sims$magnitude_mass_ext <- paste(0.5, 1, collapse="")
     sims$p_equilibrium <- 0.01 # probability of equilibrium per my  ### ADJUST DEFAULT VALUES FOR PROBABILITIES THAT WILL MAKE SENSE
     sims$p_constant_bd <- 0.01 # probability of constant birth-death rates per my
     sims$p_mass_speciation <- 0.01 # probability of mass speciation per my
+    sims$p_dd_model <- 0.05 # probability of diversity-dependent diversification
+    sims$dd_K <- paste(100,1000, collapse = "")  # carrying capacity for dd clades
+    sims$dd_maxL <- 1 # starting sp rate for dd
+    sims$pr_extant_clade <- 0.7 # probability of simulating an extant clade
     sims$poiL <- 4  # expected number of birth rate shifts
     sims$poiM <- 4  # expected number of death rate shifts
     sims$scale <- 10 # scaling 
@@ -283,7 +288,7 @@ areas_matrix <- function(area_ages = NULL, n_areas, config, bins, label = "start
       area_ages <- rbind(area_ages,
                          c(max(bins), max(bins)))
     }
-    set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+    set_value(attribute_name = paste0("area_", label, i), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
   }
   if(is.null(area_ages) & label=="end"){
     # for each region, specify two ages between which connection to others will be removed.
@@ -292,11 +297,11 @@ areas_matrix <- function(area_ages = NULL, n_areas, config, bins, label = "start
       area_ages <- rbind(area_ages,
                          c(min(bins), min(bins)))
     }
-    set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+    set_value(attribute_name = paste0("area_", label, i), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
   }
   if(!is.null(area_ages)){
       for(i in 1:n_areas){
-        set_value(attribute_name = paste0("area", i, label), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
+        set_value(attribute_name = paste0("area_", label, i), value=c(area_ages[i, 1], area_ages[i, 2]), module="simulations", config)
       }
   }
 }
