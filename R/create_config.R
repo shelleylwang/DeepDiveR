@@ -29,6 +29,8 @@
 create_config <- function(simulate = T, model_training = T,
                           empirical_predictions = F, outputs=F,
                           
+                          autotune=FALSE,
+                          
                           # settings needed for simulation module
                           wd = NULL, 
                           time_bins = NULL, 
@@ -46,7 +48,9 @@ create_config <- function(simulate = T, model_training = T,
                           #rnn_names = NULL, 
                           
                           empirical_input_file = dd_dataset,
-                          include_present_diversity = TRUE, present_diversity = NULL,
+                          include_present_diversity = FALSE, 
+                          present_diversity = NA,
+                          calibrate_diversity = FALSE,
                           taxonomic_level = taxon_level,
                           output_file = NULL){
 ### use a function to turn TRUE and FALSE to True and False in python
@@ -65,8 +69,13 @@ create_config <- function(simulate = T, model_training = T,
   if(is.null(general$time_bins)){
     print("Warning: time_bins is set to NULL, please adjust using argument in create_config or using the set function below to provide values")
   }
+  general$n_areas <- n_areas  # number of discrete regions
+  if(is.null(general$n_areas)){
+    print("Warning: n_areas is set to NULL, please adjust using argument in create_config or using the set function below")
+  }
+  general$autotune <- autotune
   general$include_present_diversity <- include_present_diversity
-  
+  general$calibrate_diversity <- calibrate_diversity
   
   config$data$general <- general
   
@@ -78,10 +87,6 @@ create_config <- function(simulate = T, model_training = T,
     sims$sim_name <- sim_name
     sims$n_CPUS <- 1  # number of CPUs used for simulations
     sims$n_training_simulations <- 2000  # simulations per CPU (total should be ~10,000)
-    sims$n_areas <- n_areas  # number of discrete regions
-    if(is.null(sims$n_areas)){
-      print("Warning: n_areas is set to NULL, please adjust using argument in create_config or using the set function below")
-      }
     sims$training_seed <- 123
     if(add_test == TRUE){
       sims$test_seed <- 432
@@ -133,7 +138,9 @@ create_config <- function(simulate = T, model_training = T,
     sims$sd_through_time_skyline <- 1
     sims$mean_n_epochs_skyline <- 4
     sims$fraction_skyline_sampling <- 0.5
+    sims$mean_skyline_sampling <- paste(0.1, 10, collapse="")
     sims$maximum_localities_per_bin <- 200
+    sims$species_per_locality_multiplier <- 1
     sims$singletons_frequency <- 0.1  # MAKE SURE YOU ASJUST THIS TO A SENSIBLE NO.
     sims$sims_folder <- simulations_file
     
@@ -214,7 +221,7 @@ create_config <- function(simulate = T, model_training = T,
       print("Warning: empirical_input_file is set to NULL, please provide a file path using the argument in create_config or using the set() function")
     }
     e$model_folder <- models_file
-    e$n_predictions <- 10  # number of predictions per input file 
+    e$n_predictions <- 1  # number of predictions per input file 
     e$replicates <- 100  # number of age randomisation replicates used in data_pipeline.R
 #    e$CI <- 0.95  # confidence intervals
 #    e$random_seed <- 123
