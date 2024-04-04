@@ -5,7 +5,7 @@
 #' @param simulate A true or false statement that switches on and off the generation of simulated datasets used in model training and testing.
 #' @param model_training A true or false statement that switches on and off the training of new RNN models.
 #' @param empirical_predictions A true or false statement that switches on and off the set up for empirical analyses. 
-#' @param wd The working directory where necessary files can be found.
+#' @param path_wd The working directory where files for analyses can be found.
 #' @param time_bins A vector of bin boundary ages.
 #' @param sim_name A string that identified a set of simulations.
 #' @param n_areas An integer number of discrete sampling regions e.g. continents, basins.
@@ -32,7 +32,7 @@ create_config <- function(simulate = T, model_training = T,
                           autotune=FALSE,
                           
                           # settings needed for simulation module
-                          wd = NULL, 
+                          path_wd = NULL, 
                           time_bins = NULL, 
                           sim_name = NULL,
                           n_areas = NULL, 
@@ -64,7 +64,7 @@ create_config <- function(simulate = T, model_training = T,
   
   # directory
   general <- c()
-  general$wd <- wd
+  general$wd <- path_wd
   general$time_bins <- sort(paste(time_bins, collapse=" "))
   if(is.null(general$time_bins)){
     print("Warning: time_bins is set to NULL, please adjust using argument in create_config or using the set function below to provide values")
@@ -82,8 +82,8 @@ create_config <- function(simulate = T, model_training = T,
   # simulations
   if(simulate == TRUE){
     folders <- simulations_file
-    paths <- paste(wd, folders, sep="/")
-    sapply(folders, dir.create)
+    paths <- paste(path_wd, folders, sep="/")
+    sapply(paths, dir.create)
     sims$sim_name <- sim_name
     sims$n_CPUS <- 1  # number of CPUs used for simulations
     sims$n_training_simulations <- 2000  # simulations per CPU (total should be ~10,000)
@@ -160,8 +160,8 @@ create_config <- function(simulate = T, model_training = T,
     ## add if statement if no simulations run need to specify where the sims are
     # Settings for training models
     folders <- models_file
-    paths <- paste(wd, folders, sep="/")
-    sapply(folders, dir.create)
+    paths <- paste(path_wd, folders, sep="/")
+    sapply(paths, dir.create)
     mt <- c()
     mt$sims_folder <- simulations_file
     mt$model_folder <- models_file
@@ -237,8 +237,8 @@ create_config <- function(simulate = T, model_training = T,
 #    e$models <- "None"  # or provide a list of file names which could have a single item ##NULL DOESNT READ CORRECLT IN PYTHON
     e$output_file <- output_file
     folders <- output_file
-    paths <- paste(wd, folders, sep="/")
-    sapply(folders, dir.create)
+    paths <- paste(path_wd, folders, sep="/")
+    sapply(paths, dir.create)
     config$data$empirical_predictions <- e
   }
   
