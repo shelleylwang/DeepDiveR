@@ -21,12 +21,36 @@ ages <- function(dat, method){
     dat <- cbind(dat, SampledAge)
   }
   if (method == "random_by_loc") {
-    dat$SampledAge <- dat$Locality
-    for (i in 1:length(unique(dat$Locality))) {
+    library(dplyr)
+    #dat$SampledAge <- NA
+    locate_and_assign <- c()
+    for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)
       loc <- dat[locate, ]
-      Age <- runif(n = 1, min = loc$MinAge, max = loc$MaxAge)
-      dat$SampledAge[dat$SampledAge == i] <- Age
+      loc_distinct_ages <- loc %>% distinct(MinAge, MaxAge, Locality)
+      SampledAge <- c()
+      for(j in 1:nrow(loc_distinct_ages)){
+        Age <- runif(n = 1, min = loc_distinct_ages$MinAge[j], max=loc_distinct_ages$MaxAge[j])
+        SampledAge <- append(SampledAge, Age)
+      }
+      loc_distinct_ages <- cbind(loc_distinct_ages, SampledAge)
+#      if(length(unique(loc$MinAge)) == 1 && length(unique(loc$MaxAge)) == 1){
+      locate_and_assign <- rbind(locate_and_assign, loc_distinct_ages)
+
+#      dat$SampledAge[which(dat$Locality == i)] <- Age
+#      } else{
+#        Age <- runif(n = nrow(loc), min = loc$MinAge, max = loc$MaxAge)
+#        dat$SampledAge[which(dat$Locality == i)] <- Age
+    #}
+    }
+    dat <- left_join(dat, locate_and_assign, by = c("MinAge" = "MinAge", "MaxAge" = "MaxAge", "Locality" = "Locality"))
+  }
+  for(i in length(dat$SampledAge)){
+    if(dat$SampledAge[i] > dat$MaxAge[i] || dat$SampledAge[i] < dat$MinAge[i]){
+      print("Error: SampledAge greater than max or less than min - check input.")
+    }
+    if(is.na(dat$SampledAge[i])){
+      print("Error: SampledAge failed to update, there are NAs.")
     }
   }
   return(dat)
