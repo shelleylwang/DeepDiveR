@@ -1,16 +1,16 @@
 #' Ages function
 #'
-#' 'ages()' assigns sampled ages to each occurrence within it's age range using
-#' either the median of the minimum and maximum age estimate, a random age drawn
+#' 'ages()' assigns sampled ages to each occurrence within the range on MinAge
+#' to MaxAge. Either using the median, a random age drawn
 #' from a uniform distribution, or a random age drawn from uniform distribution
 #' that is kept the same for occurrences which are sampled from the same
-#' locality
+#' locality and have the same MinAge and MaxAge.
 #' @param dat Occurrence data table
-#' @param method Age assignment method ("median", "random" or
-#' "random_by_loc")
+#' @param method Age assignment method. Either "median", "random" or
+#' "random_by_loc".
 #' @returns Occurrence data table with additional SampledAge column
 #' @examples
-#' ages(dat, method="median")
+#' ages(dat=your_data, method="median")
 #' @export
 ages <- function(dat, method){
   if (method == "median") {

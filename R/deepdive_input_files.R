@@ -34,7 +34,7 @@ write_dd_files <- function(dat, r=replicate, age_m="median", taxon_level, bins){
 
 #' Generate DeepDive input in one file
 #'
-#' 'write_dd_files2()' makes a single input csv file for use in DeepDive.
+#' 'write_dd_files2()' makes a single input .csv file for use in DeepDive.
 #' @param dat Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
 #' Locality columns.
 #' @param r The number of age assignment replicates
@@ -79,7 +79,7 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins)
 }
 
 
-#' Prep DeepDive Input
+#' Prepare DeepDive Input
 #'
 #' 'prep_dd_input()' makes a single input file for use in DeepDive in one line.
 #' @param dat Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
@@ -103,8 +103,8 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins)
 #' generated alongside the replicate number, the data type (either locs or occs)
 #' and the region ID.
 #' @examples
-#' prep_dd_input(dat=dat, scale="stages", begin=, finish=, r=replicates, age_m = age_method,
-#' taxon_level=taxonomic_level, all_lr=T)
+#' prep_dd_input(dat=your_data, bins=bins, r=100, age_m = "random_by_loc",
+#' taxon_level="Genus")
 #' @export
 prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method, 
                           taxon_level=taxonomic_level, output_file=NULL){

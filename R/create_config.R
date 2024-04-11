@@ -1,24 +1,24 @@
 #' Create DeepDive config object and file
 #'
-#' 'create_config()' generates config object with settings needed to launch
-#' DeepDive scripts in python. 
+#' 'create_config()' generates a config object with settings needed to launch
+#' DeepDive scripts in python. Uses the ConfigParser formatting.
 #' @param simulate A true or false statement that switches on and off the generation of simulated datasets used in model training and testing.
 #' @param model_training A true or false statement that switches on and off the training of new RNN models.
 #' @param empirical_predictions A true or false statement that switches on and off the set up for empirical analyses. 
 #' @param path_wd The working directory where files for analyses can be found.
 #' @param time_bins A vector of bin boundary ages.
-#' @param sim_name A string that identified a set of simulations.
+#' @param sim_name A string that identifies a set of simulations.
 #' @param n_areas An integer number of discrete sampling regions e.g. continents, basins.
-#' @param simulations_file File path to where simulations will be saved.
-#' @param add_test TRUE/FALSE statement, when T a test set with the same settings as the training set are generated.
-#' @param models_file Path to a folder where trained models can be saved and retrieved.
+#' @param simulations_file File where simulations will be saved.
+#' @param add_test A true or false statement, when true a test set with the same settings as the training set are generated.
+#' @param models_file File where trained models can be saved and retrieved.
 #' @param feature_file File name for training features.
 #' @param label_file File name for training labels.
-#' @param empirical_input_file File path to empirical data in the input format for use in deepdive.
-#' @param include_present_diversity TRUE/FALSE statement, if T will condition predictions on modern diversity.
+#' @param empirical_input_file File name where empirical data in the input format for use in deepdive will be saved.
+#' @param include_present_diversity A true or false statement, if true predictions will be conditioned on modern diversity.
 #' @param present_diverstiy A number of extant taxa, which predictions will be conditioned on.
 #' @param taxonomic_level String of the name of the taxonomic data column, e.g. "Species", "Genus".
-#' @param output_file Path where outputs will be saved.
+#' @param output_file File where outputs will be saved.
 #' @returns Creates config with settings to launch DeepDive.
 #' @examples
 #' config <- create_config(simulate = T,  model_training = F, 

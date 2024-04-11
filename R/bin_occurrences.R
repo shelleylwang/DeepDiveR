@@ -1,6 +1,6 @@
 #' Taxa per time bin per area (occurrence data)
 #'
-#' 'taxa_time_per_area()' makes a table of shape TAXON X REGION X TIME BIN where
+#' 'taxa_time_per_area()' makes a table of shape taxon x region x time bin where
 #' occurrences are recorded.
 #' @param dat An occurrence data table including taxon id, Area, MinAge, MaxAge
 #' and Locality columns.
@@ -10,7 +10,7 @@
 #' and training)
 #' @param taxon_level Specify the taxon level where there is more than one
 #' option
-#' @returns A table of shape TAXON X REGION X TIME BIN where occurrences are
+#' @returns A table of shape taxon x region x time bin where occurrences are
 #' recorded.
 #' @examples
 #' taxa_time_per_area(dat, area_tables, bins, taxon_level="Genus")
