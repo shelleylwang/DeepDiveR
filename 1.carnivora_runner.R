@@ -34,7 +34,7 @@ bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 5
           29.84667, 28.83333, 27.82, 26.862, 25.904, 24.946, 23.988, 23.03, 
           22.16667, 21.30333, 20.44, 19.3225, 18.205, 17.0875, 15.97, 14.895, 
           13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 
-          4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0.0117, 0.0082, 0.0042, 0)
+          4.4665, 3.6, 2.58, 0) # 1.8, 0.774, 0.129, 0.0117, 0)
 
 dd_dataset <- paste(path_dat, "deepdive_input.csv", sep="/")
 
@@ -107,19 +107,33 @@ length(summary_dat$Status == "Extant")
 
 # Generate config for the carnivores
 # To do everything in one
+#config <- create_config(
+#  simulate = T,  model_training = T, empirical_predictions = T,
+#  wd = path_dat,  
+#  time_bins = bins,
+#  sim_name="carnivora",
+#  n_areas = length(unique(dat$Area)),
+#  simulations_file = "simulations_carnivora", 
+#  add_test = T, 
+#  models_file = "trained_models_carnivora", 
+#  include_present_diversity = FALSE,
+#  present_diversity = 137,
+#  taxonomic_level = "Genus",
+#  empirical_input_file = dd_dataset
+#)
+
+# simulate training and test sets
 config <- create_config(
-  simulate = T,  model_training = T, empirical_predictions = T,
+  simulate = T,  model_training = F, empirical_predictions = F,
   wd = path_dat,  
   time_bins = bins,
   sim_name="carnivora",
   n_areas = length(unique(dat$Area)),
   simulations_file = "simulations_carnivora", 
   add_test = T, 
-  models_file = "trained_models_carnivora", 
   include_present_diversity = FALSE,
-  present_diversity = 137,
-  taxonomic_level = "Genus",
-  empirical_input_file = dd_dataset
+  calibrate_diversity = FALSE,
+  autotune=TRUE
 )
 
 # edit number of living taxa, present_diversity is 137
@@ -130,7 +144,6 @@ set_value(attribute_name = "total_sp", value=c(618, 2000), module="simulations",
 
 # edit carrying capacity in equilibrium simulations
 set_value(attribute_name="dd_K", value=c(13, 1300), module="simulations", config)
-
 
 #set_value(attribute_name = "p_mass_extinction", value = 0.001, module="simulations", config)
 #set_value(attribute_name = "p_mass_speciation", value = 0.001, module="simulations", config)
@@ -149,16 +162,74 @@ S_America <- max(area_tables$SouthAmerica$MaxAge)
 
 
 ## SUGGESTION FOR THE ABOVE
-area_ages <- rbind(c(max(bins), 64.8),  # North America - these have narrower, 0.2ma range for the oldest
-                   c(max(bins), 61.7),  # Asia - these have very coarse ages at the oldest end, around 5my  ### VIA BERING LAND BRIDGE
+area_ages <- rbind(c(max(bins), max(bins)),  # North America - these have narrower, 0.2ma range for the oldest
+                   c(max(bins), max(bins)),  # Asia - these have very coarse ages at the oldest end, around 5my  ### VIA BERING LAND BRIDGE
                    c(61.6, 59.2),  # Africa - via arabian peninsula?
                    c(59.2, 56),  # Europe - why is there a temporal delay before they are sampled in Europe? barrier to dispersal we can time?
                    c(11.608, 7.3))  # South America - GABI, when is the oldest this could realistically happen? 
 
+
 # if entered as area_ages = NULL, also provide bins as an argument.
-# areas disapearing instead of connecting can be made via adding the argument
+# areas disappearing instead of connecting can be made via adding the argument
 # label = "end"
 areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
 
-
 config$write(paste(path_dat, "carnivora.ini", sep="/"))
+
+
+##### Modern div, do nothing
+config <- create_config(
+  simulate = F,  model_training = T, empirical_predictions = T,
+  wd = path_dat,  
+  time_bins = bins,
+  sim_name="carnivora",
+  n_areas = length(unique(dat$Area)),
+  autotune = T,
+  simulations_file = "simulations_carnivora", 
+  add_test = T, 
+  models_file = "trained_models_carnivora", 
+  include_present_diversity = FALSE,
+  taxonomic_level = "Genus",
+  empirical_input_file = dd_dataset
+)
+
+config$write(paste(path_dat, "carnivora_no_modern.ini", sep="/"))
+
+##### Modern div, extra feature
+config <- create_config(
+  simulate = F,  model_training = T, empirical_predictions = T,
+  wd = path_dat,  
+  time_bins = bins,
+  sim_name="carnivora",
+  n_areas = length(unique(dat$Area)),
+  autotune = T,
+  simulations_file = "simulations_carnivora", 
+  add_test = T, 
+  models_file = "trained_models_carnivora", 
+  include_present_diversity = TRUE,
+  present_diversity=137, 
+  taxonomic_level = "Genus",
+  empirical_input_file = dd_dataset
+)
+
+config$write(paste(path_dat, "carnivora_mod_feature.ini", sep="/"))
+
+##### Modern div, calibrate
+config <- create_config(
+  simulate = F,  model_training = T, empirical_predictions = T,
+  wd = path_dat,  
+  time_bins = bins,
+  sim_name="carnivora",
+  n_areas = length(unique(dat$Area)),
+  autotune = T,
+  simulations_file = "simulations_carnivora", 
+  add_test = T, 
+  models_file = "trained_models_carnivora", 
+  include_present_diversity = TRUE,
+  present_diversity=137, 
+  calibrate_diversity = TRUE,
+  taxonomic_level = "Genus",
+  empirical_input_file = dd_dataset
+)
+
+config$write(paste(path_dat, "carnivora_mod_calibrate.ini", sep="/"))
