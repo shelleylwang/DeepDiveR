@@ -16,7 +16,14 @@ library(data.table)
 path_wd <- "/Users/CooperR/Documents/GitHub/DeepDiveR/training_and_test_sets"
 
 # Specify a vector of time bins
-bins <- sort(seq(0, 100, by=10), decreasing=TRUE)
+bins <- c(66, 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 54.975, 53.95, 
+          52.925, 51.9, 50.875, 49.85, 48.825, 47.8, 46.85714, 45.91429, 
+          44.97143, 44.02857, 43.08571, 42.14286, 41.2, 40.03667, 38.87333, 
+          37.71, 36.7575, 35.805, 34.8525, 33.9, 32.88667, 31.87333, 30.86, 
+          29.84667, 28.83333, 27.82, 26.862, 25.904, 24.946, 23.988, 23.03, 
+          22.16667, 21.30333, 20.44, 19.3225, 18.205, 17.0875, 15.97, 14.895, 
+          13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 
+          4.4665, 3.6, 2.58, 0)
 
 
 # To make a general training set and train a model
@@ -152,3 +159,4 @@ config <- create_config(
 set_value(attribute_name = "n_training_simulations", value=100, module="simulations", config)
 set_value(attribute_name = "pr_extant_clade", value=0, module="simulations", config)
 config$write(paste(path_wd, "extinct_calibrate.ini", sep="/")) # write config
+
