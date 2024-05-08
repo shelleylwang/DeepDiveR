@@ -34,8 +34,8 @@ config <- create_config(
   sim_name="general",
   n_areas = 5,
   simulations_file = "simulations_general", 
-  add_test = T, 
-  autotune = T,
+  add_test = TRUE, 
+  autotune = FALSE,
   models_file = "trained_models_general", 
   include_present_diversity = TRUE,
   calibrate_diversity = FALSE
@@ -53,8 +53,8 @@ config <- create_config(
   sim_name="extant",
   n_areas = 5,
   simulations_file = "simulations_extant_u", 
-  add_test = F, 
-  autotune = T,
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = FALSE
 )
 
@@ -65,14 +65,14 @@ config$write(paste(path_wd, "extant_unconstrained.ini", sep="/")) # write config
 
 # Test set extant - conditioned
 config <- create_config(
-  simulate = T,  model_training = F, empirical_predictions = F,
+  simulate = TRUE,  model_training = F, empirical_predictions = F,
   path_wd = path_wd,  
   time_bins = bins,
   sim_name="extant",
   n_areas = 5,
   simulations_file = "simulations_extant_con", 
-  add_test = F, 
-  autotune = T,
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = TRUE,
   present_diversity = 100,  # extant species-level diversity
   calibrate_diversity = FALSE
@@ -85,14 +85,14 @@ config$write(paste(path_wd, "extant_condition.ini", sep="/")) # write config
 
 # Test set extant - calibrate
 config <- create_config(
-  simulate = T,  model_training = F, empirical_predictions = F,
+  simulate = TRUE,  model_training = F, empirical_predictions = F,
   path_wd = path_wd,  
   time_bins = bins,
   sim_name="extant",
   n_areas = 5,
   simulations_file = "simulations_extant_cal", 
-  add_test = F, 
-  autotune = T,
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = TRUE,
   present_diversity = 100,  # extant species-level diversity
   calibrate_diversity = TRUE
@@ -105,14 +105,14 @@ config$write(paste(path_wd, "extant_calibrate.ini", sep="/")) # write config
 
 # Test set extinct - unconstrained
 config <- create_config(
-  simulate = T,  model_training = F, empirical_predictions = F,
+  simulate = TRUE,  model_training = F, empirical_predictions = F,
   path_wd = path_wd,  
   time_bins = bins,
   sim_name="extinct",
   n_areas = 5,
   simulations_file = "simulations_extinct_u", 
-  add_test = F, 
-  autotune = T,
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = FALSE
 )
 
@@ -123,14 +123,14 @@ config$write(paste(path_wd, "extinct_unconstrained.ini", sep="/")) # write confi
 
 # Test set extant - conditioned
 config <- create_config(
-  simulate = T,  model_training = F, empirical_predictions = F,
+  simulate = TRUE,  model_training = F, empirical_predictions = F,
   path_wd = path_wd,  
   time_bins = bins,
   sim_name="extinct",
   n_areas = 5,
   simulations_file = "simulations_extinct_con", 
-  add_test = F, 
-  autotune = T,
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = TRUE,
   present_diversity = 0,  # extant species-level diversity
   calibrate_diversity = FALSE
@@ -143,14 +143,14 @@ config$write(paste(path_wd, "exinct_condition.ini", sep="/")) # write config
 
 # Test set extant - calibrate
 config <- create_config(
-  simulate = T,  model_training = F, empirical_predictions = F,
+  simulate = TRUE,  model_training = F, empirical_predictions = F,
   path_wd = path_wd,  
   time_bins = bins,
   sim_name="extinct",
   n_areas = 5,
   simulations_file = "simulations_extinct_cal", 
-  add_test = F, 
-  autotune = T, 
+  add_test = FALSE, 
+  autotune = TRUE,
   include_present_diversity = TRUE,
   present_diversity = 0,  # extant species-level diversity
   calibrate_diversity = TRUE
