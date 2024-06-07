@@ -4,7 +4,7 @@
 \alias{taxa_time_per_area}
 \title{Taxa per time bin per area (occurrence data)}
 \usage{
-taxa_time_per_area(dat, area_tables, bins, taxon_level)
+taxa_time_per_area(dat, area_tables, bins, taxonomic_level)
 }
 \arguments{
 \item{dat}{An occurrence data table including taxon id, Area, MinAge, MaxAge
@@ -20,11 +20,11 @@ and training)}
 option}
 }
 \value{
-A table of shape TAXON X REGION X TIME BIN where occurrences are
+A table of shape taxon x region x time bin where occurrences are
 recorded.
 }
 \description{
-'taxa_time_per_area()' makes a table of shape TAXON X REGION X TIME BIN where
+'taxa_time_per_area()' makes a table of shape taxon x region x time bin where
 occurrences are recorded.
 }
 \examples{

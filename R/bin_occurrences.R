@@ -8,14 +8,13 @@
 #' @param bins Time bins used in the analysis (should reflect the empirical data
 #' and be identical to the bins used in any corresponding DeepDive simulations
 #' and training)
-#' @param taxon_level Specify the taxon level where there is more than one
-#' option
 #' @returns A table of shape taxon x region x time bin where occurrences are
 #' recorded.
 #' @examples
-#' taxa_time_per_area(dat, area_tables, bins, taxon_level="Genus")
+#' taxa_time_per_area(dat, area_tables, bins)
 #' @export
-taxa_time_per_area <- function(dat, area_tables, bins, taxonomic_level){
+taxa_time_per_area <- function(dat, area_tables, bins){
+  taxonomic_level <- "Taxon"
   occs_table <- data.frame()
   bins <- sort(-abs(bins))
   for(i in 1:length(area_tables)){

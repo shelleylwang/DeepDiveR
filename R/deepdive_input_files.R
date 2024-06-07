@@ -5,21 +5,18 @@
 #' Locality columns.
 #' @param r The number of age assignment replicates
 #' @param age_m The age assignment method
-#' @param taxon_level The taxonomic level the data are identified to
 #' @param bins The time bins specified for the data set
 #' @returns Saves a csv file for each age replicate with Type column indicating
 #' whether data are locality counts or the binned occurrence data per region.
 #' @examples
-#' write_dd_files(dat, r=replicate, taxon_level="Species", bins=bins,
-#' age_m=age_method)
+#' write_dd_files(dat, r=replicate, bins=bins, age_m=age_method)
 #' @export
-write_dd_files <- function(dat, r=replicate, age_m="median", taxon_level, bins){
+write_dd_files <- function(dat, r=replicate, age_m="median", bins){
   sampled_dat <- ages(dat, method=age_m)  # Get ages and append
   area_tables <- split(sampled_dat, f = sampled_dat$Area)  # Split data by area
 
   # Get species or genera level data
-  occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins,
-                             taxonomic_level=taxon_level)
+  occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins)
 
   # Get locality data
   locs <- generate_locality_dataset(sampled_dat, bins=bins)
@@ -39,7 +36,6 @@ write_dd_files <- function(dat, r=replicate, age_m="median", taxon_level, bins){
 #' Locality columns.
 #' @param r The number of age assignment replicates
 #' @param age_m The age assignment method
-#' @param taxon_level The taxonomic level the data are identified to
 #' @param bins Time bins used in the analysis (should reflect the empirical data
 #' and be identical to the bins used in any corresponding DeepDive simulations
 #' and training)
@@ -48,18 +44,16 @@ write_dd_files <- function(dat, r=replicate, age_m="median", taxon_level, bins){
 #' generated alongside the replicate number, the data type (either locs or occs)
 #' and the region ID.
 #' @examples
-#' write_dd_files2(dat, r=replicate, taxon_level="Genus", bins=bins,
-#' age_m="median")
+#' write_dd_files2(dat, r=replicate, bins=bins, age_m="median")
 #' @export
-write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins){
+write_dd_files2 <- function(dat, r=replicate, age_m="median", bins){
   deepdive_input <- data.frame()
   for(rep in 1:r){
     sampled_dat <- ages(dat, method=age_m) # Get ages and append
     area_tables <- split(sampled_dat, f = sampled_dat$Area)  # Split data by area
 
     # Get species or genera level data
-    occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins,
-                               taxon_level=taxon_level)
+    occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins)
     cnames <- c(colnames(occs))
 
     # Get locality data
@@ -95,7 +89,6 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins)
 #' @param merge_holo_ple Merge time bins in the Upper Pleistocene and Holocene
 #' @param r The number of age assignment replicates
 #' @param age_m The age assignment method
-#' @param taxon_level The taxonomic level the data are identified to
 #' @param age_range_threshold An age range cut-off between high and low res
 #' occurrences (default=NA)
 #' @returns Here each age replicate is indicated in the 'R' column and can be
@@ -103,11 +96,10 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", taxon_level, bins)
 #' generated alongside the replicate number, the data type (either locs or occs)
 #' and the region ID.
 #' @examples
-#' prep_dd_input(dat=your_data, bins=bins, r=100, age_m = "random_by_loc",
-#' taxon_level="Genus")
+#' prep_dd_input(dat=your_data, bins=bins, r=100, age_m = "random_by_loc")
 #' @export
 prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method, 
-                          taxon_level=taxonomic_level, output_file=NULL){
+                          output_file=NULL){
 
   deepdive_input <- data.frame()
   for(rep in 1:r){
@@ -116,8 +108,7 @@ prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method,
     area_tables <- split(sampled_dat, f = sampled_dat$Area)  # Split data by area
 
     # Get species or genera level data
-    occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins,
-                               taxonomic_level=taxon_level)
+    occs <- taxa_time_per_area(sampled_dat, area_tables, bins=bins)
     cnames <- c(colnames(occs))
     
     # Get locality data

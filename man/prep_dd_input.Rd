@@ -6,27 +6,22 @@
 \usage{
 prep_dd_input(
   dat = dat,
-  bin_type = bins_scale,
-  begin = begin_bins,
-  finish = end_bins,
-  n_bins = 10,
-  custom_bins = NULL,
-  lr_hr_bins = "",
-  remove_bins = NULL,
-  use_q = FALSE,
-  merge_holo = FALSE,
-  merge_holo_ple = FALSE,
+  bins,
   r = replicate,
   age_m = age_method,
   taxon_level = taxonomic_level,
-  age_range_threshold = NA,
-  all_lr = F,
-  write_file = F
+  output_file = NULL
 )
 }
 \arguments{
 \item{dat}{Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
 Locality columns.}
+
+\item{r}{The number of age assignment replicates}
+
+\item{age_m}{The age assignment method}
+
+\item{taxon_level}{The taxonomic level the data are identified to}
 
 \item{bin_type}{Determines how bins will be made (equal bins, epochs, stages)}
 
@@ -45,12 +40,6 @@ use a list object)}
 
 \item{merge_holo_ple}{Merge time bins in the Upper Pleistocene and Holocene}
 
-\item{r}{The number of age assignment replicates}
-
-\item{age_m}{The age assignment method}
-
-\item{taxon_level}{The taxonomic level the data are identified to}
-
 \item{age_range_threshold}{An age range cut-off between high and low res
 occurrences (default=NA)}
 }
@@ -64,6 +53,6 @@ and the region ID.
 'prep_dd_input()' makes a single input file for use in DeepDive in one line.
 }
 \examples{
-prep_dd_input(dat=dat_res, scale="stages", begin=, finish=, r=replicates, age_m = age_method,
+prep_dd_input(dat=dat, scale="stages", begin=, finish=, r=replicates, age_m = age_method,
 taxon_level=taxonomic_level, all_lr=T)
 }

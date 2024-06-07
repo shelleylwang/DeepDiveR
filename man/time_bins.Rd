@@ -10,7 +10,6 @@ time_bins(
   finish,
   n_bins = 100,
   custom_bins = NULL,
-  lr_hr_bins = "",
   remove_bins = NULL,
   use_q = FALSE,
   merge_holo = FALSE,
@@ -26,8 +25,6 @@ stages) or whether "custom_bins" will be used.}
 \item{finish}{Ending age of the youngest time bin}
 
 \item{n_bins}{Number of bins (used only when equal_bins are specified)}
-
-\item{lr_hr_bins}{Make time bins at a specified low or high resolution}
 
 \item{remove_bins}{Specify named time bins to be removed (quote directly or
 use a list object)}
@@ -56,6 +53,4 @@ time_bins(bin_type="stages", begin=66, finish=0, merge_holo_ple = T)
 time_bins(bin_type="epochs", begin=66, finish=0, use_q = T)
 time_bins(bin_type="epochs", begin=66, finish=0, remove_bins = "Holocene")
 time_bins(bin_type="custom_bins", custom_bins = -c(10:0))
-time_bins(bin_type="stages", begin=66, finish=0, lr_hr_bins="low")
-time_bins(bin_type="stages", begin=66, finish=0, lr_hr_bins="high")
 }
