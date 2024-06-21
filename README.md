@@ -1,14 +1,15 @@
 # DeepDiveR
 DeepDiveR is an r package to prepare input for running DeepDive in Python. 
 
-The current version can be installed by downloading from GitHub, setting the working directory to the location where DeepDiveR is saved and using:
-library(devtools)
-load_all("")
-library(DeepDiveR)
+You can install DeepDiveR directly in an R console by using the devtools library as below. Make sure you have R version 4.3.1 or above installed on your computer:
 
-The functions assume input data to be organised by columns with a "Taxon" identifier, a discrete "Area", "MinAge", "MaxAge" and "Locality". 
+```
+library(devtools)
+devtools::install_github("DeepDive-project/DeepDiveR")
+```
+
+The functions in DeepDiveR assume input data to be organised by columns with a "Taxon", discrete "Area", "MinAge", "MaxAge" and "Locality" identifier for each fossil occurrence. 
 Please carry out any extra cleaning steps, such as removal of duplicate occurrences, prior to use of the data preparation function.
-A vector of time bins must also be provided.
 
 You can read more about following functions using ?function_name_here.
 
