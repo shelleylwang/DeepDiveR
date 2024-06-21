@@ -6,11 +6,11 @@
 #' Locality columns.
 #' @param bins Time bins used in the analysis (should reflect the empirical data
 #' and be identical to the bins used in any corresponding DeepDive simulations
-#' and training)
+#' and training).
 #' @returns A table of dimensions regions x bins where the summed number of
 #' localities in a time bin are recorded.
 #' @examples
-#' generate_locality_dataset(dat, bins)
+#' generate_locality_dataset(dat=your_data, bins=time_bins)
 #' @export
 generate_locality_dataset <- function(dat, bins){
   list_areas <- unique(dat$Area)

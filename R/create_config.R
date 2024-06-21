@@ -1,29 +1,28 @@
 #' Create DeepDive config object and file
 #'
 #' 'create_config()' generates a config object with settings needed to launch
-#' DeepDive scripts in python. Uses the ConfigParser formatting.
-#' @param simulate A true or false statement that switches on and off the generation of simulated datasets used in model training and testing.
-#' @param model_training A true or false statement that switches on and off the training of new RNN models.
-#' @param empirical_predictions A true or false statement that switches on and off the set up for empirical analyses. 
-#' @param autotune When TRUE a new config will be saved with adjusted parameters used for analyses.
-#' @param present_diverstiy A number of extant taxa, which predictions will be conditioned on.
-#' @param path_wd The working directory where files for analyses can be found.
+#' DeepDive scripts in python. Uses ConfigParser (Hoefling, 2017) formatting.
+#' @param simulate A TRUE/FALSE statement that switches on and off generation of simulated datasets used in model training and testing.
+#' @param model_training A TRUE/FALSE statement that switches on and off the training of new RNN models.
+#' @param empirical_predictions A TRUE/FALSE statement that switches on and off empirical analyses. 
+#' @param autotune When TRUE a new config will be saved with adjusted parameters used for analyses that reflect the empirical data.
+#' @param present_diverstiy Number of extant taxa which predictions will be conditioned on. When NA no conditioning occurs.
+#' @param path_wd Working directory where files for analyses can be found.
 #' @param bins A vector of bin boundary ages.
 #' @param sim_name A string that identifies a set of simulations.
 #' @param n_areas An integer number of discrete sampling regions e.g. continents, basins.
 #' @param simulations_file File where simulations will be saved.
-#' @param add_test A true or false statement, when true a test set with the same settings as the training set are generated.
+#' @param add_test A TRUE/FALSE statement, when true a test set with the same settings as the training set are generated.
 #' @param models_file File where trained models can be saved and retrieved.
 #' @param feature_file File name for training features.
 #' @param label_file File name for training labels.
 #' @param empirical_input_file File name where empirical data in the input format for use in deepdive will be saved.
 #' @param output_file File where outputs will be saved.
-#' @returns Creates config with settings to launch DeepDive.
+#' @returns Creates configuration file with settings to launch DeepDive.
 #' @examples
-#' config <- create_config(simulate = T,  model_training = F, 
-#' empirical_predictions = F, wd = paste0(getwd()), bins = time_bins, 
-#' sim_name="test", n_areas = length(unique(dat$Area)), 
-#' simulations_file = paste0(path_dat, "simulations"), add_test = F)
+#' config <- create_config(wd = paste0(getwd()), bins = time_bins, 
+#' sim_name = "test", n_areas = length(unique(your_data$Area)), 
+#' simulations_file = paste0(path_dat, "simulations"), add_test = T)
 #' @export 
 create_config <- function(simulate = TRUE, model_training = TRUE,
                           empirical_predictions = TRUE,
@@ -88,13 +87,13 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     sims$total_sp <- paste(100, 5000, collapse="")  # min/max size data set
     sims$root_r <- paste(0.8*(max(bins)-min(bins))+min(bins), max(bins), collapse="")  # range of ages for origin of clade
     sims$min_extinct_sp <- 0  # minimum number of extinct lineages allowed
-    sims$extant_sp <- paste(0, 10000, collapse="")  # min/max number of living species  # MAYBE MAKE THESE VECTORS INSTEAD?
-    sims$rangeL <- paste(0.02, 0.5, collapse="")  # range of birth rates - range based on Cantalapiedra et al 2022 for elephant example 
+    sims$extant_sp <- paste(0, 10000, collapse="")  # min/max number of living species
+    sims$rangeL <- paste(0.02, 0.5, collapse="")  # range of birth rates
     sims$rangeM <- paste(0.02, 0.5, collapse="")  # range of death rates
     sims$log_uniform_rates <- FALSE 
     sims$p_mass_extinction <- 0.01  # probability of mass extinction per my
     sims$magnitude_mass_ext <- paste(0.5, 1, collapse="")
-    sims$p_equilibrium <- 0.01  # probability of equilibrium per my  ### ADJUST DEFAULT VALUES FOR PROBABILITIES THAT WILL MAKE SENSE
+    sims$p_equilibrium <- 0.01  # probability of equilibrium per my 
     sims$p_constant_bd <- 0.01  # probability of constant birth-death rates per my
     sims$p_mass_speciation <- 0.01  # probability of mass speciation per my
     sims$p_dd_model <- 0.05  # probability of diversity-dependent diversification
@@ -205,10 +204,10 @@ set_value <- function(attribute_name, value, module, config){
 #' maximum and minimum age range for regions becoming connected. 
 #' @param area_ages A matrix of minimum and maximum ages for areas appearing, with older ages in column one. Must have a number of rows = number of discrete areas.
 #' @param n_areas The number of unique discrete areas used in the analysis.
-#' @param config A config which can be generated in create_config(), that you will add attributes to here. 
+#' @param config A config which can be generated in create_config() that you will add attributes to here. 
 #' @returns Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
 #' @examples 
-#' areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
+#' areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)
 #' @export
 areas_matrix <- function(area_ages = NULL, n_areas, config, bins, label = "start"){
   if(is.null(area_ages) & label=="start"){

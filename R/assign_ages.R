@@ -1,10 +1,10 @@
 #' Ages function
 #'
 #' 'ages()' assigns sampled ages to each occurrence within the range on MinAge
-#' to MaxAge. Either using the median, a random age drawn
-#' from a uniform distribution, or a random age drawn from uniform distribution
-#' that is kept the same for occurrences which are sampled from the same
-#' locality and have the same MinAge and MaxAge.
+#' to MaxAge. Either using the median, a random age drawn from a uniform 
+#' distribution, or a random age drawn from uniform distribution that is kept 
+#' the same for occurrences which are sampled from the same locality and have 
+#' the same MinAge and MaxAge.
 #' @param dat Occurrence data table
 #' @param method Age assignment method. Either "median", "random" or
 #' "random_by_loc".
@@ -34,14 +34,7 @@ ages <- function(dat, method){
         SampledAge <- append(SampledAge, Age)
       }
       loc_distinct_ages <- cbind(loc_distinct_ages, SampledAge)
-#      if(length(unique(loc$MinAge)) == 1 && length(unique(loc$MaxAge)) == 1){
       locate_and_assign <- rbind(locate_and_assign, loc_distinct_ages)
-
-#      dat$SampledAge[which(dat$Locality == i)] <- Age
-#      } else{
-#        Age <- runif(n = nrow(loc), min = loc$MinAge, max = loc$MaxAge)
-#        dat$SampledAge[which(dat$Locality == i)] <- Age
-    #}
     }
     dat <- left_join(dat, locate_and_assign, by = c("MinAge" = "MinAge", "MaxAge" = "MaxAge", "Locality" = "Locality"))
   }

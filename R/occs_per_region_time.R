@@ -11,7 +11,8 @@
 #' @returns A table of dimensions regions x bins where the number of occurrences
 #' are summed per region per time bin and recorded.
 #' @examples
-#' generate_occurrence_dataset(dat, area_tables, bins)
+#' generate_occurrence_dataset(dat=your_data, 
+#' area_tables=your_data_split_by_area, bins=time_bins)
 #' @export
 generate_occurrence_dataset <- function(dat, area_tables, bins){
   list_areas <- unique(dat$Area)
@@ -21,7 +22,6 @@ generate_occurrence_dataset <- function(dat, area_tables, bins){
     total_occs_for_area <- length(indices_areas)
     area_dat <- dat[indices_areas,]
     age_occs <- area_dat$SampledAge
-    # uni_age_occs <- unique(age_occs)
     h <- hist(x = -as.numeric(age_occs), breaks=bins, plot=F)
     n_occurrences[i,] <- h$counts
   }

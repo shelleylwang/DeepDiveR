@@ -105,7 +105,7 @@ customise_bins <- function(custom_bins){
 #'
 #' 'adjust_stages()' takes a table of time bin start, end and midpoint ages and
 #' makes adjustments depending on settings provided.
-#' @param binsA table of time bin start, end and midpoint ages.
+#' @param bins A table of time bin start, end and midpoint ages.
 #' @param finish Ending age of the youngest time bin.
 #' @param rmv_bins Named bins will be removed from the bins object.
 #' @param quat When TRUE bins in the Quaternary are merged into one time bin.
@@ -159,7 +159,7 @@ adjust_stages <- function(bins, finish, rmv_bins=NULL, quat=F, holo=F,
 #' @param quat When TRUE bins in the Quaternary are merged into one time bin.
 #' @returns A table of start, end and midpoint ages
 #' @examples
-#' adjust_epochs(bins, finish=192.9, rmv_bins=)
+#' adjust_epochs(bins, finish=192.9)
 #' @export
 adjust_epochs <- function(bins, finish, rmv_bins=NULL, quat=F){
   if(!is.null(rmv_bins)){
@@ -293,14 +293,12 @@ time_bins_all_opts <- function(bin_type, begin, finish, n_bins = 100,
   if(lr_hr_bins == "low"){
     bins <- lr_hr_bins(res = "low", bin_type = bin_type, begin = begin,
                        finish = finish)
-    # bins_0 <- -c(lr_bins$start, min(lr_bins$end))
   }
   if(lr_hr_bins == "high"){
     # Build high resolution time bins with boundaries that align to lr_bins with
     # length 1 My on average
     bins <- lr_hr_bins(res="high", bin_type = bin_type, begin = begin,
                        finish = finish)
-    # bins_0 <- -c(bins$start, min(bins$end))
   }
   return(bins)
 }

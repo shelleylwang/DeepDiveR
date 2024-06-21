@@ -1,6 +1,6 @@
 #' Make input files for DeepDive where replicates are saved in separate files
 #'
-#' 'write_dd_files()' uses the data to make input files for use in DeepDive
+#' 'write_dd_files()' uses fossil occurrence data to make input files for use in DeepDive
 #' @param dat Column-wise occurrence data with taxon ID, Area, MinAge, MaxAge,
 #' Locality columns.
 #' @param r The number of age assignment replicates
@@ -78,23 +78,12 @@ write_dd_files2 <- function(dat, r=replicate, age_m="median", bins){
 #' 'prep_dd_input()' makes a single input file for use in DeepDive in one line.
 #' @param dat Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
 #' Locality columns.
-#' @param bin_type Determines how bins will be made (equal bins, epochs, stages)
-#' @param begin Starting age of the oldest time bin
-#' @param finish Ending age of the youngest time bin
-#' @param n_bins Number of bins (used only when equal_bins are specified)
-#' @param remove_bins Specify named time bins to be removed (quote directly or
-#' use a list object)
-#' @param use_q Merge time bins in the Quaternary together
-#' @param merge_holo Merge time bins in the Holocene together
-#' @param merge_holo_ple Merge time bins in the Upper Pleistocene and Holocene
 #' @param r The number of age assignment replicates
 #' @param age_m The age assignment method
-#' @param age_range_threshold An age range cut-off between high and low res
-#' occurrences (default=NA)
-#' @returns Here each age replicate is indicated in the 'R' column and can be
-#' set using the r setting. Locality and occurrence data by time bin are
-#' generated alongside the replicate number, the data type (either locs or occs)
-#' and the region ID.
+#' @returns A .csv file containing: start age, midpoint and duration of time
+#' bins, counts of the number of localities per region for each bin, counts of
+#' occurrences of each taxon per region per time bin, the data type (bins, locs,
+#' occs) and replicate number (where age replicates are used, column R).
 #' @examples
 #' prep_dd_input(dat=your_data, bins=bins, r=100, age_m = "random_by_loc")
 #' @export

@@ -4,14 +4,15 @@
 #' occurrences are recorded.
 #' @param dat An occurrence data table including taxon id, Area, MinAge, MaxAge
 #' and Locality columns.
-#' @param area_tables Tibble of occurrence table split by area
+#' @param area_tables Tibble of occurrence table split by area.
 #' @param bins Time bins used in the analysis (should reflect the empirical data
 #' and be identical to the bins used in any corresponding DeepDive simulations
 #' and training)
 #' @returns A table of shape taxon x region x time bin where occurrences are
 #' recorded.
 #' @examples
-#' taxa_time_per_area(dat, area_tables, bins)
+#' taxa_time_per_area(dat=your_data, 
+#' area_tables=occurrence_data_split_by_sampling_region, bins=your_bins)
 #' @export
 taxa_time_per_area <- function(dat, area_tables, bins){
   taxonomic_level <- "Taxon"
