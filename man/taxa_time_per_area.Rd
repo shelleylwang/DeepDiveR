@@ -4,20 +4,17 @@
 \alias{taxa_time_per_area}
 \title{Taxa per time bin per area (occurrence data)}
 \usage{
-taxa_time_per_area(dat, area_tables, bins, taxonomic_level)
+taxa_time_per_area(dat, area_tables, bins)
 }
 \arguments{
 \item{dat}{An occurrence data table including taxon id, Area, MinAge, MaxAge
 and Locality columns.}
 
-\item{area_tables}{Tibble of occurrence table split by area}
+\item{area_tables}{Tibble of occurrence table split by area.}
 
 \item{bins}{Time bins used in the analysis (should reflect the empirical data
 and be identical to the bins used in any corresponding DeepDive simulations
 and training)}
-
-\item{taxon_level}{Specify the taxon level where there is more than one
-option}
 }
 \value{
 A table of shape taxon x region x time bin where occurrences are
@@ -28,5 +25,6 @@ recorded.
 occurrences are recorded.
 }
 \examples{
-taxa_time_per_area(dat, area_tables, bins, taxon_level="Genus")
+taxa_time_per_area(dat=your_data, 
+area_tables=occurrence_data_split_by_sampling_region, bins=your_bins)
 }

@@ -5,38 +5,36 @@
 \title{Create DeepDive config object and file}
 \usage{
 create_config(
-  simulate = T,
-  model_training = T,
-  empirical_predictions = F,
-  outputs = F,
-  autotune = FALSE,
+  simulate = TRUE,
+  model_training = TRUE,
+  empirical_predictions = TRUE,
+  autotune = TRUE,
+  present_diversity = NA,
   path_wd = NULL,
-  time_bins = NULL,
+  bins = NULL,
   sim_name = NULL,
   n_areas = NULL,
-  simulations_file = NULL,
-  add_test = F,
-  models_file = NULL,
+  simulations_file = "simulations",
+  add_test = TRUE,
+  models_file = "trained_models",
   feature_file = NULL,
   label_file = NULL,
-  empirical_input_file = dd_dataset,
-  include_present_diversity = FALSE,
-  present_diversity = NA,
-  calibrate_diversity = FALSE,
-  taxonomic_level = taxon_level,
+  empirical_input_file = NULL,
   output_file = NULL
 )
 }
 \arguments{
-\item{simulate}{A true or false statement that switches on and off the generation of simulated datasets used in model training and testing.}
+\item{simulate}{A TRUE/FALSE statement that switches on and off generation of simulated datasets used in model training and testing.}
 
-\item{model_training}{A true or false statement that switches on and off the training of new RNN models.}
+\item{model_training}{A TRUE/FALSE statement that switches on and off the training of new RNN models.}
 
-\item{empirical_predictions}{A true or false statement that switches on and off the set up for empirical analyses.}
+\item{empirical_predictions}{A TRUE/FALSE statement that switches on and off empirical analyses.}
 
-\item{path_wd}{The working directory where files for analyses can be found.}
+\item{autotune}{When TRUE a new config will be saved with adjusted parameters used for analyses that reflect the empirical data.}
 
-\item{time_bins}{A vector of bin boundary ages.}
+\item{path_wd}{Working directory where files for analyses can be found.}
+
+\item{bins}{A vector of bin boundary ages.}
 
 \item{sim_name}{A string that identifies a set of simulations.}
 
@@ -44,7 +42,7 @@ create_config(
 
 \item{simulations_file}{File where simulations will be saved.}
 
-\item{add_test}{A true or false statement, when true a test set with the same settings as the training set are generated.}
+\item{add_test}{A TRUE/FALSE statement, when true a test set with the same settings as the training set are generated.}
 
 \item{models_file}{File where trained models can be saved and retrieved.}
 
@@ -54,24 +52,19 @@ create_config(
 
 \item{empirical_input_file}{File name where empirical data in the input format for use in deepdive will be saved.}
 
-\item{include_present_diversity}{A true or false statement, if true predictions will be conditioned on modern diversity.}
-
-\item{taxonomic_level}{String of the name of the taxonomic data column, e.g. "Species", "Genus".}
-
 \item{output_file}{File where outputs will be saved.}
 
-\item{present_diverstiy}{A number of extant taxa, which predictions will be conditioned on.}
+\item{present_diverstiy}{Number of extant taxa which predictions will be conditioned on. When NA no conditioning occurs.}
 }
 \value{
-Creates config with settings to launch DeepDive.
+Creates configuration file with settings to launch DeepDive.
 }
 \description{
 'create_config()' generates a config object with settings needed to launch
-DeepDive scripts in python. Uses the ConfigParser formatting.
+DeepDive scripts in python. Uses ConfigParser (Hoefling, 2017) formatting.
 }
 \examples{
-config <- create_config(simulate = T,  model_training = F, 
-empirical_predictions = F, wd = paste0(getwd()), time_bins = bins, 
-sim_name="test", n_areas = length(unique(dat$Area)), 
-simulations_file = paste0(path_dat, "simulations"), add_test = F)
+config <- create_config(wd = paste0(getwd()), bins = time_bins, 
+sim_name = "test", n_areas = length(unique(your_data$Area)), 
+simulations_file = paste0(path_dat, "simulations"), add_test = T)
 }

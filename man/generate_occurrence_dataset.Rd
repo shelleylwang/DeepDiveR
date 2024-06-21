@@ -25,5 +25,6 @@ are summed per region per time bin and recorded.
 make a table of regions x bins.
 }
 \examples{
-generate_occurrence_dataset(dat, area_tables, bins)
+generate_occurrence_dataset(dat=your_data, 
+area_tables=your_data_split_by_area, bins=time_bins)
 }

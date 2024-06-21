@@ -12,7 +12,7 @@ Locality columns.}
 
 \item{bins}{Time bins used in the analysis (should reflect the empirical data
 and be identical to the bins used in any corresponding DeepDive simulations
-and training)}
+and training).}
 }
 \value{
 A table of dimensions regions x bins where the summed number of
@@ -23,5 +23,5 @@ localities in a time bin are recorded.
 localities per area and time bin (output is a table of regions x bins).
 }
 \examples{
-generate_locality_dataset(dat, bins)
+generate_locality_dataset(dat=your_data, bins=time_bins)
 }

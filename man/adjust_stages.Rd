@@ -7,6 +7,8 @@
 adjust_stages(bins, finish, rmv_bins = NULL, quat = F, holo = F, holo_ple = F)
 }
 \arguments{
+\item{bins}{A table of time bin start, end and midpoint ages.}
+
 \item{finish}{Ending age of the youngest time bin.}
 
 \item{rmv_bins}{Named bins will be removed from the bins object.}
@@ -17,8 +19,6 @@ adjust_stages(bins, finish, rmv_bins = NULL, quat = F, holo = F, holo_ple = F)
 
 \item{holo_ple}{When TRUE bins in the Holocene will be merged into one time
 bin along with the Upper Pleistocene.}
-
-\item{binsA}{table of time bin start, end and midpoint ages.}
 }
 \value{
 A table of start, end and midpoint ages

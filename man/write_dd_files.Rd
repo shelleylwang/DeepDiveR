@@ -4,7 +4,7 @@
 \alias{write_dd_files}
 \title{Make input files for DeepDive where replicates are saved in separate files}
 \usage{
-write_dd_files(dat, r = replicate, age_m = "median", taxon_level, bins)
+write_dd_files(dat, r = replicate, age_m = "median", bins)
 }
 \arguments{
 \item{dat}{Column-wise occurrence data with taxon ID, Area, MinAge, MaxAge,
@@ -14,8 +14,6 @@ Locality columns.}
 
 \item{age_m}{The age assignment method}
 
-\item{taxon_level}{The taxonomic level the data are identified to}
-
 \item{bins}{The time bins specified for the data set}
 }
 \value{
@@ -23,9 +21,8 @@ Saves a csv file for each age replicate with Type column indicating
 whether data are locality counts or the binned occurrence data per region.
 }
 \description{
-'write_dd_files()' uses the data to make input files for use in DeepDive
+'write_dd_files()' uses fossil occurrence data to make input files for use in DeepDive
 }
 \examples{
-write_dd_files(dat, r=replicate, taxon_level="Species", bins=bins,
-age_m=age_method)
+write_dd_files(dat, r=replicate, bins=bins, age_m=age_method)
 }

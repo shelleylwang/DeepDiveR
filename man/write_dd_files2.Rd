@@ -4,7 +4,7 @@
 \alias{write_dd_files2}
 \title{Generate DeepDive input in one file}
 \usage{
-write_dd_files2(dat, r = replicate, age_m = "median", taxon_level, bins)
+write_dd_files2(dat, r = replicate, age_m = "median", bins)
 }
 \arguments{
 \item{dat}{Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
@@ -13,8 +13,6 @@ Locality columns.}
 \item{r}{The number of age assignment replicates}
 
 \item{age_m}{The age assignment method}
-
-\item{taxon_level}{The taxonomic level the data are identified to}
 
 \item{bins}{Time bins used in the analysis (should reflect the empirical data
 and be identical to the bins used in any corresponding DeepDive simulations
@@ -27,9 +25,8 @@ generated alongside the replicate number, the data type (either locs or occs)
 and the region ID.
 }
 \description{
-'write_dd_files2()' makes a single input csv file for use in DeepDive.
+'write_dd_files2()' makes a single input .csv file for use in DeepDive.
 }
 \examples{
-write_dd_files2(dat, r=replicate, taxon_level="Genus", bins=bins,
-age_m="median")
+write_dd_files2(dat, r=replicate, bins=bins, age_m="median")
 }

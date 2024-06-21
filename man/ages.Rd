@@ -17,10 +17,10 @@ Occurrence data table with additional SampledAge column
 }
 \description{
 'ages()' assigns sampled ages to each occurrence within the range on MinAge
-to MaxAge. Either using the median, a random age drawn
-from a uniform distribution, or a random age drawn from uniform distribution
-that is kept the same for occurrences which are sampled from the same
-locality and have the same MinAge and MaxAge.
+to MaxAge. Either using the median, a random age drawn from a uniform
+distribution, or a random age drawn from uniform distribution that is kept
+the same for occurrences which are sampled from the same locality and have
+the same MinAge and MaxAge.
 }
 \examples{
 ages(dat=your_data, method="median")

@@ -23,5 +23,5 @@ A table of start, end and midpoint ages
 makes adjustments depending on settings provided.
 }
 \examples{
-adjust_epochs(bins, finish=192.9, rmv_bins=)
+adjust_epochs(bins, finish=192.9)
 }

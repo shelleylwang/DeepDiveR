@@ -11,7 +11,7 @@ areas_matrix(area_ages = NULL, n_areas, config, bins, label = "start")
 
 \item{n_areas}{The number of unique discrete areas used in the analysis.}
 
-\item{config}{A config which can be generated in create_config(), that you will add attributes to here.}
+\item{config}{A config which can be generated in create_config() that you will add attributes to here.}
 }
 \value{
 Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
@@ -21,5 +21,5 @@ Adds an attribute for each area (named "area1", "area2"... etc) with min and max
 maximum and minimum age range for regions becoming connected.
 }
 \examples{
-areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
+areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)
 }
