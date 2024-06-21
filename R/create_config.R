@@ -169,7 +169,6 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     e$replicates <- 100  # number of age randomisation replicates used in data_pipeline.R
     e$scaling <- "1-mean"
     e$present_diversity <- present_diversity
-    e$taxon_level <- taxonomic_level
     e$output_file <- output_file
     folders <- output_file
     paths <- paste(path_wd, folders, sep="/")
