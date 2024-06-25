@@ -6,6 +6,7 @@ You can install DeepDiveR directly in an R console by using the devtools library
 ```
 library(devtools)
 devtools::install_github("DeepDive-project/DeepDiveR")
+library(DeepDiveR)
 ```
 
 The functions in DeepDiveR assume input data to be organised by columns with a "Taxon", discrete "Area", "MinAge", "MaxAge" and "Locality" identifier for each fossil occurrence. 
