@@ -166,8 +166,6 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     e$model_folder <- models_file
     e$n_predictions <- 1  # number of predictions per input file 
     e$replicates <- 100  # number of age randomisation replicates used in data_pipeline.R
-    e$scaling <- "1-mean"
-    e$present_diversity <- present_diversity
     e$output_file <- output_file
     folders <- output_file
     paths <- paste(path_wd, folders, sep="/")
