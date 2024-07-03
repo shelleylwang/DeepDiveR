@@ -71,8 +71,6 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
   # simulations
   if(simulate == TRUE){
     folders <- simulations_file
-    paths <- paste(path_wd, folders, sep="/")
-    sapply(paths, dir.create)
     sims$sim_name <- sim_name
     sims$n_CPUS <- 1  # number of CPUs used for simulations
     sims$n_training_simulations <- 2000  # simulations per CPU (total should be ~10,000)
@@ -141,8 +139,6 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
   if(model_training == TRUE){
     # Settings for training models
     folders <- models_file
-    paths <- paste(path_wd, folders, sep="/")
-    sapply(paths, dir.create)
     mt <- c()
     mt$sims_folder <- simulations_file
     mt$model_folder <- models_file
@@ -168,8 +164,6 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     e$replicates <- 100  # number of age randomisation replicates used in data_pipeline.R
     e$output_file <- output_file
     folders <- output_file
-    paths <- paste(path_wd, folders, sep="/")
-    sapply(paths, dir.create)
     config$data$empirical_predictions <- e
   }
 
