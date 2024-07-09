@@ -15,6 +15,7 @@
 generate_locality_dataset <- function(dat, bins){
   dat$Locality <- paste(dat$Area,dat$Locality)
   list_areas <- unique(dat$Area)
+  list_areas <- sort(unique(dat$Area))
   localities <- data.frame(matrix(0, length(list_areas), length(bins)-1))
   bins <- sort(-abs(bins))
   for (i in seq_len(length(list_areas))){
