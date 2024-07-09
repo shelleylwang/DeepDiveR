@@ -55,6 +55,10 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
   # general directory
   general <- c()
   general$wd <- path_wd
+  if(any(bins < 0)){
+    bins <- -bins
+  }
+  bins <- sort(bins, decreasing=TRUE)
   general$time_bins <- sort(paste(bins, collapse=" "))
   if(is.null(general$time_bins)){
     print("Warning: time_bins is set to NULL, please adjust using argument in create_config or using the set function below to provide values")

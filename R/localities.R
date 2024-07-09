@@ -13,6 +13,7 @@
 #' generate_locality_dataset(dat=your_data, bins=time_bins)
 #' @export
 generate_locality_dataset <- function(dat, bins){
+  dat$Locality <- paste(dat$Area,dat$Locality)
   list_areas <- unique(dat$Area)
   localities <- data.frame(matrix(0, length(list_areas), length(bins)-1))
   bins <- sort(-abs(bins))
