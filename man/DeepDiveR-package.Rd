@@ -11,5 +11,10 @@ Organise input data and scripts for analysis in DeepDive.
 \author{
 \strong{Maintainer}: Rebecca Cooper \email{rebecca.cooper@unifr.ch} (\href{https://orcid.org/0000-0002-4742-1422}{ORCID})
 
+Authors:
+\itemize{
+  \item Daniele Silvestro \email{daniele.silvestro@unifr.ch} (\href{https://orcid.org/0000-0003-0100-0961}{ORCID})
+}
+
 }
 \keyword{internal}

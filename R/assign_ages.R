@@ -22,7 +22,6 @@ ages <- function(dat, method){
   }
   if (method == "random_by_loc") {
     library(dplyr)
-    #dat$SampledAge <- NA
     locate_and_assign <- c()
     for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)

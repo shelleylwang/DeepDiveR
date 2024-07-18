@@ -15,7 +15,7 @@
 #' area_tables=your_data_split_by_area, bins=time_bins)
 #' @export
 generate_occurrence_dataset <- function(dat, area_tables, bins){
-  list_areas <- unique(dat$Area)
+  list_areas <-  sort(unique(dat$Area))
   n_occurrences <- data.frame(matrix(0, length(list_areas), length(bins)-1))
   for (i in seq_len(length(list_areas))){
     indices_areas <- which(dat$Area == list_areas[i])
