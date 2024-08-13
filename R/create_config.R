@@ -33,7 +33,7 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
                           # settings needed for simulation module
                           path_wd = NULL, 
                           bins = NULL, 
-                          sim_name = NULL,
+                          sim_name = "simulations",
                           n_areas = NULL, 
                           simulations_file = "simulations",
                           add_test = TRUE,
@@ -77,11 +77,11 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     folders <- simulations_file
     sims$sim_name <- sim_name
     sims$n_CPUS <- 1  # number of CPUs used for simulations
-    sims$n_training_simulations <- 2000  # simulations per CPU (total should be ~10,000)
+    sims$n_training_simulations <- 10000  # total number of training simulations
     sims$training_seed <- 123
     if(add_test == TRUE){
       sims$test_seed <- 432
-      sims$n_test_simulations <- 100  # simulations per CPU (the total should be e.g. 100 or 1000)
+      sims$n_test_simulations <- 100  # total number of test simulations
     }
     
     
