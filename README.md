@@ -19,25 +19,44 @@ Please carry out any extra cleaning steps, such as removal of duplicate occurren
 
 You can read more about following functions using ?function_name_here.
 
-1. Data preparation: prep_dd_input
+1. Data preparation: ```prep_dd_input```
 Generates a .csv file containing information about the time bins, counts of localities per time bin per region and counts of occurrences per taxa through time in each region. If using age   replicates these are also saved in the same file. 
 
-2. Create config file
-create_config generates a .ini file of settings for analyses that will be executed in step 3. Setting modules to false will remove stages of analyses from the pipeline, by default the full pipeline will be run. For arguments see ?create_config.
+2. Create a configuration file: ```create_config```
+Generates a .ini file of settings for analyses that will be executed in step 3. Setting modules to false will remove stages of analyses from the pipeline, by default the full pipeline will be run. For arguments see ```?create_config```.
 
 Settings not included in the arguments for create_config can be updated using:
-set_value(attribute_name = "parameter_you_want_to_set", value="value_here", module="module_where_parameter_is_stored", config)
-
-To make areas appear through time you can provide age ranges as below:
+```
+set_value(attribute_name = "parameter_you_want_to_set", value="updated_parameter_value", module="module_where_parameter_is_stored", config)
+```
+To make regions appear through time you can provide age ranges as below:
+```
 area_ages <- rbind(c(max(bins), max(bins)),  # where each row represents a discrete sampling region
                    c(50, 40)))  
-                   
-Areas can also be made to disappear using label="end" in the following:
+```                  
+Regios can then be added to the configuration files using the function ```areas_matrix```. 
+Regions can also be made to disappear using label="end" in the following:
+```
 areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
-which adds ages to the config.
+```
 
-The config is saved using:
+The configuration file is saved using:
+```
 config$write(paste(path_dat, "config.ini", sep="/"))
+```
 
+4. Execute files and launch analyses
+Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window using the Python script run_dd_config.py:
 
-4. Read the config file in python and launch analyses
+```
+python run_dd_config.py your_path/config_file.ini
+```
+
+You can additionally specify a working directory where all output files are saved and the number of CPUs used for the parallelized simulations, which will overwrite the corresponding settings in the configuration file, using the flags 
+```
+-wd your\_working\_directory} 
+```
+and e.g. -cpu 64. 
+
+This script will create a "simulations" folder containing the training and test sets, and a "trained_models" folder containing the trained models and plots of the training history. This folder will additionally include plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
+
