@@ -12,7 +12,7 @@
 #' @examples
 #' prep_dd_input(dat=your_data, bins=bins, r=100, age_m = "random_by_loc")
 #' @export
-prep_dd_input <- function(dat=dat, bins, r=replicate, age_m=age_method, 
+prep_dd_input <- function(dat=dat, bins, r=10, age_m="random_by_loc", 
                           output_file=NULL){
 
   deepdive_input <- data.frame()
