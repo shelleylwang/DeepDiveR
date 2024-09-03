@@ -34,7 +34,7 @@ To make regions appear through time you can provide age ranges as below:
 area_ages <- rbind(c(max(bins), max(bins)),  # where each row represents a discrete sampling region
                    c(50, 40)))  
 ```                  
-Regios can then be added to the configuration files using the function ```areas_matrix```. 
+Regions can then be added to the configuration files using the function ```areas_matrix```. 
 Regions can also be made to disappear using label="end" in the following:
 ```
 areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
