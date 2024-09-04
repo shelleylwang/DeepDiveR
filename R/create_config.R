@@ -94,6 +94,7 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
     sims$rangeM <- paste(0.02, 0.5, collapse="")  # range of death rates
     sims$log_uniform_rates <- FALSE 
     sims$p_mass_extinction <- 0.01  # probability of mass extinction per my
+    sims$fixed_mass_extinction <- NA  # known time of mass extinction
     sims$magnitude_mass_ext <- paste(0.5, 1, collapse="")
     sims$p_equilibrium <- 0.01  # probability of equilibrium per my 
     sims$p_constant_bd <- 0.01  # probability of constant birth-death rates per my
