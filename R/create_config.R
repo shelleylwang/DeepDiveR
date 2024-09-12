@@ -45,7 +45,7 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
                           
                           # empirial analysis module
                           empirical_input_file = NULL,
-                          
+
                           output_file = NULL){
 
   library(ConfigParser)
@@ -202,6 +202,8 @@ set_value <- function(attribute_name, value, module, config){
 #' @param area_ages A matrix of minimum and maximum ages for areas appearing, with older ages in column one. Must have a number of rows = number of discrete areas.
 #' @param n_areas The number of unique discrete areas used in the analysis.
 #' @param config A config which can be generated in create_config() that you will add attributes to here. 
+#' @param bins A vector of time bins.
+#' @param label Default "start" makes regions become available through time, if changed to "end" regions will no longer be available between the ages specified.
 #' @returns Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
 #' @examples 
 #' areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)
