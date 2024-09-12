@@ -13,6 +13,7 @@ Organise input data and scripts for analysis in DeepDive.
 
 Authors:
 \itemize{
+  \item Bethany Allen \email{bethany.allen@bsse.ethz.ch} (\href{https://orcid.org/0000-0003-0282-6407}{ORCID})
   \item Daniele Silvestro \email{daniele.silvestro@unifr.ch} (\href{https://orcid.org/0000-0003-0100-0961}{ORCID})
 }
 
