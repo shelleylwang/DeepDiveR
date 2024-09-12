@@ -3,8 +3,10 @@
 #' 'prep_dd_input()' makes a single input file for use in DeepDive in one line.
 #' @param dat Data frame of occurrences with taxon ID, Area, MinAge, MaxAge and
 #' Locality columns.
+#' @param bins A vector of time bins
 #' @param r The number of age assignment replicates
 #' @param age_m The age assignment method
+#' @param output_file A string containing an output file name.
 #' @returns A .csv file containing: start age, midpoint and duration of time
 #' bins, counts of the number of localities per region for each bin, counts of
 #' occurrences of each taxon per region per time bin, the data type (bins, locs,

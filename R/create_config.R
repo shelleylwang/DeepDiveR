@@ -6,7 +6,7 @@
 #' @param model_training A TRUE/FALSE statement that switches on and off the training of new RNN models.
 #' @param empirical_predictions A TRUE/FALSE statement that switches on and off empirical analyses. 
 #' @param autotune When TRUE a new config will be saved with adjusted parameters used for analyses that reflect the empirical data.
-#' @param present_diverstiy Number of extant taxa which predictions will be conditioned on. When NA no conditioning occurs.
+#' @param present_diversity Number of extant taxa which predictions will be conditioned on. When NA no conditioning occurs.
 #' @param path_wd Working directory where files for analyses can be found.
 #' @param bins A vector of bin boundary ages.
 #' @param sim_name A string that identifies a set of simulations.
@@ -22,7 +22,8 @@
 #' @examples
 #' config <- create_config(wd = paste0(getwd()), bins = time_bins, 
 #' sim_name = "test", n_areas = length(unique(your_data$Area)), 
-#' simulations_file = paste0(path_dat, "simulations"), add_test = T)
+#' simulations_file = paste0(path_dat, "simulations"), add_test = T,
+#' present_diversity = 200)
 #' @export 
 create_config <- function(simulate = TRUE, model_training = TRUE,
                           empirical_predictions = TRUE,
