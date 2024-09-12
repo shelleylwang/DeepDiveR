@@ -49,7 +49,7 @@ create_config <- function(simulate = TRUE, model_training = TRUE,
 
                           output_file = NULL){
 
-  config <- ConfigParser$new()
+  config <- ConfigParser::ConfigParser$new()
   sims <- c()
  
   # general directory

@@ -14,7 +14,7 @@
 #' @export
 ages <- function(dat, method){
   if (method == "median") {
-    dat <- mutate(rowwise(dat), SampledAge = median(c(MinAge, MaxAge)))
+    dat <- dplyr::mutate(rowwise(dat), SampledAge = median(c(MinAge, MaxAge)))
   }
   if (method == "random") {
     SampledAge <- runif(length(dat$Complete_name), min = dat$MinAge, max = dat$MaxAge)
@@ -25,7 +25,7 @@ ages <- function(dat, method){
     for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)
       loc <- dat[locate, ]
-      loc_distinct_ages <- loc %>% distinct(MinAge, MaxAge, Locality)
+      loc_distinct_ages <- loc %>% dplyr::distinct(MinAge, MaxAge, Locality)
       SampledAge <- c()
       for(j in 1:nrow(loc_distinct_ages)){
         Age <- runif(n = 1, min = loc_distinct_ages$MinAge[j], max=loc_distinct_ages$MaxAge[j])
@@ -34,7 +34,7 @@ ages <- function(dat, method){
       loc_distinct_ages <- cbind(loc_distinct_ages, SampledAge)
       locate_and_assign <- rbind(locate_and_assign, loc_distinct_ages)
     }
-    dat <- left_join(dat, locate_and_assign, by = c("MinAge" = "MinAge", "MaxAge" = "MaxAge", "Locality" = "Locality"))
+    dat <- dplyr::left_join(dat, locate_and_assign, by = c("MinAge" = "MinAge", "MaxAge" = "MaxAge", "Locality" = "Locality"))
   }
   for(i in length(dat$SampledAge)){
     if(dat$SampledAge[i] > dat$MaxAge[i] || dat$SampledAge[i] < dat$MinAge[i]){
