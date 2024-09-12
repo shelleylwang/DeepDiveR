@@ -12,7 +12,7 @@ create_config(
   present_diversity = NA,
   path_wd = NULL,
   bins = NULL,
-  sim_name = NULL,
+  sim_name = "simulations",
   n_areas = NULL,
   simulations_file = "simulations",
   add_test = TRUE,
