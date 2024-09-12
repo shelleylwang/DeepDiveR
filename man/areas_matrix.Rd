@@ -12,6 +12,10 @@ areas_matrix(area_ages = NULL, n_areas, config, bins, label = "start")
 \item{n_areas}{The number of unique discrete areas used in the analysis.}
 
 \item{config}{A config which can be generated in create_config() that you will add attributes to here.}
+
+\item{bins}{A vector of time bins.}
+
+\item{label}{Default "start" makes regions become available through time, if changed to "end" regions will no longer be available between the ages specified.}
 }
 \value{
 Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
