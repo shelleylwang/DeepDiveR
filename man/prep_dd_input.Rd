@@ -7,8 +7,8 @@
 prep_dd_input(
   dat = dat,
   bins,
-  r = replicate,
-  age_m = age_method,
+  r = 10,
+  age_m = "random_by_loc",
   output_file = NULL
 )
 }
