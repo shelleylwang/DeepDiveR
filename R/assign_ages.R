@@ -21,7 +21,6 @@ ages <- function(dat, method){
     dat <- cbind(dat, SampledAge)
   }
   if (method == "random_by_loc") {
-    library(dplyr)
     locate_and_assign <- c()
     for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)
