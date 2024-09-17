@@ -26,6 +26,12 @@ To install the library, use the package remotes or by downloading from the GitHu
 ```{r}
 # Option 1: install the package from GitHub
 devtools::install_github("DeepDive-project/DeepDiveR")
+library(DeepDiveR)
+```
+
+or...
+
+```{r}
 # Option 2: load it from a directory after donwloading it from
 # https://github.com/DeepDive-project/DeepDiveR
 deepdiver_path <- "path_to_DeepDiveR"
@@ -40,9 +46,8 @@ Load an occurrence table here.
 This typically includes one row for each occurrence and 5 columns: taxon name, geographic area, min age, max age, and locality
 
 ```{r}
-path_dat <- "your_path"  # path to the input data 
-setwd(path_dat)
-dat <- read.csv("carnivora_data.csv")
+data(carnivora)
+dat <- carnivora
 ```
 
 Next, specify a vector of time bins (they do not need to be equally spaced). Here we use divisions of the stages of the Cenozoic, averaged to 1 My duration:
