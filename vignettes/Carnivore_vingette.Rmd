@@ -3,6 +3,9 @@ title: "DeepDiveR vingette"
 author: "Rebecca Cooper"
 date: "09/09/2024"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r setup, include=FALSE}
@@ -13,16 +16,17 @@ knitr::opts_chunk$set(echo = TRUE)
   title: "DeepDiveR vingette"
   output: html_vingette
 ---
-  
-  # Introduction
-    
-  'DeepDiveR' is an R package for estimating biodiversity from fossil occurrence data. It produces formatted input data and a configuration file that can then be exectued in the command line, enabling a clearer and more readily reproducable workflow.
-  In this tutorial we will use DeepDiveR to analyse the past diversity of mammalian carnivores using the data of Faurby et al (2019). 
-  
-# Installation  
 
-To install the library, use the package remotes or by downloading from the GitHub repository:
-  
+\# Introduction First make sure you download the DeepDive Python Program: <https://github.com/DeepDive-project>
+
+'DeepDiveR' is an R package for estimating biodiversity from fossil occurrence data.
+It produces formatted input data and a configuration file that can then be exectued in the command line, enabling a clearer and more readily reproducable workflow.
+In this tutorial we will use DeepDiveR to analyse the past diversity of mammalian carnivores using the data of Faurby et al (2019).
+
+# Installation
+
+To install the DeepDive R package library, use the package remotes or by downloading from the GitHub repository:
+
 ```{r}
 # Option 1: install the package from GitHub using remotes
 remotes::install_github("DeepDive-project/DeepDiveR")
@@ -31,7 +35,6 @@ library(dplyr)
 
 # "Skipping install" because I downloaded DeepDiveR previously
 ```
-
 
 ```{r}
 # Option 1: install the package from GitHub using devtools
@@ -63,7 +66,8 @@ data(carnivora)
 dat <- carnivora
 ```
 
-Next, specify a vector of time bins (they do not need to be equally spaced). Here we use divisions of the stages of the Cenozoic, averaged to 1 My duration:
+Next, specify a vector of time bins (they do not need to be equally spaced).
+Here we use divisions of the stages of the Cenozoic, averaged to 1 My duration:
 
 ```{r}
 bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 
@@ -76,7 +80,9 @@ bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56,
           5.333, 4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0)
 ```
 
-Prepare input file for deepdive, set output_file name to save. With the argument 'r=10' we are randomly resampling occurrence ages 10 times from their stratigraphic ranges. For your final analysis, you may want to make more replicates e.g. 100.
+Prepare input file for deepdive, set output_file name to save.
+With the argument 'r=10' we are randomly resampling occurrence ages 10 times from their stratigraphic ranges.
+For your final analysis, you may want to make more replicates e.g. 100.
 
 ```{r}
 dd_file_name <- "carnivora_deepdive_input.csv"
@@ -85,7 +91,8 @@ prep_dd_input(dat = dat, bins = bins, r = 10, output_file = dd_file_name)
 
 # The configuration file
 
-Create a config for the DeepDive analysis. If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
+Create a config for the DeepDive analysis.
+If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
 
 path_dat = where you would like to save your files
 
@@ -102,7 +109,8 @@ config <- create_config(
 )
 ```
 
-To have regions becoming available over time, create area_ages object. Areas are expected to be in alphabetical order.
+To have regions becoming available over time, create area_ages object.
+Areas are expected to be in alphabetical order.
 Here for example we assume that dispersal to South America only becomes possible between 11 and 7 Ma.
 Regions disappearing instead of connecting can be made via setting the label argument to: label = "end".
 
@@ -118,7 +126,8 @@ areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config, label="start
 ```
 
 For the purpose of running a quick test analysis we use low number of training and test simulations.
-Note that you will need at least 10,000 training simulations for a real analysis. Entries in the configuration file can be edited in the format below, using the set_value function:
+Note that you will need at least 10,000 training simulations for a real analysis.
+Entries in the configuration file can be edited in the format below, using the set_value function:
 
 ```{r}
 set_value(attribute_name = "n_training_simulations", 
@@ -134,20 +143,35 @@ Write the configuration file to use in the analysis:
 
 ```{r}
 config$write("carnivora.ini")
-```  
+```
 
 # Executing the analysis
 
+## 1. Move out of current wd with this file, clone down the "deepdive" repository from GitHub
+
+<https://github.com/DeepDive-project/deepdive> \^ This will containt the programs for running the program
+
+## 2. Run Deep Dive in terminal (command line)
+
+Go back to the wd with this file!
+We will now run the programs in that repo\^ on your files
+
 Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script run_dd_config.py as follows:
-  
-python run_dd_config.py your_path/config_file.ini
+
+**python path to deepdive repo created in step 1. above/run_dd_config.py your_path/config_file.ini**
+
+### 2.A. If you want to specify a wd for all the output files to go to and if yuo want to specify the number of CPUs used for the parallelized simulations, you can do so with the following flags:
 
 You can additionally specify a working directory where all output files are saved and the number of CPUs used for the parallelized simulations, which will overwrite the corresponding settings in the configuration file, using the flags -wd and -cpu, e.g.
 
-python run_dd_config.py your_path/config_file.ini -wd your_working_directory -cpu 64
+**python deepdive repo/run_dd_config.py your_path/config_file.ini -wd your_working_directory -cpu 64**
 
-This script will create a "simulations" folder containing the training and test sets, and a "trained_models" folder containing the trained models and plots of the training history. This folder will additionally include plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
-
+This script will create a "simulations" folder containing the training and test sets, and a "trained_models" folder containing the trained models and plots of the training history.
+This folder will additionally include plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
 
 # References
-Faurby, S., Werdelin, L. & Antonelli, A. (2019) Dispersal ability predicts evolutionary success among mammalian carnivores. BioRxiv, p. 755207.
+
+Faurby, S., Werdelin, L.
+& Antonelli, A.
+(2019) Dispersal ability predicts evolutionary success among mammalian carnivores.
+BioRxiv, p. 755207.
