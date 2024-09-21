@@ -25,7 +25,7 @@ To install the library, use the package remotes or by downloading from the GitHu
   
 ```{r}
 # Option 1: install the package from GitHub
-devtools::install_github("DeepDive-project/DeepDiveR")
+remotes::install_github("DeepDive-project/DeepDiveR")
 library(DeepDiveR)
 library(dplyr)
 ```
@@ -37,6 +37,7 @@ or...
 # https://github.com/DeepDive-project/DeepDiveR
 deepdiver_path <- "path_to_DeepDiveR"
 setwd(deepdiver_path)
+library(devtools)
 load_all(".")
 library(DeepDiveR)
 library(dplyr)
@@ -75,6 +76,7 @@ prep_dd_input(dat = dat, bins = bins, r = 10, output_file = dd_file_name)
 # The configuration file
 
 Create a config for the DeepDive analysis. If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
+
 
 ```{r}
 config <- create_config(
