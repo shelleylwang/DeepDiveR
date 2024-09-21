@@ -24,7 +24,18 @@ knitr::opts_chunk$set(echo = TRUE)
 To install the library, use the package remotes or by downloading from the GitHub repository:
   
 ```{r}
-# Option 1: install the package from GitHub
+# Option 1: install the package from GitHub using remotes
+remotes::install_github("DeepDive-project/DeepDiveR")
+library(DeepDiveR)
+library(dplyr)
+
+# "Skipping install" because I downloaded DeepDiveR previously
+```
+
+
+```{r}
+# Option 1: install the package from GitHub using devtools
+install.packages("devtools")
 devtools::install_github("DeepDive-project/DeepDiveR")
 library(DeepDiveR)
 library(dplyr)
@@ -35,8 +46,8 @@ or...
 ```{r}
 # Option 2: load it from a directory after donwloading it from
 # https://github.com/DeepDive-project/DeepDiveR
-deepdiver_path <- "path_to_DeepDiveR"
-setwd(deepdiver_path)
+deepdiver_path <- "/Users/shelleywang/Documents/PU RSII/DeepDiveR/DeepDiveR.Rproj"
+setwd(../)
 load_all(".")
 library(DeepDiveR)
 library(dplyr)
@@ -76,9 +87,11 @@ prep_dd_input(dat = dat, bins = bins, r = 10, output_file = dd_file_name)
 
 Create a config for the DeepDive analysis. If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
 
+path_dat = where you would like to save your files
+
 ```{r}
 config <- create_config(
-  path_wd = path_dat,  
+  path_wd = "/Users/shelleywang/Documents/PU RSII/DeepDiveR/vignettes", # This was path_dat
   bins = bins,
   sim_name="carnivora",
   n_areas = length(unique(dat$Area)),
