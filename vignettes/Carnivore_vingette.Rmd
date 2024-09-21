@@ -20,10 +20,10 @@ knitr::opts_chunk$set(echo = TRUE)
 \# Introduction First make sure you download the DeepDive Python Program: <https://github.com/DeepDive-project>
 
 'DeepDiveR' is an R package for estimating biodiversity from fossil occurrence data.
-It produces formatted input data and a configuration file that can then be exectued in the command line, enabling a clearer and more readily reproducable workflow.
+It produces formatted input data and a configuration file that can then be exectued in the command line, enabling a clearer and more redatadily reproducable workflow.
 In this tutorial we will use DeepDiveR to analyse the past diversity of mammalian carnivores using the data of Faurby et al (2019).
 
-# Installation
+# 1. Installation
 
 To install the DeepDive R package library, use the package remotes or by downloading from the GitHub repository:
 
@@ -56,7 +56,7 @@ library(DeepDiveR)
 library(dplyr)
 ```
 
-# Preparing data
+# 2. Preparing data
 
 Load an occurrence table here.
 This typically includes one row for each occurrence and 5 columns: taxon name, geographic area, min age, max age, and locality
@@ -64,7 +64,16 @@ This typically includes one row for each occurrence and 5 columns: taxon name, g
 ```{r}
 data(carnivora)
 dat <- carnivora
+dat
 ```
+
+"dat" should always have the following columns: Taxon, Area, MinAge, MaxAge, Locality
+
+-    “Area” column in input file should depend on overall ground covered in the raw data: if you’re looking at global reptilia data, “Area” can be continents.
+    If looking at one country, “Area” can be smaller
+
+-   "Locality" = the place where the fossil was found.
+    Any object type is fine (int, string, etc.)
 
 Next, specify a vector of time bins (they do not need to be equally spaced).
 Here we use divisions of the stages of the Cenozoic, averaged to 1 My duration:
@@ -81,33 +90,43 @@ bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56,
 ```
 
 Prepare input file for deepdive, set output_file name to save.
-With the argument 'r=10' we are randomly resampling occurrence ages 10 times from their stratigraphic ranges.
-For your final analysis, you may want to make more replicates e.g. 100.
+With the argument 'r=10' (which is a low \# we're just using for example here) we are randomly resampling occurrence ages 10 times from their stratigraphic ranges.
+For your final analysis, you shouldbmake more replicates e.g. 100.
 
 ```{r}
 dd_file_name <- "carnivora_deepdive_input.csv"
 prep_dd_input(dat = dat, bins = bins, r = 10, output_file = dd_file_name)
 ```
 
-# The configuration file
+# 3. The configuration file: setting parameters for the simulations
 
-Create a config for the DeepDive analysis.
+Creating a config for the DeepDive analysis, which will later be run in the Terminal to create the simulated data.
+
 If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
 
-path_dat = where you would like to save your files
+path_wd= where you would like to save your files
 
 ```{r}
 config <- create_config(
-  path_wd = "/Users/shelleywang/Documents/PU RSII/DeepDiveR/vignettes", # This was path_dat
+  path_wd = "/Users/shelleywang/Documents/PU RSII/DeepDiveR/vignettes", # This is "path_dat" in the upstream's version of this file
   bins = bins,
   sim_name="carnivora",
   n_areas = length(unique(dat$Area)),
   simulations_file = "simulations_carnivora", 
   models_file = "trained_models_carnivora", 
-  present_diversity = 313,
+  present_diversity = 313, # # of extant species
   empirical_input_file = dd_file_name
 )
 ```
+
+\^ Above you are editing parameters for the simulated data.
+Once you have gotten through this step (Step 3), you can open the configuration file you created to see all your parameters.
+For now, open the example "carnivora.ini" file in this folder to see all available parameters to be adjusted.
+
+Later, you will run the Terminal commands, which will output a new folder trained_model_sim_name, where "sim_name" was set above
+
+-   if you go to feature_plots folder, it will show you a bunch of plots showing how the simulations data compares to the empirical data.
+    If it doesn't match up enough for your liking, you'd come back here and create a new config file with edited parameters, run the Terminal command again, and again check the feature_plots
 
 To have regions becoming available over time, create area_ages object.
 Areas are expected to be in alphabetical order.
@@ -145,29 +164,48 @@ Write the configuration file to use in the analysis:
 config$write("carnivora.ini")
 ```
 
-# Executing the analysis
+# 4. Executing the analysis in Terminal
 
-## 1. Move out of current wd with this file, clone down the "deepdive" repository from GitHub
+## A. Move out of current wd with this file, clone down the "deepdive" repository from GitHub
 
-<https://github.com/DeepDive-project/deepdive> \^ This will containt the programs for running the program
+<https://github.com/DeepDive-project/deepdive> \^ This will containm the programs for running the program.
+Also follow the instructions on that repo to install "deepdive" Python program from Terminal:
 
-## 2. Run Deep Dive in terminal (command line)
+**python -m pip install git+<https://github.com/DeepDive-project/deepdive>**
 
-Go back to the wd with this file!
-We will now run the programs in that repo\^ on your files
+## B. Run Deep Dive in terminal (command line)
+
+Go back to the wd with this R file in it!
+We will now run the programs in Step 4.A's "deepdive" repo on your files
 
 Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script run_dd_config.py as follows:
 
 **python path to deepdive repo created in step 1. above/run_dd_config.py your_path/config_file.ini**
 
-### 2.A. If you want to specify a wd for all the output files to go to and if yuo want to specify the number of CPUs used for the parallelized simulations, you can do so with the following flags:
+## **C. Outputs**
+
+-   This script will create a "**simulations**" folder containing a "**trained_models"** folder which contains:
+
+-   The trained model (Keras model)
+
+-   Plot of the training history (model accuracy on test set).
+
+-   Simulated vs. empirical features (pdf plots): This folder will additionally include plots (in **feature_plots** folder) comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
+
+    -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3.
+        (creating the configuration file) and specify new parameters for new simulations
+
+-   empirical_features_conditional.csv — the traits of the simulate data, what is visualized in the simulation plots (feature_plots pdfs)
+
+-   empirical_predictions_conditional.csv — diversity predictions through time
+
+### C.i. If you want to specify a wd for all the output files to go to and if you want to specify the number of CPUs used for the parallelized simulations, you can do so with the following flags:
 
 You can additionally specify a working directory where all output files are saved and the number of CPUs used for the parallelized simulations, which will overwrite the corresponding settings in the configuration file, using the flags -wd and -cpu, e.g.
 
-**python deepdive repo/run_dd_config.py your_path/config_file.ini -wd your_working_directory -cpu 64**
+Terminal:
 
-This script will create a "simulations" folder containing the training and test sets, and a "trained_models" folder containing the trained models and plots of the training history.
-This folder will additionally include plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
+**python deepdive repo/run_dd_config.py your_path/config_file.ini -wd your_working_directory -cpu 64**
 
 # References
 
