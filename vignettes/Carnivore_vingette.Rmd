@@ -27,6 +27,7 @@ To install the library, use the package remotes or by downloading from the GitHu
 # Option 1: install the package from GitHub
 devtools::install_github("DeepDive-project/DeepDiveR")
 library(DeepDiveR)
+library(dplyr)
 ```
 
 or...
@@ -38,6 +39,7 @@ deepdiver_path <- "path_to_DeepDiveR"
 setwd(deepdiver_path)
 load_all(".")
 library(DeepDiveR)
+library(dplyr)
 ```
 
 # Preparing data
