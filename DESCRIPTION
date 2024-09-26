@@ -23,7 +23,7 @@ Imports:
     dplyr,
     tidyr
 Suggests:
-    knitr (>= 1.48)
+    knitr (>= 1.48),
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 VignetteBuilder: knitr
