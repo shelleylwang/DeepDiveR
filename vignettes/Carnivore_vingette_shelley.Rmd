@@ -125,8 +125,7 @@ For now, open the example "carnivora.ini" file in this folder to see all availab
 
 Later, you will run the Terminal commands, which will output a new folder trained_model_sim_name, where "sim_name" was set above
 
--   if you go to feature_plots folder, it will show you a bunch of plots showing how the simulations data compares to the empirical data.
-    If it doesn't match up enough for your liking, you'd come back here and create a new config file with edited parameters, run the Terminal command again, and again check the feature_plots
+-   if you go to feature_plots folder, it will show you a bunch of plots showing how the simulations data compares to the empirical data. If it doesn't match up enough for your liking, you'd come back here and create a new config file with edited parameters, run the Terminal command again, and again check the feature_plots
 
 To have regions becoming available over time, create area_ages object.
 Areas are expected to be in alphabetical order.
@@ -192,8 +191,7 @@ Once the configuration and input files are created, the full DeepDive analysis, 
 
 -   Simulated vs. empirical features (pdf plots): This folder will additionally include plots (in **feature_plots** folder) comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
 
-    -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3.
-        (creating the configuration file) and specify new parameters for new simulations
+    -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3. (creating the configuration file) and specify new parameters for new simulations
 
 -   empirical_features_conditional.csv — the traits of the simulate data, what is visualized in the simulation plots (feature_plots pdfs)
 
