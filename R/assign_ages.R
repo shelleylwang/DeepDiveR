@@ -19,7 +19,8 @@
 #'    must be provided which gives the locality identifier for each occurrence.
 #' The supplied `dataframe` of occurrences should not contain any `NA` values.
 #'
-#' @import dplyr
+#' @importFrom dplyr distinct left_join mutate rowwise
+#' @importFrom stats median runif
 #' @examples
 #' # Import internal dataset
 #' data(carnivora)
@@ -63,7 +64,7 @@ ages <- function(dat = NULL, method = "median"){
 
   # Compute median ages
   if (method == "median") {
-    dat <- dplyr::mutate(rowwise(dat), SampledAge = median(c(MinAge, MaxAge)))
+    dat <- mutate(rowwise(dat), SampledAge = median(c(MinAge, MaxAge)))
   }
 
   # Sample random ages
@@ -79,7 +80,7 @@ ages <- function(dat = NULL, method = "median"){
     for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)
       loc <- dat[locate, ]
-      loc_distinct_ages <- loc %>% dplyr::distinct(MinAge, MaxAge, Locality)
+      loc_distinct_ages <- loc %>% distinct(MinAge, MaxAge, Locality)
       SampledAge <- c()
       for(j in 1:nrow(loc_distinct_ages)){
         Age <- runif(n = 1,
@@ -90,7 +91,7 @@ ages <- function(dat = NULL, method = "median"){
       loc_distinct_ages <- cbind(loc_distinct_ages, SampledAge)
       locate_and_assign <- rbind(locate_and_assign, loc_distinct_ages)
     }
-    dat <- dplyr::left_join(dat, locate_and_assign,
+    dat <- left_join(dat, locate_and_assign,
                             by = c("MinAge" = "MinAge", "MaxAge" = "MaxAge",
                                    "Locality" = "Locality"))
   }
