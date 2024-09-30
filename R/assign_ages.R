@@ -80,7 +80,7 @@ ages <- function(dat = NULL, method = "median"){
     for (i in unique(dat$Locality)) {
       locate <- which(dat$Locality == i)
       loc <- dat[locate, ]
-      loc_distinct_ages <- loc %>% distinct(MinAge, MaxAge, Locality)
+      loc_distinct_ages <- distinct(loc, MinAge, MaxAge, Locality)
       SampledAge <- c()
       for(j in 1:nrow(loc_distinct_ages)){
         Age <- runif(n = 1,
