@@ -25,12 +25,15 @@ changed.
 }
 \description{
 A function to modify parameters within a configuration object for DeepDive,
-created using \code{create_config()}.
+created using \code{create_config()}. Default values are listed below, while
+the values currently held by each parameter can be checked using the
+notation \verb{config$data$[module]$[parameter]}. Extensive checks ensure that
+it is possible for the specific parameter to hold the desired value.
 }
 \details{
 Add full list of default parameters.
 }
 \examples{
-edit_config(attribute_name = "extant_sp", value=c(10, 10000),
-  module="simulations", config)
+edit_config(config = config, module = "simulations", parameter = "extant_sp",
+    value = c(10, 10000))
 }

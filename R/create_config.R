@@ -40,7 +40,7 @@
 #'
 #' @import ConfigParser
 #' @examples
-#' config <- create_config(wd = paste0(getwd()),
+#' config <- create_config(path_wd = paste0(getwd()),
 #'                         bins = bins <- c(66, 23, 2.6, 0),
 #'                         sim_name = "test",
 #'                         n_areas = length(unique(your_data$Area)),
@@ -51,7 +51,7 @@
 create_config <- function(simulate = TRUE,
                           model_training = TRUE,
                           empirical_predictions = TRUE,
-                          autotune=TRUE,
+                          autotune = TRUE,
                           present_diversity = NA,
                           # settings needed for simulation module
                           path_wd = NULL,
@@ -65,7 +65,7 @@ create_config <- function(simulate = TRUE,
                           feature_file = NULL,
                           label_file = NULL,
                           # empirial analysis module
-                          empirical_input_file = NULL,
+                          data_file = NULL,
                           output_file = NULL){
 
   # Handling errors

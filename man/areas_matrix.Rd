@@ -4,25 +4,29 @@
 \alias{areas_matrix}
 \title{Make discrete geographic regions appear or disappear}
 \usage{
-areas_matrix(area_ages = NULL, n_areas, config, bins, label = "start")
+areas_matrix(config = NULL, area_ages = NULL, presence = TRUE)
 }
 \arguments{
-\item{area_ages}{A matrix of minimum and maximum ages for areas appearing, with older ages in column one. Must have a number of rows = number of discrete areas.}
+\item{config}{\code{character}. The name of the configuration object, created
+using \code{create_config()}, that will be edited.}
 
-\item{n_areas}{The number of unique discrete areas used in the analysis.}
+\item{area_ages}{\code{dataframe}. A \code{dataframe} describing the \code{MinAge} and
+\code{MaxAge} for each geographic area, with older ages in column one. The
+number of rows in the \code{dataframe} must match \code{n_areas} in the configuration
+file.}
 
-\item{config}{A config which can be generated in create_config() that you will add attributes to here.}
-
-\item{bins}{A vector of time bins.}
-
-\item{label}{Default "start" makes regions become available through time, if changed to "end" regions will no longer be available between the ages specified.}
+\item{presence}{\code{logical}. When TRUE (the default), regions become
+available to occupy within the time frames specified. When FALSE, regions
+will be removed from the simulations between the ages specified.}
 }
 \value{
-Adds an attribute for each area (named "area1", "area2"... etc) with min and max age of migration becoming possible.
+Adds an attribute for each area (named "area1", "area2"... etc) with
+minimum and maximum age of migration becoming possible.
 }
 \description{
-'areas_matrix()' adds attributes in the simulations module which provide a
-maximum and minimum age range for regions becoming connected.
+A function to modify the simulations module by providing a maximum and
+minimum age range for geographic regions being connected to the study
+system.
 }
 \examples{
 areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)

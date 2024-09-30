@@ -1,7 +1,10 @@
 #' Edit values in the configuration file
 #'
 #' A function to modify parameters within a configuration object for DeepDive,
-#'   created using `create_config()`.
+#'   created using `create_config()`. Default values are listed below, while
+#'   the values currently held by each parameter can be checked using the
+#'   notation `config$data$[module]$[parameter]`. Extensive checks ensure that
+#'   it is possible for the specific parameter to hold the desired value.
 #' @param config \code{character}. The name of the configuration object, created
 #'   using `create_config()`, that will be edited.
 #' @param module \code{character}. The name of the block of the configuration
@@ -18,8 +21,8 @@
 #'
 #' @import ConfigParser
 #' @examples
-#' edit_config(attribute_name = "extant_sp", value=c(10, 10000),
-#'   module="simulations", config)
+#' edit_config(config = config, module = "simulations", parameter = "extant_sp",
+#'     value = c(10, 10000))
 #' @export
 edit_config <- function(config = NULL, module = NULL,
                         parameter = NULL, value = NULL){
@@ -27,6 +30,6 @@ edit_config <- function(config = NULL, module = NULL,
   # Handling errors
 
   variable <- paste(value, collapse=" ")
-  config$data[module][[1]][parameter] <- variable
+  config$data$module$parameter <- variable
   # pass lists, vectors etc and then turn into a string
 }

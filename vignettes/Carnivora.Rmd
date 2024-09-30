@@ -126,15 +126,7 @@ area_ages <- rbind(c(max(bins), max(bins)),  # Africa
                    c(11.608, 7.3))           # South America 
 
 # Connect area data to configuration file
-areas_matrix(
-  #
-  area_ages,
-  #
-  n_areas = length(unique(dat$Area)),
-  #
-  config,
-  #
-  label = "start")
+areas_matrix(config = config, area_ages = area_ages)
 ```
 
 Now we need to describe the technical aspects of the neural network training and analysis process. For a reliable estimate, you will need at least 10,000 training simulations. However, for the purpose of running a quick test analysis, we will use a low number of both training and test simulations. Again we will edit the relevant parameters in the configuration file using the `set_value` function:
