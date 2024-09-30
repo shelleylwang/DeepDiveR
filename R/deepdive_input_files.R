@@ -4,7 +4,8 @@
 #' DeepDive.
 #'
 #' @param dat \code{dataframe}. The `dataframe` describing the occurrence data,
-#'    including `Taxon`, `Area`, `MinAge`, `MaxAge` and `Locality` columns.
+#'    including `Taxon`, `Area`, `MinAge`, `MaxAge` and `Locality` columns. The
+#'    supplied `dataframe` should not contain any `NA` values.
 #' @param bins \code{dataframe}. A `dataframe` designating the boundaries of
 #'    the time bins used in the analysis.
 #' @param r \code{integer}. The number of age assignment replicates. Defaults
@@ -39,6 +40,10 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     stop("`dat` should be a dataframe.")
   }
 
+  if (any(is.na(dat))) {
+    stop(paste("NA values detected in dataframe."))
+  }
+
   if (is.vector(bins) == FALSE) {
     stop("`bins` should be a vector.")
   }
@@ -60,12 +65,17 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     stop("`MinAge` and/or `MaxAge` columns are not of numeric class")
   }
 
+  order_check <- dat$MaxAge - dat$MinAge
+  if (any(order_check < 0)) {
+    stop(paste("All `MinAge` values must be smaller than `MaxAge` values"))
+  }
+
   if (is.numeric(r) == FALSE) {
     stop("`r` should be an integer.")
   }
 
   if (age_m != "median" && age_m != "random" && age_m != "random_by_loc") {
-    stop(paste("`method` must be 'median', 'random' or 'random_by_loc'"))
+    stop(paste("`age_m` must be 'median', 'random' or 'random_by_loc'"))
   }
 
   if (age_m == "random_by_loc" && "Locality" %in% colnames(dat) == FALSE) {
