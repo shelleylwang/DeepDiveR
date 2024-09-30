@@ -106,7 +106,7 @@ Other settings are autofilled by `create_config`. In order to alter these, we ca
 
 ``` {r modify_config}
 # Modify one of the settings
-set_value(attribute_name = "n_training_simulations", 
+edit_config(attribute_name = "n_training_simulations", 
           value = 100, 
           module = "simulations",
           config)
