@@ -15,7 +15,7 @@
 #' @param output_file \code{character}. Defaults to `FALSE`, in which case the
 #'    DeepDive input table is saved as an object. When a character string is
 #'    provided, the object is written to a `csv` file with this name.
-#' @returns If `output_file = NULL` a dataframe containing the occurrence data
+#' @returns If `output_file = NULL` a `dataframe` containing the occurrence data
 #'    summary is returned as an object. If `output_file` is given a character
 #'    string, the summary is saved to a `csv` file with this name, ready to
 #'    input into DeepDive.

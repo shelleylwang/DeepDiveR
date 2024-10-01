@@ -113,17 +113,19 @@ edit_config(attribute_name = "n_training_simulations",
 ```
 
 It is possible to allow the geographic areas available in the simulations to change through time. In order to do this, we will create an `areas_matrix` object which will be incorporated in the configuration file. 
-Here, we will assume that dispersal of carnivorans to South America was only possible between 11 and 7 Ma.
-#The provided areas are expected to be in alphabetical order.
-Regions disappearing instead of connecting can be made by setting the label argument to: label = "end".
+Here, we will assume that dispersal of carnivorans to South America was only possible between 11 and 7 Ma. Regions disappearing instead of connecting can be made by setting the label argument to: label = "end".
 
 ```{r geog_limits}
 # Create data.frame describing the time for which each area is available
-area_ages <- rbind(c(max(bins), max(bins)),  # Africa 
-                   c(max(bins), max(bins)),  # Asia
-                   c(max(bins), max(bins)),  # Europe
-                   c(max(bins), max(bins)),  # North America
-                   c(11.608, 7.3))           # South America 
+area_ages <- rbind(c("Africa", max(bins), max(bins)), 
+                   c("Asia", max(bins), max(bins)),
+                   c("Europe", max(bins), max(bins)),
+                   c("North America", max(bins), max(bins)),
+                   c("South America", 11.608, 7.3))
+area_ages <- as.data.frame(area_ages)
+
+# Label columns
+colnames(area_ages) <- c("Area", "MaxAge", "MinAge")
 
 # Connect area data to configuration file
 areas_matrix(config = config, area_ages = area_ages)

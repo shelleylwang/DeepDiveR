@@ -10,10 +10,11 @@ areas_matrix(config = NULL, area_ages = NULL, presence = TRUE)
 \item{config}{\code{character}. The name of the configuration object, created
 using \code{create_config()}, that will be edited.}
 
-\item{area_ages}{\code{dataframe}. A \code{dataframe} describing the \code{MinAge} and
-\code{MaxAge} for each geographic area, with older ages in column one. The
-number of rows in the \code{dataframe} must match \code{n_areas} in the configuration
-file.}
+\item{area_ages}{\code{dataframe}. If left NULL (default), all geographic
+regions are configured to be present throughout the simulations. Otherwise,
+a \code{dataframe} describing the \code{MinAge} and \code{MaxAge} for each geographic
+\code{Area}, with older ages in column one. The number of rows in the
+\code{dataframe} must match \code{n_areas} in the configuration file.}
 
 \item{presence}{\code{logical}. When TRUE (the default), regions become
 available to occupy within the time frames specified. When FALSE, regions

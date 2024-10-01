@@ -31,7 +31,7 @@ DeepDive input table is saved as an object. When a character string is
 provided, the object is written to a \code{csv} file with this name.}
 }
 \value{
-If \code{output_file = NULL} a dataframe containing the occurrence data
+If \code{output_file = NULL} a \code{dataframe} containing the occurrence data
 summary is returned as an object. If \code{output_file} is given a character
 string, the summary is saved to a \code{csv} file with this name, ready to
 input into DeepDive.
