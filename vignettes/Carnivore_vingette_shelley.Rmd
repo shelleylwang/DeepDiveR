@@ -272,8 +272,7 @@ This folder will additionally include CSV files with the predicted diversity tra
 
             -   **featured_plots** folder: plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity)
 
-                -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3.
-                    (creating the configuration file) and specify new parameters for new simulations
+                -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3. (creating the configuration file) and specify new parameters for new simulations
 
             -   CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
 

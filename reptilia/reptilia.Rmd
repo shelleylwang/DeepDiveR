@@ -22,10 +22,10 @@ data <- read.csv("reptilia_deepdive_input.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
-"Area" column has blanks and nulls, so I'm just going to impute with a "NA" string for now
+Checking if there are nulls
 
 ```{r}
-data$Area[is.na(data$Area)] <- "NA"
+data$Area[is.na(data$Area)]
 ```
 
 ### Defining time bins by stages
@@ -90,7 +90,8 @@ config <- create_config(
   # Specify the number of extant species
   present_diversity = 0,
   # Specify the name of the data file
-  empirical_input_file = "reptilia_deepdive_input.csv")
+  empirical_input_file = "reptilia_deepdive_input.csv"
+  )
 ```
 
 ### Neural Network Architecture
