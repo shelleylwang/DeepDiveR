@@ -31,5 +31,5 @@ minimum age range for geographic regions being connected to the study
 system.
 }
 \examples{
-areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)
+areas_matrix(config = config)
 }

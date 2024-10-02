@@ -18,7 +18,7 @@
 #' @returns Adds an attribute for each area (named "area1", "area2"... etc) with
 #'   minimum and maximum age of migration becoming possible.
 #' @examples
-#' areas_matrix(area_ages, n_areas = length(unique(your_data$Area)), config)
+#' areas_matrix(config = config)
 #' @export
 areas_matrix <- function(config = NULL, area_ages = NULL,
                          presence = TRUE){
