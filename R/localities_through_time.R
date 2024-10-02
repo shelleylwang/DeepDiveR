@@ -44,9 +44,9 @@ localities_through_time <- function(dat = NULL, bins = NULL){
   if ("Taxon" %in% colnames(dat) == FALSE ||
       "Area" %in% colnames(dat) == FALSE ||
       "Locality" %in% colnames(dat) == FALSE ||
-      "SampledAge" %in% colnames(dat == FALSE)) {
+      "SampledAge" %in% colnames(dat) == FALSE) {
     stop("`dat` does not contain columns `Taxon`, `Area`, `Locality` and
-         `SampledAge")
+         `SampledAge`")
   }
 
   if (!is.numeric(dat$SampledAge)) {
