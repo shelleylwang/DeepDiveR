@@ -1,7 +1,3 @@
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-
 # DeepDiveR
 DeepDiveR is an R package to prepare input for running DeepDive in Python. 
 
