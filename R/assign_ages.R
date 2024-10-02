@@ -3,9 +3,9 @@
 #' A function to assign a single point age for each fossil occurrence from
 #' within its age range (between `MinAge` and `MaxAge`).
 #'
-#' @param dat \code{dataframe}. The `dataframe` containing the fossil
-#'    occurrences. The supplied `dataframe` of occurrences should not contain
-#'    any `NA` values.
+#' @param dat \code{dataframe}. The `dataframe` describing the occurrence data,
+#'    including `Taxon`, `MinAge` and `MaxAge` columns. The supplied `dataframe`
+#'    of occurrences should not contain any `NA` values.
 #' @param method \code{character}. The choice of age assignment method, either
 #'    `median`, `random` or `random_by_loc`.
 #' @returns The input `dataframe` with an additional column providing a

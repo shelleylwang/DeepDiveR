@@ -14,7 +14,8 @@ using \code{create_config()}, that will be edited.}
 regions are configured to be present throughout the simulations. Otherwise,
 a \code{dataframe} describing the \code{MinAge} and \code{MaxAge} for each geographic
 \code{Area}, with older ages in column one. The number of rows in the
-\code{dataframe} must match \code{n_areas} in the configuration file.}
+\code{dataframe} must match \code{n_areas} in the configuration file. The
+supplied \code{dataframe} should not contain any \code{NA} values.}
 
 \item{presence}{\code{logical}. When TRUE (the default), regions become
 available to occupy within the time frames specified. When FALSE, regions

@@ -9,7 +9,8 @@
 #'   regions are configured to be present throughout the simulations. Otherwise,
 #'   a `dataframe` describing the `MinAge` and `MaxAge` for each geographic
 #'   `Area`, with older ages in column one. The number of rows in the
-#'   `dataframe` must match `n_areas` in the configuration file.
+#'   `dataframe` must match `n_areas` in the configuration file. The
+#'    supplied `dataframe` should not contain any `NA` values.
 #' @param presence \code{logical}. When TRUE (the default), regions become
 #'   available to occupy within the time frames specified. When FALSE, regions
 #'   will be removed from the simulations between the ages specified.

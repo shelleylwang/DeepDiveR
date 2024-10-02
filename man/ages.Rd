@@ -7,9 +7,9 @@
 ages(dat = NULL, method = "median")
 }
 \arguments{
-\item{dat}{\code{dataframe}. The \code{dataframe} containing the fossil
-occurrences. The supplied \code{dataframe} of occurrences should not contain
-any \code{NA} values.}
+\item{dat}{\code{dataframe}. The \code{dataframe} describing the occurrence data,
+including \code{Taxon}, \code{MinAge} and \code{MaxAge} columns. The supplied \code{dataframe}
+of occurrences should not contain any \code{NA} values.}
 
 \item{method}{\code{character}. The choice of age assignment method, either
 \code{median}, \code{random} or \code{random_by_loc}.}

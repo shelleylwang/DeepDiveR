@@ -78,10 +78,6 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     stop(paste("`age_m` must be 'median', 'random' or 'random_by_loc'"))
   }
 
-  if (age_m == "random_by_loc" && "Locality" %in% colnames(dat) == FALSE) {
-    stop(paste("`Locality` must be provided to use 'random_by_loc' method"))
-  }
-
   deepdive_input <- data.frame()
 
   for(rep in 1:r){
@@ -97,7 +93,7 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     cnames <- c(colnames(occs))
 
     # Get locality data
-    locs <- generate_locality_dataset(sampled_dat, bins = bins)
+    locs <- localities_through_time(dat = sampled_dat, bins = bins)
 
     # Get time bin data
     tbins <- data.frame(cbind(c("bin_start", "bin_mid", "bin_dur"), NA,
