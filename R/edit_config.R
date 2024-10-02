@@ -20,6 +20,7 @@
 #' @details Add full list of default parameters.
 #'
 #' @import ConfigParser
+#' @importFrom R6 is.R6
 #' @examples
 #' edit_config(config = config, module = "simulations", parameter = "extant_sp",
 #'     value = c(10, 10000))

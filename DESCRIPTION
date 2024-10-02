@@ -19,7 +19,8 @@ Depends:
 LazyData: true
 Imports: 
     ConfigParser,
-    dplyr
+    dplyr,
+    R6
 Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3

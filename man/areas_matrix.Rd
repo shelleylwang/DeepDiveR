@@ -32,10 +32,10 @@ system.
 }
 \examples{
 # Generate dataframe describing area presence
-area_ages <- rbind(c("Africa", max(bins), max(bins)),
-                   c("Asia", max(bins), max(bins)),
-                   c("Europe", max(bins), max(bins)),
-                   c("North America", max(bins), max(bins)),
+area_ages <- rbind(c("Africa", 66, 66),
+                   c("Asia", 66, 66),
+                   c("Europe", 66, 66),
+                   c("North America", 66, 66),
                    c("South America", 11.608, 7.3))
  area_ages <- as.data.frame(area_ages)
 
