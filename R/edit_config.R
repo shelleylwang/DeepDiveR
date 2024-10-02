@@ -28,6 +28,20 @@ edit_config <- function(config = NULL, module = NULL,
                         parameter = NULL, value = NULL){
 
   # Handling errors
+  if (is.R6(config) == FALSE) {
+    stop("`config` should be a configuration file.")
+  }
+
+  if (module %in% names(config$data) == FALSE) {
+    stop("`module` name does not exist in configuration file.")
+  }
+
+  if (parameter %in%
+      names(config$data[[which(names(config$data) == module)]]) == FALSE) {
+    stop("`parameter` name does not exist in given module in configuration
+         file.")
+  }
+
 
   variable <- paste(value, collapse=" ")
   config$data$module$parameter <- variable

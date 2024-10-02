@@ -18,16 +18,28 @@
 #' @returns Adds an attribute for each area (named "area1", "area2"... etc) with
 #'   minimum and maximum age of migration becoming possible.
 #' @examples
-#' areas_matrix(config = config)
+#' # Generate dataframe describing area presence
+#' area_ages <- rbind(c("Africa", max(bins), max(bins)),
+#'                    c("Asia", max(bins), max(bins)),
+#'                    c("Europe", max(bins), max(bins)),
+#'                    c("North America", max(bins), max(bins)),
+#'                    c("South America", 11.608, 7.3))
+#'  area_ages <- as.data.frame(area_ages)
+#'
+#' areas_matrix(config = config, area_ages = area_ages)
 #' @export
 areas_matrix <- function(config = NULL, area_ages = NULL,
                          presence = TRUE){
 
   # Handling errors
-
+  if (is.R6(config) == FALSE) {
+    stop("`config` should be a configuration file.")
+  }
 
   # Reorder areas alphabetically, then remove column
   area_ages <- area_ages[order(area_ages$Area),]
+
+  # Ensure older ages are first column
   area_ages <- data.frame(MaxAge = area_ages$MaxAge, MinAge = area_ages$MinAge)
 
   # Retrieve n_areas from configuration file

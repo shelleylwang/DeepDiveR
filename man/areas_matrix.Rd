@@ -31,5 +31,13 @@ minimum age range for geographic regions being connected to the study
 system.
 }
 \examples{
-areas_matrix(config = config)
+# Generate dataframe describing area presence
+area_ages <- rbind(c("Africa", max(bins), max(bins)),
+                   c("Asia", max(bins), max(bins)),
+                   c("Europe", max(bins), max(bins)),
+                   c("North America", max(bins), max(bins)),
+                   c("South America", 11.608, 7.3))
+ area_ages <- as.data.frame(area_ages)
+
+areas_matrix(config = config, area_ages = area_ages)
 }
