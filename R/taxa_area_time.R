@@ -20,7 +20,7 @@
 #' # Generate sampled ages using the "median" method
 #' carnivora <- ages(dat = carnivora)
 #' # Compute taxon per area and time frequencies
-#' taxa_area_time(dat = carnivora, bins = your_bins)
+#' taxa_area_time(dat = carnivora, bins = bins)
 #' @export
 taxa_area_time <- function(dat = NULL, bins = NULL) {
 
@@ -71,6 +71,7 @@ taxa_area_time <- function(dat = NULL, bins = NULL) {
 
     # Create empty dataframe
     taxa_time_table <- data.frame(matrix(0, all_taxa, length(bins) - 1))
+
     for (j in 1:length(area_taxa)){
       # Identify occurrences unique to the area and taxon
       indices_occurrences <- which(area_table$Taxon == area_taxa[j])
