@@ -85,11 +85,8 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     # Get ages and append
     sampled_dat <- ages(dat, method = age_m)
 
-    # Split data by area
-    area_tables <- split(sampled_dat, f = sampled_dat$Area)
-
     # Get species or genera level data
-    occs <- taxa_time_per_area(sampled_dat, area_tables, bins = bins)
+    occs <- taxa_area_time(dat = sampled_dat, bins = bins)
     cnames <- c(colnames(occs))
 
     # Get locality data
