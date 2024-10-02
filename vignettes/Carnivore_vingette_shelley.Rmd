@@ -1,0 +1,289 @@
+---
+title: "DeepDiveR vingette"
+author: "Rebecca Cooper"
+date: "09/09/2024"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+---
+  title: "DeepDiveR vingette"
+  output: html_vingette
+---
+
+# Introduction
+
+`DeepDiveR` is an R package for estimating biodiversity through time from fossil occurrence data.
+It produces formatted input data and a configuration file that can then be executed in Python through the command line, enabling a clear and reproducible workflow.
+In this tutorial we will use DeepDiveR to analyse the past diversity of Carnivora, an order of mammals, using the data of Faurby et al. (2019).
+
+# 1. Installation
+
+To install the `DeepDiveR` library, it needs to be downloaded from the GitHub repository.
+This can be done using the package `remotes`, or manually.
+
+```{r install, eval = FALSE}
+# Option 1: install the package from GitHub
+remotes::install_github("DeepDive-project/DeepDiveR")
+# Option 2: load it from a directory after downloading it from
+# https://github.com/DeepDive-project/DeepDiveR
+```
+
+We can then load the `DeepDiveR` package, alongside `dplyr`, which we will use for data manipulation.
+
+```{r load_packages}
+library(DeepDiveR)
+library(dplyr)
+```
+
+# 2. Preparing the input data
+
+Load an occurrence table here.
+We will load our carnivoran occurrence data.
+This is included within the `DeepDiveR` package.
+
+```{r load_data}
+# Load Carnivora.Rdata 
+data(carnivora)
+```
+
+Next, we will view the first few rows of the `data.frame` to get a sense of its contents.
+
+```{r view_data}
+# View first six rows 
+head(carnivora)
+```
+
+Input data should always have the following columns: Taxon, Area, MinAge, MaxAge, Locality
+
+-    “Area” column in input file should depend on overall ground covered in the raw data: if you’re looking at global reptilia data, “Area” can be continents.
+    If looking at one country, “Area” can be smaller
+
+-   "Locality" = the place where the fossil was found.
+    Any object type is fine (int, string, etc.)
+
+Next, we do need to specify the time bins into which our occurrences will be placed.
+They do not need to be equally spaced, meaning we can use geological intervals if desired.
+Here we will use divisions based on the stages of the Cenozoic, averaged to approximately one million year duration.
+We will do this by describing a vector which provides the bin boundaries, in millions of years:
+
+```{r}
+bins <- c(max(dat$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 
+          54.975, 53.95, 52.925, 51.9, 50.875, 49.85, 48.825, 47.8, 46.85714, 
+          45.91429, 44.97143, 44.02857, 43.08571, 42.14286, 41.2, 40.03667, 
+          38.87333, 37.71, 36.7575, 35.805, 34.8525, 33.9, 32.88667, 31.87333, 
+          30.86, 29.84667, 28.83333, 27.82, 26.862, 25.904, 24.946, 23.988, 
+          23.03, 22.16667, 21.30333, 20.44, 19.3225, 18.205, 17.0875, 15.97, 
+          14.895, 13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 
+          5.333, 4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0)
+```
+
+Now we can prepare the input file for `DeepDive`, using the function `prep_dd_input`.
+`prep_dd_input` needs:
+
+1.  `data.frame` containing the occurrence data
+
+2.  `bins` (vector of time bins).
+
+3.  The number of replicates (`r=`), i.e. how many times we want the occurrences to be placed into the time bins.
+    Here we will specify 10 replicates, to illustrate the process.
+    For your final analysis, you should make more replicates e.g. 100.
+
+4.  `output_file = *.csv` containing the desired name for the output file
+
+```{r create_data, eval = FALSE}
+# Create input file for DeepDive
+prep_dd_input(
+  # Specify occurrence data.frame
+  dat = carnivora,
+  # Specify vector containing time bin boundaries
+  bins = bins,
+  # Specify number of replicates
+  r = 10,
+  # Specify name of created file
+  output_file = "carnivora_deepdive_input.csv")
+```
+
+# 3. The configuration file: setting parameters for the simulations
+
+### 3.A. User-set parameters
+
+Now we need to create a configuration file for `DeepDive`, using the function `create_config`.
+Here we will describe all of the internal settings for the analysis.
+Some of the settings must be described by the user.
+These include...
+
+If applicable you can specify the number of living taxa which will be used by the model to calibrate the predicted diversity trajectories.
+
+path_wd= where you would like to save your files
+
+```{r create_config}
+# Create configuration file for DeepDive
+config <- create_config(
+  # Specify where the configuration file should be saved
+  # path_wd = path_dat,
+  # Specify vector containing time bin boundaries
+  bins = bins,
+  # Specify the name for the simulations
+  sim_name="carnivora",
+  # Specify the number of geographic areas to simulate
+  n_areas = length(unique(dat$Area)),
+  # Specify the name of the simulations file
+  simulations_file = "simulations_carnivora",
+  # Specify the name of the models file
+  models_file = "trained_models_carnivora",
+  # Specify the number of extant species
+  present_diversity = 313,
+  # Specify the name of the data file
+  empirical_input_file = "carnivora_deepdive_input.csv"
+)
+```
+
+### 3.B. Auto-filled parameters (and how to edit them)
+
+Other settings are autofilled by `create_config`.
+In order to alter these, we can...
+
+```{r modify_config}
+# Modify one of the settings
+set_value(attribute_name = "n_training_simulations", 
+          value = 100, 
+          module = "simulations",
+          config)
+```
+
+\^ Above you are editing parameters for the simulated data.
+Once you have gotten through this step (Step 3), you can open the configuration file you created to see all your parameters.
+For now, open the example "carnivora.ini" file in this folder to see all available parameters to be adjusted.
+
+Later, you will run the Terminal commands, which will output a new folder trained_model_sim_name, where "sim_name" was set above
+
+-   if you go to feature_plots folder, it will show you a bunch of plots showing how the simulations data compares to the empirical data. If it doesn't match up enough for your liking, you'd come back here and create a new config file with edited parameters, run the Terminal command again, and again check the feature_plots
+
+### 3.C. Areas Object
+
+It is possible to allow the geographic areas available in the simulations to change through time.
+In order to do this, we will create an `areas_matrix` object which will be incorporated in the **configuration file**.
+Here, we will assume that dispersal of carnivorans to South America was only possible between 11 and 7 Ma.
+
+Areas need to be in alphabetical order.
+Regions disappearing instead of merging can be made by setting the label argument to: label = "end".
+
+```{r geog_limits}
+# Create data.frame describing the time for which each area is available
+area_ages <- rbind(c(max(bins), max(bins)),  # Africa 
+                   c(max(bins), max(bins)),  # Asia
+                   c(max(bins), max(bins)),  # Europe
+                   c(max(bins), max(bins)),  # North America
+                   c(11.608, 7.3))           # South America 
+
+# Connect area data to configuration file
+areas_matrix(
+  #
+  area_ages,
+  #
+  n_areas = length(unique(dat$Area)),
+  #
+  config,
+  #
+  label = "start")
+```
+
+### 3.D. Setting Neural Network Architecture/Process
+
+Now we need to describe the technical aspects of the neural network training and analysis process.
+For a reliable estimate, you will need at least 10,000 training simulations.
+However, for the purpose of running a quick test analysis, we will use a low number of both training and test simulations.
+Again we will edit the relevant parameters in the configuration file using the `set_value` function:
+
+```{r describe_setup}
+# Set number of training simulations to 100
+set_value(attribute_name = "n_training_simulations", 
+          value = 100, 
+          module = "simulations",
+          config)
+
+# Set number of test simulations to 10
+set_value(attribute_name = "n_test_simulations", 
+          value = 10, 
+          module = "simulations",
+          config)
+```
+
+Write the configuration file to use in the analysis:
+
+```{r write_config}
+# Write the configuration file
+config$write("carnivora.ini")
+```
+
+We've now created the configuration and input files
+
+# 4. Executing the analysis in Terminal
+
+### 4.A. Installation of deepdive program
+
+If you haven't already done this: Move out of current wd with this file, clone down the "deepdive" repository from GitHub
+
+<https://github.com/DeepDive-project/deepdive> \^ This will contain the programs for running the program.
+Also follow the instructions on that repo to install "deepdive" Python program from Terminal:
+
+**python -m pip install git+<https://github.com/DeepDive-project/deepdive>**
+
+### 4.B. Run Deep Dive in terminal (command line)
+
+We will now run the programs in Step 4.A's "deepdive" repo on your files.
+The full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script **run_dd_config.py** as follows:
+
+Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script run_dd_config.py as follows:
+
+```{python run, eval = FALSE}
+python run_dd_config.py your_path/config_file.ini
+```
+
+Optional flag:
+
+-   `-wd your_working_directory`: will output all output files to this specified working directory
+
+-   `-cpu 64`: setting the number of CPU's to use for the parallelized simulations.
+
+You can additionally specify a working directory where all output files are saved and the
+
+This script will create a "simulations" folder containing the training and test sets, and a "trained_models" folder containing the trained models and plots of the training history.
+This folder will additionally include CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
+
+### **4.C. Outputs**
+
+-   This script will create a "**simulations**" folder containing:
+
+    -   Training and test sets (?? unsure where these are)
+
+        -   "**trained_models"** folder which contains:
+
+            -   The trained model (Keras model)
+
+            -   Plot of the training history (model accuracy on test set).
+
+            -   **featured_plots** folder: plots comparing the empirical and simulated fossil features (e.g. number of occurrences through time and per area, number of localities, fraction of singletons, and sampled diversity)
+
+                -   After you look at these plots, if you see large deviation between the simulations and empirical data, you should go back to step 3.
+                    (creating the configuration file) and specify new parameters for new simulations
+
+            -   CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
+
+                -   **empirical_features_conditional.csv** — the traits of the simulate data, what is visualized in the simulation plots (feature_plots pdfs)
+
+                -   **empirical_predictions_conditional.csv** — diversity predictions through time
+
+# References
+
+Faurby, S., Werdelin, L.
+& Antonelli, A.
+(2019) Dispersal ability predicts evolutionary success among mammalian carnivores.
+BioRxiv, p. 755207.

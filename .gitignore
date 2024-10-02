@@ -1,3 +1,19 @@
+# Ignnore R project files
 .Rproj.user
 .Rhistory
+.RData
+
+
+# Ignore system files
 .DS_Store
+Thumbs.db
+
+# Ignore compiled files
+*.o
+*.so
+
+# Ignore package files
+*.tar.gz
+
+# Ignore large data file
+vignettes/carnivora_deepdive_input.csv
