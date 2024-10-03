@@ -59,7 +59,7 @@ edit_config <- function(config = NULL, module = NULL,
   }
 
 
-  variable <- paste(value, collapse=" ")
+  variable <- paste(value, collapse = " ")
   config$data$module$parameter <- variable
   # pass lists, vectors etc and then turn into a string
 }

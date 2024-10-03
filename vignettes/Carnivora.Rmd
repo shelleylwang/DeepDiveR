@@ -127,16 +127,16 @@ Now we need to describe the technical aspects of the neural network training and
 
 ```{r describe_setup}
 # Set number of training simulations to 100
-set_value(attribute_name = "n_training_simulations", 
-          value = 100, 
-          module = "simulations",
-          config)
+edit_config(config = config,
+            module = "simulations",
+            parameter = "n_training_simulations", 
+            value = 100)
 
 # Set number of test simulations to 10
-set_value(attribute_name = "n_test_simulations", 
-          value = 10, 
-          module = "simulations",
-          config)
+edit_config(config = config,
+            module = "simulations",
+            parameter = "n_test_simulations", 
+            value = 10)
 ```
 
 Now we are ready to write the configuration file to use in the analysis:

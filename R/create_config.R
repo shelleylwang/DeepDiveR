@@ -95,8 +95,7 @@ create_config <- function(file_prefix = NULL, data_file = NULL,
   # general directory
   general <- c()
   general$wd <- getwd()
-  bins <- sort(bins, decreasing=TRUE)
-  general$time_bins <- sort(paste(bins, collapse=" "))
+  general$time_bins <- sort(paste(bins, collapse = " "), decreasing = TRUE)
   general$n_areas <- n_areas  # number of discrete region -> retrieve from data?
   general$autotune <- autotune
   general$present_diversity <- NA
