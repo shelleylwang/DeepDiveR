@@ -83,33 +83,25 @@ Some of the settings must be described by the user. These include...
 ```{r create_config}
 # Create configuration file for DeepDive
 config <- create_config(
-  # Specify where the configuration file should be saved
-  # path_wd = path_dat,
+  # Specify the name for the simulations
+  file_prefix = "carnivora",
+  # Specify the name of the data file
+  data_file = "carnivora_deepdive_input.csv",
   # Specify vector containing time bin boundaries
   bins = bins,
-  # Specify the name for the simulations
-  sim_name="carnivora",
   # Specify the number of geographic areas to simulate
-  n_areas = length(unique(dat$Area)),
-  # Specify the name of the simulations file
-  simulations_file = "simulations_carnivora",
-  # Specify the name of the models file
-  models_file = "trained_models_carnivora",
-  # Specify the number of extant species
-  present_diversity = 313,
-  # Specify the name of the data file
-  empirical_input_file = "carnivora_deepdive_input.csv"
+  n_areas = length(unique(carnivora$Area))
 )
 ```
 
-Other settings are autofilled by `create_config`. In order to alter these, we can...
+Other settings are autofilled by `create_config()`. In order to alter these, we can use the function `edit_config()`. First, we know that there are 313 extant carnivorans, so let's condition our simulations on this number of living species.
 
 ``` {r modify_config}
-# Modify one of the settings
-edit_config(attribute_name = "n_training_simulations", 
-          value = 100, 
-          module = "simulations",
-          config)
+# Modify the number of extant species ("present_diversity") in simulations
+edit_config(config = config,
+            module = "general",
+            parameter = "present_diversity", 
+            value = 313)
 ```
 
 It is possible to allow the geographic areas available in the simulations to change through time. In order to do this, we will create an `areas_matrix` object which will be incorporated in the configuration file. 
@@ -151,7 +143,7 @@ Now we are ready to write the configuration file to use in the analysis:
 
 ```{r write_config}
 # Write the configuration file
-config$write("carnivora.ini")
+config$write("carnivora_config.ini")
 ```  
 
 # Executing the analysis

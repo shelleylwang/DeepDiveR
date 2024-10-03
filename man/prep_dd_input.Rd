@@ -50,4 +50,7 @@ example1 <- prep_dd_input(dat = carnivora, bins = bins)
 # Create DeepDive input files using random age assignment, with five reps
 example2 <- prep_dd_input(dat = carnivora, bins = bins, r = 5, age_m =
   "random")
+# Create DeepDive input written to a file
+example3 <- example1 <- prep_dd_input(dat = carnivora, bins = bins,
+   output_file = "data/carnivora_deepdive_input.csv")
 }

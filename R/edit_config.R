@@ -22,8 +22,23 @@
 #' @import ConfigParser
 #' @importFrom R6 is.R6
 #' @examples
-#' edit_config(config = config, module = "simulations", parameter = "extant_sp",
-#'     value = c(10, 10000))
+#' # Import internal dataset
+#' data(carnivora)
+#' # Generate vector describing time bin boundaries
+#' bins <- c(66, 23, 2.6, 0)
+#' # Create configuration object
+#' config <- create_config(file_prefix = "carnivora",
+#'                         data_file = "data/carnivora_deepdive_input.csv",
+#'                         bins = bins,
+#'                         n_areas = length(unique(carnivora$Area)))
+#' # Edit configuration object
+#' config <- edit_config(config = config,
+#'                       module = "general",
+#'                       parameter = "present_diversity",
+#'                       value = 313)
+#' # Save configuration object to file
+#' config$write("carnivora_config.ini")
+#'
 #' @export
 edit_config <- function(config = NULL, module = NULL,
                         parameter = NULL, value = NULL){

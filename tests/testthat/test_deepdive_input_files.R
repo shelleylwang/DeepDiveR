@@ -35,5 +35,10 @@ test_that("prep_dd_input works", {
   expect_error(prep_dd_input(dat = dat, bins = bins, r = "test"))
 
   colnames(dat) <- c("Taxon", "Area", "MinAge", "MaxAge", "Loc")
-  expect_error(ages(dat = dat, method = "random_by_loc"))
+  expect_error(prep_dd_input(dat = dat, method = "random_by_loc"))
+
+  expect_error(prep_dd_input(dat = dat, bins = bins, output_file = dat))
+
+  output_file <- "test.txt"
+  expect_error(prep_dd_input(dat = dat, bins = bins, output_file = output_file))
 })
