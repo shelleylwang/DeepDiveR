@@ -31,11 +31,18 @@
 #' # Create DeepDive input files using random age assignment, with five reps
 #' example2 <- prep_dd_input(dat = carnivora, bins = bins, r = 5, age_m =
 #'   "random")
+#' # Create DeepDive input written to a file
+#' example3 <- example1 <- prep_dd_input(dat = carnivora, bins = bins,
+#'    output_file = "data/carnivora_deepdive_input.csv")
 #' @export
 prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
                           age_m = "median", output_file = NULL){
 
   # Handling errors
+  if (is.null(dat)) {
+    stop("`dat` must be provided.")
+  }
+
   if (is.data.frame(dat) == FALSE) {
     stop("`dat` should be a dataframe.")
   }
@@ -58,16 +65,16 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
       "MaxAge" %in% colnames(dat) == FALSE ||
       "Locality" %in% colnames(dat) == FALSE) {
     stop("`dat` does not contain columns `Taxon`, `Area`, `MinAge`, `MaxAge`,
-         and `Locality`")
+         and `Locality`.")
   }
 
   if (!is.numeric(dat$MinAge) || !is.numeric(dat$MaxAge)) {
-    stop("`MinAge` and/or `MaxAge` columns are not of numeric class")
+    stop("`MinAge` and/or `MaxAge` columns are not of numeric class.")
   }
 
   order_check <- dat$MaxAge - dat$MinAge
   if (any(order_check < 0)) {
-    stop(paste("All `MinAge` values must be smaller than `MaxAge` values"))
+    stop(paste("All `MinAge` values must be smaller than `MaxAge` values."))
   }
 
   if (is.numeric(r) == FALSE) {
@@ -75,7 +82,15 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
   }
 
   if (age_m != "median" && age_m != "random" && age_m != "random_by_loc") {
-    stop(paste("`age_m` must be 'median', 'random' or 'random_by_loc'"))
+    stop(paste("`age_m` must be 'median', 'random' or 'random_by_loc'."))
+  }
+
+  if (!is.character(output_file)) {
+    stop("`output_file` must be a character string.")
+  }
+
+  if (!is.null(output_file) && !endsWith(output_file, ".csv")) {
+    stop(paste("Output file name must end `.csv`."))
   }
 
   deepdive_input <- data.frame()

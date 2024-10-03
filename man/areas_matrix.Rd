@@ -31,13 +31,24 @@ minimum age range for geographic regions being connected to the study
 system.
 }
 \examples{
+# Import internal dataset
+data(carnivora)
+# Generate vector describing time bin boundaries
+bins <- c(66, 23, 2.6, 0)
+# Create configuration object
+config <- create_config(file_prefix = "carnivora",
+                        data_file = "data/carnivora_deepdive_input.csv",
+                        bins = bins,
+                        n_areas = length(unique(carnivora$Area)))
 # Generate dataframe describing area presence
 area_ages <- rbind(c("Africa", 66, 66),
                    c("Asia", 66, 66),
                    c("Europe", 66, 66),
                    c("North America", 66, 66),
                    c("South America", 11.608, 7.3))
- area_ages <- as.data.frame(area_ages)
-
-areas_matrix(config = config, area_ages = area_ages)
+area_ages <- as.data.frame(area_ages)
+# Label columns
+colnames(area_ages) <- c("Area", "MaxAge", "MinAge")
+# Connect area data to configuration file
+config <- areas_matrix(config = config, area_ages = area_ages)
 }
