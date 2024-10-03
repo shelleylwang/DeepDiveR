@@ -90,6 +90,7 @@ config <- create_config(
   # Specify the number of extant species
   present_diversity = 0,
   # Specify the name of the data file
+  empirical_predictions = TRUE,
   empirical_input_file = "reptilia_deepdive_input.csv"
   )
 ```
