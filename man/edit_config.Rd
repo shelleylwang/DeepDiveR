@@ -21,7 +21,8 @@ of value is dependent upon the parameter.}
 }
 \value{
 A configuration object with the value of the desired parameter
-changed.
+changed. Once finalised, configuration files should be saved using
+\code{config$write("file_name.ini")}.
 }
 \description{
 A function to modify parameters within a configuration object for DeepDive,
@@ -50,7 +51,7 @@ information. Defaults to NA (meaning this conditioning is not used).
 \emph{sim_name} \code{character}. The character string used in the name of the
 simulations file. Default is "simulations".
 \emph{sims_folder} \code{character}. The name of the directory in which to put the
-simulation files. Default is "\link{file_prefix}_simulations".
+simulation files. Default is "file_prefix_simulations".
 \emph{n_CPUS} <- \code{integer}. The number of CPUs across which to run the
 simulations. Default is 1.
 \emph{n_training_simulations} \code{integer}. The number of training simulations
@@ -90,7 +91,7 @@ probabilities during a mass extinction event. Default is c(0.5, 1).
 years. Default is 0.01.
 \emph{p_constant_bd} \code{numeric}. The probability of constant birth and death
 rates per million years. Default is 0.01.
-\emph{p_mass_speciation} code{numeric}. The probability of a mass speciation
+\emph{p_mass_speciation} \code{numeric}. The probability of a mass speciation
 event per million years. Default is 0.01.
 \emph{p_dd_model} \code{numeric}. The probability of diversity-dependent
 diversification. Default is 0.05.
@@ -158,9 +159,9 @@ is 0.1.
 
 \emph{modeltraining}
 \emph{sims_folder} \code{character}. The name of the directory containing the
-simulation files. Default is "\link{file_prefix}_simulations".
-\emph{model_folder} \code{character}. The name of the directory in which to put the
-model files. Default is "\link{file_prefix}_models".
+simulation files. Default is "file_prefix_simulations".
+\emph{model_folder} \code{character}. The name of the directory in which to put
+the model files. Default is "file_prefix_models".
 \emph{lstm_layers} \code{integer}. The number of LSTM layers to use. Default is
 c(64, 32).
 \emph{dense_layer} \code{integer}. The dense layer. Default is c(64, 32).
@@ -172,21 +173,21 @@ c(64, 32).
 \emph{validation_split} \code{numeric}. The proportion of data to use for
 validation. Default is 0.2.
 \emph{f} \code{character}. The name of the feature. Default is
-"\link{file_prefix}_feature".
+"file_prefix_feature".
 \emph{l} \code{character}. The name of the label. Default is
-"\link{file_prefix}_label".
+"file_prefix_label".
 
 \emph{empiricalpredictions}
 \emph{empirical_input_file} \code{character}. The name of the \code{.csv} file
 containing the DeepDive input data, as created using \code{prep_dd_input()}.
-\emph{model_folder} \code(character). The name of the directory containing the
-model files. Default is "\link{file_prefix}_models".
+\emph{model_folder} \code{character}. The name of the directory containing the
+model files. Default is "file_prefix_models".
 \emph{n_predictions} \code{integer}. The number of predictions per input file.
 Default is 1.
 \emph{replicates} \code{integer}. The number of age randomisation replicates
 used.
 \emph{output_file} \code{character}. The name of the \code{.csv} file to create
-containing the DeepDive output. Default is "\link{file_prefix}_output".
+containing the DeepDive output. Default is "file_prefix_output".
 
 Parameters relating to geographic area inclusion in the simulations are
 better altered using \code{areas_matrix()}.
@@ -206,7 +207,5 @@ config <- edit_config(config = config,
                       module = "general",
                       parameter = "present_diversity",
                       value = 313)
-# Save configuration object to file
-config$write("carnivora_config.ini")
 
 }

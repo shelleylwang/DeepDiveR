@@ -15,7 +15,8 @@
 #'   of value is dependent upon the parameter.
 
 #' @returns A configuration object with the value of the desired parameter
-#'   changed.
+#'   changed. Once finalised, configuration files should be saved using
+#'   `config$write("file_name.ini")`.
 #'
 #' @details A full list of parameters is outlined below.
 #' _general_
@@ -36,7 +37,7 @@
 #' *sim_name* \code{character}. The character string used in the name of the
 #'   simulations file. Default is "simulations".
 #' *sims_folder* \code{character}. The name of the directory in which to put the
-#'   simulation files. Default is "[file_prefix]_simulations".
+#'   simulation files. Default is "file_prefix_simulations".
 #' *n_CPUS* <- \code{integer}. The number of CPUs across which to run the
 #'   simulations. Default is 1.
 #' *n_training_simulations* \code{integer}. The number of training simulations
@@ -76,7 +77,7 @@
 #'  years. Default is 0.01.
 #' *p_constant_bd* \code{numeric}. The probability of constant birth and death
 #'  rates per million years. Default is 0.01.
-#' *p_mass_speciation* code{numeric}. The probability of a mass speciation
+#' *p_mass_speciation* \code{numeric}. The probability of a mass speciation
 #'  event per million years. Default is 0.01.
 #' *p_dd_model* \code{numeric}. The probability of diversity-dependent
 #'  diversification. Default is 0.05.
@@ -144,9 +145,9 @@
 #'
 #' _modeltraining_
 #' *sims_folder* \code{character}. The name of the directory containing the
-#'   simulation files. Default is "[file_prefix]_simulations".
-#' *model_folder* \code{character}. The name of the directory in which to put the
-#'   model files. Default is "[file_prefix]_models".
+#'   simulation files. Default is "file_prefix_simulations".
+#' *model_folder* \code{character}. The name of the directory in which to put
+#'   the model files. Default is "file_prefix_models".
 #' *lstm_layers* \code{integer}. The number of LSTM layers to use. Default is
 #'  c(64, 32).
 #' *dense_layer* \code{integer}. The dense layer. Default is c(64, 32).
@@ -158,21 +159,21 @@
 #' *validation_split* \code{numeric}. The proportion of data to use for
 #'  validation. Default is 0.2.
 #' *f* \code{character}. The name of the feature. Default is
-#' "[file_prefix]_feature".
+#' "file_prefix_feature".
 #' *l* \code{character}. The name of the label. Default is
-#' "[file_prefix]_label".
+#' "file_prefix_label".
 #'
 #' _empiricalpredictions_
 #' *empirical_input_file* \code{character}. The name of the `.csv` file
 #'  containing the DeepDive input data, as created using `prep_dd_input()`.
-#' *model_folder* \code(character). The name of the directory containing the
-#'  model files. Default is "[file_prefix]_models".
+#' *model_folder* \code{character}. The name of the directory containing the
+#'  model files. Default is "file_prefix_models".
 #' *n_predictions* \code{integer}. The number of predictions per input file.
 #'  Default is 1.
 #' *replicates* \code{integer}. The number of age randomisation replicates
 #'  used.
 #' *output_file* \code{character}. The name of the `.csv` file to create
-#'  containing the DeepDive output. Default is "[file_prefix]_output".
+#'  containing the DeepDive output. Default is "file_prefix_output".
 #'
 #' Parameters relating to geographic area inclusion in the simulations are
 #'   better altered using `areas_matrix()`.
@@ -194,8 +195,6 @@
 #'                       module = "general",
 #'                       parameter = "present_diversity",
 #'                       value = 313)
-#' # Save configuration object to file
-#' config$write("carnivora_config.ini")
 #'
 #' @export
 edit_config <- function(config = NULL, module = NULL,
