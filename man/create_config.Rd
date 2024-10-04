@@ -48,7 +48,9 @@ default) a test set with the same settings as the training set are
 generated.}
 }
 \value{
-Creates configuration object with settings to launch DeepDive.
+Creates configuration object with settings to launch DeepDive. Once
+finalised, configuration files should be saved using
+\code{config$write("file_name.ini")}.
 }
 \description{
 A function to generate a configuration object containing settings needed to
@@ -66,6 +68,4 @@ config <- create_config(file_prefix = "carnivora",
                         data_file = "data/carnivora_deepdive_input.csv",
                         bins = bins,
                         n_areas = length(unique(carnivora$Area)))
-# Save configuration object to file
-config$write("carnivora_config.ini")
 }
