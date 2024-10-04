@@ -31,7 +31,10 @@ notation \verb{config$data$[module]$[parameter]}. Extensive checks ensure that
 it is possible for the specific parameter to hold the desired value.
 }
 \details{
-Add full list of default parameters.
+A full list of parameters is outlined below.
+
+Parameters relating to geographic area inclusion in the simulations are
+better altered using \code{areas_matrix()}.
 }
 \examples{
 # Import internal dataset
