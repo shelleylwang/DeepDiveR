@@ -1,7 +1,7 @@
 #' Carnivore data
 #'
 #' A subset of occurrence data for the order Carnivora from Faurby et al.
-#' (2019).
+#' (2024).
 #'
 #' @format A data frame with 11,309 rows and 5 columns:
 #' \describe{
@@ -14,10 +14,11 @@
 #'   \item{Locality}{A unique identifier for the locality at which the fossil
 #'      was recorded.}
 #' }
-#' @source Faurby S., Werdelin L., and Antonelli, A. 2019. Dispersal ability
-#'      predicts evolutionary success among mammalian carnivores. bioRxiv,
-#'      10.1101, 755207.
-#'      <https://www.biorxiv.org/content/10.1101/755207v1.abstract>
+#' @source Faurby S., Silvestro D., Werdelin L., and Antonelli, A. 2024. Reliable 
+#' biogeography requires fossils: insights from a new species-level phylogeny of 
+#' extinct and living carnivores. Proceedings of the Royal Society B,
+#'      291(2028), 20240473.
+#'      <https://royalsocietypublishing.org/doi/full/10.1098/rspb.2024.0473t>
 "carnivora"
 
 #' Geological stage data
