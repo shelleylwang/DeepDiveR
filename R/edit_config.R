@@ -17,7 +17,12 @@
 #' @returns A configuration object with the value of the desired parameter
 #' changed.
 #'
-#' @details Add full list of default parameters.
+#' @details A full list of parameters is outlined below.
+#'
+#'
+#'
+#' Parameters relating to geographic area inclusion in the simulations are
+#'   better altered using `areas_matrix()`.
 #'
 #' @import ConfigParser
 #' @importFrom R6 is.R6
@@ -58,8 +63,5 @@ edit_config <- function(config = NULL, module = NULL,
          file.")
   }
 
-
-  variable <- paste(value, collapse = " ")
-  config$data$module$parameter <- variable
-  # pass lists, vectors etc and then turn into a string
+  config$data[[module]][[parameter]] <- paste(value, collapse = " ")
 }
