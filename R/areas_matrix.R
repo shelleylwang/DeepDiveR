@@ -42,22 +42,32 @@
 #' config <- areas_matrix(config = config, area_ages = area_ages)
 #' @export
 areas_matrix <- function(config = NULL, area_ages = NULL,
-                         presence = TRUE){
+                         presence = TRUE) {
 
   # Handling errors
   if (is.R6(config) == FALSE) {
     stop("`config` should be a configuration file.")
   }
 
-  if (!is.null(area_ages)) {
-    # Reorder areas alphabetically, then remove column
-    area_ages <- area_ages[order(area_ages$Area),]
-    # Ensure older ages are first column
-    area_ages <- data.frame(MaxAge = area_ages$MaxAge, MinAge = area_ages$MinAge)
+  if (!is.null(area_ages) && !is.data.frame(area_ages)) {
+    stop("`area_ages` should be NULL or a dataframe.")
   }
 
   # Retrieve n_areas from configuration file
   n_areas <- config$data$general$n_areas
+
+  if (!is.null(area_ages) && (nrow(area_ages) != n_areas)) {
+    stop("Number of rows in `area_ages` should equal `n_areas` in config.")
+  }
+
+  if (!is.logical(presence)) {
+    stop("`presence` must be TRUE or FALSE.")
+  }
+
+  if (!is.null(area_ages)) {
+    # Reorder areas alphabetically
+    area_ages <- area_ages[order(area_ages$Area),]
+  }
 
   # Retrieve time bins from configuration file
   bins <- as.numeric(unlist(strsplit(config$data$general$time_bins, " ")))
@@ -65,42 +75,33 @@ areas_matrix <- function(config = NULL, area_ages = NULL,
   if(is.null(area_ages) & presence == TRUE){
     # for each region, specify two ages between which connection to others will
     # be established
-    area_ages <- rbind(area_ages, c(max(bins), max(bins)))
-    for(i in 1:n_areas){
-      ###Fix issue with appending area information to config file###
-    #parameter_name = paste0("area_", "start", i)
-    #value = c(area_ages[i, 1], area_ages[i, 2])
-    config$data$simulations$test <- c(area_ages[i, 1], area_ages[i, 2])
-    setNames(config$data$simulations[length(config$data$simulations)],
-                                                  c(paste0("area_", "start", i)))
+    for(i in 1:n_areas) {
+      parameter <- paste0("area_", "start", i)
+      config$data$simulations[[parameter]] <- rep.int(max(bins), 2)
     }
   }
 
   if(is.null(area_ages) & presence == FALSE){
     # for each region, specify two ages between which connection to others will
     # be removed
-    area_ages <- c()
-    for(i in 1:n_areas){
-      area_ages <- rbind(area_ages, c(min(bins), min(bins)))
+    for(i in 1:n_areas) {
+      parameter <- paste0("area_", "end", i)
+      config$data$simulations[[parameter]] <- rep.int(min(bins), 2)
     }
-    edit_config(config, module = "simulations",
-      parameter = paste0("area_", "end", i),
-      value = c(area_ages[i, 1], area_ages[i, 2]))
   }
 
   if(!is.null(area_ages) & presence == TRUE){
-    for(i in 1:n_areas){
-      edit_config(config, module = "simulations",
-        parameter = paste0("area_", "start", i),
-        value = c(area_ages[i, 1], area_ages[i, 2]))
+    for(i in 1:n_areas) {
+      parameter <- paste0("area_", "end", i)
+      config$data$simulations[[parameter]] <- c(as.numeric(area_ages$MaxAge[i]),
+                                                as.numeric(area_ages$MinAge[i]))
     }
   }
 
   if(!is.null(area_ages) & presence == FALSE){
-    for(i in 1:n_areas){
-      edit_config(config, module = "simulations",
-                  parameter = paste0("area_", "end", i),
-                  value = c(area_ages[i, 1], area_ages[i, 2]))
+    for(i in 1:n_areas) {
+      config$data$simulations[[parameter]] <- c(as.numeric(area_ages$MaxAge[i]),
+                                                as.numeric(area_ages$MinAge[i]))
     }
   }
 }

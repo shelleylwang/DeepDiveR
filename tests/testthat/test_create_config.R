@@ -2,9 +2,6 @@ test_that("create_config works", {
   # Load data as bad object example
   data(carnivora)
 
-  # Expect equal
-  #expect_equal(nrow(ages(dat = dat)), nrow(dat))
-
   # Expect error
   expect_error(create_config())
 
