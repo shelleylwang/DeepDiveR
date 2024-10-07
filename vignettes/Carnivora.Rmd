@@ -84,7 +84,7 @@ Some of the settings must be described by the user. These include...
 # Create configuration file for DeepDive
 config <- create_config(
   # Specify the name for the simulations
-  file_prefix = "carnivora",
+  name = "carnivora",
   # Specify the name of the data file
   data_file = "carnivora_deepdive_input.csv",
   # Specify vector containing time bin boundaries
