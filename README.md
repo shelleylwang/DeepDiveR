@@ -22,7 +22,7 @@ Generates a .ini file of settings for analyses that will be executed in step 3. 
 
 Settings not included in the arguments for create_config can be updated using:
 ```
-set_value(attribute_name = "parameter_you_want_to_set", value="updated_parameter_value", module="module_where_parameter_is_stored", config)
+edit_config(config, module="module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value="updated_parameter_value")
 ```
 To make regions appear through time you can provide age ranges as below:
 ```
