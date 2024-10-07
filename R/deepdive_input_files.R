@@ -35,8 +35,8 @@
 #' example3 <- example1 <- prep_dd_input(dat = carnivora, bins = bins,
 #'    output_file = "data/carnivora_deepdive_input.csv")
 #' @export
-prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
-                          age_m = "median", output_file = NULL){
+prep_dd_input <- function(dat = NULL, bins = NULL, r = 100,
+                          age_m = "random_by_loc", output_file = NULL){
 
   # Handling errors
   if (is.null(dat)) {
