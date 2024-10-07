@@ -1,5 +1,7 @@
 # DeepDiveR
-DeepDiveR is an R package to prepare input for running DeepDive in Python. 
+DeepDiveR is an R package to prepare input for running DeepDive in Python.
+
+**Note:** The DeepDiveR package is under active developement. The version used in our [application note](https://doi.org/10.1101/2024.09.03.610960) is available on this [branch](https://github.com/DeepDive-project/DeepDiveR/tree/application_note). 
 
 You can install DeepDiveR directly in an R console by using the devtools library as below. Make sure you have R version 4.4.1 or above installed on your computer:
 
@@ -22,7 +24,7 @@ Generates a .ini file of settings for analyses that will be executed in step 3. 
 
 Settings not included in the arguments for create_config can be updated using:
 ```
-set_value(attribute_name = "parameter_you_want_to_set", value="updated_parameter_value", module="module_where_parameter_is_stored", config)
+edit_config(config, module="module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value="updated_parameter_value")
 ```
 To make regions appear through time you can provide age ranges as below:
 ```
