@@ -115,7 +115,7 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 1,
     names(tbins) <- cnames
 
     dd_input <- rbind(tbins, locs, occs)
-    dd_input <- cbind(Replicate = r, dd_input)
+    dd_input <- cbind(Replicate = rep, dd_input)
     deepdive_input <- rbind(deepdive_input, dd_input)
   }
 
