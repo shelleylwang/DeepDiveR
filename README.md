@@ -1,5 +1,10 @@
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/DeepDive-project/DeepDiveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/DeepDive-project/DeepDiveR?branch=main)
+<!-- badges: end -->
+
 # DeepDiveR
-DeepDiveR is an R package to prepare input for running DeepDive in Python. 
+DeepDiveR is an r package to prepare input for running DeepDive in Python. 
 
 You can install DeepDiveR directly in an R console by using the devtools library as below. Make sure you have R version 4.4.1 or above installed on your computer:
 
@@ -22,7 +27,7 @@ Generates a .ini file of settings for analyses that will be executed in step 3. 
 
 Settings not included in the arguments for create_config can be updated using:
 ```
-edit_config(config, module="module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value="updated_parameter_value")
+set_value(attribute_name = "parameter_you_want_to_set", value="updated_parameter_value", module="module_where_parameter_is_stored", config)
 ```
 To make regions appear through time you can provide age ranges as below:
 ```
