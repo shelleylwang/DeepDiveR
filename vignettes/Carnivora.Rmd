@@ -10,16 +10,15 @@ knitr::opts_chunk$set(echo = TRUE, include = TRUE, eval = TRUE)
 library(devtools)
 load_all()
 ```
-  
-# Introduction
-    
-`DeepDiveR` is an R package for estimating biodiversity through time from fossil occurrence data. It produces formatted input data and a configuration file that can then be executed in Python through the command line, enabling a clear and reproducible workflow. In this tutorial we will use DeepDiveR to analyse the past diversity of Carnivora, an order of mammals, using the data of Faurby et al. (2024). 
-  
-# Installation  
 
-To install the `DeepDiveR` library, it needs to be downloaded from the GitHub 
-repository using either the package `remotes` or a manual download.
-  
+# Introduction
+
+`DeepDiveR` is an R package for estimating biodiversity through time from fossil occurrence data. It produces formatted input data and a configuration file that can then be executed in Python through the command line, enabling a clear and reproducible workflow. In this tutorial we will use DeepDiveR to analyse the past diversity of Carnivora, an order of mammals, using the data of Faurby et al. (2024).
+
+# Installation
+
+To install the `DeepDiveR` library, it needs to be downloaded from the GitHub repository using either the package `remotes` or a manual download.
+
 ```{r install, eval = FALSE}
 # Option 1: install the package from GitHub
 remotes::install_github("DeepDive-project/DeepDiveR")
@@ -63,9 +62,7 @@ However, we do need to specify the time bins into which our occurrences will be 
 bins <- c(max(carnivora$MaxAge), 65, 64, 63, 61.6, 60, 59.2, 58.13333, 57.06667, 56, 54.975, 53.95, 52.925, 51.9, 50.875, 49.85, 48.825, 47.8, 46.85714, 45.91429, 44.97143, 44.02857, 43.08571, 42.14286, 41.2, 40.03667, 38.87333, 37.71, 36.7575, 35.805, 34.8525, 33.9, 32.88667, 31.87333, 30.86, 29.84667, 28.83333, 27.82, 26.862, 25.904, 24.946, 23.988, 23.03, 22.16667, 21.30333, 20.44, 19.3225, 18.205, 17.0875, 15.97, 14.895, 13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0)
 ```
 
-Now we can prepare the input file for `DeepDive`, using the function `prep_dd_input`. Here we need to specify the `data.frame` containing the occurrence data and vector of time bins.
-We also want to provide the number of replicates, i.e. how many times we want the occurrences to be placed into the time bins. Here we will specify 10 replicates, to illustrate the process, but a higher number of replicates is needed to capture temporal uncertainty in final analyses e.g. 100.
-Finally, we also need to give the name of the file that we want to be created. The file takes the form `.csv`, indicating that the values are comma-separated. This will be the file we need to input into `DeepDive`.
+Now we can prepare the input file for `DeepDive`, using the function `prep_dd_input`. Here we need to specify the `data.frame` containing the occurrence data and vector of time bins. We also want to provide the number of replicates, i.e. how many times we want the occurrences to be placed into the time bins. Here we will specify 10 replicates, to illustrate the process, but a higher number of replicates is needed to capture temporal uncertainty in final analyses e.g. 100. Finally, we also need to give the name of the file that we want to be created. The file takes the form `.csv`, indicating that the values are comma-separated. This will be the file we need to input into `DeepDive`.
 
 ```{r create_data, eval = FALSE}
 # Create input file for DeepDive
@@ -78,8 +75,7 @@ prep_dd_input(dat = carnivora, # Specify occurrence data.frame
 
 # Preparing the configuration file
 
-Now we need to create a configuration file for `DeepDive`, using the function `create_config`. Here we will describe all of the internal settings for the analysis.
-Some of the settings must be described by the user. These include...
+Now we need to create a configuration file for `DeepDive`, using the function `create_config`. Here we will describe all of the internal settings for the analysis. Some of the settings must be described by the user. These include...
 
 ```{r create_config}
 # Create configuration file for DeepDive
@@ -97,7 +93,7 @@ config <- create_config(
 
 Other settings are autofilled by `create_config()`. In order to alter these, we can use the function `edit_config()`. First, we know that there are 313 extant carnivorans, so let's condition our simulations on this number of living species.
 
-``` {r modify_config}
+```{r modify_config}
 # Modify the number of extant species ("present_diversity") in simulations
 edit_config(config = config,
             module = "general",
@@ -105,8 +101,7 @@ edit_config(config = config,
             value = 313)
 ```
 
-It is possible to allow the geographic areas available in the simulations to change through time. In order to do this, we will create an `areas_matrix` object which will be incorporated in the configuration file. 
-Here, we will assume that dispersal of carnivorans to South America was started  
+It is possible to allow the geographic areas available in the simulations to change through time. In order to do this, we will create an `areas_matrix` object which will be incorporated in the configuration file. Here, we will assume that dispersal of carnivorans to South America was started\
 between 11 and 7 Ma. Regions disappearing instead of connecting can be made by setting the label argument to: label = "end".
 
 ```{r geog_limits}
@@ -146,12 +141,12 @@ Now we are ready to write the configuration file to use in the analysis:
 ```{r write_config}
 # Write the configuration file
 config$write("carnivora_config.ini")
-```  
+```
 
 # Executing the analysis
 
 Once the configuration and input files are created, the full DeepDive analysis including simulation, model training and predictions can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script run_dd_config.py as follows:
-  
+
 ```{python run, eval = FALSE}
 python run_dd_config.py your_path/config_file.ini
 ```
@@ -165,4 +160,5 @@ python run_dd_config.py your_path/config_file.ini -wd your_working_directory -cp
 This script will create a "simulations" folder containing the training and test sets and a "trained_models" folder containing the trained models and plots of training history. This folder additionally includes plots of features of the empirical and simulated records (e.g. number of occurrences through time and per area, number of localities, fraction of singletons and sampled diversity), CSV files with the predicted diversity trajectories for the test set and for the empirical dataset, and a plot of the estimated diversity trajectory.
 
 # References
+
 Faurby, S., Silvestro, D., Werdelin, L. & Antonelli, A. (2024) Reliable biogeography requires fossils: insights from a new species-level phylogeny of extinct and living carnivores. Proceedings of the Royal Society B, 291(2028), 20240473.
