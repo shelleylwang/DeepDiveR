@@ -42,7 +42,7 @@ The configuration file is saved using:
 config$write(paste(path_dat, "config.ini", sep="/"))
 ```
 
-4. Execute files and launch analyses
+3. Execute files and launch analyses
 Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window using the Python script run_dd_config.py:
 
 ```
