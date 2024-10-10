@@ -9,9 +9,9 @@
 #' @param bins \code{numeric}. A numerical `vector` designating the boundaries
 #'    of the time bins used in the analysis.
 #' @param r \code{integer}. The number of age assignment replicates. Defaults
-#'    to 1.
+#'    to 100.
 #' @param age_m \code{character}. The age assignment method. Default is
-#'    `median`. See `ages()` for more information.
+#'    `random_by_loc`. See `ages()` for more information.
 #' @param output_file \code{character}. Defaults to `FALSE`, in which case the
 #'    DeepDive input table is saved as an object. When a character string is
 #'    provided, the object is written to a `csv` file with this name.
