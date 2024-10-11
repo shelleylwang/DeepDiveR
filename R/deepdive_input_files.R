@@ -85,6 +85,11 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 100,
     stop(paste("`age_m` must be 'median', 'random' or 'random_by_loc'."))
   }
 
+  if (age_m == "median" && r > 1) {
+    warning(paste("When age assignment is 'median', no sampling occurs, so all
+                  replicates will be identical."))
+  }
+
   if (!is.character(output_file)) {
     stop("`output_file` must be a character string.")
   }

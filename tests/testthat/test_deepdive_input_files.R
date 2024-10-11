@@ -8,8 +8,10 @@ test_that("prep_dd_input works", {
 
   bins <- c(66, 23, 2.6, 0)
 
-  # Expect equal
-  #expect_equal(nrow(prep_dd_input(dat = dat)), nrow(dat))
+  # Expect warning
+  expect_warning(prep_dd_input(dat = dat, bins = bins, r = 2,
+                               age_m = "median",
+                               output_file = "test.csv"))
 
   # Expect error
   expect_error(prep_dd_input())
@@ -35,7 +37,7 @@ test_that("prep_dd_input works", {
   expect_error(prep_dd_input(dat = dat, bins = bins, r = "test"))
 
   colnames(dat) <- c("Taxon", "Area", "MinAge", "MaxAge", "Loc")
-  expect_error(prep_dd_input(dat = dat, method = "random_by_loc"))
+  expect_error(prep_dd_input(dat = dat, age_m = "random_by_loc"))
 
   expect_error(prep_dd_input(dat = dat, bins = bins, output_file = dat))
 
