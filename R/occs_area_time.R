@@ -79,5 +79,5 @@ occs_area_time <- function(dat = NULL, bins = NULL){
   colnames(n_occurrences) <- sprintf("t%d", seq(length(bins) - 1))
   row.names(n_occurrences) <- list_areas
 
-  return(data.frame(n_ocurrences))
+  return(data.frame(n_occurrences))
 }
