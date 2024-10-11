@@ -11,6 +11,14 @@ remotes::install_github("DeepDive-project/DeepDiveR")
 library(DeepDiveR)
 ```
 
+An alternative branch can be installed by specifying the branch to install:
+
+```
+library(remotes)
+remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
+library(DeepDiveR)
+```
+
 The functions in DeepDiveR assume input data to be organised by columns with a "Taxon", discrete "Area", "MinAge", "MaxAge" and "Locality" identifier for each fossil occurrence. 
 Please carry out any extra cleaning steps, such as removal of duplicate occurrences, prior to use of the data preparation function.
 
@@ -24,7 +32,7 @@ Generates a .ini file of settings for analyses that will be executed in step 3. 
 
 Settings not included in the arguments for create_config can be updated using:
 ```
-edit_config(config, module="module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value="updated_parameter_value")
+edit_config(config, module = "module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value = "updated_parameter_value")
 ```
 To make regions appear through time you can provide age ranges as below:
 ```
