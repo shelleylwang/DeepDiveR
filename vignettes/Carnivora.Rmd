@@ -23,7 +23,7 @@ To install the `DeepDiveR` library, it needs to be downloaded from the GitHub re
 # Option 1: install the package from GitHub
 remotes::install_github("DeepDive-project/DeepDiveR")
 # Option 2: load it from a directory after downloading it from
-# https://github.com/DeepDive-project/DeepDiveR
+# https://github.com/DeepDive-pr1oject/DeepDiveR
 # deepdiver_path <- "path_to_DeepDiveR"
 # setwd(deepdiver_path)
 # library(devtools)
