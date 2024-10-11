@@ -12,22 +12,23 @@ using \code{create_config()}, that will be edited.}
 
 \item{area_ages}{\code{dataframe}. If left NULL (default), all geographic
 regions are configured to be present throughout the simulations. Otherwise,
-a \code{dataframe} describing the \code{MinAge} and \code{MaxAge} for each geographic
-\code{Area}, with older ages in column one. The number of rows in the
-\code{dataframe} must match \code{n_areas} in the configuration file. The
-supplied \code{dataframe} should not contain any \code{NA} values.}
+a \code{dataframe} describing uncertainty around the appearance or disappearance
+of geographic areas should be specified. \code{MinAge} should state the younger
+limit, and \code{MaxAge} the older limit, for each geographic \code{Area}. The number
+of rows in the \code{dataframe} must match \code{n_areas} in the configuration file.
+The supplied \code{dataframe} should not contain any \code{NA} values.}
 
 \item{presence}{\code{logical}. When TRUE (the default), regions become
-available to occupy within the time frames specified. When FALSE, regions
-will be removed from the simulations between the ages specified.}
+available to occupy based on the time frames specified. When FALSE, regions
+will be removed from the simulations based on the time frames specified.}
 }
 \value{
 Adds an attribute for each area (named "area1", "area2"... etc) with
-minimum and maximum age of migration becoming possible.
+minimum and maximum certainty limits of migration becoming possible.
 }
 \description{
 A function to modify the simulations module by providing a maximum and
-minimum age range for geographic regions being connected to the study
+minimum age uncertainty for geographic regions being connected to the study
 system.
 }
 \examples{
@@ -36,7 +37,7 @@ data(carnivora)
 # Generate vector describing time bin boundaries
 bins <- c(66, 23, 2.6, 0)
 # Create configuration object
-config <- create_config(file_prefix = "carnivora",
+config <- create_config(name = "carnivora",
                         data_file = "data/carnivora_deepdive_input.csv",
                         bins = bins,
                         n_areas = length(unique(carnivora$Area)))

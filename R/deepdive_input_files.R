@@ -8,8 +8,8 @@
 #'    supplied `dataframe` should not contain any `NA` values.
 #' @param bins \code{numeric}. A numerical `vector` designating the boundaries
 #'    of the time bins used in the analysis.
-#' @param r \code{integer}. The number of age assignment replicates. Defaults
-#'    to 100.
+#' @param r \code{integer}. The number of age assignment replicates. Default
+#'    is 100.
 #' @param age_m \code{character}. The age assignment method. Default is
 #'    `random_by_loc`. See `ages()` for more information.
 #' @param output_file \code{character}. Defaults to `FALSE`, in which case the
@@ -26,14 +26,11 @@
 #' data(carnivora)
 #' # Generate vector describing time bin boundaries
 #' bins <- c(66, 23, 2.6, 0)
-#' # Create DeepDive input file
-#' example1 <- prep_dd_input(dat = carnivora, bins = bins)
-#' # Create DeepDive input files using random age assignment, with five reps
-#' example2 <- prep_dd_input(dat = carnivora, bins = bins, r = 5, age_m =
-#'   "random")
-#' # Create DeepDive input written to a file
-#' example3 <- example1 <- prep_dd_input(dat = carnivora, bins = bins,
-#'    output_file = "data/carnivora_deepdive_input.csv")
+#' # Create DeepDive input file with three reps
+#' example1 <- prep_dd_input(dat = carnivora, bins = bins, r = 3)
+#' # Create DeepDive input files using median age assignment
+#' example2 <- prep_dd_input(dat = carnivora, bins = bins, r = 1, age_m =
+#'   "median")
 #' @export
 prep_dd_input <- function(dat = NULL, bins = NULL, r = 100,
                           age_m = "random_by_loc", output_file = NULL){
@@ -90,7 +87,7 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 100,
                   replicates will be identical."))
   }
 
-  if (!is.character(output_file)) {
+  if (!is.null(output_file) && !is.character(output_file)) {
     stop("`output_file` must be a character string.")
   }
 

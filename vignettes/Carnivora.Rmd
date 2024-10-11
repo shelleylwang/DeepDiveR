@@ -68,10 +68,15 @@ Finally, we also need to give the name of the file that we want to be created. T
 
 ```{r create_data, eval = FALSE}
 # Create input file for DeepDive
-prep_dd_input(dat = carnivora, # Specify occurrence data.frame
-              bins = bins, # Specify vector containing time bin boundaries
-              r = 10, # Specify number of replicates
-              output_file = "carnivora_deepdive_input.csv" # Specify name of created file
+prep_dd_input(
+  # Specify occurrence data.frame
+  dat = carnivora,
+  # Specify vector containing time bin boundaries
+  bins = bins,
+  # Specify number of replicates
+  r = 10, 
+  # Specify name of created file
+  output_file = "carnivora_deepdive_input.csv" 
 )
 ```
 

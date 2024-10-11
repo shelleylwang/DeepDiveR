@@ -26,7 +26,7 @@
 #' # Generate vector describing time bin boundaries
 #' bins <- c(66, 23, 2.6, 0)
 #' # Create configuration object
-#' config <- create_config(file_prefix = "carnivora",
+#' config <- create_config(name = "carnivora",
 #'                         data_file = "data/carnivora_deepdive_input.csv",
 #'                         bins = bins,
 #'                         n_areas = length(unique(carnivora$Area)))
