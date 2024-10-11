@@ -35,7 +35,6 @@ We can then load the `DeepDiveR` package, alongside `dplyr`, which we will use f
 
 ```{r load_packages}
 library(DeepDiveR)
-library(dplyr)
 ```
 
 # Preparing the input data
@@ -106,8 +105,7 @@ edit_config(config = config,
 ```
 
 It is possible to allow the geographic areas available in the simulations to change through time. In order to do this, we will create an `areas_matrix` object which will be incorporated in the configuration file. 
-Here, we will assume that dispersal of carnivorans to South America was started  
-between 11 and 7 Ma. Regions disappearing instead of connecting can be made by setting the label argument to: label = "end".
+Here, we will assume that dispersal of carnivorans to South America was started between 11 and 7 Ma. Regions disappearing instead of connecting can be made by setting the label argument to: presence = "FALSE".
 
 ```{r geog_limits}
 # Create data.frame describing the time for which each area is available
@@ -143,7 +141,7 @@ edit_config(config = config,
 
 Now we are ready to write the configuration file to use in the analysis:
 
-```{r write_config}
+```{r write_config, eval = FALSE}
 # Write the configuration file
 config$write("carnivora_config.ini")
 ```  
