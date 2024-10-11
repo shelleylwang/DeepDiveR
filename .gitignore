@@ -17,3 +17,4 @@ Thumbs.db
 
 # Ignore large data file
 vignettes/carnivora_deepdive_input.csv
+*deepdive_input.csv
