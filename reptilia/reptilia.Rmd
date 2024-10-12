@@ -28,6 +28,10 @@ Checking if there are nulls
 data$Area[is.na(data$Area)]
 ```
 
+```{r}
+anyNA(data)
+```
+
 ### Defining time bins by stages
 
 ```{r}
@@ -75,59 +79,40 @@ Settings for the analysis
 ```{r create_config}
 # Create configuration file for DeepDive
 config <- create_config(
-  # Specify where the configuration file should be saved
-  # path_wd = path_dat,
-  # Specify vector containing time bin boundaries
+  # Specify name for the simulations
+  name = "reptilia_1",
+  # Name of data file
+  data_file = "reptilia_deepdive_input.csv",
   bins = bins,
-  # Specify the name for the simulations
-  sim_name="reptilia",
-  # Specify the number of geographic areas to simulate
-  n_areas = length(unique(data$Area)),
-  # Specify the name of the simulations file
-  simulations_file = "simulations_1_reptilia",
-  # Specify the name of the models file
-  models_file = "trained_models_1_reptilia",
-  # Specify the number of extant species
-  present_diversity = 0,
-  # Specify the name of the data file
-  empirical_predictions = TRUE,
-  empirical_input_file = "reptilia_deepdive_input.csv"
+  n_areas = as.integer(1)
   )
 ```
 
-### Neural Network Architecture
+```{r}
+edit_config(config = config,
+            module = "general",
+            parameter = "present_diversity", 
+            value = 0)
+edit_config(config = config,
+            module = "general", 
+            parameter = "wd",
+            value = "reptilia")
 
-Settings for the neural network
+# Default # of training sims = 10k, default test sims = 100
 
-```{r describe_setup}
-# Set number of training simulations to 10000
-set_value(attribute_name = "n_training_simulations", 
-          value = 10000, 
-          module = "simulations",
-          config)
-
-# Set number of test simulations to 1000
-set_value(attribute_name = "n_test_simulations", 
-          value = 1000, 
-          module = "simulations",
-          config)
 ```
 
-### Write the configuration file
-
-```{r write_config}
-# Write the configuration file 
-config$write("reptilia1.ini")
+```{r}
+# Write the config file
+config$write("reptilia_config_1.ini")
 ```
-
-We've now created the configuration and input files
 
 ## Running DeepDive
 
-We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:
+We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
 
 ```{python run, eval = FALSE}
-python run_dd_config.py config_file.ini -wd reptilia/
+python ../deepdive/run_dd_config.py reptilia/reptilia_config_1.ini -wd reptilia/
 ```
 
 ### Outputs:
