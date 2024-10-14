@@ -60,6 +60,11 @@ Next, we will view the first few rows of the `data.frame` to get a sense of its 
 head(carnivora)
 ```
 
+```{r}
+sapply(carnivora, class)
+
+```
+
 Input data should always have the following columns: Taxon, Area, MinAge, MaxAge, Locality
 
 -    “Area” column in input file should depend on overall ground covered in the raw data: if you’re looking at global reptilia data, “Area” can be continents.
