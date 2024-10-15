@@ -16,7 +16,8 @@ library(DeepDiveR)
 ## Creating Input Data
 
 ``` {r}
-reptilia <- read.csv()
+reptilia <- read.csv("C:/Users/SimoesLabAdmin/Documents/BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+head(reptilia)
 ```
 
 ```{r pressure, echo=FALSE}
