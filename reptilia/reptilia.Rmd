@@ -8,14 +8,14 @@ date: "2024-09-26"
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Prepping Input File
-
-### Loading in Data
-
 ```{r load_packages}
 library(DeepDiveR)
 library(dplyr)
 ```
+
+## Prepping Input File
+
+### Loading in Data + EDA
 
 ```{r}
 data <- read.csv("C:/Users/SimoesLabAdmin/Documents/BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
@@ -49,6 +49,8 @@ We have a lot of unique localities. Let's compare to the default built-in datase
 ```{r}
 length(unique(data[['Locality']]))
 ```
+
+### **Comparing to built-in Carnivora Dataset**
 
 ```{r}
 data(carnivora)
@@ -93,9 +95,13 @@ bins
 summary(carnivora)
 ```
 
-The example carnivora dataset has much smaller Age columns because Carnivora is extant. Ran into issues so trouble shooting by shifting my ages and date ranges to present day.
+The example carnivora dataset has much smaller Age columns because Carnivora is extant. Ran into issues so trouble shooting **below** by shifting my ages and date ranges to present day.
 
-## Test: reducing ages
+## Trouble Shooting
+
+### Shifting Time Bins/Ages
+
+Ran into issues so trouble shooting **below** by shifting my ages and date ranges to present day. Potentially the large age values are causing issues?
 
 ```{r}
 data_shifted_ages <- data
@@ -104,11 +110,6 @@ data_shifted_ages$MaxAge <- data_shifted_ages$MaxAge - 199.3
 
 head(data_shifted_ages)
 
-```
-
-```{r}
-data_shifted_ages[1, 'Area'] <- 2
-head(data_shifted_ages)
 ```
 
 ```{r}
@@ -130,6 +131,15 @@ bins_shifted <- c(99.6, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90,
 bins_shifted
 ```
 
+### Adding a 2nd Area
+
+```{r}
+data_shifted_ages[1, 'Area'] <- 2 
+head(data_shifted_ages)
+```
+
+### Input File
+
 ```{r}
 # Create input file for DeepDive
 prep_dd_input(
@@ -145,22 +155,22 @@ prep_dd_input(
 
 ```{r}
 # Create configuration file for DeepDive
-config <- create_config(
+config_test <- create_config(
   # Specify name for the simulations
   name = "reptilia_1_TEST",
   # Name of data file
   data_file = "reptilia_deepdive_input_TEST.csv",
-  bins = bins,
-  n_areas = length(unique(data$Area)),
+  bins = bins_shifted,
+  n_areas = length(unique(data_shifted_ages$Area)),
   )
 ```
 
 ```{r}
-edit_config(config = config,
+edit_config(config = config_test,
             module = "general",
             parameter = "present_diversity", 
             value = 0)
-edit_config(config = config,
+edit_config(config = config_test,
             module = "general", 
             parameter = "wd",
             value = "reptilia")
@@ -168,13 +178,13 @@ edit_config(config = config,
 
 ```{r}
 # Set number of training simulations to 100
-edit_config(config = config,
+edit_config(config = config_test,
             module = "simulations",
             parameter = "n_training_simulations", 
             value = 10000)
 
 # Set number of test simulations to 10
-edit_config(config = config,
+edit_config(config = config_test,
             module = "simulations",
             parameter = "n_test_simulations", 
             value = 100)
@@ -182,13 +192,11 @@ edit_config(config = config,
 ```
 
 ```{r}
-config$write("reptilia_config_1_TEST.ini")
+config_test$write("reptilia_config_1_TEST.ini")
 
 ```
 
-```{r}
-
-```
+The above did not work to solve the error
 
 ### Combining into an Input File
 
@@ -202,15 +210,13 @@ prep_dd_input(
   # Specify number of replicates
   r = 100,
   # Specify name of created file
-  output_file = "C:/Users/SimoesLabAdmin/Documents/DeepDiveR/vignettes/reptilia_deepdive_input.csv")
+  output_file = "reptilia_deepdive_input.csv")
 
 ```
 
 ## Configuration File
 
-Settings for the analysis
-
-### Parameters for the simulations
+Settings for the analysis/parameters for the simulation
 
 ```{r create_config}
 # Create configuration file for DeepDive
@@ -265,12 +271,4 @@ python ../deepdive/run_dd_config.py reptilia/reptilia_config_1.ini -wd reptilia/
 
 -   
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+-   
