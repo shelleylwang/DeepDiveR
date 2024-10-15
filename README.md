@@ -1,5 +1,5 @@
 # DeepDiveR
-DeepDiveR is an R package to prepare input for running DeepDive in Python.
+DeepDiveR is an R package to prepare input for running DeepDive in Python. The accompanying preprint is available on bioRxiv [here](https://doi.org/10.1101/2024.09.03.610960).
 
 **Note:** The DeepDiveR package is under active developement. The version used in our [application note](https://doi.org/10.1101/2024.09.03.610960) is available on this [branch](https://github.com/DeepDive-project/DeepDiveR/tree/application_note). 
 
