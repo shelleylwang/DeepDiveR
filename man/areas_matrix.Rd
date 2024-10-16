@@ -31,6 +31,11 @@ A function to modify the simulations module by providing a maximum and
 minimum age uncertainty for geographic regions being connected to the study
 system.
 }
+\details{
+Note that this function does not need to be used if all geographic
+areas are considered to be accessible throughout the simulations; this is
+the default.
+}
 \examples{
 # Import internal dataset
 data(carnivora)
