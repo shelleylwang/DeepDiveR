@@ -51,5 +51,5 @@ area_ages <- as.data.frame(area_ages)
 # Label columns
 colnames(area_ages) <- c("Area", "MaxAge", "MinAge")
 # Connect area data to configuration file
-config <- areas_matrix(config = config, area_ages = area_ages)
+areas_matrix(config = config, area_ages = area_ages)
 }

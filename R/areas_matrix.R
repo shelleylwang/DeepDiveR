@@ -40,7 +40,7 @@
 #' # Label columns
 #' colnames(area_ages) <- c("Area", "MaxAge", "MinAge")
 #' # Connect area data to configuration file
-#' config <- areas_matrix(config = config, area_ages = area_ages)
+#' areas_matrix(config = config, area_ages = area_ages)
 #' @export
 areas_matrix <- function(config = NULL, area_ages = NULL,
                          presence = TRUE) {
@@ -97,7 +97,7 @@ areas_matrix <- function(config = NULL, area_ages = NULL,
 
   if(!is.null(area_ages) & presence == TRUE){
     for(i in 1:n_areas) {
-      parameter <- paste0("area_", "end", i)
+      parameter <- paste0("area_", "start", i)
       config$data$simulations[[parameter]] <- c(as.numeric(area_ages$MaxAge[i]),
                                                 as.numeric(area_ages$MinAge[i]))
     }
@@ -105,6 +105,7 @@ areas_matrix <- function(config = NULL, area_ages = NULL,
 
   if(!is.null(area_ages) & presence == FALSE){
     for(i in 1:n_areas) {
+      parameter <- paste0("area_", "end", i)
       config$data$simulations[[parameter]] <- c(as.numeric(area_ages$MaxAge[i]),
                                                 as.numeric(area_ages$MinAge[i]))
     }
