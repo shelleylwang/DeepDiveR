@@ -45,12 +45,11 @@ If you wish to adapt this code to obtain different data, you can use the 'Downlo
 
 ```{r API}
 # Create API call for occurrences of canids, at the identification resolution of species (and removing uncertain occurrences), excluding trace and form taxa, and including location data
-URL <- paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=Canidae&taxon_reso=species&idqual=certain&pres=regular&private&show=loc")
+URL <- paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=Canidae&taxon_reso=species&idqual=certain&pres=regular&show=loc")
 
 # Pull data through API (this step requires internet access)
-Canidae <- utils::read.csv(URL, header = TRUE, stringsAsFactors = FALSE)
-
-# Canidae <- read.csv("data/Canidae.csv", header = TRUE, stringsAsFactors = FALSE, skip = 21)
+Canidae <- utils::read.csv(URL, header = TRUE, stringsAsFactors = FALSE,
+                           skip = 20)
 ```
 
 We can view the column names to get a sense of the data included.
