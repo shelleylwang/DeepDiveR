@@ -203,9 +203,7 @@ config <- create_config(name = "carnivora",
                         bins = bins,
                         n_areas = length(unique(carnivora$Area)))
 # Edit configuration object
-config <- edit_config(config = config,
-                      module = "general",
-                      parameter = "present_diversity",
-                      value = 313)
+edit_config(config = config, module = "general",
+            parameter = "present_diversity", value = 313)
 
 }

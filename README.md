@@ -34,16 +34,7 @@ Settings not included in the arguments for create_config can be updated using:
 ```
 edit_config(config, module = "module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value = "updated_parameter_value")
 ```
-To make regions appear through time you can provide age ranges as below:
-```
-area_ages <- rbind(c(max(bins), max(bins)),  # where each row represents a discrete sampling region
-                   c(50, 40)))  
-```                  
-Regions can then be added to the configuration files using the function ```areas_matrix```. 
-Regions can also be made to disappear using label="end" in the following:
-```
-areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
-```
+For arguments see ```?edit_config```.
 
 The configuration file is saved using:
 ```

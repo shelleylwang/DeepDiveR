@@ -17,8 +17,7 @@ load_all()
   
 # Installation  
 
-To install the `DeepDiveR` library, it needs to be downloaded from the GitHub 
-repository using either the package `remotes` or a manual download.
+To install the `DeepDiveR` library, it needs to be downloaded from the GitHub repository using either the package `remotes` or a manual download.
   
 ```{r install, eval = FALSE}
 # Option 1: install the package from GitHub
@@ -31,7 +30,7 @@ remotes::install_github("DeepDive-project/DeepDiveR")
 # load_all(".")
 ```
 
-We can then load the `DeepDiveR` package, alongside `dplyr`, which we will use for data manipulation.
+We can then load the `DeepDiveR` package.
 
 ```{r load_packages}
 library(DeepDiveR)
