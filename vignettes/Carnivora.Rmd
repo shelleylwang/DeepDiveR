@@ -1,14 +1,15 @@
 ---
 title: "Inferring the evolutionary history of the Carnivora"
 author: "Rebecca Cooper"
-date: "09/09/2024"
 output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Inferring the evolutionary history of the     Carnivora}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE, eval = TRUE}
 knitr::opts_chunk$set(echo = TRUE, include = TRUE, eval = TRUE)
-library(devtools)
-load_all()
 ```
   
 # Introduction
@@ -154,13 +155,13 @@ config$write("carnivora_config.ini")
 
 Once the configuration and input files are created, the full DeepDive analysis including simulation, model training and predictions can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window executing the Python script run_dd_config.py as follows:
   
-```{python run, eval = FALSE}
+```{python run, eval = FALSE, python.reticulate = FALSE}
 python run_dd_config.py your_path/config_file.ini
 ```
 
 You can additionally specify a working directory where all output files are saved and the number of CPUs used in parallelised simulations, which will overwrite the corresponding settings in the configuration file, using the flags -wd and -cpu, e.g.
 
-```{python run2, eval = FALSE}
+```{python run2, eval = FALSE, python.reticulate = FALSE}
 python run_dd_config.py your_path/config_file.ini -wd your_working_directory -cpu 64
 ```
 
