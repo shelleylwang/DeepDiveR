@@ -1,14 +1,15 @@
 ---
 title: "Preparing PBDB data for DeepDive"
 author: "Bethany Allen"
-date: "16/10/2024"
 output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Preparing PBDB data for DeepDive}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE, eval = TRUE}
 knitr::opts_chunk$set(echo = TRUE, include = TRUE, eval = TRUE)
-library(devtools)
-load_all()
 ```
   
 # Introduction
