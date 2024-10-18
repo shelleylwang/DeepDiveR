@@ -219,7 +219,7 @@ prep_dd_input(
   # Specify occurrence data.frame
   dat = data, # this one does not have a second area
   # Specify vector containing time bin boundaries
-  bins = bins, # these are the un-shifted bins
+  bins = bins_shifted, # these are the un-shifted bins
   # Specify number of replicates
   r = 10,
   # Specify name of created file
