@@ -156,6 +156,7 @@ head(data_shifted_ages)
 ### Input File
 
 ```{r}
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
@@ -185,10 +186,6 @@ edit_config(config = config_test,
             module = "general",
             parameter = "present_diversity", 
             value = 0)
-edit_config(config = config_test,
-            module = "general", 
-            parameter = "wd",
-            value = "reptilia")
 ```
 
 ```{r}
@@ -196,13 +193,13 @@ edit_config(config = config_test,
 edit_config(config = config_test,
             module = "simulations",
             parameter = "n_training_simulations", 
-            value = 10000)
+            value = 100)
 
 # Set number of test simulations to 10
 edit_config(config = config_test,
             module = "simulations",
             parameter = "n_test_simulations", 
-            value = 100)
+            value = 10)
 
 ```
 
@@ -220,9 +217,9 @@ setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
-  dat = data,
+  dat = data, # this one does not have a second area
   # Specify vector containing time bin boundaries
-  bins = bins,
+  bins = bins, # these are the un-shifted bins
   # Specify number of replicates
   r = 10,
   # Specify name of created file
@@ -235,6 +232,7 @@ prep_dd_input(
 Settings for the analysis/parameters for the simulation
 
 ```{r create_config}
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia")
 # Create configuration file for DeepDive
 config <- create_config(
   # Specify name for the simulations
@@ -261,13 +259,13 @@ edit_config(config = config,
 edit_config(config = config,
             module = "simulations",
             parameter = "n_training_simulations", 
-            value = 10000)
+            value = 100)
 
 # Set number of test simulations to 10
 edit_config(config = config,
             module = "simulations",
             parameter = "n_test_simulations", 
-            value = 100)
+            value = 10)
 ```
 
 ```{r}
