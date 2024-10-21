@@ -48,6 +48,10 @@ prep_dd_input <- function(dat = NULL, bins = NULL, r = 100,
     stop(paste("NA values detected in dataframe."))
   }
 
+  if (length(unique(dat$Area)) < 2) {
+    stop(paste("At least two unique Areas must be present in dataframe."))
+  }
+
   if (is.vector(bins) == FALSE) {
     stop("`bins` should be a vector.")
   }
