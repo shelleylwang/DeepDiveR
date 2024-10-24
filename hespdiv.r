@@ -46,7 +46,7 @@ sens_analysis_290.1 <- sensitivity(
   sample.prop = 0.8,   # Proportion of data to sample
   parallel = TRUE,     # Use parallel processing
   cores = 2            # Number of cores
-)
+) 
 plot(sens_analysis)
 
 # Basic Statistics
