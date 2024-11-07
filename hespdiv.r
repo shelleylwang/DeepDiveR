@@ -8,32 +8,26 @@ library(sp)
 # Reading CSV file for 1
 tb_1 <- read.csv('../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv')
 
-spec_1 <- tb_1$genus
-coords_1 <- data.frame(
-  x = tb_1$'Rotated.Lon',
-  y = tb_1$'Rotated.Lat'
-)
+## Old code
+#spec_1 <- tb_1$genus
+#coords_1 <- data.frame(
+ # x = tb_1$'Rotated.Lon',
+#  y = tb_1$'Rotated.Lat'
+#)
 
 # Run hespdiv
-result_1 <- hespdiv(
+#result_1 <- hespdiv(
     # Required arguments
-    data = spec_1,
-    xy.dat = coords_1,
-)
-# Create your species data
-species_data <- data.frame(
-  species_name = c("Species1", "Species2", "Species3"),
-  longitude = c(-100, -90, -80),
-  latitude = c(40, 35, 30)
-)
-
+ #   data = spec_1,
+  #  xy.dat = coords_1,
+#)
 
 # Function to process species data with hespdiv and assign polygons
 process_species_areas <- function(species_data) {
   # 1. Format data for hespdiv
-  species <- species_data$species_name
-  coords <- data.frame(x = species_data$longitude, 
-                       y = species_data$latitude)
+  species <- species_data$genus
+  coords <- data.frame(x = species_data$'Rotated.Lon', 
+                       y = species_data$'Rotated.Lat')
   
   # 2. Run hespdiv
   result <- hespdiv(data = species, 
@@ -62,8 +56,8 @@ process_species_areas <- function(species_data) {
   # 4. Apply to all species and create columns for each rank
   # First get all polygon assignments
   polygon_assignments <- mapply(find_all_polygons, 
-                                species_data$longitude, 
-                                species_data$latitude,
+                                species_data$'Rotated.Lon', 
+                                species_data$'Rotated.Lat',
                                 MoreArgs = list(result = result))
   
   # Transpose to get matrix where rows are species and columns are polygons
@@ -106,23 +100,7 @@ process_species_areas <- function(species_data) {
   return(species_data)
 }
 
-# Example usage:
-# Assuming species_data has columns: species_name, longitude, latitude
 
-# species_data <- data.frame(
-#     species_name = c("Species1", "Species2", "Species3"),
-#     longitude = c(-100, -90, -80),
-#     latitude = c(40, 35, 30)
-# )
-
-# Add polygon assignments
-# result_data <- process_species_areas(species_data)
-
-# View results
-# head(result_data)
-
-# View polygon statistics
-# attr(result_data, "polygon_stats")
 
 # Visualization function
 plot_species_areas <- function(result_data, rank = 1) {
@@ -133,7 +111,7 @@ plot_species_areas <- function(result_data, rank = 1) {
   }
   
   # Plot base map
-  plot(result_data$longitude, result_data$latitude,
+  plot(result_data$'Rotated.Lon', result_data$'Rotated.Lat',
        type = "n", 
        xlab = "Longitude", 
        ylab = "Latitude",
@@ -146,8 +124,8 @@ plot_species_areas <- function(result_data, rank = 1) {
   
   for(i in seq_along(areas)) {
     area_species <- result_data[[col_name]] == areas[i]
-    points(result_data$longitude[area_species],
-           result_data$latitude[area_species],
+    points(result_data$'Rotated.Lon'[area_species],
+           result_data$'Rotated.Lat'[area_species],
            col = colors[i],
            pch = 19)
   }
@@ -160,21 +138,20 @@ plot_species_areas <- function(result_data, rank = 1) {
          title = "Areas")
 }
 
-# Example visualization:
-# plot_species_areas(result_data, rank = 1)
+
 
 
 
 ### RUNNING THE PROGRAM: ###
 # Process data
-result_data <- process_species_areas(species_data)
+result_tb1 <- process_species_areas(tb_1)
 
-# View results for first rank
-print(result_data$area_rank_1)
+# View results
+head(result_tb1)
 
-# Plot results for second rank
-plot_species_areas(result_data, rank = 2)
+# Visualization for the first rank:
+plot_species_areas(result_tb1, rank = 1)
 
 # View polygon statistics
-print(attr(result_data, "polygon_stats"))
+print(attr(result_tb1, "polygon_stats"))
 
