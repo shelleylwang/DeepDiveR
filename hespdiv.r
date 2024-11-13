@@ -4,6 +4,55 @@ devtools::install_github("Liudas-Dau/hespdiv")
 library(hespdiv)
 library(sp)
 
+devtools::install_github("Liudas-Dau/hespdiv_data")
+library(HDData)
+mio_mams
+
+
+species <- mio_mams$accepted_name # Taxa names
+sp_coords <- data.frame(x = mio_mams$lng, y = mio_mams$lat) # Coordinates of observations
+
+str(us) # Tutorial provides a polygon representing the study 
+# area as a ref point when interpreting results (shows up as background in plot)
+
+# The 'hd' object exists pre-calculated in HDData library, so don't need to run this code:
+hd <- hespdiv(data = species, xy.dat = sp_coords, study.pol = us)
+
+?hespdiv::hespdiv # Show options for the analysis! Lots of params
+
+hd$poly.stats
+
+plot_hespdiv(hd)
+block3d(hd, height = "rank")
+block3d(hd, height = "sd")
+block3d(hd, height = "mean")
+polypop(hd, height = "mean")
+
+?hespdiv::polypop
+
+poly_scheme(result)
+
+sim_m <- cross_comp(hd) # Obtain cross-comparison matrix
+cl <- hclust(as.dist(1-sim_m)) # Convert similarity to distance and perfomring cluster analysis
+plot(cl)
+
+
+install.packages("igprah")
+library(igraph)
+gr <- graph.adjacency(
+  as.matrix(as.dist(sim_m)), # Zero the diagonal of the similarity matrix for the graph
+  mode = "undirected",
+  weighted = TRUE,
+  diag = FALSE
+)
+plot(gr)
+
+# The 'nl' object exists pre-calculated in HDData library, so don't need to run this code:
+set.seed(1) # The seed is used to obtain the same result of an experiment with random properties.
+nl <- nulltest(hd, n = 1000) 
+plot(n1)
+
+
 
 # Reading CSV file for 1
 tb_1 <- read.csv('../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv')
