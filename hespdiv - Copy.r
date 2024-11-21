@@ -51,6 +51,7 @@ print("Basic Statistics about Split Lines:")
 print(result$poly.stats)
 result$split.stats
 result$split.lines
+result$polygons.xy
 
 ################################
 # 3. VISUALIZATION FUNCTIONS   #
