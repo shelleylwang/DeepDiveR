@@ -1,8 +1,8 @@
 #' Make discrete geographic regions appear or disappear
 #'
-#' A function to modify the simulations module by providing a maximum and
-#'   minimum age uncertainty for geographic regions being connected to the study
-#'   system.
+#' A function to area constraints to the simulation module by providing a 
+#'   maximum and minimum age uncertainty for geographic regions being connected 
+#'   to the study system.
 #' @param config \code{character}. The name of the configuration object, created
 #'   using `create_config()`, that will be edited.
 #' @param area_ages \code{dataframe}. If left NULL (default), all geographic
