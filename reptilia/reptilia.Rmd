@@ -50,19 +50,21 @@ We have a lot of unique localities. Let's compare to the default built-in datase
 length(unique(data[['Locality']]))
 ```
 
-``` {r}
+```{r}
 length(unique(data[['Taxon']]))
 ```
 
 ```{r}
 length(unique(data[['Area']]))
 ```
+
 ### **Comparing to built-in Carnivora Dataset**
 
 ```{r}
 data(carnivora)
 length(unique(carnivora[['Locality']]))
 ```
+
 ```{r}
 length(unique(carnivora[['Taxon']]))
 ```
@@ -78,6 +80,7 @@ head(carnivora)
 ```{r}
 length(unique(carnivora[['Area']]))
 ```
+
 ```{r}
 summary(carnivora$MaxAge)
 summary(carnivora$MinAge)
