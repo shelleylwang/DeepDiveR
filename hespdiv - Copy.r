@@ -6,6 +6,8 @@
 install.packages("devtools")
 devtools::install_github("Liudas-Dau/hespdiv")
 library(hespdiv)
+
+install.packages("sp")
 library(sp)
 setwd('C:/Users/SimoesLabAdmin/Documents/DeepDiveR')
 
@@ -14,7 +16,7 @@ setwd('C:/Users/SimoesLabAdmin/Documents/DeepDiveR')
 #######################
 
 # Read your data
-tb1 <- read.csv('../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv') 
+tb1 <- read.csv('../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv')
 
 # Format data for hespdiv
 species <- tb1$Taxon  # or species column
@@ -32,8 +34,8 @@ result <- hespdiv(
   data = species,
   xy.dat = coords,
   n.split.pts = 15  # Make this much higher in the future
-  # Default 15 will generate 120 split-lines for each subdivision attempt. 
-  # Increasing this value improves the fit of straight split-lines to the data 
+  # Default 15 will generate 120 split-lines for each subdivision attempt.
+  # Increasing this value improves the fit of straight split-lines to the data
   # but also increases computation time
 )
 
@@ -56,32 +58,59 @@ result$polygons.xy
 
 # Get polygon assignments for each original data point
 # So point_assignments should have the same length as the original dataframe
-point_assignments <- sapply(1:nrow(tb1), function(i) {
+
+install.packages("sp")
+library(sp)
+
+### POLYGON ASSIGNMENTS BY RANK CHOICE ###
+point_assignments_rank_filter <- sapply(1:nrow(tb1), function(i) {
   # Takes each occurrence's coordinates
   point <- coords[i,]  # Gets lng/lat for current occurrence
-  
-  # If you only want polygon assignments for a specific rank, you can filter here
-  # rank <- 3
-  # poly_ids <- names(result$polygons.xy)[result$poly.stats$rank == rank]
 
-  
-  # Checks each polygon from hespdiv output
-  for(poly_id in names(hd$polygons.xy)) {
-    # Tests if point falls within current polygon
-    if(point_in_polygon(point$x, point$y,
+  # If you only want polygon assignments for a specific rank, you can filter here
+  rank <- 3
+  poly_ids <- names(result$polygons.xy)[result$poly.stats$rank == rank]
+
+  # Only check rank 3 polygons
+  for(poly_id in poly_ids) {
+    if(point.in.polygon(point$x, point$y,
                         result$polygons.xy[[poly_id]]$x,
                         result$polygons.xy[[poly_id]]$y)) {
       return(poly_id)  # Returns polygon ID if point is inside
     }
   }
-  return(NA)  # Returns NA if point isn't in any polygon
+  return(NA)  # Returns NA if point doesn't have a polygon assignment of that rank
 })
 
-# Create final lookup table
-tb1$polygon_id <- point_assignments
+# Add column to original df w/ polygon assignments
+tb1$chosen_rank_polygon_id <- point_assignments_rank_filter
+
+
+### POLYGON ASSIGNMENTS BY FINEST SCALE RANK ###
+# For all ranks, assign each occurrence to the smallest subdivision they're in
+point_assignments_highest_rank <- sapply(1:nrow(tb1), function(i) {
+  point <- coords[i,]
+  # Order polygons by descending rank
+  poly_ids <- names(result$polygons.xy)[order(result$poly.stats$rank, decreasing=TRUE)]
+  for(poly_id in poly_ids) {
+    if(point.in.polygon(point$x, point$y,
+                        result$polygons.xy[[poly_id]]$x,
+                        result$polygons.xy[[poly_id]]$y)) {
+      return(poly_id)
+    }
+  }
+  return(NA)
+})
+
+# Add column to original df w/ polygon assignments
+tb1$highest_rank_polygon_id <- point_assignments_highest_rank
 
 # View tb1
 head(tb1)
+# View full tb1
+View(tb1)
+
+
 
 
 ################################
@@ -101,14 +130,14 @@ blok3d(result, height = "rank")
 
 # Interactively remove specific polygons if needed
 polypop(result, height = "mean") # Set the "height" to the same value as was set in the blok3D function
-# not all HespDiv polygons are displayed in the output of blok3d(hd) 
-# if not enough split-lines were evaluated to obtain a metric for height. 
-# By checking the hd$poly.stats[,c(“plot.id”,“n.splits”)] data frame, 
+# not all HespDiv polygons are displayed in the output of blok3d(hd)
+# if not enough split-lines were evaluated to obtain a metric for height.
+# By checking the hd$poly.stats[,c(“plot.id”,“n.splits”)] data frame,
 # you can see how many split-lines were evaluated in each polygon.
 
 # C. Polygon scheme visualization
 print("Creating polygon scheme...")
-poly_scheme(result, seed = 4) 
+poly_scheme(result, seed = 4)
 
 ####################################
 # 4. CROSS-COMPARISON ANALYSIS     #
@@ -179,8 +208,8 @@ stability_quant <- hsa_quant(sensitivity_results)
 plot_hsa(sensitivity_results, type = 1)
 
 # Plot by rank
-plot_hsa(sensitivity_results, 
-         type = 4, 
+plot_hsa(sensitivity_results,
+         type = 4,
          alpha = 0.3,
          basal.col = 1,
          split.col.seed = 1)
@@ -196,66 +225,66 @@ plot_hsa_q(stability_quant, hist = TRUE)
 process_species_areas <- function(species_data) {
   # 1. Format data for hespdiv
   species <- species_data$genus
-  coords <- data.frame(x = species_data$'Rotated.Lon', 
+  coords <- data.frame(x = species_data$'Rotated.Lon',
                        y = species_data$'Rotated.Lat')
-  
+
   # 2. Run hespdiv
-  result <- hespdiv(data = species, 
+  result <- hespdiv(data = species,
                     xy.dat = coords)
-  
+
   # 3. Function to find all polygons containing a point
   find_all_polygons <- function(x, y, result) {
     point <- c(x, y)
     polygons <- result$polygons.xy
     ranks <- result$poly.stats$rank
-    
+
     # Check each polygon
     contains_point <- logical(length(polygons))
-    
+
     for(i in seq_along(polygons)) {
       poly <- polygons[[i]]
       # point.in.polygon returns 0 if point is outside, 1 if inside, 2 if on boundary
-      inside <- point.in.polygon(point[1], point[2], 
+      inside <- point.in.polygon(point[1], point[2],
                                  poly$x, poly$y) > 0
       contains_point[i] <- inside
     }
-    
+
     return(contains_point)
   }
-  
+
   # 4. Apply to all species and create columns for each rank
   # First get all polygon assignments
-  polygon_assignments <- mapply(find_all_polygons, 
-                                species_data$'Rotated.Lon', 
+  polygon_assignments <- mapply(find_all_polygons,
+                                species_data$'Rotated.Lon',
                                 species_data$'Rotated.Lat',
                                 MoreArgs = list(result = result))
-  
+
   # Transpose to get matrix where rows are species and columns are polygons
   polygon_assignments <- t(polygon_assignments)
-  
+
   # Create new columns for each rank
   max_rank <- max(result$poly.stats$rank)
-  
+
   # Initialize new columns in species_data for each rank
   for(rank in 1:max_rank) {
     col_name <- paste0("area_rank_", rank)
     species_data[[col_name]] <- NA
   }
-  
+
   # For each species (row)
   for(i in 1:nrow(species_data)) {
     # Get polygons this species belongs to
     species_polygons <- which(polygon_assignments[i,])
-    
+
     if(length(species_polygons) > 0) {
       # Get ranks for these polygons
       polygon_ranks <- result$poly.stats$rank[species_polygons]
-      
+
       # For each rank present
       for(rank in unique(polygon_ranks)) {
         # Get polygon ID for this rank
         rank_polygons <- species_polygons[polygon_ranks == rank]
-        
+
         if(length(rank_polygons) > 0) {
           col_name <- paste0("area_rank_", rank)
           species_data[i, col_name] <- paste(rank_polygons, collapse = ";")
@@ -263,10 +292,10 @@ process_species_areas <- function(species_data) {
       }
     }
   }
-  
+
   # Add polygon statistics to help interpret the results
   attr(species_data, "polygon_stats") <- result$poly.stats
-  
+
   return(species_data)
 }
 
