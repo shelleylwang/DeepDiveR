@@ -17,7 +17,7 @@ setwd('C:/Users/SimoesLabAdmin/Documents/DeepDiveR')
 tb1 <- read.csv('../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv') 
 
 # Format data for hespdiv
-species <- tb1$genus  # or species column
+species <- tb1$Taxon  # or species column
 coords <- data.frame(
   x = tb1$'Rotated.Lon',
   y = tb1$'Rotated.Lat'
@@ -51,6 +51,38 @@ print("Basic Statistics about Split Lines:")
 print(result$poly.stats)
 result$split.stats
 result$split.lines
+result$polygons.xy
+
+
+# Get polygon assignments for each original data point
+# So point_assignments should have the same length as the original dataframe
+point_assignments <- sapply(1:nrow(tb1), function(i) {
+  # Takes each occurrence's coordinates
+  point <- coords[i,]  # Gets lng/lat for current occurrence
+  
+  # If you only want polygon assignments for a specific rank, you can filter here
+  # rank <- 3
+  # poly_ids <- names(result$polygons.xy)[result$poly.stats$rank == rank]
+
+  
+  # Checks each polygon from hespdiv output
+  for(poly_id in names(hd$polygons.xy)) {
+    # Tests if point falls within current polygon
+    if(point_in_polygon(point$x, point$y,
+                        result$polygons.xy[[poly_id]]$x,
+                        result$polygons.xy[[poly_id]]$y)) {
+      return(poly_id)  # Returns polygon ID if point is inside
+    }
+  }
+  return(NA)  # Returns NA if point isn't in any polygon
+})
+
+# Create final lookup table
+tb1$polygon_id <- point_assignments
+
+# View tb1
+head(tb1)
+
 
 ################################
 # 3. VISUALIZATION FUNCTIONS   #
@@ -63,7 +95,7 @@ plot_hespdiv(result, type = "w")    # Use line width for performance
 
 # B. 3D visualization with blok3d
 print("Creating 3D visualization...")
-blok3d(result)
+blok3d(result, height = "rank")
 # Taller polygons = higher MH's across all tested split-lines (more spatial
 # homogeneity in taxa composition)
 

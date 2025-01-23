@@ -28,7 +28,7 @@ block3d(hd, height = "sd")
 block3d(hd, height = "mean")
 polypop(hd, height = "mean")
 
-?hespdiv::polypop
+?hespdiv::assign_polygons
 
 poly_scheme(result)
 
