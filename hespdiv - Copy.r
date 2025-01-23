@@ -58,9 +58,12 @@ result$polygons.xy
 
 # Get polygon assignments for each original data point
 # So point_assignments should have the same length as the original dataframe
+
 install.packages("sp")
 library(sp)
-point_assignments <- sapply(1:nrow(tb1), function(i) {
+
+### POLYGON ASSIGNMENTS BY RANK CHOICE ###
+point_assignments_rank_filter <- sapply(1:nrow(tb1), function(i) {
   # Takes each occurrence's coordinates
   point <- coords[i,]  # Gets lng/lat for current occurrence
 
@@ -73,26 +76,41 @@ point_assignments <- sapply(1:nrow(tb1), function(i) {
     if(point.in.polygon(point$x, point$y,
                         result$polygons.xy[[poly_id]]$x,
                         result$polygons.xy[[poly_id]]$y)) {
-
-  # Checks each polygon from hespdiv output
-  #for(poly_id in names(result$polygons.xy)) {
-    # Tests if point falls within current polygon
-    #if(point.in.polygon(point$x, point$y,
-                       # result$polygons.xy[[poly_id]]$x,
-                       # result$polygons.xy[[poly_id]]$y)) {
       return(poly_id)  # Returns polygon ID if point is inside
     }
   }
-  return(NA)  # Returns NA if point isn't in any polygon
+  return(NA)  # Returns NA if point doesn't have a polygon assignment of that rank
 })
 
-# Create final lookup table
-tb1$polygon_id <- point_assignments
+# Add column to original df w/ polygon assignments
+tb1$chosen_rank_polygon_id <- point_assignments_rank_filter
+
+
+### POLYGON ASSIGNMENTS BY FINEST SCALE RANK ###
+# For all ranks, assign each occurrence to the smallest subdivision they're in
+point_assignments_highest_rank <- sapply(1:nrow(tb1), function(i) {
+  point <- coords[i,]
+  # Order polygons by descending rank
+  poly_ids <- names(result$polygons.xy)[order(result$poly.stats$rank, decreasing=TRUE)]
+  for(poly_id in poly_ids) {
+    if(point.in.polygon(point$x, point$y,
+                        result$polygons.xy[[poly_id]]$x,
+                        result$polygons.xy[[poly_id]]$y)) {
+      return(poly_id)
+    }
+  }
+  return(NA)
+})
+
+# Add column to original df w/ polygon assignments
+tb1$highest_rank_polygon_id <- point_assignments_highest_rank
 
 # View tb1
 head(tb1)
 # View full tb1
 View(tb1)
+
+
 
 
 ################################
