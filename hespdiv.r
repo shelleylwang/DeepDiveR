@@ -8,8 +8,13 @@ devtools::install_github("Liudas-Dau/hespdiv_data")
 library(HDData)
 mio_mams
 
+mio_mams <- data.frame(mio_mams)
 
 species <- mio_mams$accepted_name # Taxa names
+species
+#find unique number of species
+unique(species)
+
 sp_coords <- data.frame(x = mio_mams$lng, y = mio_mams$lat) # Coordinates of observations
 
 str(us) # Tutorial provides a polygon representing the study 
