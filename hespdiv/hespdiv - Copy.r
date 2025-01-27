@@ -63,27 +63,28 @@ install.packages("sp")
 library(sp)
 
 ### POLYGON ASSIGNMENTS BY RANK CHOICE ###
-point_assignments_rank_filter <- sapply(1:nrow(tb1), function(i) {
-  # Takes each occurrence's coordinates
-  point <- coords[i,]  # Gets lng/lat for current occurrence
+  point_assignments_rank_filter <- sapply(1:nrow(tb1), function(i) {
+    # Takes each occurrence's coordinates
+    point <- coords[i,]  # Gets lng/lat for current occurrence
+    # If you only want polygon assignments for a specific rank, you can filter here
+    rank <- 3
+    poly_ids <- names(result$polygons.xy)[result$poly.stats$rank == rank]
 
-  # If you only want polygon assignments for a specific rank, you can filter here
-  rank <- 3
-  poly_ids <- names(result$polygons.xy)[result$poly.stats$rank == rank]
-
-  # Only check rank 3 polygons
-  for(poly_id in poly_ids) {
-    if(point.in.polygon(point$x, point$y,
-                        result$polygons.xy[[poly_id]]$x,
-                        result$polygons.xy[[poly_id]]$y)) {
-      return(poly_id)  # Returns polygon ID if point is inside
+    # Only check rank 3 polygons
+    for(poly_id in poly_ids) {
+      if(point.in.polygon(point$x, point$y,
+                          result$polygons.xy[[poly_id]]$x,
+                          result$polygons.xy[[poly_id]]$y)) {
+        return(poly_id)  # Returns polygon ID if point is inside
+      }
     }
-  }
-  return(NA)  # Returns NA if point doesn't have a polygon assignment of that rank
-})
+    return(NA)  # Returns NA if point doesn't have a polygon assignment of that rank
+  })
 
-# Add column to original df w/ polygon assignments
-tb1$chosen_rank_polygon_id <- point_assignments_rank_filter
+  # Add column to original df w/ polygon assignments
+  tb1$chosen_rank_polygon_id <- point_assignments_rank_filter
+
+  return(tb1)
 
 
 ### POLYGON ASSIGNMENTS BY FINEST SCALE RANK ###
