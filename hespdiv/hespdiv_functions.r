@@ -187,6 +187,7 @@ result_2 <- hespdiv_analysis(tb_2)
 visualization(result_2, "hespdiv_bin2_plots.pdf")
 tb_2 <- assign_polygons_by_rank(tb_2, result_2, 2) # Assigns polygon IDs of rank 2 to tb_1
 tb_2 <- assign_highest_rank_polygon(tb_2, result_2)
+View(tb_2)
 
 
 
