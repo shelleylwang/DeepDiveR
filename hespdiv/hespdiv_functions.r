@@ -182,12 +182,26 @@ tb_1 <- assign_highest_rank_polygon(tb_1, result_1)
 #########################
 # 6. CALLING FUNCTIONS  #
 #########################
+
+# Function for running hespdiv analysis, visualization, and polygon assignment
+run_hespdiv <- function(tb, bin_num) {
+  result <- hespdiv_analysis(tb)
+  visualization(result, paste("hespdiv_bin", bin_num, "_plots.pdf", sep = ""))
+  tb <- assign_polygons_by_rank(tb, result, 2) # Assigns polygon IDs of rank 2 to tb_1
+  tb <- assign_highest_rank_polygon(tb, result)
+  return(tb)
+  View(tb)
+}
+
 tb_2 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin2.csv") # Load the data
-result_2 <- hespdiv_analysis(tb_2)
-visualization(result_2, "hespdiv_bin2_plots.pdf")
-tb_2 <- assign_polygons_by_rank(tb_2, result_2, 2) # Assigns polygon IDs of rank 2 to tb_1
-tb_2 <- assign_highest_rank_polygon(tb_2, result_2)
-View(tb_2)
+tb_2 <- run_hespdiv(tb_2, 2)
 
+tb_3 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin3.csv") # Load the data
+tb_3 <- run_hespdiv(tb_3, 3)
 
+tb_4 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin4.csv") # Load the data
+tb_4 <- run_hespdiv(tb_4, 4)
+
+tb_5 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin5.csv") # Load the data
+tb_5 <- run_hespdiv(tb_5, 5)
 
