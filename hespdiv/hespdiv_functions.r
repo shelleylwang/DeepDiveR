@@ -219,7 +219,7 @@ result_sensitivity <- function(result, output_file) {
 
   # Type 2: Split lines by rank with colors
   plot_hsa(hsa_result,
-           type = 2,
+           type = 4,
            alpha = 0.3,
            basal.col = 1,
            split.col.seed = 1)
@@ -231,6 +231,8 @@ result_sensitivity <- function(result, output_file) {
   return(hsa_result)
 }
 
+# Example usage
+hsa_result_1 <- result_sensitivity(result_1, "hespdiv_bin1_sensitivity_plots.pdf")
 
 #########################
 # 7. CALLING FUNCTIONS  #
@@ -239,10 +241,10 @@ result_sensitivity <- function(result, output_file) {
 # Function for running hespdiv analysis, visualization, and polygon assignment
 run_hespdiv <- function(tb, bin_num) {
   hespdiv_result <- hespdiv_analysis(tb)
-  visualization(result, paste("hespdiv_bin", bin_num, "_plots.pdf", sep = ""))
-  hsa_result <- result_sensitivity(result, paste("hespdiv_bin", bin_num, "_sensitivity.pdf", sep = ""))
-  tb <- assign_polygons_by_rank(tb, result, 2) # Assigns polygon IDs of rank 2 to tb_1
-  tb <- assign_highest_rank_polygon(tb, result)
+  visualization(hespdiv_result, paste("hespdiv_bin", bin_num, "_plots.pdf", sep = ""))
+  hsa_result <- result_sensitivity(hespdiv_result, paste("hespdiv_bin", bin_num, "_sensitivity_plots.pdf", sep = ""))
+  tb <- assign_polygons_by_rank(tb, hespdiv_result, 2) # Assigns polygon IDs of rank 2 to tb_1
+  tb <- assign_highest_rank_polygon(tb, hespdiv_result)
   return(list(tb = tb, hespdiv_result = hespdiv_result, hsa_result = hsa_result)))
   View(tb)
 }
