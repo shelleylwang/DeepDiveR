@@ -37,8 +37,7 @@ hespdiv_analysis <- function(tb) {
     data = species,
     xy.dat = coords,
     study.pol = study_area_polygon,
-    use.chull = FALSE,
-    pacific.region = TRUE,
+    # pacific.region = TRUE,
     method = 'morisita', # subdivision method controls how the quality of split-lines is evaluated.
     # Options: morisita, sorensen, horn.morisita
     # These each come with pre-set values for the arguments: compare.f, generalize.f, maximize, which
@@ -65,6 +64,45 @@ hespdiv_analysis <- function(tb) {
 tb_1 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin1.csv") # Load the data
 result_1 <- hespdiv_analysis(tb_1) # Run hespdiv analysis
 
+#######################################################
+# 2.B. FUNCTION: RUN HESPDIV W/ PACIFIC REGION ARGUMENT
+
+hespdiv_analysis_pacific <- function(tb) {
+  # Format data for hespdiv
+  species <- tb$Taxon  # or species column
+  coords <- data.frame(
+    x = tb$'Rotated.Lon',
+    y = tb$'Rotated.Lat'
+  )
+
+  # Run basic hespdiv analysis
+  result <- hespdiv(
+    data = species,
+    xy.dat = coords,
+    study.pol = study_area_polygon,
+    pacific.region = TRUE,
+    method = 'morisita', # subdivision method controls how the quality of split-lines is evaluated.
+    # Options: morisita, sorensen, horn.morisita
+    # These each come with pre-set values for the arguments: compare.f, generalize.f, maximize, which
+    # control split-line quality evaluation
+    n.split.pts = 15  # Make this much higher in the future
+    # Default 15 will generate 120 split-lines for each subdivision attempt.
+    # Increasing this value improves the fit of straight split-lines to the data
+    # but also increases computation time
+  )
+
+  # Print initial results
+  print("Basic Statistics about Split Lines:")
+  print(result$poly.stats)
+  print(result$split.stats)
+  print(result$split.lines)
+  print(result$polygons.xy)
+
+  # Return hespdiv object
+  return(result)
+}
+
+result_1_pac <- hespdiv_analysis_pacific(tb_1) # Run hespdiv analysis
 
 ################################
 # 3. VISUALIZATION FUNCTIONS   #
@@ -113,7 +151,7 @@ visualization <- function(result_num, output_file) {
 
 # Example usage
 visualization(result_1, "hespdiv_bin1_plots.pdf")
-
+visualization(result_1_pac, "hespdiv_bin1_pac_plots.pdf")
 
 ###############################################
 # 4. ASSIGNING OCCS POLYGONS BY RANK CHOICE   #
@@ -241,11 +279,15 @@ hsa_result_1 <- result_sensitivity(result_1, "hespdiv_bin1_sensitivity_plots.pdf
 # Function for running hespdiv analysis, visualization, and polygon assignment
 run_hespdiv <- function(tb, bin_num) {
   hespdiv_result <- hespdiv_analysis(tb)
+  hespdiv_result_pac <- hespdiv_analysis_pacific(tb)
   visualization(hespdiv_result, paste("hespdiv_bin", bin_num, "_plots.pdf", sep = ""))
+  visualization(hespdiv_result_pac, paste("hespdiv_bin", bin_num, "_pac_plots.pdf", sep = ""))
   hsa_result <- result_sensitivity(hespdiv_result, paste("hespdiv_bin", bin_num, "_sensitivity_plots.pdf", sep = ""))
   tb <- assign_polygons_by_rank(tb, hespdiv_result, 2) # Assigns polygon IDs of rank 2 to tb_1
   tb <- assign_highest_rank_polygon(tb, hespdiv_result)
-  return(list(tb = tb, hespdiv_result = hespdiv_result, hsa_result = hsa_result)))
+  return(list(tb = tb, hespdiv_result = hespdiv_result,
+              hespdiv_result_pac = hespdiv_result_pac,
+              hsa_result = hsa_result))
   View(tb)
 }
 
@@ -253,12 +295,14 @@ tb_2 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin2.csv") # Load the 
 results_2 <- run_hespdiv(tb_2, 2)
 tb_2 <- results_2$tb
 hespdiv_result_2 <- results_2$hespdiv_result
+hespdiv_result_pac_2 <- results_2$hespdiv_result_pac
 hsa_result_2 <- results_2$hsa_result
 
 tb_3 <- read.csv("../../BDNN_Arielli/data/hespdiv/hespdiv_bin3.csv") # Load the data
 results_3 <- run_hespdiv(tb_3, 3)
 tb_3 <- results_3$tb
 hespdiv_result_3 <- results_3$hespdiv_result
+hespdiv_result_pac_3 <- results_3$hespdiv_result_pac
 hsa_result_3 <- results_3$hsa_result
 
 
