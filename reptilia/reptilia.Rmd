@@ -18,7 +18,7 @@ library(dplyr)
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+data <- read.csv("../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
@@ -136,7 +136,6 @@ bins_shifted
 ```
 
 ```{r}
-# Not sure why I did this
 bins_shifted <- c(99.6, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90,
 89, 88, 87, 86, 85, 84, 83, 82, 81, 80,
 79, 78, 77, 76, 75, 74, 73, 72, 71, 70,
