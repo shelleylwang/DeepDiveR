@@ -18,7 +18,7 @@ library(dplyr)
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+data <- read.csv("../../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
@@ -160,7 +160,7 @@ head(data_shifted_ages)
 ### Input File
 
 ```{r}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/reptilia_2/")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
@@ -282,11 +282,11 @@ config$write("reptilia_config_1.ini")
 We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
 
 ```{python run, eval = FALSE}
-python ../deepdive/run_dd_config.py reptilia/reptilia_config_1.ini -wd reptilia/
+python ../deepdive/run_dd_config.py reptilia/reptilia_2/reptilia_config_1_TEST.ini -wd reptilia/reptilia_2/
 ```
 
 ### Outputs:
 
--   
+-   rep
 
 -   
