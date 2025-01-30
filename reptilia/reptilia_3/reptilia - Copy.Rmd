@@ -184,7 +184,7 @@ prep_dd_input(
   # Specify number of replicates
   r = 100,
   # Specify name of created file
-  output_file = "reptilia_deepdive_input_SHIFTED.csv")
+  output_file = "reptilia_deepdive_input_TEST.csv")
 ```
 
 ```{r}
@@ -193,7 +193,7 @@ config_test <- create_config(
   # Specify name for the simulations
   name = "reptilia_1_TEST",
   # Name of data file
-  data_file = "reptilia_deepdive_input_SHIFTED.csv",
+  data_file = "reptilia_deepdive_input_TEST.csv",
   bins = bins_shifted,
   n_areas = length(unique(data_shifted_ages$Area)),
   )
@@ -222,7 +222,7 @@ edit_config(config = config_test,
 ```
 
 ```{r}
-config_test$write("reptilia_config_1_SHIFTED.ini")
+config_test$write("reptilia_config_1_TEST.ini")
 
 ```
 
@@ -264,7 +264,7 @@ config <- create_config(
   # Name of data file
   data_file = "reptilia_deepdive_input.csv",
   bins = bins,
-  n_areas = length(unique(data_added_area$Area)),
+  n_areas = length(unique(data$Area)),
   )
 ```
 
