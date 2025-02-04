@@ -18,7 +18,7 @@ library(dplyr)
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("../../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+data <- read.csv("../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
@@ -53,21 +53,11 @@ data$Area[is.na(data$Area)]
 anyNA(data)
 ```
 
-We have a lot of unique localities. Let's compare to the default built-in dataset for carnivora in DeepDive
+**Comparing to default 'carnivora' dataset used in vignettes**
 
 ```{r}
 length(unique(data[['Locality']]))
 ```
-
-```{r}
-length(unique(data[['Taxon']]))
-```
-
-```{r}
-length(unique(data[['Area']]))
-```
-
-### **Comparing to built-in Carnivora Dataset**
 
 ```{r}
 data(carnivora)
@@ -75,11 +65,15 @@ length(unique(carnivora[['Locality']]))
 ```
 
 ```{r}
+length(unique(data[['Taxon']]))
+```
+
+```{r}
 length(unique(carnivora[['Taxon']]))
 ```
 
 ```{r}
-summary(carnivora)
+length(unique(data[['Area']]))
 ```
 
 ```{r}
@@ -98,7 +92,7 @@ table(carnivora$Area)
 ```{r}
 summary(carnivora$MaxAge)
 summary(carnivora$MinAge)
-# According to the Carnivora vignette, the bins start at the max maxage age, and go down to the min minage, so my bins vector should do the same
+# According to the Carnivora vignette, the bins start at the max maxage age, and go down to just below the minimum minage, so my bins vector should do the same
 ```
 
 ### Defining time bins by stages
@@ -127,54 +121,30 @@ bins
 summary(carnivora)
 ```
 
-The example carnivora dataset has much smaller Age columns because Carnivora is extant. Ran into issues so trouble shooting **below** by shifting my ages and date ranges to present day.
+The example carnivora dataset has much smaller Age columns because Carnivora is extant
 
-## Trouble Shooting
+During my test runs of reptilia (in test/reptilia), I found ages needed to be shifted to the present, otherwise the simulations would freeze
 
 ### Shifting Time Bins/Ages
 
-Ran into issues so trouble shooting **below** by shifting my ages and date ranges to present day. Potentially the large age values are causing issues?
-
 ```{r}
 data_shifted_ages <- data
-data_shifted_ages$MinAge <- data_shifted_ages$MinAge - 199.3
-data_shifted_ages$MaxAge <- data_shifted_ages$MaxAge - 199.3
+data_shifted_ages$MinAge <- data_shifted_ages$MinAge - 199
+data_shifted_ages$MaxAge <- data_shifted_ages$MaxAge - 199
 
 head(data_shifted_ages)
 
 ```
 
 ```{r}
-bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199.3, 283.5-199.3, 273-199.3, 264.3-199.3, 259.5-199.3, 252-199.3, 247-199.3, 242-199.3, 237-199.3, 227-199.3, 217-199.3, 0)
+bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199, 283.5-199, 273-199, 264.3-199, 259.5-199, 252-199, 247-199, 242-199, 237-199, 227-199, 217-199, 0)
 bins_shifted
 ```
 
-```{r}
-# Not sure why I did this
-bins_shifted <- c(99.6, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90,
-89, 88, 87, 86, 85, 84, 83, 82, 81, 80,
-79, 78, 77, 76, 75, 74, 73, 72, 71, 70,
-69, 68, 67, 66, 65, 64, 63, 62, 61, 60,
-59, 58, 57, 56, 55, 54, 53, 52, 51, 50,
-49, 48, 47, 46, 45, 44, 43, 42, 41, 40,
-39, 38, 37, 36, 35, 34, 33, 32, 31, 30,
-29, 28, 27, 26, 25, 24, 23, 22, 21, 20,
-19, 18, 17, 16, 15, 14, 13, 12, 11, 10,
-9, 8, 7, 6, 5, 4, 3, 2, 1, 0)
-bins_shifted
-```
-
-### Adding a 2nd Area
+### Calling prep_dd_input
 
 ```{r}
-data_shifted_ages[1:2000, 'Area'] <- 2 
-head(data_shifted_ages)
-```
-
-### Input File
-
-```{r}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/reptilia_2/")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
@@ -184,7 +154,7 @@ prep_dd_input(
   # Specify number of replicates
   r = 100,
   # Specify name of created file
-  output_file = "reptilia_deepdive_input_SHIFTED.csv")
+  output_file = "reptilia_deepdive_input.csv")
 ```
 
 ```{r}
@@ -228,30 +198,7 @@ config_test$write("reptilia_config_1_SHIFTED.ini")
 
 The above did not work to solve the error
 
-## Combining into an Input File (un-shifted)
-
-```{r}
-data_added_area <- data
-data_added_area[1:2000, 'Area'] <- 2 
-head(data_added_area)
-```
-
-```{r create_data, eval = FALSE}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/reptilia_2")
-# Create input file for DeepDive
-prep_dd_input(
-  # Specify occurrence data.frame
-  dat = data_added_area, # this one has a second area
-  # Specify vector containing time bin boundaries
-  bins = bins, # these are the un-shifted bins
-  # Specify number of replicates
-  r = 10,
-  # Specify name of created file
-  output_file = "reptilia_deepdive_input.csv")
-
-```
-
-## Configuration File (unshifted)
+## Configuration File
 
 Settings for the analysis/parameters for the simulation
 
@@ -297,7 +244,7 @@ edit_config(config = config,
 config$write("reptilia_config_1.ini")
 ```
 
-## Running DeepDive
+## Calling Config: Terminal Command
 
 We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
 
