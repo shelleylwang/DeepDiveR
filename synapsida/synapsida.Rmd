@@ -181,13 +181,13 @@ edit_config(config = config_test,
 edit_config(config = config_test,
             module = "simulations",
             parameter = "n_training_simulations", 
-            value = 100)
+            value = 10000)
 
 # Set number of test simulations to 10
 edit_config(config = config_test,
             module = "simulations",
             parameter = "n_test_simulations", 
-            value = 10)
+            value = 1000)
 
 ```
 

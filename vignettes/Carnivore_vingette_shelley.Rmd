@@ -178,7 +178,9 @@ In order to do this, we will create an `areas_matrix` object which will be incor
 Here, we will assume that dispersal of carnivorans to South America was only possible between 11 and 7 Ma.
 
 Areas need to be in alphabetical order.
-Regions disappearing instead of merging can be made by setting the label argument to: label = "end".
+
+**The tutorial uses misleading language for this function:** it only specifies simple presence and absence of an Area by allowing you to specify a start and end time for that Area designation.
+**It does NOT allow** you to specify Area 1 **splitting** into Area 2 and Area 3, **or** Area 4 and 5 **merging** into Area 6 (for example).
 
 ```{r geog_limits}
 # Create data.frame describing the time for which each area is available
