@@ -161,9 +161,9 @@ prep_dd_input(
 # Create configuration file for DeepDive
 config_test <- create_config(
   # Specify name for the simulations
-  name = "reptilia_1_TEST",
+  name = "reptilia",
   # Name of data file
-  data_file = "reptilia_deepdive_input_SHIFTED.csv",
+  data_file = "reptilia_deepdive_input.csv",
   bins = bins_shifted,
   n_areas = length(unique(data_shifted_ages$Area)),
   )
@@ -192,56 +192,8 @@ edit_config(config = config_test,
 ```
 
 ```{r}
-config_test$write("reptilia_config_1_SHIFTED.ini")
+config_test$write("reptilia_config.ini")
 
-```
-
-The above did not work to solve the error
-
-## Configuration File
-
-Settings for the analysis/parameters for the simulation
-
-```{r create_config}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/reptilia_2")
-# Create configuration file for DeepDive
-config <- create_config(
-  # Specify name for the simulations
-  name = "reptilia_1",
-  # Name of data file
-  data_file = "reptilia_deepdive_input.csv",
-  bins = bins,
-  n_areas = length(unique(data_added_area$Area)),
-  )
-```
-
-```{r}
-edit_config(config = config,
-            module = "general",
-            parameter = "present_diversity", 
-            value = 0)
-
-# Default # of training sims = 10k, default test sims = 100
-
-```
-
-```{r}
-# Set number of training simulations to 100
-edit_config(config = config,
-            module = "simulations",
-            parameter = "n_training_simulations", 
-            value = 100)
-
-# Set number of test simulations to 10
-edit_config(config = config,
-            module = "simulations",
-            parameter = "n_test_simulations", 
-            value = 10)
-```
-
-```{r}
-# Write the config file
-config$write("reptilia_config_1.ini")
 ```
 
 ## Calling Config: Terminal Command
@@ -249,7 +201,7 @@ config$write("reptilia_config_1.ini")
 We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
 
 ```{python run, eval = FALSE}
-python ../deepdive/run_dd_config.py reptilia/reptilia_2/reptilia_config_1_TEST.ini -wd reptilia/reptilia_2/
+python ../deepdive/run_dd_config.py reptilia/reptilia_config.ini -wd reptilia
 ```
 
 ### Outputs:
