@@ -178,16 +178,24 @@ plot_data <- data.frame(
     ggsave("feature_plots_formatted/n_locs_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
-  ######################## 4. N_SINGLETONS GRAPH ####################################
-  # dataframe containing the two columns
-  plot_data <- data.frame(year, data)
+  #################### 4. ORIGINATION + EXTINCTION EVENTS#######################
+    # Create a longer format dataset combining all species columns
+    plot_data <- data.frame(
+      year = rep(year, 2),
+      columns_list = c(data$extinction_events, data$origination_events),
+      columns_labels = factor(rep(c("Extinction", "Origination"), each = length(year)))
+    )
 
     # Create the step line chart with multiple lines
-    step_line_chart <- ggplot(plot_data, aes(x = year, y = n_singletons)) +
+    step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
       geom_step(size = 1) +  # Increase line thickness here
       scale_x_reverse() +
+      # Add distinct colors for each species line
+      scale_color_manual(values = c("Extinction" = "red",
+                                    "Origination" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Number of Singletons") +
+           y = "Extinction and Origination Events Through Time",
+           color = "Area") +
       coord_geo(xlim = c(-300, -190),
                 expand = FALSE,
                 clip = "on",
@@ -207,16 +215,20 @@ plot_data <- data.frame(
             plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
             axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
             axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
-            axis.text = element_text(size = 12, face = "bold"))
+            axis.text = element_text(size = 12, face = "bold"),
+            legend.position = "right",
+            legend.title = element_text(size = 12, face = "bold"),
+            legend.text = element_text(size = 10)
+      )
 
-  # Display the plot
-  print(step_line_chart)
+    # Display the plot
+    print(step_line_chart)
 
-  # Save the plot as a PDF
-  ggsave("feature_plots_formatted/n_singletons_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    # Save the plot as a PDF
+    ggsave("feature_plots_formatted/origination_extinction_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
-  ######################### 5. Other/Single GRAPHS #############################
+  ############################ 5. SINGLE GRAPHS ################################
 
   plot_graph <- function(year, y, y_label, pdf_name) {
     # Debugging: Print the PDF path
@@ -259,4 +271,10 @@ plot_data <- data.frame(
   # N_Endemics
   plot_graph(year, data$n_endemics, "Number of Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
 
-  #
+  # N_Singletons
+  plot_graph(year, data$n_singletons, "Number of Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
+
+
+  # Range_through_div
+  plot_graph(year, data$range_through_div, "Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+
