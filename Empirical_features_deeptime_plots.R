@@ -216,7 +216,7 @@ plot_data <- data.frame(
   ggsave("feature_plots_formatted/n_singletons_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
-  ######################### 5. N_ENDEMICS GRAPH ####################################
+  ######################### 5. Other/Single GRAPHS #############################
 
   plot_graph <- function(year, y, y_label, pdf_name) {
     # Debugging: Print the PDF path
@@ -256,6 +256,7 @@ plot_data <- data.frame(
     return(step_line_chart)
   }
 
-  # Call the function
-  endemic_plot <- plot_graph(year, data$n_endemics, "Number of Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
-  print(endemic_plot)
+  # N_Endemics
+  plot_graph(year, data$n_endemics, "Number of Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
+
+  #
