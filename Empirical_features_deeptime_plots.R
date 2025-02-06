@@ -71,7 +71,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
 print(step_line_chart)
 
 # Save the plot as a PDF
-ggsave("feature_plots_formatted/n_species_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("feature_plots_formatted/n_genera_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 ######################### 2. N_OCCS GRAPH ####################################
 
