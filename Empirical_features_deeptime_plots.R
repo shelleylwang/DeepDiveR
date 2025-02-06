@@ -274,7 +274,11 @@ plot_data <- data.frame(
   # N_Singletons
   plot_graph(year, data$n_singletons, "Number of Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
 
-
   # Range_through_div
   plot_graph(year, data$range_through_div, "Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+
+
+    # Net diversity
+  net_diversity = data$origination_events - data$extinction_events
+  plot_graph(year, net_diversity, "Net Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
 
