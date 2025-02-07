@@ -40,7 +40,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Area 3" = "darkgreen",
                                 "Area 4" = "darkorange")) +
   labs(x = "Time (Ma)",
-       y = "Number of Genera",
+       y = "Number of Reptilia Genera",
        color = "Area") +
   coord_geo(xlim = c(-300, -190),
             expand = FALSE,
@@ -92,7 +92,7 @@ plot_data <- data.frame(
                                   "Area 3" = "darkgreen",
                                   "Area 4" = "darkorange")) +
     labs(x = "Time (Ma)",
-         y = "Number of Occurrences",
+         y = "Number of Reptilia Occurrences",
          color = "Area") +
     coord_geo(xlim = c(-300, -190),
               expand = FALSE,
@@ -144,7 +144,7 @@ plot_data <- data.frame(
                                     "Area 3" = "darkgreen",
                                     "Area 4" = "darkorange")) +
       labs(x = "Time (Ma)",
-           y = "Number of Localities",
+           y = "Number of Reptilia Localities",
            color = "Area") +
       coord_geo(xlim = c(-300, -190),
                 expand = FALSE,
@@ -194,7 +194,7 @@ plot_data <- data.frame(
       scale_color_manual(values = c("Extinction" = "red",
                                     "Origination" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Extinction and Origination Events Through Time",
+           y = "Reptilia Extinction and Origination Events Through Time",
            color = "Area") +
       coord_geo(xlim = c(-300, -190),
                 expand = FALSE,
@@ -269,16 +269,16 @@ plot_data <- data.frame(
   }
 
   # N_Endemics
-  plot_graph(year, data$n_endemics, "Number of Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
+  plot_graph(year, data$n_endemics, "Number of Reptilia Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
 
   # N_Singletons
-  plot_graph(year, data$n_singletons, "Number of Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
+  plot_graph(year, data$n_singletons, "Number of Reptilia Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
 
   # Range_through_div
-  plot_graph(year, data$range_through_div, "Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+  plot_graph(year, data$range_through_div, "Reptilia Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
 
 
-    # Net diversity
+  # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_graph(year, net_diversity, "Net Reptilia Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
 
