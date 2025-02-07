@@ -5,8 +5,9 @@ library(deeptime)
 library(tidyr)
 library(dplyr)
 
-# Set working directory
-setwd("reptilia/reptilia_models/simulations_20250204_lstm64_32_d64_32_conditional/")
+# Set working directory. "../../../" is necessary when you've
+# run the script for one genera, and now need to switch to the other
+setwd("temnospondyli/temnospondyli_models/simulations_20250205_lstm64_32_d64_32_conditional/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
@@ -40,7 +41,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Area 3" = "darkgreen",
                                 "Area 4" = "darkorange")) +
   labs(x = "Time (Ma)",
-       y = "Number of Reptilia Genera",
+       y = "Number of Temnospondyli Genera",
        color = "Area") +
   coord_geo(xlim = c(-300, -190),
             expand = FALSE,
@@ -92,7 +93,7 @@ plot_data <- data.frame(
                                   "Area 3" = "darkgreen",
                                   "Area 4" = "darkorange")) +
     labs(x = "Time (Ma)",
-         y = "Number of Reptilia Occurrences",
+         y = "Number of Temnospondyli Occurrences",
          color = "Area") +
     coord_geo(xlim = c(-300, -190),
               expand = FALSE,
@@ -144,7 +145,7 @@ plot_data <- data.frame(
                                     "Area 3" = "darkgreen",
                                     "Area 4" = "darkorange")) +
       labs(x = "Time (Ma)",
-           y = "Number of Reptilia Localities",
+           y = "Number of Temnospondyli Localities",
            color = "Area") +
       coord_geo(xlim = c(-300, -190),
                 expand = FALSE,
@@ -194,7 +195,7 @@ plot_data <- data.frame(
       scale_color_manual(values = c("Extinction" = "red",
                                     "Origination" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Reptilia Extinction and Origination Events Through Time",
+           y = "Temnospondyli Extinction and Origination Events",
            color = "Area") +
       coord_geo(xlim = c(-300, -190),
                 expand = FALSE,
@@ -269,16 +270,16 @@ plot_data <- data.frame(
   }
 
   # N_Endemics
-  plot_graph(year, data$n_endemics, "Number of Reptilia Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
+  plot_graph(year, data$n_endemics, "Number of Temnospondyli Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
 
   # N_Singletons
-  plot_graph(year, data$n_singletons, "Number of Reptilia Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
+  plot_graph(year, data$n_singletons, "Number of Temnospondyli Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
 
   # Range_through_div
-  plot_graph(year, data$range_through_div, "Reptilia Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+  plot_graph(year, data$range_through_div, "Temnospondyli Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
 
 
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Reptilia Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_graph(year, net_diversity, "Net Temnospondyli Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
 
