@@ -13,7 +13,10 @@ setwd("temnospondyli/temnospondyli_models/simulations_20250205_lstm64_32_d64_32_
 data <- read.csv("Empirical_features__conditional.csv")
 
 # Define the year vector (x axis), and make it negative
-year <- c(199.3, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1)
+# The very last/oldest time bin (Max(data_shifted_ages$MaxAge))
+#does not need to be specified, because numbers corresponding to the
+# year = 290.1 row refer to values associated with 290.1+ Ma
+year <- c(199.3, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1)
 year <- -year
 
 # Format axis labels
@@ -288,35 +291,28 @@ plot_data <- data.frame(
   # Read and transpose data
   emp_preds <- read.csv("Empirical_predictions__conditional.csv")
   emp_preds_t <- as.data.frame(t(emp_preds))
+  emp_preds_t$timebins <- as.numeric(gsub("X", "", as.character(rownames(emp_preds_t))))
 
-  # Create stats dataframe
+
+  # Calculate statistics manually
   stats_df <- data.frame(
-    mean = rowMeans(emp_preds_t),
-    row.names = rownames(emp_preds_t))
+    timebins = emp_preds_t$timebins,
+    mean = rowMeans(emp_preds_t, na.rm = TRUE),
+    sd = apply(emp_preds_t, 1, sd, na.rm = TRUE)
+  )
 
-  # Fix CI calculations
-  stats_df$ci95 <- t(apply(emp_preds_t, 1, function(x) {
-    quantile(x, probs = c(0.025, 0.975), na.rm = TRUE)
-  }))
+  # Add confidence intervals
+  stats_df$ci95_lower <- stats_df$mean - (stats_df$sd * 1.96)
+  stats_df$ci95_upper <- stats_df$mean + (stats_df$sd * 1.96)
+  stats_df$ci50_lower <- stats_df$mean - (stats_df$sd * 0.6745)
+  stats_df$ci50_upper <- stats_df$mean + (stats_df$sd * 0.6745)
 
-  stats_df$ci50 <- t(apply(emp_preds_t, 1, function(x) {
-    quantile(x, probs = c(0.25, 0.75), na.rm = TRUE)
-  }))
+  # Add range
+  stats_df$range_lower <- apply(emp_preds_t, 1, min, na.rm = TRUE)
+  stats_df$range_upper <- apply(emp_preds_t, 1, max, na.rm = TRUE)
 
-  stats_df$range <- t(apply(emp_preds_t, 1, function(x) {
-    range(x, na.rm = TRUE)
-  }))
-
-  # Convert named elements to numeric
-  stats_df$ci95_lower <- as.numeric(stats_df$ci95[, 1])
-  stats_df$ci95_upper <- as.numeric(stats_df$ci95[, 2])
-  stats_df$ci50_lower <- as.numeric(stats_df$ci50[, 1])
-  stats_df$ci50_upper <- as.numeric(stats_df$ci50[, 2])
-  stats_df$range_lower <- as.numeric(stats_df$range[, 1])
-  stats_df$range_upper <- as.numeric(stats_df$range[, 2])
-
-
-
+  # Remove sd column if you don't need it
+  stats_df$sd <- NULL
 
   # Plot the step line chart with the confidence intervals and minmax range
   plot_empirical_predictions <- function(stats_df, year) {
