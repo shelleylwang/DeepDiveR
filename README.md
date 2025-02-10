@@ -4,13 +4,14 @@
 <!-- badges: end -->
 
 # DeepDiveR
-DeepDiveR is an r package to prepare input for running DeepDive in Python. 
+DeepDiveR is an r package to prepare input for running DeepDive in Python. Make sure you have R version 4.4.1 or above installed on your computer.
 
-You can install DeepDiveR directly in an R console by using the devtools library as below. Make sure you have R version 4.4.1 or above installed on your computer:
+You can install DeepDiveR directly in an R console by using the remotes library as shown below. 
+As the latest version of the package is currently found on the `application_note` branch, this is specified as follows:
 
 ```
 library(remotes)
-remotes::install_github("DeepDive-project/DeepDiveR")
+remotes::install_github("DeepDive-project/DeepDiveR", ref="application_note")
 library(DeepDiveR)
 ```
 
