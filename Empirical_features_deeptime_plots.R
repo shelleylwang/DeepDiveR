@@ -13,9 +13,16 @@ setwd("temnospondyli/temnospondyli_models/simulations_20250205_lstm64_32_d64_32_
 data <- read.csv("Empirical_features__conditional.csv")
 
 # Define the year vector (x axis), and make it negative
-year <- c(199.3, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1)
+# The very last/oldest time bin (Max(data_shifted_ages$MaxAge))
+#does not need to be specified, because numbers corresponding to the
+# year = 290.1 row refer to values associated with 290.1+ Ma
+year <- c(199.3, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1)
 year <- -year
 
+# Format axis labels
+format_labels <- function(x) {
+  return(sprintf("%.0f", abs(x)))
+}
 
 ######################### 1. N_SPECIES GRAPH ####################################
 
@@ -26,10 +33,6 @@ plot_data <- data.frame(
   columns_labels = factor(rep(c("Area 1", "Area 2", "Area 3", "Area 4"), each = length(year)))
 )
 
-# Format axis labels
-format_labels <- function(x) {
-  return(sprintf("%.0f", abs(x)))
-}
 
 # Create the step line chart with multiple lines
 step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
@@ -278,8 +281,90 @@ plot_data <- data.frame(
   # Range_through_div
   plot_graph(year, data$range_through_div, "Temnospondyli Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
 
-
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
   plot_graph(year, net_diversity, "Net Temnospondyli Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+
+
+  ######################### 6. EMPIRICAL PREDICTIONS #############################
+
+  # Read and transpose data
+  emp_preds <- read.csv("Empirical_predictions__conditional.csv")
+  emp_preds_t <- as.data.frame(t(emp_preds))
+  emp_preds_t$timebins <- as.numeric(gsub("X", "", as.character(rownames(emp_preds_t))))
+
+
+  # Calculate statistics manually
+  stats_df <- data.frame(
+    timebins = emp_preds_t$timebins,
+    mean = rowMeans(emp_preds_t, na.rm = TRUE),
+    sd = apply(emp_preds_t, 1, sd, na.rm = TRUE)
+  )
+
+  # Add confidence intervals
+  stats_df$ci95_lower <- stats_df$mean - (stats_df$sd * 1.96)
+  stats_df$ci95_upper <- stats_df$mean + (stats_df$sd * 1.96)
+  stats_df$ci50_lower <- stats_df$mean - (stats_df$sd * 0.6745)
+  stats_df$ci50_upper <- stats_df$mean + (stats_df$sd * 0.6745)
+
+  # Add range
+  stats_df$range_lower <- apply(emp_preds_t, 1, min, na.rm = TRUE)
+  stats_df$range_upper <- apply(emp_preds_t, 1, max, na.rm = TRUE)
+
+  # Remove sd column if you don't need it
+  stats_df$sd <- NULL
+
+  # Plot the step line chart with the confidence intervals and minmax range
+  plot_empirical_predictions <- function(stats_df, year) {
+    # Create the plot data
+    plot_data <- data.frame(
+      mean = round(stats_df$mean),
+      ci95_lower = stats_df$ci95_lower,
+      ci95_upper = stats_df$ci95_upper,
+      ci50_lower = stats_df$ci50_lower,
+      ci50_upper = stats_df$ci50_upper,
+      range_lower = stats_df$range_lower,
+      range_upper = stats_df$range_upper
+    )
+    # Create the step line chart
+    step_line_chart <- ggplot(plot_data, aes(x = year, y = mean)) +
+      geom_step(size = 1) +
+      labs(x = "Time (Ma)", y = "Empirical Predictions") +
+      coord_geo(xlim = c(-300, -190), expand = FALSE, clip = "on",
+                dat = list("international epochs", "international periods"),
+                abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
+                alpha = 1, height = unit(1.5, "line"), rot = 0,
+                size = list(6, 5), neg = TRUE) +
+      scale_x_continuous(trans = "reverse",
+                         limits = c(-300, -190),
+                         breaks = seq(-300, -190, by = 10),
+                         labels = format_labels) +
+      theme_classic() +
+      theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
+            plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+            axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
+            axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
+            axis.text = element_text(size = 12, face = "bold"))
+    # Add confidence intervals and minmax range
+    step_line_chart <- step_line_chart +
+      geom_ribbon(aes(ymin = ci95_lower, ymax = ci95_upper), fill = "blue", alpha = 0.2) +
+      geom_ribbon(aes(ymin = ci50_lower, ymax = ci50_upper), fill = "blue", alpha = 0.5) +
+      geom_ribbon(aes(ymin = range_lower, ymax = range_upper), fill = "blue", alpha = 0.1)
+    return(step_line_chart)
+  }
+  # Plot the empirical predictions
+  empirical_predictions_plot <- plot_empirical_predictions(stats_df, year)
+  # Save the plot
+  ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = empirical_predictions_plot, width = 10, height = 6)
+
+
+
+
+
+
+
+
+
+
+
 

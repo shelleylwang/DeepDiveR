@@ -98,7 +98,7 @@ summary(carnivora$MinAge)
 ### Defining time bins by stages
 
 ```{r}
-bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217)
+bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217, 208)
 
 bins
 ```
@@ -112,7 +112,7 @@ range(data$MinAge)
 As you can see, the lowest bin does not include our lowest MinAge. So I added 199.3 to correspond to the Hettangian-Sinemurian border
 
 ```{r}
-bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217, 199.3)
+bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217, 208, 199.3)
 
 bins
 ```
@@ -137,7 +137,7 @@ head(data_shifted_ages)
 ```
 
 ```{r}
-bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199, 283.5-199, 273-199, 264.3-199, 259.5-199, 252-199, 247-199, 242-199, 237-199, 227-199, 217-199, 0)
+bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199, 283.5-199, 273-199, 264.3-199, 259.5-199, 252-199, 247-199, 242-199, 237-199, 227-199, 217-199, 208-199, 0)
 bins_shifted
 ```
 
