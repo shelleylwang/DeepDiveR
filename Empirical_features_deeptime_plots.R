@@ -292,6 +292,12 @@ plot_data <- data.frame(
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
+  print(year)
+  # Format axis labels
+  format_labels <- function(x) {
+    return(sprintf("%.0f", abs(x)))
+  }
+
   # Read data
   emp_preds <- read.csv("Empirical_predictions__conditional.csv")
 
@@ -306,7 +312,7 @@ plot_data <- data.frame(
 
   # Calculate statistics manually
   stats_df <- data.frame(
-    timebins = emp_preds_t$timebins,
+    timebins = -1 * (emp_preds_t$timebins + 199),
     mean = rowMeans(emp_preds_t, na.rm = TRUE),
     sd = apply(emp_preds_t, 1, sd, na.rm = TRUE)
   )
@@ -325,10 +331,10 @@ plot_data <- data.frame(
   stats_df$sd <- NULL
 
   # Plot the step line chart with the confidence intervals and minmax range
-  plot_empirical_predictions <- function(stats_df, year) {
+  plot_empirical_predictions <- function(stats_df, year_vector) {
     # Create the plot data
     plot_data <- data.frame(
-      year = year,
+      year = year_vector,
       mean = stats_df$mean,
       ci95_lower = stats_df$ci95_lower,
       ci95_upper = stats_df$ci95_upper,
@@ -337,6 +343,7 @@ plot_data <- data.frame(
       range_lower = stats_df$range_lower,
       range_upper = stats_df$range_upper
     )
+    print(plot_data)
     # Create the step line chart
     step_line_chart <- ggplot(plot_data, aes(x = year, y = mean)) +
       geom_step(size = 1) +
@@ -369,11 +376,9 @@ plot_data <- data.frame(
   ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = empirical_predictions_plot, width = 10, height = 6)
 
 
-
-
-
-
-
+  print(emp_preds)
+  print(emp_preds_t)
+  print(stats_df)
 
 
 
