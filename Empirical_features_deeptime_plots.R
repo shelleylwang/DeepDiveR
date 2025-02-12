@@ -7,16 +7,20 @@ library(dplyr)
 
 # Set working directory. "../../../" is necessary when you've
 # run the script for one genera, and now need to switch to the other
-setwd("temnospondyli/temnospondyli_models/simulations_20250205_lstm64_32_d64_32_conditional/")
+setwd("temnospondyli/temnospondyli_models/simulations_20250210_lstm64_32_d64_32_conditional/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
 
-# Define the year vector (x axis), and make it negative
-# The very last/oldest time bin (Max(data_shifted_ages$MaxAge))
-#does not need to be specified, because numbers corresponding to the
-# year = 290.1 row refer to values associated with 290.1+ Ma
-year <- c(199.3, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1)
+# COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
+
+# Temnospondyli and Synapsida year vector
+year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+
+# Reptilia year vector:
+#year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
+
+# Make the year vector negative
 year <- -year
 
 # Format axis labels
@@ -46,7 +50,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   labs(x = "Time (Ma)",
        y = "Number of Temnospondyli Genera",
        color = "Area") +
-  coord_geo(xlim = c(-300, -190),
+  coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
             dat = list("international epochs", "international periods"),
@@ -57,8 +61,8 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
             rot = 0,
             size = list(6, 5),
             neg = TRUE) +
-  scale_x_continuous(limits = c(-300, -190),
-                     breaks = seq(-300, -190, by = 10),
+  scale_x_continuous(limits = c(-320, -190),
+                     breaks = seq(-320, -190, by = 10),
                      labels = format_labels) +
   theme_classic() +
   theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
@@ -98,7 +102,7 @@ plot_data <- data.frame(
     labs(x = "Time (Ma)",
          y = "Number of Temnospondyli Occurrences",
          color = "Area") +
-    coord_geo(xlim = c(-300, -190),
+    coord_geo(xlim = c(-320, -190),
               expand = FALSE,
               clip = "on",
               dat = list("international epochs", "international periods"),
@@ -109,8 +113,8 @@ plot_data <- data.frame(
               rot = 0,
               size = list(6, 5),
               neg = TRUE) +
-    scale_x_continuous(limits = c(-300, -190),
-                       breaks = seq(-300, -190, by = 10),
+    scale_x_continuous(limits = c(-320, -190),
+                       breaks = seq(-320, -190, by = 10),
                        labels = format_labels) +
     theme_classic() +
     theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
@@ -150,7 +154,7 @@ plot_data <- data.frame(
       labs(x = "Time (Ma)",
            y = "Number of Temnospondyli Localities",
            color = "Area") +
-      coord_geo(xlim = c(-300, -190),
+      coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
                 clip = "on",
                 dat = list("international epochs", "international periods"),
@@ -161,8 +165,8 @@ plot_data <- data.frame(
                 rot = 0,
                 size = list(6, 5),
                 neg = TRUE) +
-      scale_x_continuous(limits = c(-300, -190),
-                         breaks = seq(-300, -190, by = 10),
+      scale_x_continuous(limits = c(-320, -190),
+                         breaks = seq(-320, -190, by = 10),
                          labels = format_labels) +
       theme_classic() +
       theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
@@ -200,7 +204,7 @@ plot_data <- data.frame(
       labs(x = "Time (Ma)",
            y = "Temnospondyli Extinction and Origination Events",
            color = "Area") +
-      coord_geo(xlim = c(-300, -190),
+      coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
                 clip = "on",
                 dat = list("international epochs", "international periods"),
@@ -211,8 +215,8 @@ plot_data <- data.frame(
                 rot = 0,
                 size = list(6, 5),
                 neg = TRUE) +
-      scale_x_continuous(limits = c(-300, -190),
-                         breaks = seq(-300, -190, by = 10),
+      scale_x_continuous(limits = c(-320, -190),
+                         breaks = seq(-320, -190, by = 10),
                          labels = format_labels) +
       theme_classic() +
       theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
@@ -251,13 +255,13 @@ plot_data <- data.frame(
       geom_step(size = 1) +
       scale_x_reverse() +
       labs(x = "Time (Ma)", y = y_label) +
-      coord_geo(xlim = c(-300, -190), expand = FALSE, clip = "on",
+      coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
                 alpha = 1, height = unit(1.5, "line"), rot = 0,
                 size = list(6, 5), neg = TRUE) +
-      scale_x_continuous(limits = c(-300, -190),
-                         breaks = seq(-300, -190, by = 10),
+      scale_x_continuous(limits = c(-320, -190),
+                         breaks = seq(-320, -190, by = 10),
                          labels = format_labels) +
       theme_classic() +
       theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
@@ -288,8 +292,14 @@ plot_data <- data.frame(
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
-  # Read and transpose data
+  # Read data
   emp_preds <- read.csv("Empirical_predictions__conditional.csv")
+
+  # The first two columns of Empirical_predictions__conditional.csv are exactly the same/repeats
+  # So I can drop one
+  emp_preds <- emp_preds[, -1]
+
+  # Transpose data so time bins are in rows
   emp_preds_t <- as.data.frame(t(emp_preds))
   emp_preds_t$timebins <- as.numeric(gsub("X", "", as.character(rownames(emp_preds_t))))
 
@@ -318,7 +328,8 @@ plot_data <- data.frame(
   plot_empirical_predictions <- function(stats_df, year) {
     # Create the plot data
     plot_data <- data.frame(
-      mean = round(stats_df$mean),
+      year = year,
+      mean = stats_df$mean,
       ci95_lower = stats_df$ci95_lower,
       ci95_upper = stats_df$ci95_upper,
       ci50_lower = stats_df$ci50_lower,
@@ -330,14 +341,14 @@ plot_data <- data.frame(
     step_line_chart <- ggplot(plot_data, aes(x = year, y = mean)) +
       geom_step(size = 1) +
       labs(x = "Time (Ma)", y = "Empirical Predictions") +
-      coord_geo(xlim = c(-300, -190), expand = FALSE, clip = "on",
+      coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
                 alpha = 1, height = unit(1.5, "line"), rot = 0,
                 size = list(6, 5), neg = TRUE) +
       scale_x_continuous(trans = "reverse",
-                         limits = c(-300, -190),
-                         breaks = seq(-300, -190, by = 10),
+                         limits = c(-320, -190),
+                         breaks = seq(-320, -190, by = 10),
                          labels = format_labels) +
       theme_classic() +
       theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
