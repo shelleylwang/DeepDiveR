@@ -1,0 +1,200 @@
+---
+title: "Preparing PBDB data for DeepDive"
+author: "Bethany Allen"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Preparing PBDB data for DeepDive}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE, eval = TRUE}
+knitr::opts_chunk$set(echo = TRUE, include = TRUE, eval = TRUE)
+```
+  
+# Introduction
+    
+`DeepDiveR` is an R package for estimating biodiversity through time from fossil occurrence data. It produces formatted input data and a configuration file that can then be executed in Python through the command line, enabling a clear and reproducible workflow. In this tutorial we will download occurrence data from the [Paleobiology Database](https://paleobiodb.org) and convert it into a suitable format for input into DeepDive. 
+  
+# Installation  
+
+To install the `DeepDiveR` library, it needs to be downloaded from the GitHub repository using either the package `remotes` or a manual download.
+  
+```{r install, eval = FALSE}
+# Option 1: install the package from GitHub
+remotes::install_github("DeepDive-project/DeepDiveR")
+# Option 2: load it from a directory after downloading it from
+# https://github.com/DeepDive-project/DeepDiveR
+# deepdiver_path <- "path_to_DeepDiveR"
+# setwd(deepdiver_path)
+# library(devtools)
+# load_all(".")
+```
+
+We can then load the `DeepDiveR` package. We will also load `dplyr`, which we will use for data manipulation, and `countrycode`, which will prove useful for setting up our geographic regions.
+
+```{r load_packages}
+library(DeepDiveR)
+library(dplyr)
+library(countrycode)
+```
+
+# Downloading the PBDB data
+
+First, we will use the Paleobiology Database (PBDB) API to download our occurrence data. For this example, we will focus on Canidae, the dog family. We will create an object containing the URL describing the data we want, and then use `read.csv` to draw the data directly from the URL.
+If you wish to adapt this code to obtain different data, you can use the 'Download' tab on the PBDB website to create your own URL, and find more detailed guidance in the [API documentation](https://paleobiodb.org/data1.2/).
+
+```{r API}
+# Create API call for occurrences of canids, at the identification resolution of species (and removing uncertain occurrences), excluding trace and form taxa, and including location data
+URL <- paste0("https://paleobiodb.org/data1.2/occs/list.csv?datainfo&rowcount&base_name=Canidae&taxon_reso=species&idqual=certain&pres=regular&show=loc")
+
+# Pull data through API (this step requires internet access)
+Canidae <- utils::read.csv(URL, header = TRUE, stringsAsFactors = FALSE,
+                           skip = 20)
+```
+
+We can view the column names to get a sense of the data included.
+
+```{r view_data}
+# View first six rows
+colnames(Canidae)
+```
+
+# Cleaning the data
+
+It is essential that the data we are using for `DeepDive` has been checked and is of high quality. Here we will engage in some simple cleaning steps, although a more thorough investigation of the data should be conducted prior to analysis for a scientific study.
+The first thing we will do is remove replicates. This refers to any instances where the same species is listed within a single collection more than once; for our purposes, these constitute the same occurrence.
+
+```{r remove_replicates}
+# Remove rows with identical collections and identifications
+Canidae <- distinct(Canidae, collection_no, accepted_name,
+                  .keep_all = TRUE)
+```
+
+Next we will take a look at the list of species names, to quickly check for any obvious problems.
+
+```{r species_names}
+# List unique species names
+sort(unique(Canidae$accepted_name))
+```
+
+It seems we have a mixture of identifications at species and subspecies level. Here we are not interested in subspecies, so we will remove these elements of the `accepted_name`.
+
+```{r remove_subspecies}
+# Remove any characters including and following a second space
+Canidae$accepted_name <- sub("^(\\S*\\s+\\S+).*", "\\1",
+                             Canidae$accepted_name)
+# List unique species names
+sort(unique(Canidae$accepted_name))
+```
+
+Great, that seems to have fixed our problem. We can now start thinking about formatting the data ready for `DeepDiveR`.
+
+# Formatting the data
+
+To be ready for `DeepDiveR`, we need to distill the data into 5 columns, describing the taxon name, the geographic region where it occurs, the minimum and maximum age range, and a locality identifier. Some of these columns already exist in our PBDB `data.frame`: we can use `accepted_name` as the taxon name, `max_ma` and `min_ma` for our age range, and `collection_no` as the locality identifier.
+
+Designating the geographic areas is a little more complex. We have a column named `cc` in the dataset, which gives the code of the country in which the fossil was found. Let's look at the different values available for canids:
+
+```{r view_countries}
+# List unique country codes
+sort(unique(Canidae$cc))
+```
+
+We can see that 68 different values are present. Further, some of our occurrences do not have the country given. Ideally we should go and check this information and add the country, but for convenience here we will remove these occurrences.
+
+```{r remove_no_country}
+# Remove occurrences with no country given
+Canidae <- filter(Canidae, cc != "")
+```
+
+Next we want to convert our 67 countries into a smaller number of discrete geographic regions, such as continents. We can do this using the R package `countrycode`.
+
+```{r country_to_continent}
+# Take ISO 2 letter country codes and convert to continents
+Canidae$continent <- countrycode(Canidae$cc, "iso2c", "continent")
+```
+
+You will see that we have a warning message here, stating no match for the codes 'FA' and 'UK'. 'FA' corresponds to the Falkland Islands, a British overseas territory just off the coast of South America, while 'UK' refers to the United Kingdom, which in this scheme is instead given by 'GB'. We will complete the data for these occurrences accordingly.
+
+```{r country_to_continent2}
+# Label country 'FA' as being in the Americas
+Canidae$continent[which(Canidae$cc == "FA")] <- "Americas"
+# Label country 'UK' as being in Europe
+Canidae$continent[which(Canidae$cc == "UK")] <- "Europe"
+```
+
+Finally, in this continent scheme, the "Americas" are labelled together, but we are interested in modelling North America and South America separately. To do this at a coarse level, we will label Canada, the USA and Mexico as North America, with all other countries in the "Americas" as South America.
+
+```{r Americas}
+# Relabel "Americas" as "South America"
+Canidae$continent[which(Canidae$continent == "Americas")] <-
+  "South America"
+# Relabel "CA", "US" and "MX" as "North America"
+Canidae$continent[which(Canidae$cc == "CA")] <- "North America"
+Canidae$continent[which(Canidae$cc == "US")] <- "North America"
+Canidae$continent[which(Canidae$cc == "MX")] <- "North America"
+```
+
+We can now briefly summarise the continent distribution in the dataset, to check that this meets our expectations.
+
+```{r count_continents}
+# Count number of occurrences from each continent
+count(Canidae, continent)
+```
+
+A high proportion of canid fossils have famously been found in North America, so it is not surprising to see such a high concentration of these fossils from this continent.
+
+We have conducted all of the necessary data wrangling, so now we can compile the data columns we need into a `data.frame` for `DeepDiveR`.
+
+```{r create_dataframe}
+# Create dataframe containing taxon name, the region where it occurs, the minimum and maximum age range, and a locality identifier
+canid_data <- data.frame(Taxon = Canidae$accepted_name,
+                         Region = Canidae$continent,
+                         MinAge = Canidae$min_ma,
+                         MaxAge = Canidae$max_ma,
+                         Locality = Canidae$collection_no)
+```
+
+It is important that our dataset does not contain any NAs, so we should verify this with a final check.
+
+```{r check_NAs}
+# Check for NAs
+NA %in% canid_data
+```
+
+This returns `FALSE`, indicating that there are no NAs. We are now ready to prepare our data file for `DeepDive`.
+
+# Creating the DeepDive input
+
+Aside from our dataset, the only other information we need to create our `DeepDive` data is the time bins we want to use in our analysis. First we will check the age of the oldest possible occurrence in our dataset.
+
+```{r check_age}
+# Check oldest possible maximum fossil age
+max(canid_data$MaxAge)
+```
+
+At time of writing, this is 56Ma. In that case, we will use the same time bins as described in the carnivoran vignette, but with an upper limit of 56Ma.
+
+```{r set_time}
+# Describe vector of bin boundaries
+bins <- c(56, 54.975, 53.95, 52.925, 51.9, 50.875, 49.85, 48.825, 47.8, 46.85714, 45.91429, 44.97143, 44.02857, 43.08571, 42.14286, 41.2, 40.03667, 38.87333, 37.71, 36.7575, 35.805, 34.8525, 33.9, 32.88667, 31.87333, 30.86, 29.84667, 28.83333, 27.82, 26.862, 25.904, 24.946, 23.988, 23.03, 22.16667, 21.30333, 20.44, 19.3225, 18.205, 17.0875, 15.97, 14.895, 13.82, 12.725, 11.63, 10.534, 9.438, 8.342, 7.246, 6.2895, 5.333, 4.4665, 3.6, 2.58, 1.8, 0.774, 0.129, 0)
+```
+
+We now have everything we need to create the `.csv` file input for `DeepDive`.
+
+```{r create_data, eval = FALSE}
+# Create input file for DeepDive
+prep_dd_input(
+  # Specify occurrence data.frame
+  dat = canid_data,
+  # Specify vector containing time bin boundaries
+  bins = bins,
+  # Specify number of replicates
+  r = 5, 
+  # Specify name of created file
+  output_file = "canid_deepdive_input.csv" 
+)
+```
+
+You can now follow the guidance in the Carnivora vignette on how to set up the configuration file to run this analysis in `DeepDive`.
