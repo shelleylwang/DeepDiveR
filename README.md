@@ -1,17 +1,21 @@
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DeepDive-project/DeepDiveR/actions/workflows/R-CMD-check.yaml)
-[![Codecov test coverage](https://codecov.io/gh/DeepDive-project/DeepDiveR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/DeepDive-project/DeepDiveR?branch=main)
-<!-- badges: end -->
-
 # DeepDiveR
-DeepDiveR is an r package to prepare input for running DeepDive in Python. Make sure you have R version 4.4.1 or above installed on your computer.
+DeepDiveR is an R package to prepare input for running DeepDive in Python.
 
-You can install DeepDiveR directly in an R console by using the remotes library as shown below. 
-As the latest version of the package is currently found on the `application_note` branch, this is specified as follows:
+**Note:** The DeepDiveR package is under active developement. The version used in our [application note](https://doi.org/10.1101/2024.09.03.610960) is available on this [branch](https://github.com/DeepDive-project/DeepDiveR/tree/application_note). 
+
+You can install DeepDiveR directly in an R console by using the devtools library as below. Make sure you have R version 4.4.1 or above installed on your computer:
 
 ```
 library(remotes)
-remotes::install_github("DeepDive-project/DeepDiveR", ref="application_note")
+remotes::install_github("DeepDive-project/DeepDiveR")
+library(DeepDiveR)
+```
+
+An alternative branch can be installed by specifying the branch to install:
+
+```
+library(remotes)
+remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
 library(DeepDiveR)
 ```
 
@@ -28,25 +32,16 @@ Generates a .ini file of settings for analyses that will be executed in step 3. 
 
 Settings not included in the arguments for create_config can be updated using:
 ```
-set_value(attribute_name = "parameter_you_want_to_set", value="updated_parameter_value", module="module_where_parameter_is_stored", config)
+edit_config(config, module = "module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value = "updated_parameter_value")
 ```
-To make regions appear through time you can provide age ranges as below:
-```
-area_ages <- rbind(c(max(bins), max(bins)),  # where each row represents a discrete sampling region
-                   c(50, 40)))  
-```                  
-Regions can then be added to the configuration files using the function ```areas_matrix```. 
-Regions can also be made to disappear using label="end" in the following:
-```
-areas_matrix(area_ages, n_areas = length(unique(dat$Area)), config)
-```
+For arguments see ```?edit_config```.
 
 The configuration file is saved using:
 ```
 config$write(paste(path_dat, "config.ini", sep="/"))
 ```
 
-4. Execute files and launch analyses
+3. Execute files and launch analyses
 Once the configuration and input files are created, the full DeepDive analysis, inclusive of simulation, model training and empirical predictions, can be carried out through a single command line entered in a Terminal (MacOS and Linux) or Command prompt (Windows) window using the Python script run_dd_config.py:
 
 ```
