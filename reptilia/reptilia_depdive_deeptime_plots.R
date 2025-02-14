@@ -7,9 +7,7 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-# Set working directory. "../../../" is necessary when you've
-# run the script for one genera, and now need to switch to the other
-setwd("temnospondyli/temnospondyli_models/simulations_20250210_lstm64_32_d64_32_conditional/")
+setwd("../../../reptilia/reptilia_models/simulations_20250210_lstm64_32_d64_32_conditional/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
@@ -17,10 +15,10 @@ data <- read.csv("Empirical_features__conditional.csv")
 # COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
 
 # Temnospondyli and Synapsida year vector
-year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+# year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
 
 # Reptilia year vector:
-#year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
+year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
 
 # Make the year vector negative
 year <- -year
@@ -50,7 +48,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Area 3" = "darkgreen",
                                 "Area 4" = "darkorange")) +
   labs(x = "Time (Ma)",
-       y = "Number of Temnospondyli Genera",
+       y = "Number of Reptilia Genera",
        color = "Area") +
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
@@ -102,7 +100,7 @@ plot_data <- data.frame(
                                   "Area 3" = "darkgreen",
                                   "Area 4" = "darkorange")) +
     labs(x = "Time (Ma)",
-         y = "Number of Temnospondyli Occurrences",
+         y = "Number of Reptilia Occurrences",
          color = "Area") +
     coord_geo(xlim = c(-320, -190),
               expand = FALSE,
@@ -154,7 +152,7 @@ plot_data <- data.frame(
                                     "Area 3" = "darkgreen",
                                     "Area 4" = "darkorange")) +
       labs(x = "Time (Ma)",
-           y = "Number of Temnospondyli Localities",
+           y = "Number of Reptilia Localities",
            color = "Area") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -204,7 +202,7 @@ plot_data <- data.frame(
       scale_color_manual(values = c("Extinction" = "red",
                                     "Origination" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Temnospondyli Extinction and Origination Events",
+           y = "Reptilia Extinction and Origination Events",
            color = "Area") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -279,17 +277,17 @@ plot_data <- data.frame(
   }
 
   # N_Endemics
-  plot_graph(year, data$n_endemics, "Number of Temnospondyli Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
+  plot_graph(year, data$n_endemics, "Number of Reptilia Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
 
   # N_Singletons
-  plot_graph(year, data$n_singletons, "Number of Temnospondyli Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
+  plot_graph(year, data$n_singletons, "Number of Reptilia Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
 
   # Range_through_div
-  plot_graph(year, data$range_through_div, "Temnospondyli Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+  plot_graph(year, data$range_through_div, "Reptilia Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
 
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Temnospondyli Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_graph(year, net_diversity, "Net Reptilia Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
 
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
@@ -306,7 +304,8 @@ plot_data <- data.frame(
   emp_preds_t$timebins <- as.numeric(gsub("X", "", as.character(rownames(emp_preds_t))))
 
 
-  # Calculate statistics manually
+  # Calculate statistics manually (b/c built in methods lead to a really
+  # oddly formatted cell type (it's some sort of named list))
   stats_df <- data.frame(
     timebins = emp_preds_t$timebins,
     mean = rowMeans(emp_preds_t, na.rm = TRUE),
@@ -352,7 +351,7 @@ plot_data <- data.frame(
       # Add mean line on top
       geom_step(aes(x = year, y = mean), color = "black", size = 1) +
       scale_x_reverse() +
-      labs(x = "Time (Ma)", y = "Number of Species") +
+      labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
