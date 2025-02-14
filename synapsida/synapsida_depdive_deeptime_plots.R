@@ -12,13 +12,16 @@ setwd("../../../synapsida/synapsida_models/simulations_20250210_lstm64_32_d64_32
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
 
+# Duplicate the first row of data, so that the first two rows are identical
+data<- rbind(data[1, ], data)
+
 # COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
 
 # Temnospondyli and Synapsida year vector
-year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+year <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
 
 # Reptilia year vector:
-#year <- c(208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
+#year <- c(199.5, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
 
 # Make the year vector negative
 year <- -year
@@ -296,8 +299,9 @@ plot_data <- data.frame(
   emp_preds <- read.csv("Empirical_predictions__conditional.csv")
 
   # The first two columns of Empirical_predictions__conditional.csv are exactly the same/repeats
-  # So I can drop one
-  emp_preds <- emp_preds[, -1]
+  # Which is what we need for graphing, so that that duplicated value gets plotted
+  # If you didn't keep that duplicated column and didn't add that first value
+  # in the year vector at the top of this script, the very first value (youngest) will not be plotted
 
   # Transpose data so time bins are in rows
   emp_preds_t <- as.data.frame(t(emp_preds))
