@@ -1,9 +1,11 @@
 #!/usr/bin/env Rscript
 # Load necessary libraries
+#install.packages("pammtools")
 library(ggplot2)
 library(deeptime)
 library(tidyr)
 library(dplyr)
+library(pammtools)
 
 # Set working directory. "../../../" is necessary when you've
 # run the script for one genera, and now need to switch to the other
@@ -292,12 +294,6 @@ plot_data <- data.frame(
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
-  print(year)
-  # Format axis labels
-  format_labels <- function(x) {
-    return(sprintf("%.0f", abs(x)))
-  }
-
   # Read data
   emp_preds <- read.csv("Empirical_predictions__conditional.csv")
 
@@ -312,7 +308,7 @@ plot_data <- data.frame(
 
   # Calculate statistics manually
   stats_df <- data.frame(
-    timebins = -1 * (emp_preds_t$timebins + 199),
+    timebins = emp_preds_t$timebins,
     mean = rowMeans(emp_preds_t, na.rm = TRUE),
     sd = apply(emp_preds_t, 1, sd, na.rm = TRUE)
   )
@@ -330,11 +326,9 @@ plot_data <- data.frame(
   # Remove sd column if you don't need it
   stats_df$sd <- NULL
 
-  # Plot the step line chart with the confidence intervals and minmax range
-  plot_empirical_predictions <- function(stats_df, year_vector) {
-    # Create the plot data
-    plot_data <- data.frame(
-      year = year_vector,
+  # Create the base dataframe with all the data
+  plot_data <- data.frame(
+      year = year,
       mean = stats_df$mean,
       ci95_lower = stats_df$ci95_lower,
       ci95_upper = stats_df$ci95_upper,
@@ -343,18 +337,28 @@ plot_data <- data.frame(
       range_lower = stats_df$range_lower,
       range_upper = stats_df$range_upper
     )
-    print(plot_data)
-    # Create the step line chart
-    step_line_chart <- ggplot(plot_data, aes(x = year, y = mean)) +
-      geom_step(size = 1) +
-      labs(x = "Time (Ma)", y = "Empirical Predictions") +
+
+    # Create the step line chart with ribbons
+    step_line_chart <- ggplot(plot_data) +
+      # Add range ribbon (lightest shade)
+      geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
+                  fill = "#ffcccc", alpha = 0.3) +
+      # Add 95% CI ribbon (medium shade)
+      geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
+                  fill = "#ff9999", alpha = 0.3) +
+      # Add 50% CI ribbon (darker shade)
+      geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
+                  fill = "#ff6666", alpha = 0.3) +
+      # Add mean line on top
+      geom_step(aes(x = year, y = mean), color = "black", size = 1) +
+      scale_x_reverse() +
+      labs(x = "Time (Ma)", y = "Number of Species") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
                 alpha = 1, height = unit(1.5, "line"), rot = 0,
                 size = list(6, 5), neg = TRUE) +
-      scale_x_continuous(trans = "reverse",
-                         limits = c(-320, -190),
+      scale_x_continuous(limits = c(-320, -190),
                          breaks = seq(-320, -190, by = 10),
                          labels = format_labels) +
       theme_classic() +
@@ -363,24 +367,8 @@ plot_data <- data.frame(
             axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
             axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
             axis.text = element_text(size = 12, face = "bold"))
-    # Add confidence intervals and minmax range
-    step_line_chart <- step_line_chart +
-      geom_ribbon(aes(ymin = ci95_lower, ymax = ci95_upper), fill = "blue", alpha = 0.2) +
-      geom_ribbon(aes(ymin = ci50_lower, ymax = ci50_upper), fill = "blue", alpha = 0.5) +
-      geom_ribbon(aes(ymin = range_lower, ymax = range_upper), fill = "blue", alpha = 0.1)
-    return(step_line_chart)
-  }
-  # Plot the empirical predictions
-  empirical_predictions_plot <- plot_empirical_predictions(stats_df, year)
-  # Save the plot
-  ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = empirical_predictions_plot, width = 10, height = 6)
 
-
-  print(emp_preds)
-  print(emp_preds_t)
-  print(stats_df)
-
-
-
+    # Save the plot
+    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
