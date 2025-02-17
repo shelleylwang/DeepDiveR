@@ -344,37 +344,37 @@ plot_data <- data.frame(
       range_upper = stats_df$range_upper
     )
 
-    # Create the step line chart with ribbons
-    step_line_chart <- ggplot(plot_data) +
-      # Add range ribbon (lightest shade)
-      geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                  fill = "#ffcccc", alpha = 0.3) +
-      # Add 95% CI ribbon (medium shade)
-      geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                  fill = "#ff9999", alpha = 0.3) +
+  # Create the step line chart with ribbons
+  step_line_chart <- ggplot(plot_data) +
+    # Add range ribbon (lightest shade)
+    geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
+                fill = "#ffcccc", alpha = 0.3) +
+    # Add 95% CI ribbon (medium shade)
+    geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
+                fill = "#ff9999", alpha = 0.3) +
       # Add 50% CI ribbon (darker shade)
       geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                  fill = "#ff6666", alpha = 0.3) +
-      # Add mean line on top
-      geom_step(aes(x = year, y = mean), color = "black", size = 1) +
-      scale_x_reverse() +
-      labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
-      coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-                dat = list("international epochs", "international periods"),
-                abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
-                alpha = 1, height = unit(1.5, "line"), rot = 0,
-                size = list(6, 5), neg = TRUE) +
-      scale_x_continuous(limits = c(-320, -190),
-                         breaks = seq(-320, -190, by = 10),
-                         labels = format_labels) +
-      theme_classic() +
-      theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
-            plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-            axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
-            axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
-            axis.text = element_text(size = 12, face = "bold"))
+                fill = "#ff6666", alpha = 0.3) +
+    # Add mean line on top
+    geom_step(aes(x = year, y = mean), color = "black", size = 1) +
+    scale_x_reverse() +
+    labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
+    coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
+              dat = list("international epochs", "international periods"),
+              abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
+              alpha = 1, height = unit(1.5, "line"), rot = 0,
+              size = list(6, 5), neg = TRUE) +
+    scale_x_continuous(limits = c(-320, -190),
+                        breaks = seq(-320, -190, by = 10),
+                        labels = format_labels) +
+    theme_classic() +
+    theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
+          plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+          axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
+          axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
+          axis.text = element_text(size = 12, face = "bold"))
 
-    # Save the plot
-    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+  # Save the plot
+  ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
