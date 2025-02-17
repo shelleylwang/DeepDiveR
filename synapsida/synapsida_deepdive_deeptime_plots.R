@@ -353,7 +353,7 @@ plot_data <- data.frame(
       geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
                   fill = "#ff6666", alpha = 0.3) +
       # Add mean line on top
-      geom_step(aes(x = year, y = mean), color = "black", size = 1) +
+      geom_step(aes(x = year, y = mean), color = "maroon", size = 1) +
       scale_x_reverse() +
       labs(x = "Time (Ma)", y = "Synapsida Diversity Predictions") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
