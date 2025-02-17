@@ -145,7 +145,7 @@ step_line_chart <- ggplot(combined_plot_data) +
         axis.text = element_text(size = 12, face = "bold")) +
   scale_fill_manual(values = c("Temnospondyli" = "gray", "Synapsida" = "pink", "Reptilia" = "lightgreen"),
                     guide = guide_legend(title = "Dataset")) +
-  scale_color_manual(values = c("Temnospondyli" = "black", "Synapsida" = "darkred", "Reptilia" = "darkgreen"),
+  scale_color_manual(values = c("Temnospondyli" = "black", "Synapsida" = "maroon", "Reptilia" = "darkgreen"),
                      guide = guide_legend(title = "Dataset"))
 
 # Save the plot

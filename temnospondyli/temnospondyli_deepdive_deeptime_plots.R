@@ -347,13 +347,13 @@ plot_data <- data.frame(
     step_line_chart <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                  fill = "#ffcccc", alpha = 0.3) +
+                  fill = "#C3C3C3", alpha = 0.3) +
       # Add 95% CI ribbon (medium shade)
       geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                  fill = "#ff9999", alpha = 0.3) +
+                  fill = "#a5a5a5", alpha = 0.3) +
       # Add 50% CI ribbon (darker shade)
       geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                  fill = "#ff6666", alpha = 0.3) +
+                  fill = "#6c6c6c", alpha = 0.3) +
       # Add mean line on top
       geom_step(aes(x = year, y = mean), color = "black", size = 1) +
       scale_x_reverse() +

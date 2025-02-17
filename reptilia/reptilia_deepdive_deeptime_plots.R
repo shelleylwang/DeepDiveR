@@ -348,15 +348,15 @@ plot_data <- data.frame(
   step_line_chart <- ggplot(plot_data) +
     # Add range ribbon (lightest shade)
     geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                fill = "#ffcccc", alpha = 0.3) +
+                fill = "#dcfcdd", alpha = 0.3) +
     # Add 95% CI ribbon (medium shade)
     geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                fill = "#ff9999", alpha = 0.3) +
-      # Add 50% CI ribbon (darker shade)
-      geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                fill = "#ff6666", alpha = 0.3) +
+                fill = "#b3feb6", alpha = 0.3) +
+    # Add 50% CI ribbon (darker shade)
+    geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
+                fill = "lightgreen", alpha = 0.3) +
     # Add mean line on top
-    geom_step(aes(x = year, y = mean), color = "black", size = 1) +
+    geom_step(aes(x = year, y = mean), color = "darkgreen", size = 1) +
     scale_x_reverse() +
     labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
     coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
