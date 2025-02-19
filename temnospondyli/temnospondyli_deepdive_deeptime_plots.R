@@ -48,8 +48,8 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   # Add distinct colors for each species line
   scale_color_manual(values = c("Area 1" = "red",
                                 "Area 2" = "blue",
-                                "Area 3" = "darkgreen",
-                                "Area 4" = "darkorange")) +
+                                "Area 3" = "turquoise",
+                                "Area 4" = "orange1")) +
   labs(x = "Time (Ma)",
        y = "Number of Temnospondyli Genera",
        color = "Area") +
@@ -100,8 +100,8 @@ plot_data <- data.frame(
     # Add distinct colors for each species line
     scale_color_manual(values = c("Area 1" = "red",
                                   "Area 2" = "blue",
-                                  "Area 3" = "darkgreen",
-                                  "Area 4" = "darkorange")) +
+                                  "Area 3" = "turquoise",
+                                  "Area 4" = "orange1")) +
     labs(x = "Time (Ma)",
          y = "Number of Temnospondyli Occurrences",
          color = "Area") +
@@ -152,8 +152,8 @@ plot_data <- data.frame(
       # Add distinct colors for each species line
       scale_color_manual(values = c("Area 1" = "red",
                                     "Area 2" = "blue",
-                                    "Area 3" = "darkgreen",
-                                    "Area 4" = "darkorange")) +
+                                    "Area 3" = "turquoise",
+                                    "Area 4" = "orange1")) +
       labs(x = "Time (Ma)",
            y = "Number of Temnospondyli Localities",
            color = "Area") +
@@ -347,15 +347,15 @@ plot_data <- data.frame(
     step_line_chart <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                  fill = "#C3C3C3", alpha = 0.3) +
+                  fill = "#f9d1f3", alpha = 0.3) +
       # Add 95% CI ribbon (medium shade)
       geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                  fill = "#a5a5a5", alpha = 0.3) +
+                  fill = "#f9b5ef", alpha = 0.3) +
       # Add 50% CI ribbon (darker shade)
       geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                  fill = "#6c6c6c", alpha = 0.3) +
+                  fill = "#f38aee", alpha = 0.3) +
       # Add mean line on top
-      geom_step(aes(x = year, y = mean), color = "black", size = 1) +
+      geom_step(aes(x = year, y = mean), color = "magenta2", size = 1) +
       scale_x_reverse() +
       labs(x = "Time (Ma)", y = "Temnospondyli Diversity Predictions") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",

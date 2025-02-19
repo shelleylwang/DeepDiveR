@@ -48,8 +48,8 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   # Add distinct colors for each species line
   scale_color_manual(values = c("Area 1" = "red",
                                 "Area 2" = "blue",
-                                "Area 3" = "darkgreen",
-                                "Area 4" = "darkorange")) +
+                                "Area 3" = "turquoise",
+                                "Area 4" = "orange1")) +
   labs(x = "Time (Ma)",
        y = "Number of Synapsida Genera",
        color = "Area") +
@@ -100,8 +100,8 @@ plot_data <- data.frame(
     # Add distinct colors for each species line
     scale_color_manual(values = c("Area 1" = "red",
                                   "Area 2" = "blue",
-                                  "Area 3" = "darkgreen",
-                                  "Area 4" = "darkorange")) +
+                                  "Area 3" = "turquoise",
+                                  "Area 4" = "orange1")) +
     labs(x = "Time (Ma)",
          y = "Number of Synapsida Occurrences",
          color = "Area") +
@@ -152,8 +152,8 @@ plot_data <- data.frame(
       # Add distinct colors for each species line
       scale_color_manual(values = c("Area 1" = "red",
                                     "Area 2" = "blue",
-                                    "Area 3" = "darkgreen",
-                                    "Area 4" = "darkorange")) +
+                                    "Area 3" = "turquoise",
+                                    "Area 4" = "orange1")) +
       labs(x = "Time (Ma)",
            y = "Number of Synapsida Localities",
            color = "Area") +
@@ -345,15 +345,15 @@ plot_data <- data.frame(
     step_line_chart <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                  fill = "#ffcccc", alpha = 0.3) +
+                  fill = "#fad3bc", alpha = 0.3) +
       # Add 95% CI ribbon (medium shade)
       geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                  fill = "#ff9999", alpha = 0.3) +
+                  fill = "#faa97b", alpha = 0.3) +
       # Add 50% CI ribbon (darker shade)
       geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                  fill = "#ff6666", alpha = 0.3) +
+                  fill = "#fb9255", alpha = 0.3) +
       # Add mean line on top
-      geom_step(aes(x = year, y = mean), color = "maroon", size = 1) +
+      geom_step(aes(x = year, y = mean), color = "orangered1", size = 1) +
       scale_x_reverse() +
       labs(x = "Time (Ma)", y = "Synapsida Diversity Predictions") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
