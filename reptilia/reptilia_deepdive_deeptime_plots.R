@@ -51,8 +51,8 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   # Add distinct colors for each species line
   scale_color_manual(values = c("Area 1" = "red",
                                 "Area 2" = "blue",
-                                "Area 3" = "darkgreen",
-                                "Area 4" = "darkorange")) +
+                                "Area 3" = "turquoise",
+                                "Area 4" = "orange1")) +
   labs(x = "Time (Ma)",
        y = "Number of Reptilia Genera",
        color = "Area") +
@@ -103,8 +103,8 @@ plot_data <- data.frame(
     # Add distinct colors for each species line
     scale_color_manual(values = c("Area 1" = "red",
                                   "Area 2" = "blue",
-                                  "Area 3" = "darkgreen",
-                                  "Area 4" = "darkorange")) +
+                                  "Area 3" = "turquoise",
+                                  "Area 4" = "orange1")) +
     labs(x = "Time (Ma)",
          y = "Number of Reptilia Occurrences",
          color = "Area") +
@@ -155,8 +155,8 @@ plot_data <- data.frame(
       # Add distinct colors for each species line
       scale_color_manual(values = c("Area 1" = "red",
                                     "Area 2" = "blue",
-                                    "Area 3" = "darkgreen",
-                                    "Area 4" = "darkorange")) +
+                                    "Area 3" = "turquoise",
+                                    "Area 4" = "orange1")) +
       labs(x = "Time (Ma)",
            y = "Number of Reptilia Localities",
            color = "Area") +
@@ -348,15 +348,15 @@ plot_data <- data.frame(
   step_line_chart <- ggplot(plot_data) +
     # Add range ribbon (lightest shade)
     geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                fill = "#dcfcdd", alpha = 0.3) +
+                fill = "#d2f7f8", alpha = 0.3) +
     # Add 95% CI ribbon (medium shade)
     geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                fill = "#b3feb6", alpha = 0.3) +
+                fill = "#a4f3f6", alpha = 0.3) +
     # Add 50% CI ribbon (darker shade)
     geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                fill = "lightgreen", alpha = 0.3) +
+                fill = "#78F3F6", alpha = 0.3) +
     # Add mean line on top
-    geom_step(aes(x = year, y = mean), color = "darkgreen", size = 1) +
+    geom_step(aes(x = year, y = mean), color = "cyan2", size = 1) +
     scale_x_reverse() +
     labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
     coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
