@@ -1,7 +1,7 @@
 test_that("localities_through_time works", {
   # Test dataset
   dat <- data.frame(Taxon = c("A", "B", "C", "D", "E"),
-                    Area = c("Europe", "Europe", "Asia", "Asia", "Asia"),
+                    Region = c("Europe", "Europe", "Asia", "Asia", "Asia"),
                     Locality = c(1, 2, 3, 4, 4),
                     SampledAge = c(0.2, 0.7, 4.6, 10.2, 10.2))
 
@@ -9,7 +9,7 @@ test_that("localities_through_time works", {
 
   # Expect equal
   expect_equal(nrow(localities_through_time(dat = dat, bins = bins)),
-               length(unique(dat$Area)))
+               length(unique(dat$Region)))
 
   # Expect error
   expect_error(localities_through_time())
@@ -26,7 +26,7 @@ test_that("localities_through_time works", {
   colnames(dat) <- c("Taxon", "test", "Locality", "SampledAge")
   expect_error(localities_through_time(dat = dat, bins = bins))
 
-  colnames(dat) <- c("Taxon", "Area", "Locality", "SampledAge")
+  colnames(dat) <- c("Taxon", "Region", "Locality", "SampledAge")
   dat$SampledAge <- as.factor(dat$SampledAge)
   expect_error(localities_through_time(dat = dat, bins = bins))
 })
