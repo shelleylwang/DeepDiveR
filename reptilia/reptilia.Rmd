@@ -138,6 +138,8 @@ head(data_shifted_ages)
 
 ```{r}
 bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199, 283.5-199, 273-199, 264.3-199, 259.5-199, 252-199, 247-199, 242-199, 237-199, 227-199, 217-199, 208-199, 0)
+
+# Actually, just made last bin = 0 to mimic present day. 199.3 - 199 would've been basically 0 anyway
 bins_shifted
 ```
 

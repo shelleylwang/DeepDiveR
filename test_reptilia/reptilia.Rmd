@@ -1,0 +1,211 @@
+---
+title: "reptilia"
+output: html_document
+date: "2024-09-26"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load_packages}
+library(DeepDiveR)
+library(dplyr)
+```
+
+## Prepping Input File
+
+### Loading in Data + EDA
+
+```{r}
+data <- read.csv("../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+head(data)
+```
+
+```{r}
+# Only keeping select columns
+data <- data[, c('Locality', 'Taxon', 'Area', 'MinAge', 'MaxAge')]
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+sapply(data, class)
+```
+
+```{r}
+str(data)
+```
+
+```{r}
+summary(data)
+```
+
+Checking if there are nulls
+
+```{r}
+data$Area[is.na(data$Area)]
+```
+
+```{r}
+anyNA(data)
+```
+
+**Comparing to default 'carnivora' dataset used in vignettes**
+
+```{r}
+length(unique(data[['Locality']]))
+```
+
+```{r}
+data(carnivora)
+length(unique(carnivora[['Locality']]))
+```
+
+```{r}
+length(unique(data[['Taxon']]))
+```
+
+```{r}
+length(unique(carnivora[['Taxon']]))
+```
+
+```{r}
+length(unique(data[['Area']]))
+```
+
+```{r}
+head(carnivora)
+```
+
+```{r}
+length(unique(carnivora[['Area']]))
+```
+
+```{r}
+table(carnivora$Area)
+
+```
+
+```{r}
+summary(carnivora$MaxAge)
+summary(carnivora$MinAge)
+# According to the Carnivora vignette, the bins start at the max maxage age, and go down to just below the minimum minage, so my bins vector should do the same
+```
+
+### Defining time bins by stages
+
+```{r}
+bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217, 208)
+
+bins
+```
+
+```{r}
+range(data$MaxAge)
+range(data$MinAge)
+
+```
+
+As you can see, the lowest bin does not include our lowest MinAge. So I added 199.3 to correspond to the Hettangian-Sinemurian border
+
+```{r}
+bins <- c(max(data$MaxAge),290.1, 283.5, 273, 264.3, 259.5, 252, 247, 242, 237, 227, 217, 208, 199.3)
+
+bins
+```
+
+```{r}
+summary(carnivora)
+```
+
+The example carnivora dataset has much smaller Age columns because Carnivora is extant
+
+During my test runs of reptilia (in test/reptilia), I found ages needed to be shifted to the present, otherwise the simulations would freeze
+
+### Shifting Time Bins/Ages
+
+```{r}
+data_shifted_ages <- data
+data_shifted_ages$MinAge <- data_shifted_ages$MinAge - 199
+data_shifted_ages$MaxAge <- data_shifted_ages$MaxAge - 199
+
+head(data_shifted_ages)
+
+```
+
+```{r}
+bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1-199, 283.5-199, 273-199, 264.3-199, 259.5-199, 252-199, 247-199, 242-199, 237-199, 227-199, 217-199, 208-199, 0)
+bins_shifted
+```
+
+### Calling prep_dd_input
+
+```{r}
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/reptilia/")
+# Create input file for DeepDive
+prep_dd_input(
+  # Specify occurrence data.frame
+  dat = data_shifted_ages,
+  # Specify vector containing time bin boundaries
+  bins = bins_shifted,
+  # Specify number of replicates
+  r = 100,
+  # Specify name of created file
+  output_file = "reptilia_deepdive_input.csv")
+```
+
+```{r}
+# Create configuration file for DeepDive
+config_test <- create_config(
+  # Specify name for the simulations
+  name = "reptilia",
+  # Name of data file
+  data_file = "reptilia_deepdive_input.csv",
+  bins = bins_shifted,
+  n_areas = length(unique(data_shifted_ages$Area)),
+  )
+```
+
+```{r}
+edit_config(config = config_test,
+            module = "general",
+            parameter = "present_diversity", 
+            value = 0)
+```
+
+```{r}
+# Set number of training simulations to 100
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "n_training_simulations", 
+            value = 10000)
+
+# Set number of test simulations to 10
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "n_test_simulations", 
+            value = 1000)
+
+```
+
+```{r}
+config_test$write("reptilia_config.ini")
+
+```
+
+## Calling Config: Terminal Command
+
+We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
+
+```{python run, eval = FALSE}
+python ../deepdive/run_dd_config.py reptilia/reptilia_config.ini -wd reptilia
+```
+
+### Outputs:
+
+-   rep
+
+-   
