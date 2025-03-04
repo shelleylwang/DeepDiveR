@@ -22,9 +22,9 @@ format_labels <- function(x) {
 }
 
 # Read in empirical predictions data
-emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250210_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
-emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250210_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
-emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250210_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
+emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
+emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
+emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
 
 
 # Transpose data

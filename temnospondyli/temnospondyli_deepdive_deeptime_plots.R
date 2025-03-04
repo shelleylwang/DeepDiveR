@@ -7,7 +7,7 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("../../../temnospondyli/temnospondyli_models/simulations_20250304_lstm64_32_d64_32_conditional/")
+setwd("temnospondyli/temnospondyli_models/simulations_20250304_lstm64_32_d64_32_conditional/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
