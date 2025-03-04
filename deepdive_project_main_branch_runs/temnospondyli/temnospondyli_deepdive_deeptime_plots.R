@@ -7,24 +7,21 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("reptilia/reptilia_models/simulations_20250304_lstm64_32_d64_32_conditional/")
+setwd("../../../temnospondyli/temnospondyli_models/simulations_20250210_lstm64_32_d64_32_conditional/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features__conditional.csv")
 
 # Duplicate the first row of data, so that the first two rows are identical
-# If you don't do this + add that first value in the year vector below, the very first value (first row) will not be plotted
 data<- rbind(data[1, ], data)
 
-
 # COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
-# The first value in the year vector corresponds to the minimum MinAge value in the dataset
-# It needs to be added so that the first data point in the features_conditional csv is plotted
+
 # Temnospondyli and Synapsida year vector
-# year <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+year <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
 
 # Reptilia year vector:
-year <- c(199.5, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
+#year <- c(199.5, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
 
 # Make the year vector negative
 year <- -year
@@ -54,7 +51,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Area 3" = "turquoise",
                                 "Area 4" = "orange1")) +
   labs(x = "Time (Ma)",
-       y = "Number of Reptilia Genera",
+       y = "Number of Temnospondyli Genera",
        color = "Area") +
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
@@ -106,7 +103,7 @@ plot_data <- data.frame(
                                   "Area 3" = "turquoise",
                                   "Area 4" = "orange1")) +
     labs(x = "Time (Ma)",
-         y = "Number of Reptilia Occurrences",
+         y = "Number of Temnospondyli Occurrences",
          color = "Area") +
     coord_geo(xlim = c(-320, -190),
               expand = FALSE,
@@ -158,7 +155,7 @@ plot_data <- data.frame(
                                     "Area 3" = "turquoise",
                                     "Area 4" = "orange1")) +
       labs(x = "Time (Ma)",
-           y = "Number of Reptilia Localities",
+           y = "Number of Temnospondyli Localities",
            color = "Area") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -208,7 +205,7 @@ plot_data <- data.frame(
       scale_color_manual(values = c("Extinction" = "red",
                                     "Origination" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Reptilia Extinction and Origination Events",
+           y = "Temnospondyli Extinction and Origination Events",
            color = "Area") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -283,18 +280,20 @@ plot_data <- data.frame(
   }
 
   # N_Endemics
-  plot_graph(year, data$n_endemics, "Number of Reptilia Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
+  plot_graph(year, data$n_endemics, "Number of Temnospondyli Endemics", "feature_plots_formatted/n_endemics_formatted.pdf")
 
   # N_Singletons
-  plot_graph(year, data$n_singletons, "Number of Reptilia Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
+  plot_graph(year, data$n_singletons, "Number of Temnospondyli Singletons", "feature_plots_formatted/n_singletons_formatted.pdf")
 
   # Range_through_div
-  plot_graph(year, data$range_through_div, "Reptilia Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
+  plot_graph(year, data$range_through_div, "Temnospondyli Range Through Diversity", "feature_plots_formatted/range_through_div_formatted.pdf")
 
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Reptilia Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_graph(year, net_diversity, "Net Temnospondyli Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
 
+  # extinction_events
+  plot_graph(year, data$extinction_events, "Number of Temnospondyli Extinction Events", "feature_plots_formatted/extinction_events_formatted.pdf")
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
@@ -344,37 +343,37 @@ plot_data <- data.frame(
       range_upper = stats_df$range_upper
     )
 
-  # Create the step line chart with ribbons
-  step_line_chart <- ggplot(plot_data) +
-    # Add range ribbon (lightest shade)
-    geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
-                fill = "#d2f7f8", alpha = 0.3) +
-    # Add 95% CI ribbon (medium shade)
-    geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
-                fill = "#a4f3f6", alpha = 0.3) +
-    # Add 50% CI ribbon (darker shade)
-    geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
-                fill = "#78F3F6", alpha = 0.3) +
-    # Add mean line on top
-    geom_step(aes(x = year, y = mean), color = "cyan2", size = 1) +
-    scale_x_reverse() +
-    labs(x = "Time (Ma)", y = "Reptilia Diversity Predictions") +
-    coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-              dat = list("international epochs", "international periods"),
-              abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
-              alpha = 1, height = unit(1.5, "line"), rot = 0,
-              size = list(6, 5), neg = TRUE) +
-    scale_x_continuous(limits = c(-320, -190),
-                        breaks = seq(-320, -190, by = 10),
-                        labels = format_labels) +
-    theme_classic() +
-    theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
-          plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-          axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
-          axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
-          axis.text = element_text(size = 12, face = "bold"))
+    # Create the step line chart with ribbons
+    step_line_chart <- ggplot(plot_data) +
+      # Add range ribbon (lightest shade)
+      geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
+                  fill = "#f9d1f3", alpha = 0.3) +
+      # Add 95% CI ribbon (medium shade)
+      geom_stepribbon(aes(x = year, ymin = ci95_lower, ymax = ci95_upper),
+                  fill = "#f9b5ef", alpha = 0.3) +
+      # Add 50% CI ribbon (darker shade)
+      geom_stepribbon(aes(x = year, ymin = ci50_lower, ymax = ci50_upper),
+                  fill = "#f38aee", alpha = 0.3) +
+      # Add mean line on top
+      geom_step(aes(x = year, y = mean), color = "magenta2", size = 1) +
+      scale_x_reverse() +
+      labs(x = "Time (Ma)", y = "Temnospondyli Diversity Predictions") +
+      coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
+                dat = list("international epochs", "international periods"),
+                abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
+                alpha = 1, height = unit(1.5, "line"), rot = 0,
+                size = list(6, 5), neg = TRUE) +
+      scale_x_continuous(limits = c(-320, -190),
+                         breaks = seq(-320, -190, by = 10),
+                         labels = format_labels) +
+      theme_classic() +
+      theme(plot.margin = unit(c(2, 1, 1, 1), "cm"),
+            plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+            axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
+            axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
+            axis.text = element_text(size = 12, face = "bold"))
 
-  # Save the plot
-  ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    # Save the plot
+    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
