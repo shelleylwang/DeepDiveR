@@ -149,7 +149,7 @@ bins_shifted
 ### Calling prep_dd_input
 
 ```{r}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/synapsida/")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/deepdive_project_main_branch_runs/synapsida/")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
