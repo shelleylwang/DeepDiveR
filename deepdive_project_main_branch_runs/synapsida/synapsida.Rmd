@@ -10,10 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load_packages}
 library(remotes)
-library(DeepDiveR)
 library(dplyr)
-
 remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
+library(DeepDiveR)
 ```
 
 ## Prepping Input File
@@ -77,6 +76,11 @@ length(unique(carnivora[['Taxon']]))
 
 ```{r}
 length(unique(data[['Area']]))
+```
+
+``` {r}
+# rename data['Area'] to data['Region]
+data <- data %>% rename(Region = Area)
 ```
 
 ```{r}
@@ -170,7 +174,7 @@ config_test <- create_config(
   # Name of data file
   data_file = "synapsida_deepdive_input.csv",
   bins = bins_shifted,
-  n_areas = length(unique(data_shifted_ages$Area)),
+  n_regions = length(unique(data_shifted_ages$Region)),
   )
 ```
 
@@ -193,6 +197,16 @@ edit_config(config = config_test,
             module = "simulations",
             parameter = "n_test_simulations", 
             value = 1000)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "extant_sp", 
+            value = 0)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "pr_extant_clade", 
+            value = 0)
 
 ```
 
