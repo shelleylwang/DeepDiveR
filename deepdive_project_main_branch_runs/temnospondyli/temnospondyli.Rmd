@@ -10,10 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r load_packages}
 library(remotes)
-library(DeepDiveR)
 library(dplyr)
 
 remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
+
+library(DeepDiveR)
 ```
 
 ## Prepping Input File
@@ -21,7 +22,7 @@ remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("../../BDNN_Arielli/data/temnospondyli_processed_data/temnospondyli_deepdive_final.csv", header = TRUE, sep = ",")
+data <- read.csv("../../../BDNN_Arielli/data/temnospondyli_processed_data/temnospondyli_deepdive_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
@@ -77,6 +78,10 @@ length(unique(carnivora[['Taxon']]))
 
 ```{r}
 length(unique(data[['Area']]))
+```
+``` {r}
+# rename data['Area'] to data['Region]
+data <- data %>% rename(Region = Area)
 ```
 
 ```{r}
@@ -170,7 +175,9 @@ config_test <- create_config(
   # Name of data file
   data_file = "temnospondyli_deepdive_input.csv",
   bins = bins_shifted,
-  n_areas = length(unique(data_shifted_ages$Area)),
+  n_regions = length(unique(data_shifted_ages$Region)),
+ # extant_sp = 0, # all clades extinct, so setting this param to 0. default would've been NA, which leads to an error anyway because deepdive/deepdive/deepdiver_utilities.py demands an integer
+ # pr_extant_clade= 0 
   )
 ```
 
@@ -193,6 +200,16 @@ edit_config(config = config_test,
             module = "simulations",
             parameter = "n_test_simulations", 
             value = 1000)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "extant_sp", 
+            value = 0)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "pr_extant_clade", 
+            value = 0)
 
 ```
 
