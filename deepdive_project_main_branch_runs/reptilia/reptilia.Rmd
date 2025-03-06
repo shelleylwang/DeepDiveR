@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r load_packages}
 library(remotes)
 library(dplyr)
-
 remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
 library(DeepDiveR)
 
@@ -22,7 +21,7 @@ library(DeepDiveR)
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("../../BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
+data <- read.csv("C:/Users/SimoesLabAdmin/Documents/BDNN_Arielli/data/reptilia_processed_data/reptilia_deepdive_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
