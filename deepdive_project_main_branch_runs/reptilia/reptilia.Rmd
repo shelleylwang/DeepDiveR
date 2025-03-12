@@ -179,12 +179,7 @@ config_test <- create_config(
   )
 ```
 
-```{r}
-edit_config(config = config_test,
-            module = "general",
-            parameter = "present_diversity", 
-            value = 0)
-```
+
 
 ```{r}
 # Set number of training simulations to 100
@@ -208,6 +203,16 @@ edit_config(config = config_test,
             module = "simulations",
             parameter = "pr_extant_clade", 
             value = 0)
+
+# Optional: p_mass_extinction parameter sets the probability of a mass extinction per my
+# My study spans ~100 mys, so a p_mass_extinction = 0.02/my = 2 mass extinctions in the
+# time frame of my study, which is about what we're expecting
+# Default value is 0.01
+# edit_config(config = config_test,
+#              module = "simulations",
+#              parameter = "p_mass_extinction", 
+ #             value = 0.02)
+
 
 ```
 
