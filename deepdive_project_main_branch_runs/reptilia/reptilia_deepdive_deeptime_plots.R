@@ -7,10 +7,10 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("reptilia/reptilia_models/simulations_20250304_lstm64_32_d64_32_conditional/")
+setwd("../../../reptilia/reptilia_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Read the CSV file into a data frame
-data <- read.csv("Empirical_features__conditional.csv")
+data <- read.csv("Empirical_features_.csv")
 
 # Duplicate the first row of data, so that the first two rows are identical
 # If you don't do this + add that first value in the year vector below, the very first value (first row) will not be plotted
@@ -39,8 +39,8 @@ format_labels <- function(x) {
 # Create a longer format dataset combining all species columns
 plot_data <- data.frame(
   year = rep(year, 4),
-  columns_list = c(data$n_species_area_1, data$n_species_area_2, data$n_species_area_3, data$n_species_area_4),
-  columns_labels = factor(rep(c("Area 1", "Area 2", "Area 3", "Area 4"), each = length(year)))
+  columns_list = c(data$n_species_1.0, data$n_species_2.0, data$n_species_3.0, data$n_species_4.0),
+  columns_labels = factor(rep(c("Region 1", "Region 2", "Region 3", "Region 4"), each = length(year)))
 )
 
 
@@ -49,13 +49,13 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
-  scale_color_manual(values = c("Area 1" = "red",
-                                "Area 2" = "blue",
-                                "Area 3" = "turquoise",
-                                "Area 4" = "orange1")) +
+  scale_color_manual(values = c("Region 1" = "red",
+                                "Region 2" = "blue",
+                                "Region 3" = "turquoise",
+                                "Region 4" = "orange1")) +
   labs(x = "Time (Ma)",
        y = "Number of Reptilia Genera",
-       color = "Area") +
+       color = "Region") +
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
@@ -85,15 +85,15 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
 print(step_line_chart)
 
 # Save the plot as a PDF
-ggsave("feature_plots_formatted/n_genera_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("feature_plots_formatted/n_genera_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 ######################### 2. N_OCCS GRAPH ####################################
 
 # Create a longer format dataset combining all species columns
 plot_data <- data.frame(
   year = rep(year, 4),
-  columns_list = c(data$n_occs_area_1, data$n_occs_area_2, data$n_occs_area_3, data$n_occs_area_4),
-  columns_labels = factor(rep(c("Area 1", "Area 2", "Area 3", "Area 4"), each = length(year)))
+  columns_list = c(data$n_occs_1.0, data$n_occs_2.0, data$n_occs_3.0, data$n_occs_4.0),
+  columns_labels = factor(rep(c("Region 1", "Region 2", "Region 3", "Region 4"), each = length(year)))
 )
 
   # Create the step line chart with multiple lines
@@ -101,13 +101,13 @@ plot_data <- data.frame(
     geom_step(size = 1) +  # Increase line thickness here
     scale_x_reverse() +
     # Add distinct colors for each species line
-    scale_color_manual(values = c("Area 1" = "red",
-                                  "Area 2" = "blue",
-                                  "Area 3" = "turquoise",
-                                  "Area 4" = "orange1")) +
+    scale_color_manual(values = c("Region 1" = "red",
+                                  "Region 2" = "blue",
+                                  "Region 3" = "turquoise",
+                                  "Region 4" = "orange1")) +
     labs(x = "Time (Ma)",
          y = "Number of Reptilia Occurrences",
-         color = "Area") +
+         color = "Region") +
     coord_geo(xlim = c(-320, -190),
               expand = FALSE,
               clip = "on",
@@ -137,15 +137,15 @@ plot_data <- data.frame(
   print(step_line_chart)
 
   # Save the plot as a PDF
-  ggsave("feature_plots_formatted/n_occs_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
  ######################## 3. N_LOCS GRAPH ####################################
 
   # Create a longer format dataset combining all species columns
   plot_data <- data.frame(
     year = rep(year, 4),
-    columns_list = c(data$n_locs_area_1, data$n_locs_area_2, data$n_locs_area_3, data$n_locs_area_4),
-    columns_labels = factor(rep(c("Area 1", "Area 2", "Area 3", "Area 4"), each = length(year)))
+    columns_list = c(data$n_locs_1.0, data$n_locs_2.0, data$n_locs_3.0, data$n_locs_4.0),
+    columns_labels = factor(rep(c("Region 1", "Region 2", "Region 3", "Region 4"), each = length(year)))
   )
 
     # Create the step line chart with multiple lines
@@ -153,13 +153,13 @@ plot_data <- data.frame(
       geom_step(size = 1) +  # Increase line thickness here
       scale_x_reverse() +
       # Add distinct colors for each species line
-      scale_color_manual(values = c("Area 1" = "red",
-                                    "Area 2" = "blue",
-                                    "Area 3" = "turquoise",
-                                    "Area 4" = "orange1")) +
+      scale_color_manual(values = c("Region 1" = "red",
+                                    "Region 2" = "blue",
+                                    "Region 3" = "turquoise",
+                                    "Region 4" = "orange1")) +
       labs(x = "Time (Ma)",
            y = "Number of Reptilia Localities",
-           color = "Area") +
+           color = "Region") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
                 clip = "on",
@@ -189,7 +189,7 @@ plot_data <- data.frame(
     print(step_line_chart)
 
     # Save the plot as a PDF
-    ggsave("feature_plots_formatted/n_locs_by_area_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/n_locs_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
   #################### 4. ORIGINATION + EXTINCTION EVENTS#######################
@@ -209,7 +209,7 @@ plot_data <- data.frame(
                                     "Origination" = "blue")) +
       labs(x = "Time (Ma)",
            y = "Reptilia Extinction and Origination Events",
-           color = "Area") +
+           color = "Region") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
                 clip = "on",
@@ -299,9 +299,9 @@ plot_data <- data.frame(
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
   # Read data
-  emp_preds <- read.csv("Empirical_predictions__conditional.csv")
+  emp_preds <- read.csv("Empirical_predictions_.csv")
 
-  # The first two columns of Empirical_predictions__conditional.csv are exactly the same/repeats
+  # The first two columns of Empirical_predictions_.csv are exactly the same/repeats
   # Which is what we need for graphing, so that that duplicated value gets plotted
   # If you didn't keep that duplicated column and didn't add that first value
   # in the year vector at the top of this script, the very first value (youngest) will not be plotted
