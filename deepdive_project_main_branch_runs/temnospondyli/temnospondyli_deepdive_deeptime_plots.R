@@ -7,7 +7,7 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("../../../deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
+setwd("../../../temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features_.csv")
