@@ -6,7 +6,7 @@ library(pammtools)
 library(gridExtra)
 
 
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/deepdive_main_branch_runs")
 
 # Temnospondyli and Synapsida year vector
 year_tem_syn <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
