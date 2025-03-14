@@ -22,9 +22,9 @@ format_labels <- function(x) {
 }
 
 # Read in empirical predictions data
-emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
-emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
-emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
 
 
 # Transpose data
@@ -149,4 +149,4 @@ step_line_chart <- ggplot(combined_plot_data) +
                      guide = guide_legend(title = "Dataset"))
 
 # Save the plot
-ggsave("./empirical_predictions_ALL_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("./empirical_predictions_autotuned_ALL_formatted.pdf", plot = step_line_chart, width = 10, height = 6)

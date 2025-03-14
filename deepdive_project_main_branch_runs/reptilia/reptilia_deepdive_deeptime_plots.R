@@ -7,7 +7,13 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("../../../reptilia/reptilia_models/simulations_20250312_lstm64_32_d64_32/")
+setwd("reptilia_models/simulations_20250313_lstm64_32_d64_32/")
+
+# Check if there is a folder called "feature_plots_formatted" in the working directory
+# If there isn't, make one
+if (!dir.exists("feature_plots_formatted")) {
+  dir.create("feature_plots_formatted")
+}
 
 # Read the CSV file into a data frame
 data <- read.csv("Empirical_features_.csv")
