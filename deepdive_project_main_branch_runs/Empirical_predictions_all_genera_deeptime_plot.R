@@ -6,7 +6,7 @@ library(pammtools)
 library(gridExtra)
 
 
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/deepdive_project_main_branch_runs")
 
 # Temnospondyli and Synapsida year vector
 year_tem_syn <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
@@ -22,9 +22,9 @@ format_labels <- function(x) {
 }
 
 # Read in empirical predictions data
-emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
-emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
-emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250304_lstm64_32_d64_32_conditional/Empirical_predictions__conditional.csv")
+emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250313_lstm64_32_d64_32/Empirical_predictions_.csv")
 
 
 # Transpose data
@@ -149,4 +149,4 @@ step_line_chart <- ggplot(combined_plot_data) +
                      guide = guide_legend(title = "Dataset"))
 
 # Save the plot
-ggsave("./empirical_predictions_ALL_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("./empirical_predictions_autotuned_ALL_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
