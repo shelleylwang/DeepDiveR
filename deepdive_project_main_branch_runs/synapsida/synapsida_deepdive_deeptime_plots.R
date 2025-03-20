@@ -6,6 +6,7 @@ library(deeptime)
 library(tidyr)
 library(dplyr)
 library(pammtools)
+library(cowplot)
 
 setwd("../../../synapsida/synapsida_models/simulations_20250320_lstm64_32_d64_32/")
 
@@ -57,7 +58,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Region 3" = "turquoise",
                                 "Region 4" = "orange1")) +
   labs(x = "Time (Ma)",
-       y = "Number of Synapsida Genera",
+       y = "Synapsida Diversity Through Time (# Genera) by Region",
        color = "Region") +
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
@@ -109,7 +110,7 @@ plot_data <- data.frame(
                                   "Region 3" = "turquoise",
                                   "Region 4" = "orange1")) +
     labs(x = "Time (Ma)",
-         y = "Number of Synapsida Occurrences",
+         y = "Synapsida Raw Fossil Occurrences by Region",
          color = "Region") +
     coord_geo(xlim = c(-320, -190),
               expand = FALSE,
@@ -200,7 +201,7 @@ plot_data <- data.frame(
     plot_data <- data.frame(
       year = rep(year, 2),
       columns_list = c(data$extinction_events, data$origination_events),
-      columns_labels = factor(rep(c("Extinction", "Origination"), each = length(year)))
+      columns_labels = factor(rep(c("Extinction", "Speciation"), each = length(year)))
     )
 
     # Create the step line chart with multiple lines
@@ -209,9 +210,9 @@ plot_data <- data.frame(
       scale_x_reverse() +
       # Add distinct colors for each species line
       scale_color_manual(values = c("Extinction" = "red",
-                                    "Origination" = "blue")) +
+                                    "Speciation" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Synapsida Extinction and Origination Events",
+           y = "Synapsida Extinction and Speciation Events",
            color = "Region") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -242,7 +243,7 @@ plot_data <- data.frame(
     print(step_line_chart)
 
     # Save the plot as a PDF
-    ggsave("feature_plots_formatted/origination_extinction_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/speciation_extinction_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
 
   ############################ 5. SINGLE GRAPHS ################################
@@ -296,7 +297,7 @@ plot_data <- data.frame(
 
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Synapsida Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_graph(year, net_diversity, "Synapsida Net Diversification", "feature_plots_formatted/net_diversity_formatted.pdf")
 
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
@@ -361,7 +362,7 @@ plot_data <- data.frame(
       # Add mean line on top
       geom_step(aes(x = year, y = mean), color = "orangered1", size = 1) +
       scale_x_reverse() +
-      labs(x = "Time (Ma)", y = "Synapsida Diversity Predictions") +
+      labs(x = "Time (Ma)", y = "Synapsida Diversity Through Time (# Genera)") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
@@ -380,4 +381,6 @@ plot_data <- data.frame(
     # Save the plot
     ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
 
+
+    ######################### 7. GROUPED GRAPHS #############################
 

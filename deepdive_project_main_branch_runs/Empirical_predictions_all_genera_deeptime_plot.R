@@ -128,7 +128,7 @@ step_line_chart <- ggplot(combined_plot_data) +
   # Add mean line on top
   geom_step(aes(x = year, y = mean, color = dataset), size = 1) +
   scale_x_reverse() +
-  labs(x = "Time (Ma)", y = "Global Diversity Predictions") +
+  labs(x = "Time (Ma)", y = "Global Diversity Through Time (# Genera) by Clade") +
   coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
             dat = list("international epochs", "international periods"),
             abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
