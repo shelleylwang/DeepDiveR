@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
+setwd("../DeepDiveR/deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -387,35 +387,120 @@ plot_data <- data.frame(
 
     empty_plot <- ggplot() + theme_void()
 
-    # Arrange the plots with cowplot
-    # Create the left column with speciation & extinction events, net diversification,
-    # diveristy through time plots
-    left_column <- plot_grid(plot_a, plot_b, plot_c,
-                             ncol = 1,
-                             align = "v",
-                             labels = c("A", "B", "C"),
-                             rel_heights = c(1, 1, 1),
-                             scale = 0.95)
+final_plot <- plot_grid(plot_a, plot_b, plot_c, empty_plot, plot_d, plot_e,
+                        ncol = 2,
+                        labels = c("A", "B", "C", "", "D", "E"),
+                        byrow = TRUE,
+                        rel_heights = c(1, 1, 1, 1, 1, 1))
 
-    # Create the right column with the empty plot at the top and raw fossil occs by area, and diversity
-    # through time by area plots
-    right_column <- plot_grid(empty_plot, plot_d, plot_e,
-                              ncol = 1,
-                              align = "v",
-                              labels = c("", "D", "E"),
-                              rel_heights = c(1, 1, 1),
-                              scale = 0.95)
 
-    # Combine the left and right columns
-    final_plot <- plot_grid(left_column, right_column,
-                            ncol = 2,
-                            rel_widths = c(1, 1),
-                            axis = "lr",
-                            greedy = TRUE                            )
+# Function to adjust individual plots
+adjust_plot <- function(p) {
+  p +
+    theme(
+      # Increase margin on the left for y-axis labels
+      plot.margin = margin(5, 5, 5, 20, "pt"),
+      # Make y-axis text smaller and possibly adjust angle
+      axis.text.y = element_text(size = 8, angle = 0),
+      # Optional: truncate very long labels
+      # axis.text.y = element_text(size = 8, angle = 0, hjust = 1)
+    )
+}
+
+# Apply adjustments to each plot
+plot_a_adj <- adjust_plot(plot_a)
+plot_b_adj <- adjust_plot(plot_b)
+plot_c_adj <- adjust_plot(plot_c)
+plot_d_adj <- adjust_plot(plot_d)
+plot_e_adj <- adjust_plot(plot_e)
+
+final_plot <- plot_grid(
+  plot_a, plot_b,
+  plot_c, empty_plot,
+  plot_d, plot_e,
+  ncol = 2,
+  labels = c("A", "B", "C", "", "D", "E"),
+  byrow = TRUE,
+  # Give more horizontal space between plots to prevent label overlap
+  align = "hv",       # Align both horizontally and vertically
+  axis = "lr",        # Align by left and right axes
+  rel_widths = c(1.3, 1),  # Give left column more space for y-axis labels
+  rel_heights = c(1, 1, 1) # Keep equal heights for the rows
+)
+
+# Create wrapper function to resize axes without modifying plot content
+resize_plot <- function(plot) {
+  # Extract the plot's gtable structure
+  g <- ggplotGrob(plot)
+
+  # Find and modify the text grobs for y-axis labels
+  for(i in which(g$layout$name == "axis-l")) {
+    g$grobs[[i]]$children[[2]]$gp$fontsize <- 6  # Reduce font size dramatically
+  }
+
+  # Return the modified plot
+  g
+}
+
+# Apply wrapper to each plot
+plot_a_mod <- resize_plot(plot_a)
+plot_b_mod <- resize_plot(plot_b)
+plot_c_mod <- resize_plot(plot_c)
+plot_d_mod <- resize_plot(plot_d)
+plot_e_mod <- resize_plot(plot_e)
+
+# Now create compact grid with modified plots
+final_plot <- plot_grid(
+  plot_a_mod, plot_b_mod,
+  plot_c_mod, empty_plot,
+  plot_d_mod, plot_e_mod,
+  ncol = 2,
+  labels = c("A", "B", "C", "", "D", "E"),
+  byrow = TRUE,
+  greedy = TRUE,
+  scale = 1.0,
+  align = "none"
+)
+
+# Save with compact dimensions
+ggsave("final_figure.pdf", final_plot, width = 10, height = 12, units = "in")
+                            rel_widths = c(1, 1))
 
     # Save the final plot as a PDF
-    ggsave("grouped_plots.pdf", final_plot, width = 12, height = 15, units = "in")
+    ggsave("grouped_plots.pdf", final_plot, width = 15, height = 12, units = "in")
 
-    # Display the final arranged plot
-    print(final_plot)
+    library(gtable)
+    library(grid)
 
+    # Alternative approach using gtable
+    resize_plot <- function(plot) {
+      # Convert to grob
+      g <- ggplotGrob(plot)
+
+      # Find and edit all text elements
+      for (i in 1:length(g$grobs)) {
+        if (grepl("axis-l", g$layout$name[i])) {
+          # Find text within the axis grob
+          g$grobs[[i]] <- editGrob(g$grobs[[i]], gp = gpar(fontsize = 6))
+        }
+      }
+
+      return(g)
+    }
+
+    # Apply and create layout as before
+
+
+
+
+    install.packages("patchwork")
+    library(patchwork)
+
+    # Create layout using patchwork which is often more forgiving with grobs
+    final_plot <- (plot_a + plot_b) /
+      (plot_c + empty_plot) /
+      (plot_d + plot_e) +
+      plot_annotation(tag_levels = 'A')
+
+    # Save with compact dimensions
+    ggsave("final_figure.pdf", final_plot, width = 10, height = 12, units = "in")
