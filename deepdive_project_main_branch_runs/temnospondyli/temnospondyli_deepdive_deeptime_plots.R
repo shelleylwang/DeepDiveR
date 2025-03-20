@@ -6,8 +6,9 @@ library(deeptime)
 library(tidyr)
 library(dplyr)
 library(pammtools)
+library(cowplot)
 
-setwd("../../../temnospondyli/temnospondyli_models/simulations_20250313_lstm64_32_d64_32/")
+setwd("deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -49,7 +50,7 @@ plot_data <- data.frame(
 
 
 # Create the step line chart with multiple lines
-step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
@@ -58,7 +59,7 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
                                 "Region 3" = "turquoise",
                                 "Region 4" = "orange1")) +
   labs(x = "Time (Ma)",
-       y = "Number of Temnospondyli Genera",
+       y = "Temnospondyli Diversity Through Time (# Genera) by Region",
        color = "Region") +
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
@@ -86,10 +87,10 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   )
 
 # Display the plot
-print(step_line_chart)
+print(plot_e)
 
 # Save the plot as a PDF
-ggsave("feature_plots_formatted/n_genera_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("feature_plots_formatted/n_genera_by_region_formatted.pdf", plot = plot_e, width = 10, height = 6)
 
 ######################### 2. N_OCCS GRAPH ####################################
 
@@ -101,7 +102,7 @@ plot_data <- data.frame(
 )
 
   # Create the step line chart with multiple lines
-  step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+  plot_d <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
     geom_step(size = 1) +  # Increase line thickness here
     scale_x_reverse() +
     # Add distinct colors for each species line
@@ -110,7 +111,7 @@ plot_data <- data.frame(
                                   "Region 3" = "turquoise",
                                   "Region 4" = "orange1")) +
     labs(x = "Time (Ma)",
-         y = "Number of Temnospondyli Occurrences",
+         y = "Temnospondyli Raw Fossil Occurrences by Region",
          color = "Region") +
     coord_geo(xlim = c(-320, -190),
               expand = FALSE,
@@ -138,10 +139,10 @@ plot_data <- data.frame(
     )
 
   # Display the plot
-  print(step_line_chart)
+  print(plot_d)
 
   # Save the plot as a PDF
-  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = plot_d, width = 10, height = 6)
 
  ######################## 3. N_LOCS GRAPH ####################################
 
@@ -201,18 +202,18 @@ plot_data <- data.frame(
     plot_data <- data.frame(
       year = rep(year, 2),
       columns_list = c(data$extinction_events, data$origination_events),
-      columns_labels = factor(rep(c("Extinction", "Origination"), each = length(year)))
+      columns_labels = factor(rep(c("Extinction", "Speciation"), each = length(year)))
     )
 
     # Create the step line chart with multiple lines
-    step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+    plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
       geom_step(size = 1) +  # Increase line thickness here
       scale_x_reverse() +
       # Add distinct colors for each species line
       scale_color_manual(values = c("Extinction" = "red",
-                                    "Origination" = "blue")) +
+                                    "Speciation" = "blue")) +
       labs(x = "Time (Ma)",
-           y = "Temnospondyli Extinction and Origination Events",
+           y = "Temnospondyli Extinction and Speciation Events",
            color = "Region") +
       coord_geo(xlim = c(-320, -190),
                 expand = FALSE,
@@ -240,10 +241,10 @@ plot_data <- data.frame(
       )
 
     # Display the plot
-    print(step_line_chart)
+    print(plot_a)
 
     # Save the plot as a PDF
-    ggsave("feature_plots_formatted/origination_extinction_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/speciation_extinction_formatted.pdf", plot = plot_a, width = 10, height = 6)
 
 
   ############################ 5. SINGLE GRAPHS ################################
@@ -297,10 +298,8 @@ plot_data <- data.frame(
 
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
-  plot_graph(year, net_diversity, "Net Temnospondyli Diversity", "feature_plots_formatted/net_diversity_formatted.pdf")
-
-  # extinction_events
-  plot_graph(year, data$extinction_events, "Number of Temnospondyli Extinction Events", "feature_plots_formatted/extinction_events_formatted.pdf")
+  plot_graph(year, net_diversity, "Temnospondyli Net Diversification", "feature_plots_formatted/net_diversity_formatted.pdf")
+  plot_b <- plot_graph(year, net_diversity, "Temnospondyli Net Diversification", "feature_plots_formatted/net_diversity_formatted.pdf")
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
@@ -351,7 +350,7 @@ plot_data <- data.frame(
     )
 
     # Create the step line chart with ribbons
-    step_line_chart <- ggplot(plot_data) +
+    plot_c <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
                   fill = "#f9d1f3", alpha = 0.3) +
@@ -364,7 +363,7 @@ plot_data <- data.frame(
       # Add mean line on top
       geom_step(aes(x = year, y = mean), color = "magenta2", size = 1) +
       scale_x_reverse() +
-      labs(x = "Time (Ma)", y = "Temnospondyli Diversity Predictions") +
+      labs(x = "Time (Ma)", y = "Temnospondyli Diversity Through Time (# Genera)") +
       coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
                 dat = list("international epochs", "international periods"),
                 abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
@@ -381,6 +380,42 @@ plot_data <- data.frame(
             axis.text = element_text(size = 12, face = "bold"))
 
     # Save the plot
-    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = plot_c, width = 10, height = 6)
 
+
+    ######################### 7. GROUPED GRAPHS #############################
+
+    empty_plot <- ggplot() + theme_void()
+
+    # Arrange the plots with cowplot
+    # Create the left column with speciation & extinction events, net diversification,
+    # diveristy through time plots
+    left_column <- plot_grid(plot_a, plot_b, plot_c,
+                             ncol = 1,
+                             align = "v",
+                             labels = c("A", "B", "C"),
+                             rel_heights = c(1, 1, 1),
+                             scale = 0.95)
+
+    # Create the right column with the empty plot at the top and raw fossil occs by area, and diversity
+    # through time by area plots
+    right_column <- plot_grid(empty_plot, plot_d, plot_e,
+                              ncol = 1,
+                              align = "v",
+                              labels = c("", "D", "E"),
+                              rel_heights = c(1, 1, 1),
+                              scale = 0.95)
+
+    # Combine the left and right columns
+    final_plot <- plot_grid(left_column, right_column,
+                            ncol = 2,
+                            rel_widths = c(1, 1),
+                            axis = "lr",
+                            greedy = TRUE                            )
+
+    # Save the final plot as a PDF
+    ggsave("grouped_plots.pdf", final_plot, width = 12, height = 15, units = "in")
+
+    # Display the final arranged plot
+    print(final_plot)
 

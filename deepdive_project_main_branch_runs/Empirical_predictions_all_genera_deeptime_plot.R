@@ -22,9 +22,9 @@ format_labels <- function(x) {
 }
 
 # Read in empirical predictions data
-emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
-emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
-emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250312_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_tem <- read.csv("./temnospondyli/temnospondyli_models/simulations_20250320_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_syn <- read.csv("./synapsida/synapsida_models/simulations_20250320_lstm64_32_d64_32/Empirical_predictions_.csv")
+emp_preds_rep <- read.csv("./reptilia/reptilia_models/simulations_20250320_lstm64_32_d64_32/Empirical_predictions_.csv")
 
 
 # Transpose data
@@ -128,7 +128,7 @@ step_line_chart <- ggplot(combined_plot_data) +
   # Add mean line on top
   geom_step(aes(x = year, y = mean, color = dataset), size = 1) +
   scale_x_reverse() +
-  labs(x = "Time (Ma)", y = "Global Diversity Predictions") +
+  labs(x = "Time (Ma)", y = "Global Diversity Through Time (# Genera) by Clade") +
   coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
             dat = list("international epochs", "international periods"),
             abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
@@ -149,4 +149,4 @@ step_line_chart <- ggplot(combined_plot_data) +
                      guide = guide_legend(title = "Dataset"))
 
 # Save the plot
-ggsave("./empirical_predictions_ALL_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("./empirical_predictions_ALL_formatted_p_mass_extinction.pdf", plot = step_line_chart, width = 10, height = 6)
