@@ -7,7 +7,7 @@ library(tidyr)
 library(dplyr)
 library(pammtools)
 
-setwd("../../../synapsida/synapsida_models/simulations_20250313_lstm64_32_d64_32/")
+setwd("../../../synapsida/synapsida_models/simulations_20250320_lstm64_32_d64_32/")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
