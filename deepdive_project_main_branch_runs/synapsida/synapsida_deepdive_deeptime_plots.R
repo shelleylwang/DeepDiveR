@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("../../../synapsida/synapsida_models/simulations_20250320_lstm64_32_d64_32/")
+setwd("../../../synapsida/synapsida_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -49,7 +49,7 @@ plot_data <- data.frame(
 
 
 # Create the step line chart with multiple lines
-step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
@@ -86,10 +86,10 @@ step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = col
   )
 
 # Display the plot
-print(step_line_chart)
+print(plot_e)
 
 # Save the plot as a PDF
-ggsave("feature_plots_formatted/n_genera_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+ggsave("feature_plots_formatted/n_genera_by_region_formatted.pdf", plot = plot_e, width = 10, height = 6)
 
 ######################### 2. N_OCCS GRAPH ####################################
 
@@ -101,7 +101,7 @@ plot_data <- data.frame(
 )
 
   # Create the step line chart with multiple lines
-  step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+  plot_d <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
     geom_step(size = 1) +  # Increase line thickness here
     scale_x_reverse() +
     # Add distinct colors for each species line
@@ -138,10 +138,10 @@ plot_data <- data.frame(
     )
 
   # Display the plot
-  print(step_line_chart)
+  print(plot_d)
 
   # Save the plot as a PDF
-  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = plot_d, width = 10, height = 6)
 
  ######################## 3. N_LOCS GRAPH ####################################
 
@@ -205,7 +205,7 @@ plot_data <- data.frame(
     )
 
     # Create the step line chart with multiple lines
-    step_line_chart <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+    plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
       geom_step(size = 1) +  # Increase line thickness here
       scale_x_reverse() +
       # Add distinct colors for each species line
@@ -240,10 +240,10 @@ plot_data <- data.frame(
       )
 
     # Display the plot
-    print(step_line_chart)
+    print(plot_a)
 
     # Save the plot as a PDF
-    ggsave("feature_plots_formatted/speciation_extinction_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/speciation_extinction_formatted.pdf", plot = plot_a, width = 10, height = 6)
 
 
   ############################ 5. SINGLE GRAPHS ################################
@@ -298,7 +298,7 @@ plot_data <- data.frame(
   # Net diversity
   net_diversity = data$origination_events - data$extinction_events
   plot_graph(year, net_diversity, "Synapsida Net Diversification", "feature_plots_formatted/net_diversity_formatted.pdf")
-
+  plot_b <- plot_graph(year, net_diversity, "Synapsida Net Diversification", "feature_plots_formatted/net_diversity_formatted.pdf")
 
   ######################### 6. EMPIRICAL PREDICTIONS #############################
 
@@ -349,7 +349,7 @@ plot_data <- data.frame(
     )
 
     # Create the step line chart with ribbons
-    step_line_chart <- ggplot(plot_data) +
+    plot_c <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
                   fill = "#fad3bc", alpha = 0.3) +
@@ -379,8 +379,19 @@ plot_data <- data.frame(
             axis.text = element_text(size = 12, face = "bold"))
 
     # Save the plot
-    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = step_line_chart, width = 10, height = 6)
+    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = plot_c, width = 10, height = 6)
 
 
     ######################### 7. GROUPED GRAPHS #############################
+    empty_plot <- ggplot() + theme_void()
 
+    # plot_a = speciation and extinction events
+    # plot_b = net diversification
+    # plot_c = empirical predictions (diversity through time # genera)
+    # plot_d = n occs by region
+    # plot_e = diversity through time (# genera) by region
+
+    combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_d, plot_c, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
+
+    # Save the combined plot as a PDF
+    ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 20, height = 20)

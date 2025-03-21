@@ -387,120 +387,13 @@ plot_data <- data.frame(
 
     empty_plot <- ggplot() + theme_void()
 
-final_plot <- plot_grid(plot_a, plot_b, plot_c, empty_plot, plot_d, plot_e,
-                        ncol = 2,
-                        labels = c("A", "B", "C", "", "D", "E"),
-                        byrow = TRUE,
-                        rel_heights = c(1, 1, 1, 1, 1, 1))
+    # plot_a = speciation and extinction events
+    # plot_b = net diversification
+    # plot_c = empirical predictions (diversity through time # genera) NOT by region
+    # plot_d = n occs by region (raw fossil occs)
+    # plot_e = diversity through time (# genera) by region
 
+   combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_d, plot_c, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
 
-# Function to adjust individual plots
-adjust_plot <- function(p) {
-  p +
-    theme(
-      # Increase margin on the left for y-axis labels
-      plot.margin = margin(5, 5, 5, 20, "pt"),
-      # Make y-axis text smaller and possibly adjust angle
-      axis.text.y = element_text(size = 8, angle = 0),
-      # Optional: truncate very long labels
-      # axis.text.y = element_text(size = 8, angle = 0, hjust = 1)
-    )
-}
-
-# Apply adjustments to each plot
-plot_a_adj <- adjust_plot(plot_a)
-plot_b_adj <- adjust_plot(plot_b)
-plot_c_adj <- adjust_plot(plot_c)
-plot_d_adj <- adjust_plot(plot_d)
-plot_e_adj <- adjust_plot(plot_e)
-
-final_plot <- plot_grid(
-  plot_a, plot_b,
-  plot_c, empty_plot,
-  plot_d, plot_e,
-  ncol = 2,
-  labels = c("A", "B", "C", "", "D", "E"),
-  byrow = TRUE,
-  # Give more horizontal space between plots to prevent label overlap
-  align = "hv",       # Align both horizontally and vertically
-  axis = "lr",        # Align by left and right axes
-  rel_widths = c(1.3, 1),  # Give left column more space for y-axis labels
-  rel_heights = c(1, 1, 1) # Keep equal heights for the rows
-)
-
-# Create wrapper function to resize axes without modifying plot content
-resize_plot <- function(plot) {
-  # Extract the plot's gtable structure
-  g <- ggplotGrob(plot)
-
-  # Find and modify the text grobs for y-axis labels
-  for(i in which(g$layout$name == "axis-l")) {
-    g$grobs[[i]]$children[[2]]$gp$fontsize <- 6  # Reduce font size dramatically
-  }
-
-  # Return the modified plot
-  g
-}
-
-# Apply wrapper to each plot
-plot_a_mod <- resize_plot(plot_a)
-plot_b_mod <- resize_plot(plot_b)
-plot_c_mod <- resize_plot(plot_c)
-plot_d_mod <- resize_plot(plot_d)
-plot_e_mod <- resize_plot(plot_e)
-
-# Now create compact grid with modified plots
-final_plot <- plot_grid(
-  plot_a_mod, plot_b_mod,
-  plot_c_mod, empty_plot,
-  plot_d_mod, plot_e_mod,
-  ncol = 2,
-  labels = c("A", "B", "C", "", "D", "E"),
-  byrow = TRUE,
-  greedy = TRUE,
-  scale = 1.0,
-  align = "none"
-)
-
-# Save with compact dimensions
-ggsave("final_figure.pdf", final_plot, width = 10, height = 12, units = "in")
-                            rel_widths = c(1, 1))
-
-    # Save the final plot as a PDF
-    ggsave("grouped_plots.pdf", final_plot, width = 15, height = 12, units = "in")
-
-    library(gtable)
-    library(grid)
-
-    # Alternative approach using gtable
-    resize_plot <- function(plot) {
-      # Convert to grob
-      g <- ggplotGrob(plot)
-
-      # Find and edit all text elements
-      for (i in 1:length(g$grobs)) {
-        if (grepl("axis-l", g$layout$name[i])) {
-          # Find text within the axis grob
-          g$grobs[[i]] <- editGrob(g$grobs[[i]], gp = gpar(fontsize = 6))
-        }
-      }
-
-      return(g)
-    }
-
-    # Apply and create layout as before
-
-
-
-
-    install.packages("patchwork")
-    library(patchwork)
-
-    # Create layout using patchwork which is often more forgiving with grobs
-    final_plot <- (plot_a + plot_b) /
-      (plot_c + empty_plot) /
-      (plot_d + plot_e) +
-      plot_annotation(tag_levels = 'A')
-
-    # Save with compact dimensions
-    ggsave("final_figure.pdf", final_plot, width = 10, height = 12, units = "in")
+    # Save the combined plot as a PDF
+  ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 20, height = 20)
