@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
+setwd("../DeepDiveR/deepdive_project_main_branch_runs/temnospondyli/temnospondyli_models/simulations_20250312_lstm64_32_d64_32/")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -387,35 +387,13 @@ plot_data <- data.frame(
 
     empty_plot <- ggplot() + theme_void()
 
-    # Arrange the plots with cowplot
-    # Create the left column with speciation & extinction events, net diversification,
-    # diveristy through time plots
-    left_column <- plot_grid(plot_a, plot_b, plot_c,
-                             ncol = 1,
-                             align = "v",
-                             labels = c("A", "B", "C"),
-                             rel_heights = c(1, 1, 1),
-                             scale = 0.95)
+    # plot_a = speciation and extinction events
+    # plot_b = net diversification
+    # plot_c = empirical predictions (diversity through time # genera) NOT by region
+    # plot_d = n occs by region (raw fossil occs)
+    # plot_e = diversity through time (# genera) by region
 
-    # Create the right column with the empty plot at the top and raw fossil occs by area, and diversity
-    # through time by area plots
-    right_column <- plot_grid(empty_plot, plot_d, plot_e,
-                              ncol = 1,
-                              align = "v",
-                              labels = c("", "D", "E"),
-                              rel_heights = c(1, 1, 1),
-                              scale = 0.95)
+   combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_d, plot_c, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
 
-    # Combine the left and right columns
-    final_plot <- plot_grid(left_column, right_column,
-                            ncol = 2,
-                            rel_widths = c(1, 1),
-                            axis = "lr",
-                            greedy = TRUE                            )
-
-    # Save the final plot as a PDF
-    ggsave("grouped_plots.pdf", final_plot, width = 12, height = 15, units = "in")
-
-    # Display the final arranged plot
-    print(final_plot)
-
+    # Save the combined plot as a PDF
+  ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 20, height = 20)
