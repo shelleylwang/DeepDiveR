@@ -101,7 +101,7 @@ plot_data <- data.frame(
 )
 
   # Create the step line chart with multiple lines
-  plot_d <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+  plot_c <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
     geom_step(size = 1) +  # Increase line thickness here
     scale_x_reverse() +
     # Add distinct colors for each species line
@@ -138,10 +138,10 @@ plot_data <- data.frame(
     )
 
   # Display the plot
-  print(plot_d)
+  print(plot_c)
 
   # Save the plot as a PDF
-  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = plot_d, width = 10, height = 6)
+  ggsave("feature_plots_formatted/n_occs_by_region_formatted.pdf", plot = plot_c, width = 10, height = 6)
 
  ######################## 3. N_LOCS GRAPH ####################################
 
@@ -349,7 +349,7 @@ plot_data <- data.frame(
     )
 
     # Create the step line chart with ribbons
-    plot_c <- ggplot(plot_data) +
+    plot_d <- ggplot(plot_data) +
       # Add range ribbon (lightest shade)
       geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
                   fill = "#fad3bc", alpha = 0.3) +
@@ -379,7 +379,7 @@ plot_data <- data.frame(
             axis.text = element_text(size = 12, face = "bold"))
 
     # Save the plot
-    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = plot_c, width = 10, height = 6)
+    ggsave("feature_plots_formatted/empirical_predictions_formatted.pdf", plot = plot_d, width = 10, height = 6)
 
 
     ######################### 7. GROUPED GRAPHS #############################
@@ -387,11 +387,11 @@ plot_data <- data.frame(
 
     # plot_a = speciation and extinction events
     # plot_b = net diversification
-    # plot_c = empirical predictions (diversity through time # genera)
-    # plot_d = n occs by region
+    # plot_d = empirical predictions (diversity through time # genera)
+    # plot_c = n occs by region
     # plot_e = diversity through time (# genera) by region
 
-    combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_d, plot_c, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
+    combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_c, plot_d, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
 
     # Save the combined plot as a PDF
-    ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 20, height = 20)
+    ggsave("feature_plots_formatted/synapsida_final_figure_draft.pdf", combined_plot, width = 20, height = 20)
