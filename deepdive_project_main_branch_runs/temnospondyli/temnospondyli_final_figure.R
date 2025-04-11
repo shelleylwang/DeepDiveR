@@ -81,9 +81,10 @@ plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
         axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
         axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
         axis.text = element_text(size = 12, face = "bold"),
-        legend.position = "right",
-        legend.title = element_text(size = 12, face = "bold"),
-        legend.text = element_text(size = 10)
+        legend.position = "none"
+        # legend.position = c(0.12, 0.85),
+        # legend.title = element_text(size = 12, face = "bold"),
+        # legend.text = element_text(size = 10)
   )
 
 
@@ -119,7 +120,7 @@ plot_graph <- function(year, y, y_label) {
 
 # Net diversity
 net_diversity = data$origination_events - data$extinction_events
-plot_b <- plot_graph(year, net_diversity, "Net Diversification")
+plot_b <- plot_graph(year, net_diversity, "Net Diversification Events")
 
 
 ######################### 6. PLOT_D EMPIRICAL PREDICTIONS #############################
