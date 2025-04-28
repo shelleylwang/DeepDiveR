@@ -15,7 +15,7 @@ An alternative branch can be installed by specifying the branch to install:
 
 ```
 library(remotes)
-remotes::install_github("DeepDive-project/DeepDiveR", ref = "application_note")
+remotes::install_github("DeepDive-project/DeepDiveR", ref = "CRAN")
 library(DeepDiveR)
 ```
 
