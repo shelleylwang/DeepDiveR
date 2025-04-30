@@ -12,11 +12,11 @@ using \code{create_config()}, that will be edited.}
 
 \item{region_ages}{\code{dataframe}. If left NULL (default), all geographic
 regions are configured to be present throughout the simulations. Otherwise,
-a \code{dataframe} describing uncertainty around the appearance or disappearance
-of geographic areas should be specified. \code{MinAge} should state the younger
-limit, and \code{MaxAge} the older limit, for each geographic \code{Region}. The number
-of rows in the \code{dataframe} must match \code{n_regions} in the configuration file.
-The supplied \code{dataframe} should not contain any \code{NA} values.}
+a \code{dataframe} describing for each geographic \code{Region} the \code{MinAge}
+(younger limit) and \code{MaxAge} (older limit) between which a geographic
+connection is either made or severed. The number of rows in the \code{dataframe}
+must match \code{n_regions} in the configuration file. The supplied \code{dataframe}
+should not contain any \code{NA} values.}
 
 \item{presence}{\code{logical}. When TRUE (the default), regions become
 available to occupy based on the time frames specified. When FALSE, regions
