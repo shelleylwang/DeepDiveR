@@ -82,7 +82,7 @@ create_config <- function(name = NULL, data_file = NULL,
     stop("`bins` should contain numeric values (the ages of bin boundaries).")
   }
 
-  if (numeric(n_regions) == FALSE) {
+  if (is.numeric(n_regions) == FALSE) {
     stop("`n_regions` must be an integer.")
   }
 
