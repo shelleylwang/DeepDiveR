@@ -70,9 +70,9 @@ create_config <- function(name = NULL, data_file = NULL,
     stop("`data_file` must be a character string.")
   }
 
-  if (!endsWith(data_file, ".csv")) {
-    stop(paste("Data file name must end `.csv`."))
-  }
+  # if (!endsWith(data_file, ".csv")) {
+  #   stop(paste("Data file name must end `.csv`."))
+  # }
 
   if (is.vector(bins) == FALSE) {
     stop("`bins` should be a vector.")
@@ -82,7 +82,7 @@ create_config <- function(name = NULL, data_file = NULL,
     stop("`bins` should contain numeric values (the ages of bin boundaries).")
   }
 
-  if (is.integer(n_regions) == FALSE) {
+  if (numeric(n_regions) == FALSE) {
     stop("`n_regions` must be an integer.")
   }
 
