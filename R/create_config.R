@@ -70,9 +70,9 @@ create_config <- function(name = NULL, data_file = NULL,
     stop("`data_file` must be a character string.")
   }
 
-  if (!endsWith(data_file, ".csv")) {
-    stop(paste("Data file name must end `.csv`."))
-  }
+  # if (!endsWith(data_file, ".csv")) {
+  #   stop(paste("Data file name must end `.csv`."))
+  # }
 
   if (is.vector(bins) == FALSE) {
     stop("`bins` should be a vector.")
@@ -82,7 +82,7 @@ create_config <- function(name = NULL, data_file = NULL,
     stop("`bins` should contain numeric values (the ages of bin boundaries).")
   }
 
-  if (is.integer(n_regions) == FALSE) {
+  if (is.numeric(n_regions) == FALSE) {
     stop("`n_regions` must be an integer.")
   }
 
@@ -208,7 +208,7 @@ create_config <- function(name = NULL, data_file = NULL,
 
   # For empirical predictions
   e <- c()
-  e$empirical_input_file <- data_file
+  e$empirical_input_file <- basename(data_file)
   e$model_folder <- paste0(name, "_models")
   e$n_predictions <- 1  # number of predictions per input file
   e$replicates <- 100  # number of age randomisation replicates
