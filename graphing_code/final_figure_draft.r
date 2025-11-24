@@ -43,7 +43,7 @@ format_labels <- function(x) {
 
 
 
-#################### 4. PLOT_A ORIGINATION + EXTINCTION EVENTS#######################
+#################### 4. PLOT ORIGINATION + EXTINCTION EVENTS#######################
 # Create a longer format dataset combining all species columns
 plot_data <- data.frame(
   year = rep(year, 2),
@@ -52,7 +52,7 @@ plot_data <- data.frame(
 )
 
 # Create the step line chart with multiple lines
-plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+plot_spec_ext_events <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
@@ -64,7 +64,7 @@ plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
@@ -100,7 +100,7 @@ plot_graph <- function(year, y, y_label) {
     scale_x_reverse() +
     labs(x = "Time (Ma)", y = y_label) +
     coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-              dat = list("international epochs", "international periods"),
+              dat = list("international ages", "international periods"),
               abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
               alpha = 1, height = unit(1.5, "line"), rot = 0,
               size = list(6, 5), neg = TRUE) +
@@ -119,10 +119,22 @@ plot_graph <- function(year, y, y_label) {
 
 # Net diversity
 net_diversity = data$origination_events - data$extinction_events
-plot_b <- plot_graph(year, net_diversity, "Net Diversification")
+plot_net_div_events <- plot_graph(year, net_diversity, "Net Diversification Events")
+
+# Speciation rate
+speciation_rate = data$origination_events / (data$n_species)*data$time_bin_duration
+plot_spec_rate <- plot_graph(year, speciation_rate, "Speciation Rate")
+
+# Extinction rate
+extinction_rate = data$extinction_events / (data$n_species)*data$time_bin_duration
+plot_ext_rate <- plot_graph(year, extinction_rate, "Extinction Rate")
+
+# Net diversification rate
+net_div_rate = speciation_rate - extinction_rate
+plot_net_div_rate <- plot_graph(year, net_div_rate, "Net Diversification Rate")
 
 
-######################### 6. PLOT_D EMPIRICAL PREDICTIONS #############################
+######################### 6.PLOT EMPIRICAL PREDICTIONS #############################
 
 # Read data
 emp_preds <- read.csv("Empirical_predictions_.csv")
@@ -171,7 +183,7 @@ plot_data <- data.frame(
 )
 
 # Create the step line chart with ribbons
-plot_d <- ggplot(plot_data) +
+plot_emp_preds <- ggplot(plot_data) +
   # Add range ribbon (lightest shade)
   geom_stepribbon(aes(x = year, ymin = range_lower, ymax = range_upper),
                   fill = "#d2f7f8", alpha = 0.3) +
@@ -186,7 +198,7 @@ plot_d <- ggplot(plot_data) +
   scale_x_reverse() +
   labs(x = "Time (Ma)", y = "Diversity Through Time (# Genera)") +
   coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
             alpha = 1, height = unit(1.5, "line"), rot = 0,
             size = list(6, 5), neg = TRUE) +
@@ -210,7 +222,7 @@ plot_data <- data.frame(
 )
 
 # Create the step line chart with multiple lines
-plot_c <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+plot_n_occs_region <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
@@ -224,7 +236,7 @@ plot_c <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
@@ -246,7 +258,7 @@ plot_c <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
         legend.text = element_text(size = 10)
   )
 
-######################### 1. PLOT_E N_SPECIES GRAPH ####################################
+######################### 1. PLOT N_SPECIES GRAPH ####################################
 
 # Create a longer format dataset combining all species columns
 plot_data <- data.frame(
@@ -257,7 +269,7 @@ plot_data <- data.frame(
 
 
 # Create the step line chart with multiple lines
-plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
+plot_n_species_region <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labels)) +
   geom_step(size = 1) +  # Increase line thickness here
   scale_x_reverse() +
   # Add distinct colors for each species line
@@ -271,7 +283,7 @@ plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
@@ -293,18 +305,18 @@ plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
         legend.text = element_text(size = 10)
   )
 
-######################### 7. GROUPED GRAPHS #############################
+
+######################### 10. GROUPED GRAPHS #############################
 
 empty_plot <- ggplot() + theme_void()
 
-# plot_a = speciation and extinction events
-# plot_b = net diversification
-# plot_d = empirical predictions (diversity through time # genera) NOT by region
-# plot_c = n occs by region (raw fossil occs)
-# plot_e = diversity through time (# genera) by region
+# plot_spec_ext_events = speciation and extinction events
+# plot_net_div_events= net diversification
+# plot_emp_preds = empirical predictions (diversity through time # genera) NOT by region
+# plot_n_occs_region = n occs by region (raw fossil occs)
+# plot_n_species_region = diversity through time (# genera) by region
 
-combined_plot <- plot_grid(plot_a, empty_plot, plot_b, plot_c, plot_d, plot_e, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
-
+combined_plot <- plot_grid(plot_spec_ext_events, empty_plot, plot_net_div_events, plot_n_occs_region, plot_emp_preds, plot_n_species_region, plot_spec_rate, plot_ext_rate, plot_net_div_rate, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
 
 # Save the combined plot as a PDF
 ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 25, height = 20)

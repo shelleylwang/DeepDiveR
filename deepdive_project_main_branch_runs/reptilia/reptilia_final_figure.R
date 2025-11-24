@@ -64,7 +64,7 @@ plot_a <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
@@ -100,7 +100,7 @@ plot_graph <- function(year, y, y_label) {
     scale_x_reverse() +
     labs(x = "Time (Ma)", y = y_label) +
     coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-              dat = list("international epochs", "international periods"),
+              dat = list("international ages", "international periods"),
               abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
               alpha = 1, height = unit(1.5, "line"), rot = 0,
               size = list(6, 5), neg = TRUE) +
@@ -186,7 +186,7 @@ plot_d <- ggplot(plot_data) +
   scale_x_reverse() +
   labs(x = "Time (Ma)", y = "Diversity Through Time (# Genera)") +
   coord_geo(xlim = c(-320, -190), expand = FALSE, clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE), pos = list("bottom", "bottom"),
             alpha = 1, height = unit(1.5, "line"), rot = 0,
             size = list(6, 5), neg = TRUE) +
@@ -224,7 +224,7 @@ plot_c <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
@@ -271,7 +271,7 @@ plot_e <- ggplot(plot_data, aes(x = year, y = columns_list, color = columns_labe
   coord_geo(xlim = c(-320, -190),
             expand = FALSE,
             clip = "on",
-            dat = list("international epochs", "international periods"),
+            dat = list("international ages", "international periods"),
             abbrv = list(TRUE, FALSE),
             pos = list("bottom", "bottom"),
             alpha = 1,
