@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("simulations_20250320_lstm64_32_d64_32/")
+setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\deepdive_project_main_branch_runs\\dicynodon\\dicynodon_models\\simulations_20250313_lstm64_32_d64_32")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -41,9 +41,7 @@ format_labels <- function(x) {
   return(sprintf("%.0f", abs(x)))
 }
 
-# ============================================================================
-# REUSABLE HELPER FUNCTIONS
-# ============================================================================
+########################## DEFINE FUNCTIONS ##########################
 
 # Apply standard theme to all plots
 apply_standard_theme <- function(plot, show_legend = FALSE) {
@@ -68,7 +66,7 @@ apply_standard_theme <- function(plot, show_legend = FALSE) {
 }
 
 # Apply standard coordinate system and scales
-apply_standard_coords <- function(plot, xlim = c(-320, -190), 
+apply_standard_coords <- function(plot, xlim = c(-300, -200), # CHANGE THIS IF YOU WANT TO CHANGE THE X AXIS LIMITS
                                   x_breaks_by = 10) {
   plot <- plot +
     scale_x_reverse() +
@@ -82,7 +80,8 @@ apply_standard_coords <- function(plot, xlim = c(-320, -190),
       alpha = 1,
       height = unit(1.5, "line"),
       rot = 0,
-      size = list(6, 5),
+      # size = list(6, 5),
+      size = list(3, 5),
       neg = TRUE
     ) +
     scale_x_continuous(
@@ -133,7 +132,6 @@ create_single_plot <- function(year, y, y_label, line_color = "black") {
 }
 
 
-
 #################### PLOT ORIGINATION + EXTINCTION EVENTS#######################
 plot_spec_ext_events <- create_multiline_plot(
   year = year,
@@ -146,13 +144,19 @@ plot_spec_ext_events <- create_multiline_plot(
 )
 
 
-############################ SINGLE GRAPHS ################################
+############################ SINGLE PLOTS ################################
+plot_n_endemics <- create_single_plot(year, data$n_endemics, "Number of Endemics")
+plot_n_singletons <- create_single_plot(year, data$n_singletons, "Number of Singletons")
+plot_range_through_div <- create_single_plot(year, data$range_through_div, "Range-Through Diversity")
 
-# Net diversity
+
+############################ SINGLE PLOTS, SELF-CALCULATED ################################
+
+# Net diversification events
 net_diversity = data$origination_events - data$extinction_events
 plot_net_div_events <- create_single_plot(year, net_diversity, "Net Diversification Events")
 
-# Speciation rate
+# Speciation rate 
 speciation_rate = data$origination_events / (data$n_species)*data$time_bin_duration
 plot_spec_rate <- create_single_plot(year, speciation_rate, "Speciation Rate", line_color = "blue")
 
@@ -231,8 +235,9 @@ plot_emp_preds <- ggplot(plot_data) +
 plot_emp_preds <- apply_standard_coords(plot_emp_preds)
 plot_emp_preds <- apply_standard_theme(plot_emp_preds, show_legend = FALSE)
 
-######################### N_OCCS GRAPH ####################################
+######################### PLOTS PER REGION ####################################
 
+# PLOT N_OCCS BY REGION GRAPH
 plot_n_occs_region <- create_multiline_plot(
   year = year,
   data_columns = list(data$n_occs_1.0, data$n_occs_2.0, 
@@ -245,8 +250,7 @@ plot_n_occs_region <- create_multiline_plot(
   legend_title = "Region"
 )
 
-######################### PLOT N_SPECIES GRAPH ####################################
-
+# PLOT N_SPECIES BY REGION GRAPH 
 plot_n_species_region <- create_multiline_plot(
   year = year,
   data_columns = list(data$n_species_1.0, data$n_species_2.0, 
@@ -259,6 +263,18 @@ plot_n_species_region <- create_multiline_plot(
   legend_title = "Region"
 )
 
+# PLOT N_LOCS BY REGION GRAPH
+plot_n_locs_region <- create_multiline_plot(
+  year = year,
+  data_columns = list(data$n_locs_1.0, data$n_locs_2.0, 
+                      data$n_locs_3.0, data$n_locs_4.0),
+  line_labels = c("Region 1", "Region 2", "Region 3", "Region 4"),
+  colors = c("Region 1" = "red", "Region 2" = "blue", 
+             "Region 3" = "turquoise", "Region 4" = "orange1"),
+  x_label = "Time (Ma)",
+  y_label = "Number of Localities by Region",
+  legend_title = "Region"
+)
 
 ######################### GROUPED GRAPH #############################
 
@@ -285,6 +301,7 @@ ggsave("feature_plots_formatted/n_species_region.pdf", plot_n_species_region, wi
 ggsave("feature_plots_formatted/speciation_rate.pdf", plot_spec_rate, width = 10, height = 6)
 ggsave("feature_plots_formatted/extinction_rate.pdf", plot_ext_rate, width = 10, height = 6)
 ggsave("feature_plots_formatted/net_div_rate.pdf", plot_net_div_rate, width = 10, height = 6)
-
-
-# PLOTS that we don't have: n_endemics, n_locs_by_region, n_singletons, range_through_div
+ggsave("feature_plots_formatted/n_endemics.pdf", plot_n_endemics, width = 10, height = 6)
+ggsave("feature_plots_formatted/n_singletons.pdf", plot_n_singletons, width = 10, height = 6)
+ggsave("feature_plots_formatted/range_through_div.pdf", plot_range_through_div, width = 10, height = 6)
+ggsave("feature_plots_formatted/net_div_events.pdf", plot_net_div_events, width = 10, height = 6)
