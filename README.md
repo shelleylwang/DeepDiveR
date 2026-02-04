@@ -34,7 +34,7 @@ Settings not included in the arguments for create_config can be updated using:
 ```
 edit_config(config, module = "module_where_parameter_is_stored", parameter = "parameter_you_want_to_set", value = "updated_parameter_value")
 ```
-For arguments see ```?edit_config```.
+For arguments see ```?edit_config```. WARNING: Many of the default values provided in the `parameters` table are currently incorrect, and users should refer directly to their `config` to see what values are being set.
 
 The configuration file is saved using:
 ```
