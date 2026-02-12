@@ -1,0 +1,3961 @@
+﻿id,occurrence_no,Taxon,MaxAge,MinAge,Locality,Area
+6406,803135,Procolophon,251.902,246.7,Fremouw,1
+6407,803158,Procolophon,251.902,246.7,Fremouw,1
+6408,803158,Procolophon,251.902,246.7,Fremouw,1
+6409,803158,Procolophon,251.902,246.7,Fremouw,1
+6412,807184,Procolophon,251.902,246.7,Fremouw,1
+6424,853631,Palacrodon,251.902,246.7,Fremouw,1
+6435,922693,Prolacerta,251.902,246.7,Fremouw,1
+6436,922694,Prolacerta,251.902,246.7,Fremouw,1
+6437,922695,Prolacerta,251.902,246.7,Fremouw,1
+6438,922696,Prolacerta,251.902,246.7,Fremouw,1
+6467,1431220,Antarctanax,251.902,246.7,Fremouw,1
+6471,1587698,Procolophon,251.902,246.7,Fremouw,1
+3164,360364,Zupaysaurus,227.0,208.5,La Rioja,1
+3221,513572,Coloradisaurus,227.0,208.5,La Rioja,1
+3222,513603,Riojasaurus,227.0,208.5,La Rioja,1
+3268,539206,Lessemsaurus,227.0,208.5,La Rioja,1
+3269,539206,Lessemsaurus,227.0,208.5,La Rioja,1
+3270,539206,Lessemsaurus,227.0,208.5,La Rioja,1
+3289,561802,Riojasaurus,227.0,208.5,La Rioja,1
+3759,923083,Riojasuchus,227.0,208.5,La Rioja,1
+3760,923086,Neoaetosauroides,227.0,208.5,La Rioja,1
+3761,923086,Neoaetosauroides,227.0,208.5,La Rioja,1
+3762,923087,Hemiprotosuchus,227.0,208.5,La Rioja,1
+3763,923087,Hemiprotosuchus,227.0,208.5,La Rioja,1
+3764,923088,Pseudhesperosuchus,227.0,208.5,La Rioja,1
+3765,923089,Palaeochersis,227.0,208.5,La Rioja,1
+3766,923089,Palaeochersis,227.0,208.5,La Rioja,1
+3767,923089,Palaeochersis,227.0,208.5,La Rioja,1
+3768,923090,Fasolasuchus,227.0,208.5,La Rioja,1
+3769,923092,Neoaetosauroides,227.0,208.5,La Rioja,1
+3770,923093,Neoaetosauroides,227.0,208.5,La Rioja,1
+3771,923093,Neoaetosauroides,227.0,208.5,La Rioja,1
+3772,923094,Neoaetosauroides,227.0,208.5,La Rioja,1
+3773,923095,Neoaetosauroides,227.0,208.5,La Rioja,1
+3774,923096,Neoaetosauroides,227.0,208.5,La Rioja,1
+3833,1112358,Coloradisaurus,227.0,208.5,La Rioja,1
+3841,1139540,Plateosaurus,227.0,208.5,Santa Cruz,1
+3842,1139540,Plateosaurus,227.0,208.5,Santa Cruz,1
+3843,1139540,Plateosaurus,227.0,208.5,Santa Cruz,1
+3844,1139540,Plateosaurus,227.0,208.5,Santa Cruz,1
+3846,1315237,Sphenotitan,227.0,208.5,San Juan,1
+3854,1347795,Dromomeron,227.0,208.5,San Juan,1
+3855,1347822,Waluchelys,227.0,208.5,San Juan,1
+3856,1347823,Sphenotitan,227.0,208.5,San Juan,1
+3857,1347824,Sphenotitan,227.0,208.5,San Juan,1
+3858,1347830,Lucianovenator,227.0,208.5,San Juan,1
+3888,1421955,Ingentia,227.0,208.5,San Juan,1
+3890,1435841,Coloradisuchus,227.0,208.5,La Rioja,1
+3929,1555177,Powellvenator,227.0,208.5,La Rioja,1
+3989,1593287,Yelaphomte,227.0,208.5,San Juan,1
+4021,N46,Coloradisaurus,227.0,208.5,La Rioja,1
+4091,N315,Ingentia,227.0,208.5,San Juan,1
+4093,N327,Lessemsaurus,227.0,208.5,La Rioja,1
+4094,N328,Lessemsaurus,227.0,208.5,La Rioja,1
+4095,N329,Lessemsaurus,227.0,208.5,La Rioja,1
+4096,N330,Lessemsaurus,227.0,208.5,La Rioja,1
+4097,N331,Lessemsaurus,227.0,208.5,La Rioja,1
+4098,N332,Lessemsaurus,227.0,208.5,La Rioja,1
+4099,N333,Lessemsaurus,227.0,208.5,La Rioja,1
+4100,N334,Lessemsaurus,227.0,208.5,La Rioja,1
+4101,N335,Lessemsaurus,227.0,208.5,La Rioja,1
+4102,N336,Lessemsaurus,227.0,208.5,La Rioja,1
+4103,N337,Lessemsaurus,227.0,208.5,La Rioja,1
+4104,N338,Lessemsaurus,227.0,208.5,La Rioja,1
+4105,N339,Lessemsaurus,227.0,208.5,La Rioja,1
+4106,N340,Lessemsaurus,227.0,208.5,La Rioja,1
+4107,N341,Lessemsaurus,227.0,208.5,La Rioja,1
+4108,N342,Lessemsaurus,227.0,208.5,La Rioja,1
+4109,N343,Lessemsaurus,227.0,208.5,La Rioja,1
+4110,N344,Lessemsaurus,227.0,208.5,La Rioja,1
+4111,N345,Leyesaurus,227.0,208.5,San Juan,1
+4125,N525,Pachagnathus,227.0,208.5,San Juan,1
+4343,256434,Eoraptor,237.0,227.0,San Juan,1
+4344,256434,Eoraptor,237.0,227.0,San Juan,1
+4345,256435,Herrerasaurus,237.0,227.0,San Juan,1
+4346,256436,Saurosuchus,237.0,227.0,San Juan,1
+4347,256437,Aetosauroides,237.0,227.0,San Juan,1
+4348,256441,Herrerasaurus,237.0,227.0,San Juan,1
+4351,277109,Pisanosaurus,237.0,227.0,La Rioja,1
+4365,474116,Herrerasaurus,237.0,227.0,San Juan,1
+4366,474117,Hyperodapedon,237.0,227.0,San Juan,1
+4367,474119,Hyperodapedon,237.0,227.0,San Juan,1
+4371,518725,Herrerasaurus,237.0,227.0,San Juan,1
+4372,518725,Herrerasaurus,237.0,227.0,San Juan,1
+4373,518726,Herrerasaurus,237.0,227.0,San Juan,1
+4374,518727,Herrerasaurus,237.0,227.0,San Juan,1
+4375,518731,Herrerasaurus,237.0,227.0,San Juan,1
+4376,518732,Herrerasaurus,237.0,227.0,San Juan,1
+4377,518733,Herrerasaurus,237.0,227.0,San Juan,1
+4378,518734,Trialestes,237.0,227.0,San Juan,1
+4379,518737,Proterochampsa,237.0,227.0,San Juan,1
+4380,519917,Herrerasaurus,237.0,227.0,San Juan,1
+4413,800076,Panphagia,237.0,227.0,San Juan,1
+4416,820889,Sillosuchus,237.0,227.0,San Juan,1
+4427,832678,Aetosauroides,237.0,227.0,San Juan,1
+4446,893426,Sanjuansaurus,237.0,227.0,San Juan,1
+4449,908663,Eodromaeus,237.0,227.0,San Juan,1
+4465,1063632,Chromogisaurus,237.0,227.0,San Juan,1
+4484,1142068,Venaticosuchus,237.0,227.0,La Rioja,1
+4485,1180352,Ignotosaurus,237.0,227.0,San Juan,1
+4486,1181558,Hyperodapedon,237.0,227.0,San Juan,1
+4506,1347794,Trialestes,237.0,227.0,La Rioja,1
+4507,1349988,Pseudochampsa,237.0,227.0,San Juan,1
+4530,1475020,Lewisuchus,237.0,227.0,La Rioja,1
+4546,1572197,Incertovenator,237.0,227.0,San Juan,1
+4550,1583925,Taytalura,237.0,227.0,San Juan,1
+6091,149866,Lewisuchus,242.0,237.0,La Rioja,1
+6092,149867,Lagerpeton,242.0,237.0,La Rioja,1
+6093,272321,Luperosuchus,242.0,237.0,La Rioja,1
+6094,272322,Lagerpeton,242.0,237.0,La Rioja,1
+6095,272323,Chanaresuchus,242.0,237.0,La Rioja,1
+6096,272324,Gualosuchus,242.0,237.0,La Rioja,1
+6097,272325,Gracilisuchus,242.0,237.0,La Rioja,1
+6098,272327,Marasuchus,242.0,237.0,La Rioja,1
+6099,272328,Lewisuchus,242.0,237.0,La Rioja,1
+6100,272329,Tropidosuchus,242.0,237.0,La Rioja,1
+6101,272330,Tarjadia,242.0,237.0,La Rioja,1
+6104,573788,Gracilisuchus,242.0,237.0,La Rioja,1
+6105,573792,Luperosuchus,242.0,237.0,La Rioja,1
+6106,573793,Lagerpeton,242.0,237.0,La Rioja,1
+6107,573794,Chanaresuchus,242.0,237.0,La Rioja,1
+6108,573795,Gualosuchus,242.0,237.0,La Rioja,1
+6136,922174,Tropidosuchus,242.0,237.0,La Rioja,1
+6137,922175,Marasuchus,242.0,237.0,La Rioja,1
+6138,922176,Luperosuchus,242.0,237.0,La Rioja,1
+6139,922177,Tarjadia,242.0,237.0,La Rioja,1
+6140,922178,Tarjadia,242.0,237.0,La Rioja,1
+6141,922179,Tarjadia,242.0,237.0,La Rioja,1
+6143,923804,Lewisuchus,242.0,237.0,La Rioja,1
+6144,923804,Lewisuchus,242.0,237.0,La Rioja,1
+6145,923804,Lewisuchus,242.0,237.0,La Rioja,1
+6146,923807,Lagerpeton,242.0,237.0,La Rioja,1
+6147,923807,Lagerpeton,242.0,237.0,La Rioja,1
+6148,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6149,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6150,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6151,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6152,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6153,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6154,923809,Tropidosuchus,242.0,237.0,La Rioja,1
+6299,1565299,Chanaresuchus,242.0,237.0,La Rioja,1
+6313,N522,Elorhynchus,242.0,237.0,Cordoba,1
+6314,N524,Koilamasuchus,242.0,237.0,Mendoza,1
+3170,404182,Placochelys,227.0,208.5,Niederösterreich,3
+3742,882293,Mystriosuchus,227.0,208.5,Styria,3
+3743,882293,Mystriosuchus,227.0,208.5,Styria,3
+3744,882293,Mystriosuchus,227.0,208.5,Styria,3
+5276,1419207,Psephoderma,208.5,201.4,Kössen,3
+5652,882303,Dolerosaurus,233.4,227.0,Niederösterreich,3
+5986,1094707,Cymatosaurus,246.7,242.0,Arlberg,3
+6294,1432005,Partanosaurus,242.0,237.0,Vorarlberg,3
+6475,635142,Austriadactylus,213.2,208.5,Tyrol,3
+6476,777000,Austriadraco,213.2,208.5,Tirol,3
+6479,1418498,Langobardisaurus,213.2,208.5,Tirol,3
+6702,1415012,Lariosaurus,239.7,237.0,Karnten,3
+6703,1415013,Neusticosaurus,239.7,237.0,Karnten,3
+7097,790404,Kadimakara,251.902,251.2,Queensland,1
+7098,790404,Kadimakara,251.902,251.2,Queensland,1
+7099,790405,Kudnu,251.902,251.2,Queensland,1
+7100,790405,Kudnu,251.902,251.2,Queensland,1
+7117,979958,Tasmaniosaurus,251.902,251.2,Tasmania,1
+7118,979962,Tasmaniosaurus,251.902,251.2,Queensland,1
+7119,979963,Kalisuchus,251.902,251.2,Queensland,1
+7122,1087072,Eomurruna,251.902,251.2,Queensland,1
+7127,1534873,Eomurruna,251.902,251.2,Queensland,1
+4278,1134406,Tholodus,246.7,237.0,Vares,1
+5230,1101333,Ichthyosaurus,208.5,201.4,Gaume,3
+5231,1101354,Plesiosaurus,208.5,201.4,Gaume,3
+5232,1101373,Ichthyosaurus,208.5,201.4,Gaume,3
+5233,1101374,Plesiosaurus,208.5,201.4,Gaume,3
+5257,1313178,Diphydontosaurus,208.5,201.4,Gaume,3
+5268,1391294,Clevosaurus,208.5,201.4,Gaume,3
+4274,1094847,Nothosaurus,246.7,237.0,Belgium,3
+3186,461293,Unaysaurus,227.0,208.5,Rio Grande do Sul,1
+3257,536062,Sacisaurus,227.0,208.5,Rio Grande do Sul,1
+3258,536068,Guaibasaurus,227.0,208.5,Rio Grande do Sul,1
+3259,536068,Guaibasaurus,227.0,208.5,Rio Grande do Sul,1
+3348,668537,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3405,811795,Soturnia,227.0,208.5,Rio Grande do Sul,1
+3406,811795,Soturnia,227.0,208.5,Rio Grande do Sul,1
+3407,811795,Soturnia,227.0,208.5,Rio Grande do Sul,1
+3408,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3409,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3410,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3411,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3412,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3413,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3414,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3415,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3416,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3417,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3418,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3419,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3420,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3421,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3422,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3423,811801,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3748,897618,Guaibasaurus,227.0,208.5,Rio Grande do Sul,1
+3751,908524,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3752,908524,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3753,908525,Hyperodapedon,227.0,208.5,Rio Grande do Sul,1
+3754,908533,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3755,908533,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3756,908533,Teyumbaita,227.0,208.5,Rio Grande do Sul,1
+3758,923080,Clevosaurus,227.0,208.5,Rio Grande do Sul,1
+3784,930806,Faxinalipterus,227.0,208.5,Rio Grande do Sul,1
+3785,930806,Faxinalipterus,227.0,208.5,Rio Grande do Sul,1
+3786,930809,Cargninia,227.0,208.5,Rio Grande do Sul,1
+3889,1423604,Macrocollum,227.0,208.5,Rio Grande do Sul,1
+3893,1456852,Nhandumirim,227.0,208.5,Rio Grande do Sul,1
+3898,1499983,Lanceirosphenodon,227.0,208.5,Rio Grande do Sul,1
+3934,1578530,Guaibasaurus,227.0,208.5,Rio Grande do Sul,1
+3935,1578530,Guaibasaurus,227.0,208.5,Rio Grande do Sul,1
+3988,1593261,Maehary,227.0,208.5,Rio Grande do Sul,1
+3990,1598305,Microsphenodon,227.0,208.5,Rio Grande do Sul,1
+4000,1637389,Macrocollum,227.0,208.5,Rio Grande do Sul,1
+4003,N1,Aetosauroides,227.0,208.5,RS,1
+4004,N2,Aetosauroides,227.0,208.5,RS,1
+4005,N3,Aetosauroides,227.0,208.5,RS,1
+4006,N4,Aetosauroides,227.0,208.5,RS,1
+4007,N9,Amanasaurus,227.0,208.5,RS,1
+4008,N10,Amanasaurus,227.0,208.5,RS,1
+4009,N31,Buriolestes,227.0,208.5,RS,1
+4010,N32,Buriolestes,227.0,208.5,RS,1
+4011,N33,Buriolestes,227.0,208.5,RS,1
+4012,N34,Buriolestes,227.0,208.5,RS,1
+4013,N38,Clevosaurus,227.0,208.5,RS,1
+4014,N39,Clevosaurus,227.0,208.5,RS,1
+4015,N40,Clevosaurus,227.0,208.5,RS,1
+4016,N41,Clevosaurus,227.0,208.5,RS,1
+4017,N42,Clevosaurus,227.0,208.5,RS,1
+4018,N43,Clevosaurus,227.0,208.5,RS,1
+4019,N44,Clevosaurus,227.0,208.5,RS,1
+4020,N45,Clevosaurus,227.0,208.5,RS,1
+4022,N246,Gnathovorax,227.0,208.5,RS,1
+4023,N247,Guaibasaurus,227.0,208.5,RS,1
+4024,N248,Guaibasaurus,227.0,208.5,RS,1
+4025,N249,Hyperodapedon,227.0,208.5,RS,1
+4026,N250,Hyperodapedon,227.0,208.5,RS,1
+4027,N251,Hyperodapedon,227.0,208.5,RS,1
+4028,N252,Hyperodapedon,227.0,208.5,RS,1
+4029,N253,Hyperodapedon,227.0,208.5,RS,1
+4030,N254,Hyperodapedon,227.0,208.5,RS,1
+4031,N255,Hyperodapedon,227.0,208.5,RS,1
+4032,N256,Hyperodapedon,227.0,208.5,RS,1
+4033,N257,Hyperodapedon,227.0,208.5,RS,1
+4034,N258,Hyperodapedon,227.0,208.5,RS,1
+4035,N259,Hyperodapedon,227.0,208.5,RS,1
+4036,N260,Hyperodapedon,227.0,208.5,RS,1
+4037,N261,Hyperodapedon,227.0,208.5,RS,1
+4038,N262,Hyperodapedon,227.0,208.5,RS,1
+4039,N263,Hyperodapedon,227.0,208.5,RS,1
+4040,N264,Hyperodapedon,227.0,208.5,RS,1
+4041,N265,Hyperodapedon,227.0,208.5,RS,1
+4042,N266,Hyperodapedon,227.0,208.5,RS,1
+4043,N267,Hyperodapedon,227.0,208.5,RS,1
+4044,N268,Hyperodapedon,227.0,208.5,RS,1
+4045,N269,Hyperodapedon,227.0,208.5,RS,1
+4046,N270,Hyperodapedon,227.0,208.5,RS,1
+4047,N271,Hyperodapedon,227.0,208.5,RS,1
+4048,N272,Hyperodapedon,227.0,208.5,RS,1
+4049,N273,Hyperodapedon,227.0,208.5,RS,1
+4050,N274,Hyperodapedon,227.0,208.5,RS,1
+4051,N275,Hyperodapedon,227.0,208.5,RS,1
+4052,N276,Hyperodapedon,227.0,208.5,RS,1
+4053,N277,Hyperodapedon,227.0,208.5,RS,1
+4054,N278,Hyperodapedon,227.0,208.5,RS,1
+4055,N279,Hyperodapedon,227.0,208.5,RS,1
+4056,N280,Hyperodapedon,227.0,208.5,RS,1
+4057,N281,Hyperodapedon,227.0,208.5,RS,1
+4058,N282,Hyperodapedon,227.0,208.5,RS,1
+4059,N283,Hyperodapedon,227.0,208.5,RS,1
+4060,N284,Hyperodapedon,227.0,208.5,RS,1
+4061,N285,Hyperodapedon,227.0,208.5,RS,1
+4062,N286,Hyperodapedon,227.0,208.5,RS,1
+4063,N287,Hyperodapedon,227.0,208.5,RS,1
+4064,N288,Hyperodapedon,227.0,208.5,RS,1
+4065,N289,Hyperodapedon,227.0,208.5,RS,1
+4066,N290,Hyperodapedon,227.0,208.5,RS,1
+4067,N291,Hyperodapedon,227.0,208.5,RS,1
+4068,N292,Hyperodapedon,227.0,208.5,RS,1
+4069,N293,Hyperodapedon,227.0,208.5,RS,1
+4070,N294,Hyperodapedon,227.0,208.5,RS,1
+4071,N295,Hyperodapedon,227.0,208.5,RS,1
+4072,N296,Hyperodapedon,227.0,208.5,RS,1
+4073,N297,Hyperodapedon,227.0,208.5,RS,1
+4074,N298,Hyperodapedon,227.0,208.5,RS,1
+4075,N299,Hyperodapedon,227.0,208.5,RS,1
+4076,N300,Hyperodapedon,227.0,208.5,RS,1
+4077,N301,Hyperodapedon,227.0,208.5,RS,1
+4078,N302,Hyperodapedon,227.0,208.5,RS,1
+4079,N303,Hyperodapedon,227.0,208.5,RS,1
+4080,N304,Hyperodapedon,227.0,208.5,RS,1
+4081,N305,Hyperodapedon,227.0,208.5,RS,1
+4082,N306,Hyperodapedon,227.0,208.5,RS,1
+4083,N307,Hyperodapedon,227.0,208.5,RS,1
+4084,N308,Hyperodapedon,227.0,208.5,RS,1
+4085,N309,Hyperodapedon,227.0,208.5,RS,1
+4086,N310,Hyperodapedon,227.0,208.5,RS,1
+4087,N311,Hyperodapedon,227.0,208.5,RS,1
+4088,N312,Hyperodapedon,227.0,208.5,RS,1
+4089,N313,Hyperodapedon,227.0,208.5,RS,1
+4090,N314,Hyperodapedon,227.0,208.5,RS,1
+4092,N318,Ixalerpeton,227.0,208.5,RS,1
+4112,N350,Macrocollum,227.0,208.5,RS,1
+4113,N351,Maehary,227.0,208.5,RS,1
+4114,N362,Microsphenodon,227.0,208.5,RS,1
+4115,N363,new Neotheropoda,227.0,208.5,RS,1
+4116,N364,new Rhynchocephalia,227.0,208.5,RS,1
+4117,N365,Nhandumirim,227.0,208.5,RS,1
+4118,N366,Pampadromaeus,227.0,208.5,RS,1
+4119,N482,Saturnalia,227.0,208.5,RS,1
+4120,N503,Stenoscelida,227.0,208.5,RS,1
+4121,N507,Teyumbaita,227.0,208.5,RS,1
+4122,N508,Teyumbaita,227.0,208.5,RS,1
+4123,N511,Unaysaurus,227.0,208.5,RS,1
+4124,N512,Venetoraptor,227.0,208.5,RS,1
+4289,1382838,Decuriasuchus,246.7,237.0,Rio Grande do Sul,1
+4370,486188,Staurikosaurus,237.0,227.0,Rio Grande do Sul,1
+4493,1308719,Dagasuchus,237.0,227.0,Rio Grande do Sul,1
+4494,1308746,Polesinesuchus,237.0,227.0,Rio Grande do Sul,1
+4502,1347761,Ixalerpeton,237.0,227.0,Rio Grande do Sul,1
+4503,1347761,Ixalerpeton,237.0,227.0,Rio Grande do Sul,1
+4504,1347762,Buriolestes,237.0,227.0,Rio Grande do Sul,1
+4505,1347762,Buriolestes,237.0,227.0,Rio Grande do Sul,1
+4523,1419303,Erythrovenator,237.0,227.0,Rio Grande do Sul,1
+4528,1459722,Clevosaurus,237.0,227.0,Rio Grande do Sul,1
+4529,1459725,Pampadromaeus,237.0,227.0,Rio Grande do Sul,1
+4556,1624818,Amanasaurus,237.0,227.0,Rio Grande do Sul,1
+4557,1633028,Venetoraptor,237.0,227.0,Rio Grande do Sul,1
+4564,1651915,Prestosuchus,237.0,227.0,Rio Grande do Sul,1
+4566,N325,Kuruxuchampsa,237.0,227.0,RS,1
+4567,N515,Cornualbus,237.0,227.0,RS,1
+4568,N516,Dynamosuchus,237.0,227.0,RS,1
+4569,N517,Aetobarbakinoides,237.0,227.0,RS,1
+4570,N518,Rauisuchus,237.0,227.0,RS,1
+5090,733154,Provelosaurus,266.9,259.51,Rio Grande do Sul,1
+5456,814809,Brazilosaurus,290.1,283.5,Goiás,1
+5457,814810,Stereosternum,290.1,283.5,Goiás,1
+5458,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5459,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5460,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5461,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5462,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5463,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5464,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5465,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5466,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5467,815039,Brazilosaurus,290.1,283.5,Goiás,1
+5468,815040,Mesosaurus,290.1,283.5,Goiás,1
+5469,815041,Stereosternum,290.1,283.5,Goiás,1
+5470,820351,Mesosaurus,290.1,283.5,Paraná,1
+5471,820351,Mesosaurus,290.1,283.5,Paraná,1
+5472,820351,Mesosaurus,290.1,283.5,Paraná,1
+5473,820351,Mesosaurus,290.1,283.5,Paraná,1
+5474,820351,Mesosaurus,290.1,283.5,Paraná,1
+5475,820351,Mesosaurus,290.1,283.5,Paraná,1
+5476,820351,Mesosaurus,290.1,283.5,Paraná,1
+5477,820351,Mesosaurus,290.1,283.5,Paraná,1
+5478,820351,Mesosaurus,290.1,283.5,Paraná,1
+5479,820352,Mesosaurus,290.1,283.5,Rio Grande do Sul,1
+5480,820353,Stereosternum,290.1,283.5,Rio Grande do Sul,1
+5481,820353,Stereosternum,290.1,283.5,Rio Grande do Sul,1
+5482,820354,Stereosternum,290.1,283.5,São Paulo,1
+5483,820354,Stereosternum,290.1,283.5,São Paulo,1
+5484,820354,Stereosternum,290.1,283.5,São Paulo,1
+5485,820354,Stereosternum,290.1,283.5,São Paulo,1
+5486,820355,Stereosternum,290.1,283.5,São Paulo,1
+5487,820355,Stereosternum,290.1,283.5,São Paulo,1
+5488,820355,Stereosternum,290.1,283.5,São Paulo,1
+5489,820355,Stereosternum,290.1,283.5,São Paulo,1
+5490,820355,Stereosternum,290.1,283.5,São Paulo,1
+5491,820355,Stereosternum,290.1,283.5,São Paulo,1
+5492,820355,Stereosternum,290.1,283.5,São Paulo,1
+5493,820355,Stereosternum,290.1,283.5,São Paulo,1
+5494,820355,Stereosternum,290.1,283.5,São Paulo,1
+5495,820355,Stereosternum,290.1,283.5,São Paulo,1
+5496,820355,Stereosternum,290.1,283.5,São Paulo,1
+5497,820355,Stereosternum,290.1,283.5,São Paulo,1
+5498,820355,Stereosternum,290.1,283.5,São Paulo,1
+5499,820356,Brazilosaurus,290.1,283.5,São Paulo,1
+5500,820356,Brazilosaurus,290.1,283.5,São Paulo,1
+5501,820356,Brazilosaurus,290.1,283.5,São Paulo,1
+5502,820478,Brazilosaurus,290.1,283.5,São Paulo,1
+5503,820479,Stereosternum,290.1,283.5,São Paulo,1
+5504,820479,Stereosternum,290.1,283.5,São Paulo,1
+5505,820479,Stereosternum,290.1,283.5,São Paulo,1
+5506,820479,Stereosternum,290.1,283.5,São Paulo,1
+5507,820480,Mesosaurus,290.1,283.5,São Paulo,1
+5508,820481,Stereosternum,290.1,283.5,Ceará,1
+5509,820482,Stereosternum,290.1,283.5,São Paulo,1
+5510,820574,Stereosternum,290.1,283.5,São Paulo,1
+5511,820575,Brazilosaurus,290.1,283.5,Paraná,1
+5512,820575,Brazilosaurus,290.1,283.5,Paraná,1
+5513,820575,Brazilosaurus,290.1,283.5,Paraná,1
+5517,820921,Mesosaurus,290.1,283.5,Paraná,1
+5518,820921,Mesosaurus,290.1,283.5,Paraná,1
+5519,820922,Mesosaurus,290.1,283.5,Paraná,1
+5520,820922,Mesosaurus,290.1,283.5,Paraná,1
+5521,820922,Mesosaurus,290.1,283.5,Paraná,1
+5522,820928,Mesosaurus,290.1,283.5,Paraná,1
+5523,820929,Mesosaurus,290.1,283.5,São Paulo,1
+5524,821003,Mesosaurus,290.1,283.5,São Paulo,1
+5525,821005,Mesosaurus,290.1,283.5,Paraná,1
+5526,821028,Mesosaurus,290.1,283.5,Paraná,1
+5527,821068,Stereosternum,290.1,283.5,Paraná,1
+5528,821068,Stereosternum,290.1,283.5,Paraná,1
+5529,821068,Stereosternum,290.1,283.5,Paraná,1
+5530,821068,Stereosternum,290.1,283.5,Paraná,1
+5531,821068,Stereosternum,290.1,283.5,Paraná,1
+5532,821068,Stereosternum,290.1,283.5,Paraná,1
+5533,821180,Mesosaurus,290.1,283.5,São Paulo,1
+5534,821444,Mesosaurus,290.1,283.5,Paraná,1
+5535,821444,Mesosaurus,290.1,283.5,Paraná,1
+5536,821444,Mesosaurus,290.1,283.5,Paraná,1
+5537,821444,Mesosaurus,290.1,283.5,Paraná,1
+5538,821444,Mesosaurus,290.1,283.5,Paraná,1
+5539,821444,Mesosaurus,290.1,283.5,Paraná,1
+5540,821444,Mesosaurus,290.1,283.5,Paraná,1
+5541,821444,Mesosaurus,290.1,283.5,Paraná,1
+5542,821444,Mesosaurus,290.1,283.5,Paraná,1
+5543,821444,Mesosaurus,290.1,283.5,Paraná,1
+5544,821444,Mesosaurus,290.1,283.5,Paraná,1
+5545,821444,Mesosaurus,290.1,283.5,Paraná,1
+5546,821444,Mesosaurus,290.1,283.5,Paraná,1
+5547,821444,Mesosaurus,290.1,283.5,Paraná,1
+5548,821444,Mesosaurus,290.1,283.5,Paraná,1
+5549,821444,Mesosaurus,290.1,283.5,Paraná,1
+5550,821444,Mesosaurus,290.1,283.5,Paraná,1
+5551,821444,Mesosaurus,290.1,283.5,Paraná,1
+5552,821444,Mesosaurus,290.1,283.5,Paraná,1
+5553,821444,Mesosaurus,290.1,283.5,Paraná,1
+5554,821444,Mesosaurus,290.1,283.5,Paraná,1
+5555,821444,Mesosaurus,290.1,283.5,Paraná,1
+5556,821444,Mesosaurus,290.1,283.5,Paraná,1
+5557,821444,Mesosaurus,290.1,283.5,Paraná,1
+5558,821444,Mesosaurus,290.1,283.5,Paraná,1
+5559,821454,Stereosternum,290.1,283.5,São Paulo,1
+5560,821454,Stereosternum,290.1,283.5,São Paulo,1
+5561,821454,Stereosternum,290.1,283.5,São Paulo,1
+5562,821454,Stereosternum,290.1,283.5,São Paulo,1
+5563,821454,Stereosternum,290.1,283.5,São Paulo,1
+5564,821454,Stereosternum,290.1,283.5,São Paulo,1
+5565,821454,Stereosternum,290.1,283.5,São Paulo,1
+5566,821454,Stereosternum,290.1,283.5,São Paulo,1
+5567,821454,Stereosternum,290.1,283.5,São Paulo,1
+5568,821454,Stereosternum,290.1,283.5,São Paulo,1
+5569,821455,Brazilosaurus,290.1,283.5,São Paulo,1
+5570,821455,Brazilosaurus,290.1,283.5,São Paulo,1
+5571,823059,Mesosaurus,290.1,283.5,Paraná,1
+5572,823059,Mesosaurus,290.1,283.5,Paraná,1
+5573,823059,Mesosaurus,290.1,283.5,Paraná,1
+5574,823059,Mesosaurus,290.1,283.5,Paraná,1
+5575,823059,Mesosaurus,290.1,283.5,Paraná,1
+5576,823059,Mesosaurus,290.1,283.5,Paraná,1
+5577,823059,Mesosaurus,290.1,283.5,Paraná,1
+5578,823059,Mesosaurus,290.1,283.5,Paraná,1
+5579,823059,Mesosaurus,290.1,283.5,Paraná,1
+5580,823059,Mesosaurus,290.1,283.5,Paraná,1
+5581,823059,Mesosaurus,290.1,283.5,Paraná,1
+5582,823059,Mesosaurus,290.1,283.5,Paraná,1
+5583,823059,Mesosaurus,290.1,283.5,Paraná,1
+5584,823059,Mesosaurus,290.1,283.5,Paraná,1
+5585,823059,Mesosaurus,290.1,283.5,Paraná,1
+5586,823059,Mesosaurus,290.1,283.5,Paraná,1
+5587,823059,Mesosaurus,290.1,283.5,Paraná,1
+5661,1419205,Hyperodapedon,233.4,227.0,Rio Grande do Sul,1
+5662,1486218,Gnathovorax,233.4,227.0,Rio Grande do Sul,1
+6102,486189,Spondylosoma,242.0,237.0,Rio Grande do Sul,1
+6110,668708,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6115,837002,Candelaria,242.0,237.0,Rio Grande do Sul,1
+6116,837006,Candelaria,242.0,237.0,Rio Grande do Sul,1
+6117,837006,Candelaria,242.0,237.0,Rio Grande do Sul,1
+6125,895292,Barberenasuchus,242.0,237.0,Rio Grande do Sul,1
+6127,895947,Spondylosoma,242.0,237.0,Rio Grande do Sul,1
+6128,896139,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6129,896140,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6130,896145,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6131,896147,Spondylosoma,242.0,237.0,Rio Grande do Sul,1
+6142,922685,Brasinorhynchus,242.0,237.0,Rio Grande do Sul,1
+6155,924724,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6156,924725,Prestosuchus,242.0,237.0,Rio Grande do Sul,1
+6157,924728,Procerosuchus,242.0,237.0,Rio Grande do Sul,1
+6160,930780,Archeopelta,242.0,237.0,Rio Grande do Sul,1
+6167,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6168,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6169,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6170,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6171,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6172,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6173,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6174,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6175,933819,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6176,933820,Decuriasuchus,242.0,237.0,Rio Grande do Sul,1
+6300,1615939,Gamatavus,242.0,237.0,Rio Grande do Sul,1
+6301,N30,Brasinorhynchus,242.0,237.0,RS,1
+6302,N35,Candelaria,242.0,237.0,RS,1
+6303,N245,Gamatavus,242.0,237.0,RS,1
+6304,N371,Parvosuchus,242.0,237.0,RS,1
+6305,N372,Prestosuchus,242.0,237.0,RS,1
+6306,N373,Prestosuchus,242.0,237.0,RS,1
+6307,N374,Prestosuchus,242.0,237.0,RS,1
+6308,N375,Prestosuchus,242.0,237.0,RS,1
+6309,N513,Retymaijychampsa,242.0,237.0,RS,1
+6310,N514,Schultzsuchus,242.0,237.0,RS,1
+6311,N519,Pinheirochampsa,242.0,237.0,RS,1
+6312,N520,Gondwanax,242.0,237.0,RS,1
+6413,843491,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6414,843492,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6419,845945,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6425,895255,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6426,895260,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6427,895264,Procolophon,251.902,246.7,Rio Grande do Sul,1
+6458,1347612,Teyujagua,251.902,246.7,Rio Grande do Sul,1
+6468,1500171,Elessaurus,251.902,246.7,Rio Grande do Sul,1
+6469,1549175,Oryporan,251.902,246.7,Rio Grande do Sul,1
+6470,1549176,Oryporan,251.902,246.7,Rio Grande do Sul,1
+6622,N376,Procolophon,249.9,246.7,RS,1
+6623,N377,Procolophon,249.9,246.7,RS,1
+6624,N378,Procolophon,249.9,246.7,RS,1
+6625,N379,Procolophon,249.9,246.7,RS,1
+6626,N380,Procolophon,249.9,246.7,RS,1
+6627,N381,Procolophon,249.9,246.7,RS,1
+6628,N382,Procolophon,249.9,246.7,RS,1
+6629,N383,Procolophon,249.9,246.7,RS,1
+6630,N384,Procolophon,249.9,246.7,RS,1
+6631,N385,Procolophon,249.9,246.7,RS,1
+6632,N386,Procolophon,249.9,246.7,RS,1
+6633,N387,Procolophon,249.9,246.7,RS,1
+6634,N388,Procolophon,249.9,246.7,RS,1
+6635,N389,Procolophon,249.9,246.7,RS,1
+6636,N390,Procolophon,249.9,246.7,RS,1
+6637,N391,Procolophon,249.9,246.7,RS,1
+6638,N392,Procolophon,249.9,246.7,RS,1
+6639,N393,Procolophon,249.9,246.7,RS,1
+6738,N397,Provelosaurus,266.9,264.28,RS,1
+6739,N398,Provelosaurus,266.9,264.28,RS,1
+6740,N399,Provelosaurus,266.9,264.28,RS,1
+6741,N400,Provelosaurus,266.9,264.28,RS,1
+6742,N401,Provelosaurus,266.9,264.28,RS,1
+3404,811785,Hypsognathus,227.0,208.5,Nova Scotia,4
+3429,820942,Callawayia,227.0,208.5,British Columbia,4
+3793,933495,Rutiodon,227.0,208.5,Nova Scotia,4
+3794,933496,Sikannisuchus,227.0,208.5,British Columbia,4
+3795,933497,Metashastasaurus,227.0,208.5,British Columbia,4
+3796,933499,Sikannisuchus,227.0,208.5,British Columbia,4
+3797,933502,Sikannisuchus,227.0,208.5,British Columbia,4
+3798,933503,Metashastasaurus,227.0,208.5,British Columbia,4
+3799,933505,Sikannisuchus,227.0,208.5,British Columbia,4
+3839,1134411,Hudsonelpidia,227.0,208.5,British Columbia,4
+3840,1134412,Macgowania,227.0,208.5,British Columbia,4
+4282,1181754,Paralonectes,246.7,237.0,British Columbia,4
+4283,1181755,Thalattosaurus,246.7,237.0,British Columbia,4
+4284,1181757,Thalattosaurus,246.7,237.0,British Columbia,4
+4296,1419120,Phalarodon,246.7,237.0,British Columbia,4
+4409,748041,Acadiella,237.0,227.0,Nova Scotia,4
+4410,748059,Haligonia,237.0,227.0,Nova Scotia,4
+4411,748801,Scoloparia,237.0,227.0,Nova Scotia,4
+4415,811667,Scoloparia,237.0,227.0,Nova Scotia,4
+4455,933482,Teraterpeton,237.0,227.0,Nova Scotia,4
+4456,933484,Teraterpeton,237.0,227.0,Nova Scotia,4
+4457,933490,Hyperodapedon,237.0,227.0,Nova Scotia,4
+4508,1371695,Hypsognathus,237.0,227.0,Nova Scotia,4
+4539,1520765,Oryctorhynchus,237.0,227.0,Nova Scotia,4
+4540,1520767,Oryctorhynchus,237.0,227.0,Nova Scotia,4
+6083,1611415,Sclerosaurus,246.7,242.0,Nova Scotia,4
+6084,1611416,Anomoiodon,246.7,242.0,Nova Scotia,4
+6085,1611419,Tanystropheus,246.7,242.0,Nova Scotia,4
+6610,882304,Shastasaurus,216.7,213.2,British Columbia,4
+6611,882305,Macgowania,216.7,213.2,British Columbia,4
+6612,882306,Callawayia,216.7,213.2,British Columbia,4
+6645,1420107,Utatsusaurus,251.902,246.7,British Columbia,4
+6780,789759,Wapitisaurus,251.2,246.7,British Columbia,4
+6792,920238,Grippia,251.2,246.7,British Columbia,4
+6793,920238,Grippia,251.2,246.7,British Columbia,4
+6794,920239,Gulosaurus,251.2,246.7,British Columbia,4
+6795,920239,Gulosaurus,251.2,246.7,British Columbia,4
+6796,1181752,Paralonectes,251.2,246.7,British Columbia,4
+6797,1181753,Paralonectes,251.2,246.7,British Columbia,4
+6798,1181756,Agkistrognathus,251.2,246.7,British Columbia,4
+6823,1419118,Phalarodon,251.2,246.7,British Columbia,4
+6824,1419119,Phalarodon,251.2,246.7,British Columbia,4
+6826,1420108,Utatsusaurus,251.2,246.7,British Columbia,4
+6828,1529520,Phalarodon,251.2,246.7,British Columbia,4
+6829,1529521,Phalarodon,251.2,246.7,British Columbia,4
+6873,690312,Protosuchus,201.4,199.5,Nova Scotia,4
+6874,690316,Protosuchus,201.4,199.5,Nova Scotia,4
+6875,690318,Clevosaurus,201.4,199.5,Nova Scotia,4
+6876,690319,Protosuchus,201.4,199.5,Nova Scotia,4
+6877,690320,Ammosaurus,201.4,199.5,Nova Scotia,4
+6878,690321,Clevosaurus,201.4,199.5,Nova Scotia,4
+6879,690323,Protosuchus,201.4,199.5,Nova Scotia,4
+6880,690324,Clevosaurus,201.4,199.5,Nova Scotia,4
+6881,690330,Protosuchus,201.4,199.5,Nova Scotia,4
+6882,690331,Ammosaurus,201.4,199.5,Nova Scotia,4
+6883,690332,Clevosaurus,201.4,199.5,Nova Scotia,4
+6884,690333,Clevosaurus,201.4,199.5,Nova Scotia,4
+6885,690334,Protosuchus,201.4,199.5,Nova Scotia,4
+6886,690335,Ammosaurus,201.4,199.5,Nova Scotia,4
+6887,690336,Clevosaurus,201.4,199.5,Nova Scotia,4
+4127,N543,Jupijkam,227.0,208.5,Nova Scotia,4
+3149,220070,Plateosaurus,227.0,208.5,Aargau,3
+3150,220071,Aetosaurus,227.0,208.5,Aargau,3
+3151,220072,Saltoposuchus,227.0,208.5,Aargau,3
+3152,220073,Liliensternus,227.0,208.5,Aargau,3
+3191,479563,Plateosaurus,227.0,208.5,Schaffhausen,3
+3220,504257,Eudimorphodon,227.0,208.5,Schaffhausen,3
+3868,1408749,Deltadectes,227.0,208.5,Schaffhausen,3
+3869,1408750,Diphydontosaurus,227.0,208.5,Schaffhausen,3
+3892,1456627,Notatesseraeraptor,227.0,208.5,Aargau,3
+3899,1514433,Schleitheimia,227.0,208.5,Schaffhausen,3
+3931,1559619,Clevosaurus,227.0,208.5,Aargau,3
+3991,1610810,Plateosaurus,227.0,208.5,Aargau,3
+3992,1610811,Proganochelys,227.0,208.5,Aargau,3
+4207,150315,Neusticosaurus,246.7,237.0,Ticino,3
+4208,150316,Mixosaurus,246.7,237.0,Ticino,3
+4227,797952,Serpianosaurus,246.7,237.0,Kanton Tessin,3
+4228,797952,Serpianosaurus,246.7,237.0,Kanton Tessin,3
+4229,797952,Serpianosaurus,246.7,237.0,Kanton Tessin,3
+4230,797952,Serpianosaurus,246.7,237.0,Kanton Tessin,3
+4231,797952,Serpianosaurus,246.7,237.0,Kanton Tessin,3
+4232,797953,Macrocnemus,246.7,237.0,Kanton Tessin,3
+4233,797954,Serpianosaurus,246.7,237.0,Ticino,3
+4234,797955,Serpianosaurus,246.7,237.0,Ticino,3
+4235,797956,Serpianosaurus,246.7,237.0,Ticino,3
+4236,797956,Serpianosaurus,246.7,237.0,Ticino,3
+4237,797956,Serpianosaurus,246.7,237.0,Ticino,3
+4238,797956,Serpianosaurus,246.7,237.0,Ticino,3
+4249,950445,Cyamodus,246.7,237.0,Kanton Tessin,3
+4250,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4251,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4252,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4253,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4254,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4255,950446,Paraplacodus,246.7,237.0,Kanton Tessin,3
+4256,950447,Mixosaurus,246.7,237.0,Kanton Tessin,3
+4257,950447,Mixosaurus,246.7,237.0,Kanton Tessin,3
+4258,950448,Nothosaurus,246.7,237.0,Kanton Tessin,3
+4259,950449,Tanystropheus,246.7,237.0,Kanton Tessin,3
+4276,1134404,Contectopalatus,246.7,237.0,Ticino,3
+4277,1134405,Mixosaurus,246.7,237.0,Ticino,3
+4279,1134407,Besanosaurus,246.7,237.0,Ticino,3
+4280,1134409,Mikadocephalus,246.7,237.0,Ticino,3
+4281,1134410,Wimanius,246.7,237.0,Ticino,3
+4286,1306716,Askeptosaurus,246.7,237.0,Kanton Tessin,3
+4297,1561500,Tanystropheus,246.7,237.0,Kanton Tessin,3
+5140,504266,Eudimorphodon,208.5,201.4,Schaffhausen,3
+5141,504276,Variodens,208.5,201.4,Schaffhausen,3
+5272,1408746,Deltadectes,208.5,201.4,Schaffhausen,3
+5273,1408748,Paleollanosaurus,208.5,201.4,Schaffhausen,3
+5784,797942,Macrocnemus,246.7,242.0,Ticino,3
+5785,797942,Macrocnemus,246.7,242.0,Ticino,3
+5786,797951,Serpianosaurus,246.7,242.0,Ticino,3
+5963,923791,Ticinosuchus,246.7,242.0,Ticino,3
+5964,923792,Ticinosuchus,246.7,242.0,Ticino,3
+6114,797957,Macrocnemus,242.0,237.0,Ticino,3
+6164,931597,Tanystropheus,242.0,237.0,Ticino,3
+6179,950450,Ceresiosaurus,242.0,237.0,Ticino,3
+6180,950451,Pachypleurosaurus,242.0,237.0,Ticino,3
+6181,950451,Pachypleurosaurus,242.0,237.0,Ticino,3
+6182,950451,Pachypleurosaurus,242.0,237.0,Ticino,3
+6183,950451,Pachypleurosaurus,242.0,237.0,Ticino,3
+6184,950452,Lariosaurus,242.0,237.0,Ticino,3
+6249,1094893,Ceresiosaurus,242.0,237.0,Ticino,3
+6283,1409649,Neusticosaurus,242.0,237.0,onte San Giorgio,3
+6287,1419047,Pachypleurosaurus,242.0,237.0,Ticino,3
+6292,1419794,Ceresiosaurus,242.0,237.0,Ticino,3
+6293,1419795,Tanystropheus,242.0,237.0,Ticino,3
+6473,479551,Gresslyosaurus,213.2,208.5,Basel-Landschaft,3
+6474,479551,Gresslyosaurus,213.2,208.5,Basel-Landschaft,3
+6483,1600123,Serpianosaurus,246.7,239.7,Ticino,3
+6484,1600124,Macrocnemus,246.7,239.7,Ticino,3
+6485,1600125,Macrocnemus,246.7,239.7,Ticino,3
+6486,1600126,Lariosaurus,246.7,239.7,Ticino,3
+6487,1600127,Askeptosaurus,246.7,239.7,Ticino,3
+6488,1600128,Helveticosaurus,246.7,239.7,Ticino,3
+6762,792529,Sclerosaurus,246.7,244.7,Basel-Stadt,3
+6781,797948,Serpianosaurus,242.0,239.7,Ticino,3
+6782,797948,Serpianosaurus,242.0,239.7,Ticino,3
+6783,797949,Serpianosaurus,242.0,239.7,Ticino,3
+6784,797949,Serpianosaurus,242.0,239.7,Ticino,3
+6785,797949,Serpianosaurus,242.0,239.7,Ticino,3
+6786,797950,Serpianosaurus,242.0,239.7,Ticino,3
+6787,797950,Serpianosaurus,242.0,239.7,Ticino,3
+6788,797950,Serpianosaurus,242.0,239.7,Ticino,3
+6789,797950,Serpianosaurus,242.0,239.7,Ticino,3
+6790,797950,Serpianosaurus,242.0,239.7,Ticino,3
+6799,1289434,Macrocnemus,242.0,239.7,Graubunden,3
+6800,1289435,Macrocnemus,242.0,239.7,Grisons,3
+6801,1337530,Ceresiosaurus,242.0,239.7,Ticino,3
+6802,1337532,Ceresiosaurus,242.0,239.7,Ticino,3
+6803,1337536,Ceresiosaurus,242.0,239.7,Ticino,3
+6804,1337540,Neusticosaurus,242.0,239.7,Ticino,3
+6805,1337541,Ceresiosaurus,242.0,239.7,Ticino,3
+6806,1337549,Neusticosaurus,242.0,239.7,Ticino,3
+6807,1337550,Ceresiosaurus,242.0,239.7,Ticino,3
+6808,1337557,Ceresiosaurus,242.0,239.7,Ticino,3
+6809,1337567,Neusticosaurus,242.0,239.7,Ticino,3
+6810,1337578,Ceresiosaurus,242.0,239.7,Ticino,3
+6811,1415286,Neusticosaurus,242.0,239.7,Ticino,3
+6821,1417908,Eusaurosphargis,242.0,239.7,Graubunden,3
+6822,1419096,Pachypleurosaurus,242.0,239.7,Graubunden,3
+6830,1648022,Prosantosaurus,242.0,239.7,Graubunden,3
+6959,797944,Serpianosaurus,246.7,242.0,Ticino,3
+6960,797945,Serpianosaurus,246.7,242.0,Ticino,3
+6961,797946,Serpianosaurus,246.7,242.0,Ticino,3
+6962,797946,Serpianosaurus,246.7,242.0,Ticino,3
+6963,797947,Serpianosaurus,246.7,242.0,Ticino,3
+6964,797947,Serpianosaurus,246.7,242.0,Ticino,3
+6965,797947,Serpianosaurus,246.7,242.0,Ticino,3
+6966,797947,Serpianosaurus,246.7,242.0,Ticino,3
+6968,884857,Cymbospondylus,246.7,242.0,Ticino,3
+6982,1306712,Clarazia,246.7,242.0,Ticino,3
+6983,1306715,Hescheleria,246.7,242.0,Ticino,3
+6984,1310837,Mixosaurus,246.7,242.0,Ticino,3
+4213,391980,Barracudasaurus,246.7,237.0,Guizhou,2
+4239,883957,Chinchenia,246.7,237.0,Guizhou,2
+4260,966703,Hupehsuchus,246.7,237.0,Hubei,2
+4261,966703,Hupehsuchus,246.7,237.0,Hubei,2
+4262,966703,Hupehsuchus,246.7,237.0,Hubei,2
+4263,966703,Hupehsuchus,246.7,237.0,Hubei,2
+4290,1412685,Chaohusaurus,246.7,237.0,Hubei,2
+4291,1412687,Eretmorhipis,246.7,237.0,Hubei,2
+4293,1418845,Nanchangosaurus,246.7,237.0,Hubei,2
+4434,880873,Guizhouichthyosaurus,237.0,227.0,Guizhou,2
+4441,882593,Qianichthyosaurus,237.0,227.0,Guizhou,2
+4442,882951,Anshunsaurus,237.0,227.0,Guizhou,2
+4443,887799,Miodentosaurus,237.0,227.0,Guizhou,2
+4444,887799,Miodentosaurus,237.0,227.0,Guizhou,2
+4445,892976,Xinpusaurus,237.0,227.0,Guizhou,2
+4447,893430,Guizhouichthyosaurus,237.0,227.0,Guizhou,2
+4453,911118,Guizhouichthyosaurus,237.0,227.0,Guizhou,2
+4477,1100594,Concavispina,237.0,227.0,Guizhou,2
+4479,1108332,Guanlingsaurus,237.0,227.0,Guizhou,2
+4482,1134552,Qianichthyosaurus,237.0,227.0,Guizhou,2
+4483,1135822,Guizhouichthyosaurus,237.0,227.0,Guizhou,2
+4514,1415556,Xinpusaurus,237.0,227.0,Guizhou,2
+4515,1415801,Eorhynchochelys,237.0,227.0,Guizhou,2
+4538,1505388,Qianichthyosaurus,237.0,227.0,Guizhou,2
+4608,285740,Eumetabolodon,251.2,242.0,Nei Mongol,2
+4609,285752,Eumetabolodon,251.2,242.0,Shaanxi,2
+4611,833134,Pentaedrusaurus,251.2,242.0,Shaanxi,2
+4612,890990,Xilousuchus,251.2,242.0,Shaanxi,2
+4613,902425,Fugusuchus,251.2,242.0,Shaanxi,2
+4737,990462,Gansurhinus,259.51,251.902,Nei Mongol,2
+5062,1406770,Elginia,259.51,251.902,Nei Mongol,2
+5641,788480,Odontochelys,233.4,227.0,Guizhou,2
+5642,788480,Odontochelys,233.4,227.0,Guizhou,2
+5643,788480,Odontochelys,233.4,227.0,Guizhou,2
+5644,788481,Qianichthyosaurus,233.4,227.0,Guizhou,2
+5645,788482,Guizhouichthyosaurus,233.4,227.0,Guizhou,2
+5646,788483,Guanlingsaurus,233.4,227.0,Guizhou,2
+5647,788484,Sinocyamodus,233.4,227.0,Guizhou,2
+5648,788485,Psephochelys,233.4,227.0,Guizhou,2
+5649,788486,Anshunsaurus,233.4,227.0,Guizhou,2
+5650,788487,Xinpusaurus,233.4,227.0,Guizhou,2
+5651,788488,Xinpusaurus,233.4,227.0,Guizhou,2
+5665,1589225,Cyamodus,233.4,227.0,Guizhou,2
+5667,789656,Belebey,274.4,266.9,Gansu,2
+5668,990446,Gansurhinus,274.4,266.9,Gansu,2
+5739,1286766,Zhongjiania,259.51,254.14,Henan,2
+5740,1286767,Zhongjiania,259.51,254.14,Henan,2
+5741,1286768,Zhongjiania,259.51,254.14,Henan,2
+5787,806332,Turfanosuchus,246.7,242.0,Xinjiang,2
+5835,833223,Eumetabolodon,246.7,242.0,Nei Mongol,2
+5836,833317,Neoprocolophon,246.7,242.0,Shanxi,2
+5871,880670,Lotosaurus,246.7,242.0,Hunan,2
+5872,880670,Lotosaurus,246.7,242.0,Hunan,2
+5873,880670,Lotosaurus,246.7,242.0,Hunan,2
+5874,880670,Lotosaurus,246.7,242.0,Hunan,2
+5875,880670,Lotosaurus,246.7,242.0,Hunan,2
+5876,880670,Lotosaurus,246.7,242.0,Hunan,2
+5877,880670,Lotosaurus,246.7,242.0,Hunan,2
+5878,880670,Lotosaurus,246.7,242.0,Hunan,2
+5879,880670,Lotosaurus,246.7,242.0,Hunan,2
+5880,880670,Lotosaurus,246.7,242.0,Hunan,2
+5881,880672,Lotosaurus,246.7,242.0,Hubei,2
+5885,883956,Sanchiaosaurus,246.7,242.0,Guizhou,2
+5886,893427,Nothosaurus,246.7,242.0,Guizhou,2
+5887,893427,Nothosaurus,246.7,242.0,Guizhou,2
+5888,899258,Halazhaisuchus,246.7,242.0,Shaanxi,2
+5889,899756,Barracudasauroides,246.7,242.0,Guizhou,2
+5890,899759,Barracudasauroides,246.7,242.0,Guizhou,2
+5891,899764,Barracudasauroides,246.7,242.0,Guizhou,2
+5892,899766,Barracudasauroides,246.7,242.0,Guizhou,2
+5893,899768,Barracudasauroides,246.7,242.0,Guizhou,2
+5894,899770,Barracudasauroides,246.7,242.0,Guizhou,2
+5895,902067,Shansisuchus,246.7,242.0,Shanxi,2
+5896,902068,Shansisuchus,246.7,242.0,Shanxi,2
+5897,902069,Shansisuchus,246.7,242.0,Shanxi,2
+5898,902069,Shansisuchus,246.7,242.0,Shanxi,2
+5899,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5900,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5901,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5902,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5903,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5904,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5905,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5906,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5907,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5908,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5909,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5910,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5911,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5912,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5913,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5914,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5915,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5916,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5917,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5918,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5919,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5920,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5921,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5922,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5923,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5924,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5925,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5926,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5927,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5928,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5929,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5930,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5931,902070,Shansisuchus,246.7,242.0,Shanxi,2
+5932,902374,Guchengosuchus,246.7,242.0,Shaanxi,2
+5933,902375,Youngosuchus,246.7,242.0,Xinjiang,2
+5934,902378,Shansisuchus,246.7,242.0,Shanxi,2
+5935,902379,Shansisuchus,246.7,242.0,Shanxi,2
+5936,902380,Shansisuchus,246.7,242.0,Shanxi,2
+5937,902381,Shansisuchus,246.7,242.0,Shanxi,2
+5938,902382,Shansisuchus,246.7,242.0,Shanxi,2
+5939,902383,Shansisuchus,246.7,242.0,Shanxi,2
+5940,902384,Shansisuchus,246.7,242.0,Shanxi,2
+5941,902385,Shansisuchus,246.7,242.0,Shanxi,2
+5942,902385,Shansisuchus,246.7,242.0,Shanxi,2
+5943,902386,Shansisuchus,246.7,242.0,Shanxi,2
+5944,902395,Shansisuchus,246.7,242.0,Shanxi,2
+5945,902395,Shansisuchus,246.7,242.0,Shanxi,2
+5946,902395,Shansisuchus,246.7,242.0,Shanxi,2
+5947,902395,Shansisuchus,246.7,242.0,Shanxi,2
+5948,902395,Shansisuchus,246.7,242.0,Shanxi,2
+5949,902396,Shansisuchus,246.7,242.0,Shanxi,2
+5950,902397,Shansisuchus,246.7,242.0,Shanxi,2
+5951,902398,Shansisuchus,246.7,242.0,Shanxi,2
+5952,902417,Shansisuchus,246.7,242.0,Shanxi,2
+5953,902422,Shansisuchus,246.7,242.0,Shaanxi,2
+5954,916388,Barracudasaurus,246.7,242.0,Guizhou,2
+5955,916388,Barracudasaurus,246.7,242.0,Guizhou,2
+5965,931833,Wumengosaurus,246.7,242.0,Guizhou,2
+5966,931833,Wumengosaurus,246.7,242.0,Guizhou,2
+5967,931833,Wumengosaurus,246.7,242.0,Guizhou,2
+5968,931833,Wumengosaurus,246.7,242.0,Guizhou,2
+5969,931833,Wumengosaurus,246.7,242.0,Guizhou,2
+6023,1308749,Shansisuchus,246.7,242.0,Shanxi,2
+6052,1409648,Dawazisaurus,246.7,242.0,Yunnan,2
+6066,1418768,Mixosaurus,246.7,242.0,Yunnan,2
+6076,1425292,Pectodens,246.7,242.0,Yunnan,2
+6088,1643172,Dianmeisaurus,246.7,242.0,Yunnan,2
+6089,1658055,Mixosaurus,246.7,242.0,Yunnan,2
+6124,892977,Lariosaurus,242.0,237.0,Guizhou,2
+6161,931425,Macrocnemus,242.0,237.0,Yunnan,2
+6162,931425,Macrocnemus,242.0,237.0,Yunnan,2
+6163,931426,Keichousaurus,242.0,237.0,Yunnan,2
+6185,1058263,Yunguisaurus,242.0,237.0,Guizhou,2
+6186,1058570,Yunguisaurus,242.0,237.0,Yunnan,2
+6187,1071217,Diandongosuchus,242.0,237.0,Yunnan,2
+6188,1081119,Qianxisaurus,242.0,237.0,Guizhou,2
+6275,1190487,Yunguisaurus,242.0,237.0,Yunnan,2
+6278,1290839,Fuyuansaurus,242.0,237.0,Yunnan,2
+6280,1347723,Litorosuchus,242.0,237.0,Yunnan,2
+6286,1418911,Lariosaurus,242.0,237.0,Guizhou,2
+6288,1419102,Glyphoderma,242.0,237.0,Yunnan,2
+6297,1523739,Xinpusaurus,242.0,237.0,Guizhou,2
+6298,1523740,Guizhouichthyosaurus,242.0,237.0,Guizhou,2
+6400,285753,Youngetta,251.902,246.7,Nei Mongol,2
+6534,883958,Kwangsisaurus,251.2,246.7,Guangxi,2
+6535,883958,Kwangsisaurus,251.2,246.7,Guangxi,2
+6536,884084,Hanosaurus,251.2,246.7,Jiangxi,2
+6538,899636,Keichousaurus,251.2,246.7,Hubei,2
+6560,1378800,Chaohusaurus,251.2,246.7,Anhui,2
+6561,1409652,Majiashanosaurus,251.2,246.7,Anhui,2
+6562,1412684,Hupehsuchus,251.2,246.7,Hubei,2
+6571,1475021,Chaohusaurus,251.2,246.7,Anhui,2
+6573,1638028,Lariosaurus,251.2,246.7,Hubei,2
+6619,1157811,Himalayasaurus,216.7,213.2,Tibet,2
+6653,880946,Tanystropheus,239.7,237.0,Guizhou,2
+6654,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6655,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6656,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6657,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6658,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6659,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6660,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6661,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6662,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6663,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6664,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6665,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6666,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6667,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6668,892336,Keichousaurus,239.7,237.0,Guizhou,2
+6669,893428,Anshunsaurus,239.7,237.0,Guizhou,2
+6670,893428,Anshunsaurus,239.7,237.0,Guizhou,2
+6671,899638,Nothosaurus,239.7,237.0,Guizhou,2
+6704,1415537,Anshunsaurus,239.7,237.0,Guizhou,2
+6705,1415694,Wangosaurus,239.7,237.0,Guizhou,2
+6706,1417409,Askeptosaurus,239.7,237.0,Yunnan,2
+6707,1417410,Keichousaurus,239.7,237.0,Yunnan,2
+6708,1418453,Keichousaurus,239.7,237.0,Guizhou,2
+6709,1418457,Keichousaurus,239.7,237.0,Guizhou,2
+6710,1418461,Keichousaurus,239.7,237.0,Guizhou,2
+6711,1418462,Lariosaurus,239.7,237.0,Guizhou,2
+6712,1418463,Lariosaurus,239.7,237.0,Guizhou,2
+6713,1418464,Wangosaurus,239.7,237.0,Guizhou,2
+6714,1418465,Yunguisaurus,239.7,237.0,Guizhou,2
+6715,1418466,Qianichthyosaurus,239.7,237.0,Guizhou,2
+6716,1418467,Xinpusaurus,239.7,237.0,Guizhou,2
+6717,1418469,Qianichthyosaurus,239.7,237.0,Guizhou,2
+6718,1418470,Guizhouichthyosaurus,239.7,237.0,Guizhou,2
+6719,1418471,Xinpusaurus,239.7,237.0,Guizhou,2
+6720,1418472,Guizhouichthyosaurus,239.7,237.0,Guizhou,2
+6721,1418474,Xinpusaurus,239.7,237.0,Guizhou,2
+6722,1418475,Xinpusaurus,239.7,237.0,Guizhou,2
+6723,1418476,Qianichthyosaurus,239.7,237.0,Guizhou,2
+6724,1418525,Lariosaurus,239.7,237.0,Yunnan,2
+6727,1418652,Macrocnemus,239.7,237.0,Guizhou,2
+6831,733517,Sanchuansaurus,254.14,251.902,Shanxi,2
+6841,837542,Shihtienfenia,254.14,251.902,Shanxi,2
+6842,837576,Shihtienfenia,254.14,251.902,Shanxi,2
+6843,842666,Shihtienfenia,254.14,251.902,Shanxi,2
+6847,1286764,Shihtienfenia,254.14,251.902,Shanxi,2
+6848,1286765,Shihtienfenia,254.14,251.902,Shanxi,2
+6851,472008,Jingshanosaurus,201.4,199.5,Yunnan,2
+6853,490781,Lufengosaurus,201.4,199.5,Yunnan,2
+6854,490782,Lufengosaurus,201.4,199.5,Yunnan,2
+6855,490785,Lufengosaurus,201.4,199.5,Yunnan,2
+6856,490786,Gyposaurus,201.4,199.5,Yunnan,2
+6857,490787,Lufengosaurus,201.4,199.5,Yunnan,2
+6858,490788,Lukousaurus,201.4,199.5,Yunnan,2
+6859,490789,Sinosaurus,201.4,199.5,Yunnan,2
+6860,492832,Chinshakiangosaurus,201.4,199.5,Yunnan,2
+6861,513242,Eshanosaurus,201.4,199.5,Yunnan,2
+6863,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6864,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6865,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6866,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6867,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6868,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6869,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6870,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6871,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6872,539205,Yimenosaurus,201.4,199.5,Yunnan,2
+6892,902174,Jingshanosaurus,201.4,199.5,Yunnan,2
+6910,1092070,Yunnanosaurus,201.4,199.5,Yunnan,2
+6911,1092071,Sinosaurus,201.4,199.5,Yunnan,2
+6912,1092072,Lukousaurus,201.4,199.5,Yunnan,2
+6913,1092073,Gyposaurus,201.4,199.5,Yunnan,2
+6914,1092073,Gyposaurus,201.4,199.5,Yunnan,2
+6915,1092254,Yunnanosaurus,201.4,199.5,Yunnan,2
+6935,1299065,Lufengosaurus,201.4,199.5,Yunnan,2
+6936,1299067,Yunnanosaurus,201.4,199.5,Yunnan,2
+6939,1347918,Anomoepus,201.4,199.5,Yunnan,2
+6941,1402790,Shuangbaisaurus,201.4,199.5,Yunnan,2
+6942,1406778,Xingxiulong,201.4,199.5,Yunnan,2
+6943,1407038,Panguraptor,201.4,199.5,Yunnan,2
+6944,1410191,Clevosaurus,201.4,199.5,Yunnan,2
+6953,1625162,Sinosaurus,201.4,199.5,Yunnan,2
+6954,1625162,Sinosaurus,201.4,199.5,Yunnan,2
+6996,388713,Chaohusaurus,251.2,246.7,Anhui,2
+6997,388714,Chaohusaurus,251.2,246.7,Anhui,2
+7009,1134401,Chaohusaurus,251.2,246.7,Anhui,2
+7010,1134402,Chaohusaurus,251.2,246.7,Anhui,2
+7011,1134403,Chaohusaurus,251.2,246.7,Anhui,2
+7012,1200768,Parahupehsuchus,251.2,246.7,Hubei,2
+7013,1202577,Chaohusaurus,251.2,246.7,Anhui,2
+7014,1301648,Nanchangosaurus,251.2,246.7,Hubei,2
+7015,1329759,Cartorhynchus,251.2,246.7,Anhui,2
+7016,1329760,Sclerocormus,251.2,246.7,Anhui,2
+7017,1409443,Eohupehsuchus,251.2,246.7,Hubei,2
+7040,1605531,Baisesaurus,251.2,246.7,Guangxi,2
+7041,1632821,Prosaurosphargis,251.2,246.7,Hubei,2
+7042,806205,Qianosuchus,246.7,243.8,Guizhou,2
+7043,806205,Qianosuchus,246.7,243.8,Guizhou,2
+7044,806205,Qianosuchus,246.7,243.8,Guizhou,2
+7047,899762,Barracudasauroides,246.7,243.8,Guizhou,2
+7048,899772,Barracudasauroides,246.7,243.8,Guizhou,2
+7049,913706,Xinminosaurus,246.7,243.8,Guizhou,2
+7050,915088,Phalarodon,246.7,243.8,Guizhou,2
+7052,931832,Wumengosaurus,246.7,243.8,Guizhou,2
+7053,931832,Wumengosaurus,246.7,243.8,Guizhou,2
+7054,931832,Wumengosaurus,246.7,243.8,Guizhou,2
+7055,931832,Wumengosaurus,246.7,243.8,Guizhou,2
+7056,931832,Wumengosaurus,246.7,243.8,Guizhou,2
+7057,935625,Dianopachysaurus,246.7,243.8,Yunnan,2
+7058,935627,Sinosaurosphargis,246.7,243.8,Yunnan,2
+7059,935632,Sinosaurosphargis,246.7,243.8,Guizhou,2
+7060,963746,Diandongosaurus,246.7,243.8,Yunnan,2
+7061,1012675,Largocephalosaurus,246.7,243.8,Yunnan,2
+7063,1102551,Phalarodon,246.7,243.8,Yunnan,2
+7064,1129589,Dinocephalosaurus,246.7,243.8,Guizhou,2
+7065,1129589,Dinocephalosaurus,246.7,243.8,Guizhou,2
+7066,1137542,Largocephalosaurus,246.7,243.8,Guizhou,2
+7067,1193266,Atopodentatus,246.7,243.8,Yunnan,2
+7069,1380905,Dinocephalosaurus,246.7,243.8,Yunnan,2
+7070,1409641,Nothosaurus,246.7,243.8,Yunnan,2
+7071,1409644,Nothosaurus,246.7,243.8,Guizhou,2
+7072,1415693,Atopodentatus,246.7,243.8,Yunnan,2
+7073,1417530,Dianmeisaurus,246.7,243.8,Yunnan,2
+7074,1418523,Lariosaurus,246.7,243.8,Guizhou,2
+7076,1418765,Mixosaurus,246.7,243.8,Guizhou,2
+7077,1419101,Placodus,246.7,243.8,Guizhou,2
+7079,1441011,Panzhousaurus,246.7,243.8,Guizhou,2
+7081,1648021,Honghesaurus,246.7,243.8,Yunnan,2
+7082,1648024,Luopingosaurus,246.7,243.8,Yunnan,2
+7104,842090,Santaisaurus,251.902,251.2,Xinjiang,2
+7105,842090,Santaisaurus,251.902,251.2,Xinjiang,2
+7106,842090,Santaisaurus,251.902,251.2,Xinjiang,2
+7114,902092,Prolacertoides,251.902,251.2,Xinjiang,2
+7120,981517,Proterosuchus,251.902,251.2,Xinjiang,2
+7123,1130047,Proterosuchus,251.902,251.2,Xinjiang,2
+3148,149988,Efraasia,227.0,208.5,Baden-Württemberg,3
+3153,220082,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3154,220082,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3155,220083,Proganochelys,227.0,208.5,Baden-Württemberg,3
+3156,220083,Proganochelys,227.0,208.5,Baden-Württemberg,3
+3157,220083,Proganochelys,227.0,208.5,Baden-Württemberg,3
+3158,220084,Liliensternus,227.0,208.5,Baden-Württemberg,3
+3190,479381,Teratosaurus,227.0,208.5,Baden-Württemberg,3
+3202,486393,Plateosaurus,227.0,208.5,Bavaria,3
+3203,486395,Liliensternus,227.0,208.5,Bavaria,3
+3204,486405,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3205,486408,Gresslyosaurus,227.0,208.5,Baden-Württemberg,3
+3206,486412,Ruehleia,227.0,208.5,Thuringia,3
+3207,486412,Ruehleia,227.0,208.5,Thuringia,3
+3208,486413,Liliensternus,227.0,208.5,Thuringia,3
+3209,486413,Liliensternus,227.0,208.5,Thuringia,3
+3345,632302,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3346,632303,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3347,632304,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3359,705954,Plateosaurus,227.0,208.5,Bavaria,3
+3435,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3436,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3437,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3438,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3439,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3440,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3441,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3442,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3443,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3444,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3445,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3446,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3447,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3448,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3449,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3450,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3451,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3452,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3453,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3454,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3455,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3456,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3457,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3458,832046,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3459,832047,Aetosaurus,227.0,208.5,Baden-Württemberg,3
+3740,880945,Coburgosuchus,227.0,208.5,Bavaria,3
+3741,882064,Plateosaurus,227.0,208.5,Bavaria,3
+3775,924734,Mystriosuchus,227.0,208.5,Baden-Württemberg,3
+3776,924735,Mystriosuchus,227.0,208.5,Baden-Württemberg,3
+3777,924736,Mystriosuchus,227.0,208.5,Baden-Württemberg,3
+3778,924737,Mystriosuchus,227.0,208.5,Baden-Württemberg,3
+3779,924739,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3780,924740,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3782,924747,Paratypothorax,227.0,208.5,Baden-Württemberg,3
+3783,929818,Paratypothorax,227.0,208.5,Baden-Württemberg,3
+3787,930836,Mystriosuchus,227.0,208.5,Niedersachsen,3
+3788,930837,Nicrosaurus,227.0,208.5,Niedersachsen,3
+3789,930849,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3815,1099822,Proganochelys,227.0,208.5,Baden-Württemberg,3
+3816,1099826,Proganochelys,227.0,208.5,Baden-Württemberg,3
+3817,1099834,Proterochersis,227.0,208.5,Baden-Württemberg,3
+3818,1099923,Proterochersis,227.0,208.5,Baden-Württemberg,3
+3819,1099924,Proterochersis,227.0,208.5,Baden-Württemberg,3
+3820,1099927,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3821,1100182,Paratypothorax,227.0,208.5,Baden-Württemberg,3
+3822,1100184,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3823,1100185,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3824,1100202,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3825,1100203,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3826,1100204,Paratypothorax,227.0,208.5,Baden-Württemberg,3
+3827,1100205,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3828,1100206,Nicrosaurus,227.0,208.5,Baden-Württemberg,3
+3829,1104047,Plateosaurus,227.0,208.5,Bavaria,3
+3831,1107325,Tanystropheus,227.0,208.5,Baden-Württemberg,3
+3850,1334449,Proterochersis,227.0,208.5,Baden-Württemberg,3
+3948,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3949,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3950,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3951,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3952,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3953,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3954,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3955,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3956,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3957,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3958,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3959,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3960,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3961,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3962,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3963,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3964,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3965,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3966,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3967,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3968,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3969,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3970,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3971,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3972,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3973,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3974,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3975,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3976,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3977,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3978,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3979,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3980,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3981,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3982,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3983,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3984,1586159,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3985,1586160,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3997,1616704,Tuebingosaurus,227.0,208.5,Baden-Württemberg,3
+3998,1624400,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+3999,1624401,Plateosaurus,227.0,208.5,Baden-Württemberg,3
+4214,411325,Cyamodus,246.7,237.0,Baden-Württemberg,3
+4223,725442,Teratosaurus,246.7,237.0,Baden-Württemberg,3
+4243,921260,Cyamodus,246.7,237.0,Bavaria,3
+4244,921261,Placodus,246.7,237.0,Bavaria,3
+4245,921262,Placodus,246.7,237.0,Bavaria,3
+4246,921263,Placodus,246.7,237.0,Bavaria,3
+4264,1091664,Tanystropheus,246.7,237.0,Baden-Württemberg,3
+4265,1091665,Blezingeria,246.7,237.0,Baden-Württemberg,3
+4266,1091666,Nothosaurus,246.7,237.0,Baden-Württemberg,3
+4267,1091667,Simosaurus,246.7,237.0,Baden-Württemberg,3
+4268,1091733,Nothosaurus,246.7,237.0,Baden-Württemberg,3
+4269,1091751,Tanystropheus,246.7,237.0,Baden-Württemberg,3
+4270,1094789,Placodus,246.7,237.0,Bavaria,3
+4271,1094789,Placodus,246.7,237.0,Bavaria,3
+4272,1094789,Placodus,246.7,237.0,Bavaria,3
+4273,1094789,Placodus,246.7,237.0,Bavaria,3
+4275,1094901,Placodus,246.7,237.0,Bavaria,3
+4287,1374079,Tanystropheus,246.7,237.0,Baden-Württemberg,3
+4288,1374080,Thecodontosaurus,246.7,237.0,Baden-Württemberg,3
+4435,880955,Chirotherium,237.0,227.0,Bavaria,3
+4436,881081,Parasuchus,237.0,227.0,Bavaria,3
+4437,881082,Ebrachosuchus,237.0,227.0,Bavaria,3
+4438,881088,Stagonolepis,237.0,227.0,Bavaria,3
+4439,881097,Parasuchus,237.0,227.0,Bavaria,3
+4440,882413,Zanclodon,237.0,227.0,Baden-Württemberg,3
+4469,1095300,Henodus,237.0,227.0,Thuringia,3
+4470,1095300,Henodus,237.0,227.0,Thuringia,3
+4471,1095300,Henodus,237.0,227.0,Thuringia,3
+4472,1095300,Henodus,237.0,227.0,Thuringia,3
+4473,1095300,Henodus,237.0,227.0,Thuringia,3
+4474,1095300,Henodus,237.0,227.0,Thuringia,3
+4475,1095300,Henodus,237.0,227.0,Thuringia,3
+4478,1106819,Palaeosaurus,237.0,227.0,Baden-Württemberg,3
+4516,1417828,Dyoplax,237.0,227.0,Baden-Württemberg,3
+4531,1477148,Nothosaurus,237.0,227.0,Bavaria,3
+4532,1477149,Simosaurus,237.0,227.0,Bavaria,3
+4533,1477150,Placodus,237.0,227.0,Bavaria,3
+5095,220086,Proganochelys,208.5,201.4,Sachsen-Anhalt,3
+5096,220087,Liliensternus,208.5,201.4,Sachsen-Anhalt,3
+5097,220088,Elachistosuchus,208.5,201.4,Sachsen-Anhalt,3
+5112,486402,Plateosaurus,208.5,201.4,Baden-Württemberg,3
+5113,486407,Plateosaurus,208.5,201.4,Baden-Württemberg,3
+5114,486407,Plateosaurus,208.5,201.4,Baden-Württemberg,3
+5115,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5116,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5117,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5118,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5119,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5120,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5121,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5122,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5123,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5124,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5125,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5126,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5127,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5128,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5129,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5130,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5131,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5132,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5133,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5134,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5135,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5136,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5137,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5138,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5139,486411,Plateosaurus,208.5,201.4,Sachsen-Anhalt,3
+5162,534736,Plateosaurus,208.5,201.4,Niedersachsen,3
+5222,1091742,Ichthyosaurus,208.5,201.4,Baden-Württemberg,3
+5226,1095301,Macroplacus,208.5,201.4,Bavaria,3
+5227,1099947,Ichthyosaurus,208.5,201.4,Baden-Württemberg,3
+5228,1099948,Plesiosaurus,208.5,201.4,Baden-Württemberg,3
+5229,1099949,Termatosaurus,208.5,201.4,Baden-Württemberg,3
+5234,1104052,Proganochelys,208.5,201.4,Sachsen-Anhalt,3
+5235,1104085,Chelyoposuchus,208.5,201.4,Sachsen-Anhalt,3
+5236,1104086,Tanystropheus,208.5,201.4,Sachsen-Anhalt,3
+5237,1104090,Mystriosuchus,208.5,201.4,Sachsen-Anhalt,3
+5238,1104093,Tanystropheus,208.5,201.4,Sachsen-Anhalt,3
+5239,1104094,Plesiosaurus,208.5,201.4,Sachsen-Anhalt,3
+5254,1162208,Termatosaurus,208.5,201.4,Thuringia,3
+5264,1384346,Psephoderma,208.5,201.4,Vienna,3
+5265,1384354,Placochelys,208.5,201.4,Vienna,3
+5266,1384355,Psephoderma,208.5,201.4,Vienna,3
+5267,1384356,Leptonectes,208.5,201.4,Vienna,3
+5274,1409647,Rhaeticosaurus,208.5,201.4,Westphalia,3
+5281,1453483,Termatosaurus,208.5,201.4,Baden-Württemberg,3
+5282,1453484,Nothosaurus,208.5,201.4,Baden-Württemberg,3
+5288,1546985,Shonisaurus,208.5,201.4,Westphalia,3
+5289,1546987,Pachystropheus,208.5,201.4,Westphalia,3
+5292,1586158,Plateosaurus,208.5,201.4,Baden-Württemberg,3
+5440,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5441,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5442,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5443,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5444,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5445,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5446,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5447,788638,Thuringothyris,290.1,283.5,Thuringia,3
+5448,788639,Eudibamus,290.1,283.5,Thuringia,3
+5620,1421392,Dimetropus,290.1,283.5,Thuringia,3
+5624,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5625,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5626,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5627,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5628,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5629,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5630,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5631,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5632,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5633,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5634,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5635,1583938,Dimetropus,290.1,283.5,Thuringia,3
+5660,1415674,Apatopus,233.4,227.0,Bavaria,3
+5691,786382,Protorosaurus,259.51,254.14,Hesse,3
+5692,786383,Parasaurus,259.51,254.14,Hesse,3
+5694,790004,Weigeltisaurus,259.51,254.14,Saxony Anhalt,3
+5695,790009,Weigeltisaurus,259.51,254.14,Hesse,3
+5696,790010,Weigeltisaurus,259.51,254.14,Hesse,3
+5697,790011,Weigeltisaurus,259.51,254.14,Thuringia,3
+5698,790284,Protorosaurus,259.51,254.14,Saxony Anhalt,3
+5699,790284,Protorosaurus,259.51,254.14,Saxony Anhalt,3
+5700,790285,Weigeltisaurus,259.51,254.14,Saxony Anhalt,3
+5701,790390,Weigeltisaurus,259.51,254.14,Hesse,3
+5702,790406,Parasaurus,259.51,254.14,Lower Saxony,3
+5703,790462,Parasaurus,259.51,254.14,Thuringia,3
+5704,790463,Parasaurus,259.51,254.14,Thuringia,3
+5710,791882,Parasaurus,259.51,254.14,Hesse,3
+5711,791885,Parasaurus,259.51,254.14,Hesse,3
+5712,791945,Protorosaurus,259.51,254.14,Hesse,3
+5713,792227,Coelurosauravus,259.51,254.14,Saxony Anhalt,3
+5723,838171,Protorosaurus,259.51,254.14,Thuringia,3
+5724,838172,Protorosaurus,259.51,254.14,Thuringia,3
+5725,838172,Protorosaurus,259.51,254.14,Thuringia,3
+5726,838194,Protorosaurus,259.51,254.14,Saxony Anhalt,3
+5727,838197,Protorosaurus,259.51,254.14,Hesse,3
+5728,838198,Parasaurus,259.51,254.14,Hesse,3
+5752,1417195,Glaurung,259.51,254.14,Saxony Anhalt,3
+5756,451787,Nothosaurus,246.7,242.0,Hessen,3
+5841,850677,Phantomosaurus,246.7,242.0,Bavaria,3
+5956,920619,Cymatosaurus,246.7,242.0,Thuringia,3
+5974,1058582,Pistosaurus,246.7,242.0,Bavaria,3
+5987,1094708,Cymatosaurus,246.7,242.0,Brandenburg,3
+5991,1094793,Nothosaurus,246.7,242.0,Brandenburg,3
+5992,1094796,Nothosaurus,246.7,242.0,Bavaria,3
+5993,1094846,Nothosaurus,246.7,242.0,Bavaria,3
+5994,1094849,Nothosaurus,246.7,242.0,Sachsen-Anhalt,3
+5995,1094850,Nothosaurus,246.7,242.0,Sachsen-Anhalt,3
+5996,1094853,Nothosaurus,246.7,242.0,Brandenburg,3
+5997,1094856,Nothosaurus,246.7,242.0,Brandenburg,3
+5998,1094860,Nothosaurus,246.7,242.0,Thuringia,3
+5999,1094869,Nothosaurus,246.7,242.0,Saxony Anhalt,3
+6002,1094872,Nothosaurus,246.7,242.0,Sachsen-Anhalt,3
+6004,1094884,Nothosaurus,246.7,242.0,Thuringia,3
+6005,1094904,Placodus,246.7,242.0,Sachsen-Anhalt,3
+6006,1094907,Placodus,246.7,242.0,Sachsen-Anhalt,3
+6007,1094909,Placodus,246.7,242.0,Baden-Württemberg,3
+6008,1094912,Placodus,246.7,242.0,Baden-Württemberg,3
+6009,1094914,Placodus,246.7,242.0,Bavaria,3
+6010,1094918,Placodus,246.7,242.0,Brandenburg,3
+6011,1094921,Placodus,246.7,242.0,Thuringia,3
+6012,1106822,Thecodontosaurus,246.7,242.0,Bavaria,3
+6029,1347585,Protanystropheus,246.7,242.0,Baden-Württemberg,3
+6033,1394192,Cymbospondylus,246.7,242.0,Sachsen-Anhalt,3
+6034,1394193,Phalarodon,246.7,242.0,Sachsen-Anhalt,3
+6035,1394194,Phalarodon,246.7,242.0,Sachsen-Anhalt,3
+6036,1394195,Tholodus,246.7,242.0,Sachsen-Anhalt,3
+6054,1415005,Anarosaurus,246.7,242.0,Sachsen-Anhalt,3
+6055,1415006,Anarosaurus,246.7,242.0,Sachsen-Anhalt,3
+6070,1418992,Placodus,246.7,242.0,Brandenburg,3
+6072,1419121,Phalarodon,246.7,242.0,Baden-Württemberg,3
+6073,1419161,Pistosaurus,246.7,242.0,Bavaria,3
+6078,1432347,Doliovertebra,246.7,242.0,Sachsen-Anhalt,3
+6086,1639002,Nothosaurus,246.7,242.0,Sachsen-Anhalt,3
+6087,1639003,Nothosaurus,246.7,242.0,Sachsen-Anhalt,3
+6103,486398,Zanclodon,242.0,237.0,Baden-Württemberg,3
+6109,614939,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6113,791754,Zanclodon,242.0,237.0,Baden-Württemberg,3
+6123,882311,Omphalosaurus,242.0,237.0,Bavaria,3
+6134,914542,Omphalosaurus,242.0,237.0,Baden-Württemberg,3
+6165,931661,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6166,931662,Tanystropheus,242.0,237.0,Baden-Württemberg,3
+6189,1094779,Simosaurus,242.0,237.0,Baden-Württemberg,3
+6190,1094780,Simosaurus,242.0,237.0,Baden-Württemberg,3
+6191,1094780,Simosaurus,242.0,237.0,Baden-Württemberg,3
+6192,1094781,Simosaurus,242.0,237.0,Bavaria,3
+6193,1094782,Simosaurus,242.0,237.0,Baden-Württemberg,3
+6194,1094783,Nothosaurus,242.0,237.0,Bavaria,3
+6197,1094787,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6198,1094790,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6199,1094794,Cyamodus,242.0,237.0,Bavaria,3
+6200,1094795,Simosaurus,242.0,237.0,Baden-Württemberg,3
+6201,1094797,Placodus,242.0,237.0,Bavaria,3
+6202,1094801,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6203,1094803,Nothosaurus,242.0,237.0,Bavaria,3
+6205,1094805,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6206,1094805,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6207,1094805,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6208,1094806,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6209,1094807,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6210,1094807,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6211,1094807,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6212,1094808,Nothosaurus,242.0,237.0,Lower Saxony,3
+6213,1094809,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6214,1094810,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6215,1094828,Nothosaurus,242.0,237.0,Thuringia,3
+6216,1094829,Nothosaurus,242.0,237.0,Thuringia,3
+6217,1094830,Nothosaurus,242.0,237.0,Thuringia,3
+6218,1094831,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6219,1094832,Nothosaurus,242.0,237.0,Bavaria,3
+6220,1094833,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6221,1094834,Nothosaurus,242.0,237.0,Bavaria,3
+6222,1094835,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6223,1094836,Nothosaurus,242.0,237.0,Bavaria,3
+6224,1094837,Nothosaurus,242.0,237.0,Bavaria,3
+6225,1094838,Nothosaurus,242.0,237.0,Bavaria,3
+6226,1094839,Nothosaurus,242.0,237.0,Bavaria,3
+6227,1094840,Nothosaurus,242.0,237.0,Bavaria,3
+6228,1094841,Nothosaurus,242.0,237.0,Bavaria,3
+6229,1094842,Nothosaurus,242.0,237.0,Bavaria,3
+6230,1094843,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6231,1094844,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6232,1094845,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6233,1094848,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6234,1094848,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6235,1094861,Nothosaurus,242.0,237.0,Thuringia,3
+6236,1094863,Nothosaurus,242.0,237.0,Thuringia,3
+6237,1094864,Nothosaurus,242.0,237.0,Thuringia,3
+6238,1094874,Nothosaurus,242.0,237.0,Bavaria,3
+6239,1094877,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6240,1094878,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6241,1094879,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6242,1094880,Nothosaurus,242.0,237.0,Bavaria,3
+6243,1094881,Nothosaurus,242.0,237.0,Bavaria,3
+6244,1094882,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6245,1094883,Nothosaurus,242.0,237.0,Lower Saxony,3
+6250,1094894,Cyamodus,242.0,237.0,Baden-Württemberg,3
+6251,1094895,Placodus,242.0,237.0,Baden-Württemberg,3
+6252,1094896,Placodus,242.0,237.0,Bavaria,3
+6253,1094897,Cyamodus,242.0,237.0,Baden-Württemberg,3
+6254,1094898,Cyamodus,242.0,237.0,Bavaria,3
+6255,1094899,Cyamodus,242.0,237.0,Baden-Württemberg,3
+6256,1094900,Placodus,242.0,237.0,Baden-Württemberg,3
+6257,1094903,Placodus,242.0,237.0,Thuringia,3
+6258,1094905,Placodus,242.0,237.0,Nordrhein-Westfalen,3
+6259,1094906,Placodus,242.0,237.0,Baden-Württemberg,3
+6260,1094908,Placodus,242.0,237.0,Baden-Württemberg,3
+6263,1094917,Placodus,242.0,237.0,Brandenburg,3
+6264,1094919,Placodus,242.0,237.0,Thuringia,3
+6267,1095302,Cyamodus,242.0,237.0,Baden-Württemberg,3
+6282,1409643,Nothosaurus,242.0,237.0,Hohenlohe,3
+6285,1418532,Lariosaurus,242.0,237.0,Thuringia,3
+6289,1419162,Pistosaurus,242.0,237.0,Thuringia,3
+6291,1419215,Horaffia,242.0,237.0,Baden-Württemberg,3
+6295,1432348,Placodus,242.0,237.0,Bavaria,3
+6296,1456893,Nothosaurus,242.0,237.0,Baden-Württemberg,3
+6582,479548,Efraasia,216.7,213.2,Baden-Württemberg,3
+6586,632299,Efraasia,216.7,213.2,Baden-Württemberg,3
+6587,632300,Efraasia,216.7,213.2,Baden-Württemberg,3
+6588,632301,Efraasia,216.7,213.2,Baden-Württemberg,3
+6589,705707,Plateosaurus,216.7,213.2,Baden-Württemberg,3
+6590,728277,Aetosaurus,216.7,213.2,Baden-Württemberg,3
+6591,728364,Procompsognathus,216.7,213.2,Baden-Württemberg,3
+6592,728367,Mystriosuchus,216.7,213.2,Baden-Württemberg,3
+6593,728368,Nicrosaurus,216.7,213.2,Baden-Württemberg,3
+6594,728369,Saltoposuchus,216.7,213.2,Baden-Württemberg,3
+6595,728398,Saltoposuchus,216.7,213.2,Baden-Württemberg,3
+6621,1430263,Apatosuchus,216.7,213.2,Baden-Württemberg,3
+6672,906398,Batrachotomus,239.7,237.0,Baden-Württemberg,3
+6673,906404,Batrachotomus,239.7,237.0,Baden-Württemberg,3
+6674,906408,Batrachotomus,239.7,237.0,Baden-Württemberg,3
+6675,929791,Neusticosaurus,239.7,237.0,Baden-Württemberg,3
+6676,929792,Nothosaurus,239.7,237.0,Baden-Württemberg,3
+6677,929794,Tanystropheus,239.7,237.0,Baden-Württemberg,3
+6682,1091750,Psephosaurus,239.7,237.0,Baden-Württemberg,3
+6683,1094786,Simosaurus,239.7,237.0,Baden-Württemberg,3
+6685,1094800,Nothosaurus,239.7,237.0,Baden-Württemberg,3
+6686,1094875,Nothosaurus,239.7,237.0,Baden-Württemberg,3
+6687,1094876,Nothosaurus,239.7,237.0,Thuringia,3
+6692,1142026,Jaxtasuchus,239.7,237.0,Baden-Württemberg,3
+6693,1142027,Jaxtasuchus,239.7,237.0,Baden-Württemberg,3
+6694,1142028,Jaxtasuchus,239.7,237.0,Baden-Württemberg,3
+6695,1142046,Jaxtasuchus,239.7,237.0,Baden-Württemberg,3
+6696,1285800,Pappochelys,239.7,237.0,Baden-Württemberg,3
+6697,1374081,Zanclodon,239.7,237.0,Baden-Württemberg,3
+6699,1406772,Fraxinisaura,239.7,237.0,Baden-Württemberg,3
+6729,1419214,Horaffia,239.7,237.0,Baden-Württemberg,3
+6730,1419216,Horaffia,239.7,237.0,Baden-Württemberg,3
+6731,1419217,Horaffia,239.7,237.0,Baden-Württemberg,3
+6734,1495723,Vellbergia,239.7,237.0,Baden-Württemberg,3
+6735,1519520,Polymorphodon,239.7,237.0,Baden-Württemberg,3
+6736,1565999,Stauromatodon,239.7,237.0,Baden-Württemberg,3
+6761,792528,Sclerosaurus,246.7,244.7,Baden-Württemberg,3
+6768,976632,Amotosaurus,246.7,244.7,Baden-Württemberg,3
+6769,1076286,Eifelosaurus,246.7,244.7,Rheinland-Pfalz,3
+6770,1076309,Amotosaurus,246.7,244.7,Baden-Württemberg,3
+6771,1076310,Amotosaurus,246.7,244.7,Baden-Württemberg,3
+6772,1076313,Anomoiodon,246.7,244.7,Baden-Württemberg,3
+6773,1076315,Amotosaurus,246.7,244.7,Baden-Württemberg,3
+6774,1076316,Amotosaurus,246.7,244.7,Baden-Württemberg,3
+6776,1094702,Cymatosaurus,246.7,244.7,Baden-Württemberg,3
+6777,1659690,Marcianosuchus,246.7,244.7,Baden-Württemberg,3
+6791,880949,Parasuchus,251.2,246.7,Sachsen-Anhalt,3
+6940,1390020,Plateosaurus,201.4,199.5,Bavaria,3
+6952,1441012,Lindwurmia,201.4,199.5,Halberstadt,3
+6971,920614,Lariosaurus,246.7,242.0,Baden-Württemberg,3
+6972,1094854,Nothosaurus,246.7,242.0,Brandenburg,3
+6973,1094855,Nothosaurus,246.7,242.0,Brandenburg,3
+6974,1094858,Nothosaurus,246.7,242.0,Brandenburg,3
+6975,1094858,Nothosaurus,246.7,242.0,Brandenburg,3
+6976,1094859,Nothosaurus,246.7,242.0,Brandenburg,3
+6977,1102351,Nothosaurus,246.7,242.0,Niedersachsen,3
+6985,1417418,Cyamodus,246.7,242.0,Bavaria,3
+6986,1417419,Cyamodus,246.7,242.0,Bavaria,3
+6987,1418531,Lariosaurus,246.7,242.0,Bavaria,3
+6999,792622,Anomoiodon,246.7,245.5,Thuringia,3
+7000,792622,Anomoiodon,246.7,245.5,Thuringia,3
+7002,837482,Koiloskiosaurus,246.7,245.5,Bavaria,3
+7003,943872,Ctenosauriscus,251.2,246.7,Niedersachsen,3
+7004,1076935,Trachelosaurus,246.7,245.5,Sachsen-Anhalt,3
+7051,915702,Phalarodon,246.7,243.8,Baden-Württemberg,3
+7075,1418533,Lariosaurus,246.7,243.8,Nordrhein-Westfalen,3
+7078,1419309,Serpianosaurus,246.7,243.8,Sachsen-Anhalt,3
+7084,930320,Cymatosaurus,246.7,244.7,Sachsen-Anhalt,3
+7089,1521053,Cymatosaurus,246.7,244.7,Thuringia,3
+5297,933167,Jesairosaurus,246.7,242.0,Illizi,1
+4221,700604,Psephosauriscus,246.7,237.0,Shamal Sina,1
+4222,700605,Psephosauriscus,246.7,237.0,Shamal Sina,1
+5065,N535,Tramuntanasaurus,274.4,266.9,Balearic Islands,3
+6178,949902,Lariosaurus,242.0,237.0,Aragon,3
+6284,1415681,Hispaniasaurus,242.0,237.0,Cuenca,3
+6678,945415,Cosesaurus,239.7,237.0,Tarragona,3
+6679,945416,Lariosaurus,239.7,237.0,Tarragona,3
+6680,945417,Nothosaurus,239.7,237.0,Tarragona,3
+6725,1418528,Ceresiosaurus,239.7,237.0,Tarragona,3
+6726,1418529,Nothosaurus,239.7,237.0,Tarragona,3
+6728,1418893,Nothosaurus,239.7,237.0,Soria,3
+3198,486103,Plateosaurus,227.0,208.5,Jura,3
+3199,486104,Plateosaurus,227.0,208.5,Jura,3
+3200,486145,Plateosaurus,227.0,208.5,Jura,3
+3201,486146,Gresslyosaurus,227.0,208.5,Jura,3
+4616,491743,Lophostropheus,208.5,199.5,Basse-Normandie,3
+5110,486128,Plateosaurus,208.5,201.4,Lorraine,3
+5179,630464,Eudimorphodon,208.5,201.4,Lorraine,3
+5180,630480,Graoullyodon,208.5,201.4,Lorraine,3
+5206,824857,Termatosaurus,208.5,201.4,Bourgogne-Franche-Comté,3
+5207,824858,Ichthyosaurus,208.5,201.4,Bourgogne-Franche-Comté,3
+5208,824859,Simosaurus,208.5,201.4,Bourgogne-Franche-Comté,3
+5209,824866,Megalosaurus,208.5,201.4,Franche-Comte,3
+5215,846853,Eudimorphodon,208.5,201.4,Lorraine,3
+5219,945501,Thecodontosaurus,208.5,201.4,Bourgogne,3
+5240,1106462,Plateosaurus,208.5,201.4,Champagne-Ardennes,3
+5241,1106817,Plateosaurus,208.5,201.4,Champagne-Ardennes,3
+5242,1107581,Plesiosaurus,208.5,201.4,Champagne-Ardennes,3
+5245,1136049,Plesiosaurus,208.5,201.4,Burgundy,3
+5246,1136050,Plesiosaurus,208.5,201.4,Burgundy,3
+5247,1136051,Plesiosaurus,208.5,201.4,Burgundy,3
+5248,1136052,Plesiosaurus,208.5,201.4,Burgundy,3
+5249,1136054,Ichthyosaurus,208.5,201.4,Burgundy,3
+5250,1136057,Actiosaurus,208.5,201.4,Burgundy,3
+5290,1563922,Termatosaurus,208.5,201.4,Champagne-Ardennes,3
+5683,1285904,Aphelosaurus,298.9,293.52,Languedoc-Roussillon,3
+6135,915953,Cyamodus,242.0,237.0,Alsace,3
+6195,1094784,Simosaurus,242.0,237.0,Grand Est,3
+6196,1094785,Nothosaurus,242.0,237.0,Grand Est,3
+6204,1094804,Nothosaurus,242.0,237.0,Grand Est,3
+6248,1094892,Lariosaurus,242.0,237.0,Occitanie,3
+6266,1095299,Cyamodus,242.0,237.0,Grand Est,3
+6268,1106820,Thecodontosaurus,242.0,237.0,Grand Est,3
+6281,1389767,Simosaurus,242.0,237.0,Grand Est,3
+6888,824330,Plesiosaurus,201.4,199.5,Lorraine,3
+6889,824331,Pterodactylus,201.4,199.5,Lorraine,3
+3159,283819,Arcticodactylus,227.0,208.5,East Greenland,4
+3160,283826,Aetosaurus,227.0,208.5,East Greenland,4
+3161,283826,Aetosaurus,227.0,208.5,East Greenland,4
+3162,283828,Plateosaurus,227.0,208.5,East Greenland,4
+3163,283860,Issi,227.0,208.5,East Greenland,4
+6578,283825,Proganochelys,216.7,213.2,East Greenland,4
+4476,1095303,Placochelys,237.0,227.0,Hungary,3
+6276,1205247,Nothosaurus,242.0,237.0,Hungary,3
+6277,1205251,Cyamodus,242.0,237.0,Hungary,3
+4248,943015,Nothosaurus,246.7,237.0,Israel,1
+4610,601687,Placodus,251.2,242.0,Israel,1
+5762,601696,Psephosauriscus,246.7,242.0,Israel,1
+5763,601699,Tanystropheus,246.7,242.0,Israel,1
+5764,601701,Nothosaurus,246.7,242.0,Israel,1
+5765,601702,Psephosaurus,246.7,242.0,Israel,1
+6480,1409642,Nothosaurus,246.7,239.7,Israel,1
+6482,1419209,Psephoderma,246.7,239.7,Israel,1
+6778,601739,Placodus,242.0,239.7,Israel,1
+6779,601740,Nothosaurus,242.0,239.7,Israel,1
+6956,601711,Nothosaurus,246.7,242.0,Israel,1
+6957,601712,Placodus,246.7,242.0,Israel,1
+6958,601714,Psephosaurus,246.7,242.0,Israel,1
+6989,1419210,Psephoderma,246.7,242.0,Israel,1
+6990,1419211,Psephosauriscus,246.7,242.0,Israel,1
+6991,1419212,Psephosauriscus,246.7,242.0,Israel,1
+6992,1419509,Simosaurus,246.7,242.0,Israel,1
+7068,1347595,Tanystropheus,246.7,243.8,Israel,1
+7080,1530062,Psephosauriscus,246.7,243.8,Israel,1
+3803,1066207,Nambalia,227.0,208.5,Andhra Pradesh,1
+3804,1066207,Nambalia,227.0,208.5,Andhra Pradesh,1
+3805,1066207,Nambalia,227.0,208.5,Andhra Pradesh,1
+3806,1066208,Jaklapallisaurus,227.0,208.5,Andhra Pradesh,1
+3926,1549937,Kranosaura,227.0,208.5,Andhra Pradesh,1
+4381,545075,Alwalkeria,237.0,227.0,Andhra Pradesh,1
+4432,853397,Tikisuchus,237.0,227.0,Madhya Pradesh,1
+4433,853401,Hyperodapedon,237.0,227.0,Madhya Pradesh,1
+4454,930893,Volcanosuchus,237.0,227.0,Madhya Pradesh,1
+4466,1088563,Parasuchus,237.0,227.0,Madhya Pradesh,1
+4492,1302049,Hyperodapedon,237.0,227.0,Madhya Pradesh,1
+4535,1494772,Parasuchus,237.0,227.0,Madhya Pradesh,1
+4536,1494773,Hyperodapedon,237.0,227.0,Madhya Pradesh,1
+4537,1494781,Hyperodapedon,237.0,227.0,Madhya Pradesh,1
+5686,N539,Indosauriscus,259.51,254.14,Andhra Pradesh,1
+5815,818246,Yarasuchus,246.7,242.0,Andhra Pradesh,1
+5816,818246,Yarasuchus,246.7,242.0,Andhra Pradesh,1
+5817,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5818,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5819,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5820,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5821,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5822,818268,Pamelaria,246.7,242.0,Andhra Pradesh,1
+5976,1087839,Mesodapedon,246.7,242.0,Andhra Pradesh,1
+6039,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6040,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6041,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6042,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6043,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6044,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6045,1405272,Shringasaurus,246.7,242.0,Madhya Pradesh,1
+6642,980069,Proterosuchus,251.902,246.7,West Bengal,1
+6644,1419840,Teratosaurus,251.902,246.7,West Bengal,1
+3887,1419785,Sclerostropheus,227.0,208.5,Bergamo,3
+3895,1475022,Seazzadactylus,227.0,208.5,Friuli-Venezia Giulia,3
+4224,797372,Macrocnemus,246.7,237.0,Piedmont,3
+4225,797372,Macrocnemus,246.7,237.0,Piedmont,3
+4226,797372,Macrocnemus,246.7,237.0,Piedmont,3
+4240,895625,Pistosaurus,246.7,237.0,Trento,3
+4285,1277671,Eusaurosphargis,246.7,237.0,Piedmont,3
+4292,1417420,Cyamodus,246.7,237.0,Piedmont,3
+4294,1418949,Lariosaurus,246.7,237.0,Piedmont,3
+4295,1419046,Pachypleurosaurus,246.7,237.0,Piedmont,3
+4353,382568,Placochelys,237.0,227.0,Friuli-Venezia Giulia,3
+4354,389769,Placochelys,237.0,227.0,Lombardia,3
+4448,895624,Nothosaurus,237.0,227.0,Udine,3
+4544,1561501,Raibliania,237.0,227.0,Udine,3
+4670,777443,Eudimorphodon,216.7,208.5,Friuli-Venezia Giulia,3
+4671,777444,Eudimorphodon,216.7,208.5,Friuli-Venezia Giulia,3
+4672,777702,Preondactylus,216.7,208.5,Friuli-Venezia Giulia,3
+4673,777710,Megalancosaurus,216.7,208.5,Friuli-Venezia Giulia,3
+4674,778056,Langobardisaurus,216.7,208.5,Friuli-Venezia Giulia,3
+4675,778320,Megalancosaurus,216.7,208.5,Friuli-Venezia Giulia,3
+4676,779171,Megalancosaurus,216.7,208.5,Friuli-Venezia Giulia,3
+4677,779179,Langobardisaurus,216.7,208.5,Friuli-Venezia Giulia,3
+4678,841811,Austriadactylus,216.7,208.5,Friuli-Venezia Giulia,3
+5102,389770,Psephoderma,208.5,201.4,Lombardia,3
+5103,389771,Psephoderma,208.5,201.4,Lombardia,3
+5277,1419208,Psephoderma,208.5,201.4,Lombardia,3
+5653,895626,Shonisaurus,233.4,227.0,Belluno,3
+5755,389772,Paraplacodus,246.7,242.0,Lombardia,3
+6081,1583200,Heteropelta,246.7,242.0,Udine,3
+6126,895629,Cymbospondylus,242.0,237.0,Udine,3
+6158,929597,Pachypleurosaurus,242.0,237.0,Lombardia,3
+6159,929597,Pachypleurosaurus,242.0,237.0,Lombardia,3
+6177,944327,Cymbospondylus,242.0,237.0,Bolzano,3
+6246,1094887,Lariosaurus,242.0,237.0,Lombardia,3
+6247,1094888,Lariosaurus,242.0,237.0,Lombardia,3
+6477,846844,Eudimorphodon,213.2,208.5,Lombardia,3
+6478,930879,Mystriosuchus,213.2,208.5,Lombardia,3
+6574,1058248,Bobosaurus,237.0,233.4,Udine,3
+6575,1140294,Nothosaurus,237.0,233.4,Bolzano,3
+6576,1419511,Simosaurus,237.0,233.4,Udine,3
+6577,1419512,Protenodontosaurus,237.0,233.4,Udine,3
+6579,382582,Psephoderma,216.7,213.2,Lombardia,3
+6580,382582,Psephoderma,216.7,213.2,Lombardia,3
+6581,382582,Psephoderma,216.7,213.2,Lombardia,3
+6596,777078,Eudimorphodon,216.7,213.2,Friuli-Venezia Giulia,3
+6597,777437,Eudimorphodon,216.7,213.2,Friuli-Venezia Giulia,3
+6599,846845,Eudimorphodon,216.7,213.2,Lombardia,3
+6600,846846,Peteinosaurus,216.7,213.2,Lombardia,3
+6601,846847,Aetosaurus,216.7,213.2,Lombardia,3
+6602,846848,Peteinosaurus,216.7,213.2,Lombardia,3
+6603,846849,Eudimorphodon,216.7,213.2,Lombardia,3
+6604,851317,Drepanosaurus,216.7,213.2,Lombardia,3
+6605,851324,Vallesaurus,216.7,213.2,Lombardia,3
+6606,851325,Vallesaurus,216.7,213.2,Lombardia,3
+6607,851329,Megalancosaurus,216.7,213.2,Lombardia,3
+6608,851330,Megalancosaurus,216.7,213.2,Lombardia,3
+6609,876982,Bergamodactylus,216.7,213.2,Lombardia,3
+6613,913310,Preondactylus,216.7,213.2,Friuli-Venezia Giulia,3
+6614,913311,Drepanosaurus,216.7,213.2,Friuli-Venezia Giulia,3
+6615,915667,Langobardisaurus,216.7,213.2,Lombardia,3
+6616,930888,Mystriosuchus,216.7,213.2,Lombardia,3
+6617,930889,Mystriosuchus,216.7,213.2,Lombardia,3
+6618,930895,Diphydontosaurus,216.7,213.2,Lombardia,3
+6620,1402721,Endennasaurus,216.7,213.2,Lombardia,3
+6684,1094791,Lariosaurus,239.7,237.0,Lecco,3
+6688,1094885,Lariosaurus,239.7,237.0,Lecco,3
+6689,1094886,Neusticosaurus,239.7,237.0,Lecco,3
+6690,1094889,Lariosaurus,239.7,237.0,Lombardia,3
+6691,1094890,Lariosaurus,239.7,237.0,Lombardia,3
+6698,1406769,Megachirella,246.7,242.0,Alto Adige,3
+6701,1415011,Neusticosaurus,239.7,237.0,Lombardia,3
+6732,1420037,Tholodus,246.7,242.0,Udine,3
+6733,1439334,Odoiporosaurus,239.7,237.0,Lombardia,3
+6737,1633862,Lariosaurus,239.7,237.0,Lecco,3
+6827,1445534,Neusticosaurus,242.0,239.7,Lombardia,3
+6978,1162165,Mixosaurus,246.7,242.0,Lombardia,3
+6979,1162174,Neusticosaurus,246.7,242.0,Lombardia,3
+6980,1162175,Tanystropheus,246.7,242.0,Lombardia,3
+6993,1445529,Helveticosaurus,246.7,242.0,Lombardia,3
+6994,1445531,Ticinosuchus,246.7,242.0,Lombardia,3
+7045,895602,Placodus,246.7,243.8,Trentino,3
+7046,895605,Nothosaurus,246.7,243.8,Trentino,3
+4614,1447344,Nothosaurus,251.2,242.0,Janoobiah,1
+6501,800599,Utatsusaurus,251.2,246.7,Miyagi,2
+7001,821274,Utatsusaurus,251.2,246.7,Miyagi,2
+3261,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3262,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3263,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3264,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3265,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3266,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+3267,538678,Kholumolumo,227.0,208.5,Mohale's Hoek,1
+5178,630027,Eudimorphodon,208.5,201.4,Luxembourg,3
+6583,538740,Eudimorphodon,216.7,213.2,Luxembourg,3
+6584,538741,Clevosaurus,216.7,213.2,Luxembourg,3
+6585,538742,Kuehneosaurus,216.7,213.2,Luxembourg,3
+6933,1199898,Temnodontosaurus,201.4,199.5,Luxembourg,3
+4383,562008,Azendohsaurus,237.0,227.0,Marrakech-Safi,1
+4384,562009,Parasuchus,237.0,227.0,Marrakech-Safi,1
+4385,562010,Arganasuchus,237.0,227.0,Marrakech-Safi,1
+4431,853392,Arganasuchus,237.0,227.0,Marrakech-Safi,1
+4527,1430528,Angistorhinus,237.0,227.0,Marrakech-Safi,1
+5689,740289,Acrodenta,259.51,254.14,Marrakech-Tensift-Al Haouz,1
+5721,814095,Arganaceras,259.51,254.14,Marrakech-Tensift-Al Haouz,1
+4698,790024,Thadeosaurus,259.51,251.902,Tulear,1
+4699,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4700,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4701,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4702,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4703,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4704,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4705,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4706,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4707,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4708,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4709,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4710,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4711,790114,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4712,790115,Claudiosaurus,259.51,251.902,Tulear,1
+4713,790147,Claudiosaurus,259.51,251.902,Fianarantsoa,1
+4714,790203,Coelurosauravus,259.51,251.902,Tulear,1
+4715,790204,Coelurosauravus,259.51,251.902,Tulear,1
+4716,790204,Coelurosauravus,259.51,251.902,Tulear,1
+4723,833324,Coelurosauravus,259.51,251.902,Fianarantsoa,1
+4724,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4725,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4726,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4727,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4728,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4729,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4730,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4731,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4732,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4733,833385,Barasaurus,259.51,251.902,Fianarantsoa,1
+4734,833493,Acerosodontosaurus,259.51,251.902,Tulear,1
+4749,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4750,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4751,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4752,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4753,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4754,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4755,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4756,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4757,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4758,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4759,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4760,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4761,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4762,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4763,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4764,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4765,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4766,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4767,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4768,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4769,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4770,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4771,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4772,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4773,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4774,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4775,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4776,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4777,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4778,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4779,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4780,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4781,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4782,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4783,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4784,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4785,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4786,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4787,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4788,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4789,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4790,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4791,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4792,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4793,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4794,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4795,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4796,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4797,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4798,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4799,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4800,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4801,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4802,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4803,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4804,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4805,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4806,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4807,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4808,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4809,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4810,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4811,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4812,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4813,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4814,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4815,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4816,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4817,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4818,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4819,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4820,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4821,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4822,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4823,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4824,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4825,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4826,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4827,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4828,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4829,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4830,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4831,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4832,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4833,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4834,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4835,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4836,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4837,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4838,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4839,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4840,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4841,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4842,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4843,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4844,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4845,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4846,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4847,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4848,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4849,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4850,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4851,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4852,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4853,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4854,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4855,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4856,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4857,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4858,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4859,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4860,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4861,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4862,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4863,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4864,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4865,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4866,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4867,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4868,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4869,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4870,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4871,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4872,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4873,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4874,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4875,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4876,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4877,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4878,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4879,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4880,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4881,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4882,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4883,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4884,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4885,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4886,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4887,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4888,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4889,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4890,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4891,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4892,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4893,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4894,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4895,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4896,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4897,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4898,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4899,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4900,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4901,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4902,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4903,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4904,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4905,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4906,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4907,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4908,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4909,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4910,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4911,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4912,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4913,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4914,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4915,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4916,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4917,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4918,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4919,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4920,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4921,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4922,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4923,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4924,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4925,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4926,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4927,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4928,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4929,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4930,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4931,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4932,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4933,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4934,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4935,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4936,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4937,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4938,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4939,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4940,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4941,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4942,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4943,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4944,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4945,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4946,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4947,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4948,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4949,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4950,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4951,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4952,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4953,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4954,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4955,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4956,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4957,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4958,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4959,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4960,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4961,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4962,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4963,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4964,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4965,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4966,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4967,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4968,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4969,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4970,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4971,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4972,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4973,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4974,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4975,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4976,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4977,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4978,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4979,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4980,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4981,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4982,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4983,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4984,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4985,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4986,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4987,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4988,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4989,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4990,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4991,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4992,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4993,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4994,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4995,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4996,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4997,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4998,1285964,Hovasaurus,259.51,251.902,Tulear,1
+4999,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5000,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5001,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5002,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5003,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5004,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5005,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5006,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5007,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5008,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5009,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5010,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5011,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5012,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5013,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5014,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5015,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5016,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5017,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5018,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5019,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5020,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5021,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5022,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5023,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5024,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5025,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5026,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5027,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5028,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5029,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5030,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5031,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5032,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5033,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5034,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5035,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5036,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5037,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5038,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5039,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5040,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5041,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5042,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5043,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5044,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5045,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5046,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5047,1285964,Hovasaurus,259.51,251.902,Tulear,1
+5048,1285964,Hovasaurus,259.51,251.902,Tulear,1
+6640,833484,Barasaurus,251.902,246.7,Diana,1
+6641,833489,Hovasaurus,251.902,246.7,Diana,1
+6643,1132153,Lasasaurus,251.902,246.7,Diana,1
+4450,909072,Shastasaurus,237.0,227.0,Sonora,4
+4451,909072,Shastasaurus,237.0,227.0,Sonora,4
+4452,909072,Shastasaurus,237.0,227.0,Sonora,4
+4480,1134130,Toretocnemus,237.0,227.0,Sonora,4
+4541,1528938,Shastasaurus,237.0,227.0,Sonora,4
+4542,1528939,Toretocnemus,237.0,227.0,Sonora,4
+5309,297328,Mesosaurus,290.1,283.5,Erongo,1
+5310,297329,Mesosaurus,290.1,283.5,Erongo,1
+5311,297330,Mesosaurus,290.1,283.5,Erongo,1
+5312,297331,Mesosaurus,290.1,283.5,Erongo,1
+5589,823730,Mesosaurus,290.1,283.5,Karas,1
+5590,823897,Mesosaurus,290.1,283.5,Karas,1
+5591,823898,Mesosaurus,290.1,283.5,Karas,1
+5064,1605042,Moradisaurus,259.51,251.902,Agadez,1
+6833,786315,Moradisaurus,254.14,251.902,Agadez,1
+6834,786315,Moradisaurus,254.14,251.902,Agadez,1
+6835,786315,Moradisaurus,254.14,251.902,Agadez,1
+6836,786668,Bunostegos,254.14,251.902,Agadez,1
+6837,789102,Moradisaurus,254.14,251.902,Agadez,1
+5856,873708,Anarosaurus,246.7,242.0,Gelderland,3
+5857,873709,Dactylosaurus,246.7,242.0,Gelderland,3
+5858,873710,Nothosaurus,246.7,242.0,Gelderland,3
+5859,873711,Eusaurosphargis,246.7,242.0,Gelderland,3
+5860,873712,Placodus,246.7,242.0,Gelderland,3
+5861,873713,Amotosaurus,246.7,242.0,Gelderland,3
+5973,989470,Lariosaurus,246.7,242.0,Gelderland,3
+5980,1094699,Nothosaurus,246.7,242.0,Gelderland,3
+5981,1094699,Nothosaurus,246.7,242.0,Gelderland,3
+5982,1094699,Nothosaurus,246.7,242.0,Gelderland,3
+6014,1125596,Pararcus,246.7,242.0,Gelderland,3
+6065,1418524,Lariosaurus,246.7,242.0,Gelderland,3
+6068,1418894,Nothosaurus,246.7,242.0,Gelderland,3
+6069,1418894,Nothosaurus,246.7,242.0,Gelderland,3
+7085,1195725,Anarosaurus,246.7,244.7,Gelderland,3
+7086,1195726,Eusaurosphargis,246.7,244.7,Gelderland,3
+7087,1195727,Cymatosaurus,246.7,244.7,Gelderland,3
+5177,604143,Plateosaurus,208.5,201.4,Norway,3
+6132,908441,Cymbospondylus,242.0,237.0,Svalbard,3
+6133,908443,Cymbospondylus,242.0,237.0,Svalbard,3
+6489,363117,Grippia,251.2,246.7,Spitzberger,3
+7033,1419471,Grippia,251.2,246.7,Svalbard,3
+3830,1107323,Velocipes,227.0,208.5,Opole,3
+3927,1554599,Kocurypelta,227.0,208.5,Opole,3
+3928,1554602,Proterochersis,227.0,208.5,Opole,3
+4513,1406776,Ozimek,237.0,227.0,Slaskie,3
+5637,584073,Stagonolepis,233.4,227.0,Opole,3
+5638,584074,Silesaurus,233.4,227.0,Opole,3
+5639,584306,Parasuchus,233.4,227.0,Opole,3
+5640,584307,Polonosuchus,233.4,227.0,Opole,3
+5659,1405851,Ozimek,233.4,227.0,Opole,3
+5823,818844,Placodus,246.7,242.0,Silesia,3
+5983,1094700,Cymatosaurus,246.7,242.0,Silesia,3
+5984,1094703,Cymatosaurus,246.7,242.0,Silesia,3
+5985,1094704,Cymatosaurus,246.7,242.0,Opole,3
+5988,1094760,Germanosaurus,246.7,242.0,Opole,3
+5989,1094761,Germanosaurus,246.7,242.0,Silesia,3
+5990,1094788,Cymatosaurus,246.7,242.0,Opole,3
+6000,1094870,Cymatosaurus,246.7,242.0,Silesia,3
+6001,1094871,Nothosaurus,246.7,242.0,Silesia,3
+6003,1094873,Nothosaurus,246.7,242.0,Silesia,3
+6013,1106823,Protanystropheus,246.7,242.0,Opole,3
+6056,1415007,Dactylosaurus,246.7,242.0,Silesia,3
+6057,1415009,Dactylosaurus,246.7,242.0,Opole,3
+6058,1415290,Cymatosaurus,246.7,242.0,Silesia,3
+6059,1415291,Cymatosaurus,246.7,242.0,Opole,3
+6060,1415292,Hemilopas,246.7,242.0,Silesia,3
+6061,1415293,Hemilopas,246.7,242.0,Opole,3
+6062,1415294,Hemilopas,246.7,242.0,Opole,3
+6063,1415297,Hemilopas,246.7,242.0,Upper Silesia,3
+6071,1418997,Omphalosaurus,246.7,242.0,Opole,3
+6080,1574347,Cladeiodon,246.7,242.0,Silesia,3
+6261,1094915,Placodus,242.0,237.0,Silesia,3
+6262,1094916,Placodus,242.0,237.0,Pomeranian,3
+6265,1095298,Cyamodus,242.0,237.0,Silesia,3
+6290,1419164,Pistosaurus,242.0,237.0,Silesia,3
+6481,1419163,Pistosaurus,246.7,239.7,Upper Silesia,3
+6491,401595,Czatkowiella,251.2,246.7,Malopolskie,3
+6492,401596,Sophineta,251.2,246.7,Malopolskie,3
+6493,401597,Osmolskina,251.2,246.7,Malopolskie,3
+6494,401599,Pamelina,251.2,246.7,Malopolskie,3
+6495,401600,Procolina,251.2,246.7,Malopolskie,3
+6542,984557,Collilongus,251.2,246.7,Malopolskie,3
+6700,1415008,Dactylosaurus,246.7,242.0,Opole,3
+6825,1419165,Pistosaurus,242.0,239.7,Silesia,3
+7019,1415295,Hemilopas,251.2,246.7,Upper Silesia,3
+7083,916023,Cymatosaurus,246.7,244.7,Opole,3
+7088,1347584,Protanystropheus,246.7,244.7,Opole,3
+7121,1076305,Microcnemus,251.902,251.2,West Pomerania,3
+5592,824207,Stereosternum,290.1,283.5,Guairá,1
+6075,1419692,Tanystropheus,246.7,242.0,Bihor,3
+3757,914556,Alexeyisaurus,227.0,208.5,Nenets,3
+4202,1640637,Nyctiboetus,283.5,274.4,Perm,3
+4300,299716,Scutosaurus,264.28,254.14,Tatarstan,3
+4644,745278,Nycteroleter,274.4,264.28,Arkhangelsk,3
+4645,792642,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4646,792642,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4647,792642,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4648,792642,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4650,837590,Lanthaniscus,274.4,264.28,Arkhangelsk,3
+4651,1374680,Lanthaniscus,274.4,264.28,Arkhangelsk,3
+4652,1374681,Bashkyroleter,274.4,264.28,Arkhangelsk,3
+4653,1374682,Nycteroleter,274.4,264.28,Arkhangelsk,3
+4654,1374686,Macroleter,274.4,264.28,Arkhangelsk,3
+4655,1374687,Bashkyroleter,274.4,264.28,Arkhangelsk,3
+4656,1374690,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4657,1374692,Macroleter,274.4,264.28,Arkhangelsk,3
+4658,1374692,Macroleter,274.4,264.28,Arkhangelsk,3
+4659,1374693,Bashkyroleter,274.4,264.28,Arkhangelsk,3
+4660,1374695,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4661,1374698,Bashkyroleter,274.4,264.28,Arkhangelsk,3
+4662,1374699,Lanthanolania,274.4,264.28,Arkhangelsk,3
+4663,1374701,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4664,1374703,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4665,1374705,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4666,1374705,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4667,1385576,Nyctiphruretus,274.4,264.28,Arkhangelsk,3
+4668,1385577,Bashkyroleter,274.4,264.28,Arkhangelsk,3
+4669,1385578,Macroleter,274.4,264.28,Arkhangelsk,3
+5067,789995,Rautiania,264.28,256.8,Orenburg,3
+5068,789996,Rautiania,264.28,256.8,Orenburg,3
+5069,837648,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5070,837649,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5071,837650,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5072,837651,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5073,837652,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5074,838080,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5075,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5076,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5077,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5078,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5079,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5080,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5081,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5082,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5083,838081,Scutosaurus,264.28,256.8,Arkhangelsk,3
+5084,838082,Obirkovia,264.28,256.8,Vologda,3
+5085,1381716,Scutosaurus,264.28,256.8,Vladimir,3
+5086,1382091,Scutosaurus,264.28,256.8,Vologda,3
+5087,1382836,Nyctiphruretus,264.28,256.8,Orenburg,3
+5088,1382837,Suchonosaurus,264.28,256.8,Arkhangelsk,3
+5089,1417264,Scutosaurus,264.28,256.8,Orenburg,3
+5091,1381590,Permotriturus,266.9,264.28,Tatarstan,3
+5092,1382839,Lanthanosuchus,266.9,264.28,Tatarstan,3
+5669,1640653,Gecatogomphius,274.4,266.9,Samara,3
+5838,839581,Kapes,246.7,242.0,Orenburg,3
+5839,839583,Dorosuchus,246.7,242.0,Orenburg,3
+5862,877604,Sarmatosuchus,246.7,242.0,Orenburg,3
+5863,877605,Vjushkovisaurus,246.7,242.0,Orenburg,3
+5864,877610,Uralosaurus,246.7,242.0,Orenburg,3
+5865,877687,Uralosaurus,246.7,242.0,Orenburg,3
+5866,877701,Dorosuchus,246.7,242.0,Orenburg,3
+5867,877774,Dongusuchus,246.7,242.0,Orenburg,3
+5868,879452,Dongusuchus,246.7,242.0,Bashkortostan,3
+5869,879453,Uralosaurus,246.7,242.0,Bashkortostan,3
+5870,879454,Vjushkovisaurus,246.7,242.0,Bashkortostan,3
+6018,1163590,Jushatyria,246.7,242.0,Bashkortostan,3
+6032,1383183,Dongusuchus,246.7,242.0,Orenburg,3
+6053,1412635,Tholodus,246.7,242.0,Primorye,3
+6111,789771,Chalishevia,242.0,237.0,Bashkortostan,3
+6112,789773,Energosuchus,242.0,237.0,Bashkortostan,3
+6118,877690,Chalishevia,242.0,237.0,Orenburg,3
+6119,877792,Chalishevia,242.0,237.0,Orenburg,3
+6120,877798,Malutinisuchus,242.0,237.0,Orenburg,3
+6121,877799,Chalishevia,242.0,237.0,Orenburg,3
+6122,877800,Energosuchus,242.0,237.0,Orenburg,3
+6269,1127579,Malutinisuchus,242.0,237.0,Komi,3
+6316,299715,Deltavjatia,264.28,259.51,Kirov,3
+6317,790206,Emeroleter,264.28,259.51,Kirov,3
+6318,790206,Emeroleter,264.28,259.51,Kirov,3
+6319,790206,Emeroleter,264.28,259.51,Kirov,3
+6320,790206,Emeroleter,264.28,259.51,Kirov,3
+6321,790206,Emeroleter,264.28,259.51,Kirov,3
+6322,790206,Emeroleter,264.28,259.51,Kirov,3
+6323,790206,Emeroleter,264.28,259.51,Kirov,3
+6327,814161,Deltavjatia,264.28,259.51,Kirov,3
+6328,814161,Deltavjatia,264.28,259.51,Kirov,3
+6329,814161,Deltavjatia,264.28,259.51,Kirov,3
+6330,814161,Deltavjatia,264.28,259.51,Kirov,3
+6331,814161,Deltavjatia,264.28,259.51,Kirov,3
+6332,814161,Deltavjatia,264.28,259.51,Kirov,3
+6333,814161,Deltavjatia,264.28,259.51,Kirov,3
+6334,814161,Deltavjatia,264.28,259.51,Kirov,3
+6335,814161,Deltavjatia,264.28,259.51,Kirov,3
+6344,837578,Scutosaurus,264.28,259.51,Tatarstan,3
+6345,837578,Scutosaurus,264.28,259.51,Tatarstan,3
+6346,837578,Scutosaurus,264.28,259.51,Tatarstan,3
+6359,1163740,Eorasaurus,264.28,259.51,Tatarstan,3
+6368,1382830,Deltavjatia,264.28,259.51,Kirov,3
+6369,1382867,Scutosaurus,264.28,259.51,Orenburg,3
+6370,1417381,Scutosaurus,264.28,259.51,Orenburg,3
+6397,1640373,Rhipaeosaurus,264.28,259.51,Chuvasia Republic,3
+6398,1646159,Scutosaurus,264.28,259.51,Vologda,3
+6401,387517,Chasmatosuchus,251.902,246.7,Orenburg,3
+6402,387518,Chasmatosuchus,251.902,246.7,Orenburg,3
+6490,387512,Chasmatosuchus,251.2,246.7,Komi,3
+6496,411697,Timanophon,251.2,246.7,Komi,3
+6498,745262,Kapes,251.2,246.7,Orenburg,3
+6499,789764,Kapes,251.2,246.7,Orenburg,3
+6500,789766,Kapes,251.2,246.7,Komi,3
+6505,838751,Tichvinskia,251.2,246.7,Kirov,3
+6506,838751,Tichvinskia,251.2,246.7,Kirov,3
+6507,838751,Tichvinskia,251.2,246.7,Kirov,3
+6508,838751,Tichvinskia,251.2,246.7,Kirov,3
+6509,840200,Kapes,251.2,246.7,Komi,3
+6510,840267,Chasmatosuchus,251.2,246.7,Vologda,3
+6511,840268,Microcnemus,251.2,246.7,Vologda,3
+6512,840350,Chasmatosuchus,251.2,246.7,Orenburg,3
+6513,840353,Orenburgia,251.2,246.7,Orenburg,3
+6514,840364,Tichvinskia,251.2,246.7,Orenburg,3
+6515,840372,Garjainia,251.2,246.7,Orenburg,3
+6516,840381,Orenburgia,251.2,246.7,Volgograd,3
+6517,841368,Orenburgia,251.2,246.7,Arkhangelsk,3
+6518,841368,Orenburgia,251.2,246.7,Arkhangelsk,3
+6519,841373,Orenburgia,251.2,246.7,Arkhangelsk,3
+6520,841374,Orenburgia,251.2,246.7,Arkhangelsk,3
+6521,841667,Kapes,251.2,246.7,Orenburg,3
+6522,842017,Timanophon,251.2,246.7,Arkhangelsk,3
+6523,842020,Timanophon,251.2,246.7,Arkhangelsk,3
+6524,843124,Coelodontognathus,251.2,246.7,Volgograd,3
+6525,843125,Coelodontognathus,251.2,246.7,Volgograd,3
+6526,843727,Microcnemus,251.2,246.7,Vologda,3
+6527,843728,Microcnemus,251.2,246.7,Vologda,3
+6528,843729,Chasmatosuchus,251.2,246.7,Vologda,3
+6529,847011,Orenburgia,251.2,246.7,Arkhangelsk,3
+6530,847020,Boreopricea,251.2,246.7,Arkhangelsk,3
+6531,847023,Orenburgia,251.2,246.7,Arkhangelsk,3
+6532,847025,Boreopricea,251.2,246.7,Arkhangelsk,3
+6533,848404,Tichvinskia,251.2,246.7,Orenburg,3
+6537,890991,Garjainia,251.2,246.7,Orenburg,3
+6539,929821,Augustaburiania,251.2,246.7,Volgograd,3
+6540,929822,Augustaburiania,251.2,246.7,Arkhangelsk,3
+6541,958043,Vytshegdosuchus,251.2,246.7,Komi,3
+6543,1113776,Bystrowisuchus,251.2,246.7,Volgograd,3
+6544,1127411,Scythosuchus,251.2,246.7,Volgograd,3
+6545,1127417,Tanaisosaurus,251.2,246.7,Volgograd,3
+6546,1127431,Kapes,251.2,246.7,Volgograd,3
+6547,1127575,Vritramimosaurus,251.2,246.7,Orenburg,3
+6548,1127583,Chasmatosuchus,251.2,246.7,Orenburg,3
+6551,1347708,Chasmatosuchus,251.2,246.7,Orenburg,3
+6552,1347709,Chasmatosuchus,251.2,246.7,Komi,3
+6563,1416148,Microcnemus,251.2,246.7,Samara,3
+6564,1416149,Chasmatosuchus,251.2,246.7,Samara,3
+6565,1416154,Chasmatosuchus,251.2,246.7,Orenburg,3
+6566,1416307,Chasmatosuchus,251.2,246.7,Orenburg,3
+6567,1416308,Tichvinskia,251.2,246.7,Orenburg,3
+6568,1416309,Chasmatosuchus,251.2,246.7,Orenburg,3
+6569,1417067,Chasmatosuchus,251.2,246.7,Orenburg,3
+6570,1417069,Chasmatosuchus,251.2,246.7,Orenburg,3
+6572,1626504,Scolotosuchus,251.2,246.7,Volgograd,3
+6647,795305,Archosaurus,259.51,254.14,Vladimir,3
+6648,795309,Obirkovia,259.51,254.14,Vladimir,3
+6649,795351,Archosaurus,259.51,254.14,Vladimir,3
+6650,795352,Archosaurus,259.51,254.14,Nizhnii Novgorod,3
+6651,796148,Kinelia,259.51,254.14,Orenburg,3
+6652,1382107,Archosaurus,259.51,256.8,Vladimir,3
+6743,219963,Rhipaeosaurus,266.9,264.28,Bashkortostan,3
+6744,286782,Belebey,266.9,264.28,Bashkortostan,3
+6745,747876,Macroleter,266.9,264.28,Orenburg,3
+6746,789767,Bashkyroleter,266.9,264.28,Bashkortostan,3
+6747,789767,Bashkyroleter,266.9,264.28,Bashkortostan,3
+6748,789767,Bashkyroleter,266.9,264.28,Bashkortostan,3
+6749,790205,Belebey,266.9,264.28,Orenburg,3
+6750,790205,Belebey,266.9,264.28,Orenburg,3
+6751,790205,Belebey,266.9,264.28,Orenburg,3
+6752,790207,Belebey,266.9,264.28,Orenburg,3
+6753,799826,Rhipaeosaurus,266.9,264.28,Bashkortostan,3
+6754,1424401,Kinelia,266.9,264.28,Tatarstan,3
+6812,1416385,Chasmatosuchus,251.2,246.7,Orenburg,3
+6813,1416386,Chasmatosuchus,251.2,246.7,Orenburg,3
+6814,1416420,Chasmatosuchus,251.2,246.7,Orenburg,3
+6815,1416563,Chasmatosuchus,251.2,246.7,Orenburg,3
+6816,1417046,Chasmatosuchus,251.2,246.7,Orenburg,3
+6817,1417051,Chasmatosuchus,251.2,246.7,Orenburg,3
+6818,1417154,Tichvinskia,251.2,246.7,Orenburg,3
+6819,1417155,Chasmatosuchus,251.2,246.7,Orenburg,3
+6820,1417175,Chasmatosuchus,251.2,246.7,Samara,3
+7020,1416219,Garjainia,251.2,246.7,Bashkortostan,3
+7021,1416225,Garjainia,251.2,246.7,Bashkortostan,3
+7022,1416232,Garjainia,251.2,246.7,Orenburg,3
+7023,1416234,Garjainia,251.2,246.7,Orenburg,3
+7024,1416237,Garjainia,251.2,246.7,Orenburg,3
+7025,1416239,Garjainia,251.2,246.7,Orenburg,3
+7026,1416255,Garjainia,251.2,246.7,Orenburg,3
+7027,1416277,Garjainia,251.2,246.7,Orenburg,3
+7028,1416278,Chasmatosuchus,251.2,246.7,Orenburg,3
+7029,1417106,Scharschengia,251.2,246.7,Orenburg,3
+7030,1417172,Chasmatosuchus,251.2,246.7,Samara,3
+7090,384378,Vonhuenia,251.902,251.2,Nizhegorod,3
+7091,387513,Chasmatosuchus,251.902,251.2,Orenburg,3
+7102,792619,Phaanthosaurus,251.902,251.2,Nizhegorod,3
+7103,792621,Phaanthosaurus,251.902,251.2,Nizhnii Novgorod,3
+7107,842964,Phaanthosaurus,251.902,251.2,Nizhnii Novgorod,3
+7108,842965,Phaanthosaurus,251.902,251.2,Nizhnii Novgorod,3
+7109,842974,Phaanthosaurus,251.902,251.2,Kirov,3
+7110,842975,Phaanthosaurus,251.902,251.2,Nizhegorod,3
+7111,846843,Microcnemus,251.902,251.2,Orenburg,3
+7112,847026,Blomosaurus,251.902,251.2,Nizhnii Novgorod,3
+7113,847027,Microcnemus,251.902,251.2,Nizhnii Novgorod,3
+7124,1416560,Chasmatosuchus,251.902,251.2,Orenburg,3
+7125,1417181,Phaanthosaurus,251.902,251.2,Samara,3
+7126,1420094,Microcnemus,251.902,251.2,Nizhegorod,3
+6270,1163463,Simosaurus,242.0,237.0,Saudi Arabia,1
+6271,1163464,Nothosaurus,242.0,237.0,Saudi Arabia,1
+6272,1163468,Psephosauriscus,242.0,237.0,Saudi Arabia,1
+6273,1163470,Nothosaurus,242.0,237.0,Saudi Arabia,1
+6274,1163473,Simosaurus,242.0,237.0,Saudi Arabia,1
+6074,1419483,Pessopteryx,246.7,242.0,SJ,3
+6279,1310774,Mikadocephalus,242.0,237.0,SJ,3
+7032,1419116,Phalarodon,251.2,246.7,SJ,3
+7035,1420109,Quasianosteosaurus,251.2,246.7,SJ,3
+7036,1420150,Isfjordosaurus,251.2,246.7,SJ,3
+7037,1420151,Merriamosaurus,251.2,246.7,SJ,3
+7038,1420184,Pessopteryx,251.2,246.7,SJ,3
+7039,1529048,Omphalosaurus,251.2,246.7,SJ,3
+6067,1418847,Neusticosaurus,246.7,242.0,Banská Bystrica,3
+3790,930990,Proganochelys,227.0,208.5,Phetchabun,2
+3791,931088,Proganochelys,227.0,208.5,Khon Kaen,2
+3792,931095,Proganochelys,227.0,208.5,Khon Kaen,2
+7034,1419474,Thaisaurus,251.2,246.7,Khuan Khanun,2
+4589,N485,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4590,N486,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4591,N487,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4592,N488,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4593,N489,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4594,N490,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4595,N491,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4596,N492,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4597,N493,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4598,N494,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4599,N495,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4600,N496,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4601,N497,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4602,N498,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4603,N499,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4604,N500,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4605,N501,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+4606,N502,Stenaulorhynchus,246.7,237.0,Tanganyika,1
+5733,1163747,Aenigmastropheus,259.51,254.14,Ruvuma,1
+5737,1286081,Anthodon,259.51,254.14,Ruvuma,1
+5766,602403,Parringtonia,246.7,242.0,Ruvuma,1
+5837,838129,Hypselorhachis,246.7,242.0,Ruvuma,1
+5842,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5843,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5844,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5845,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5846,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5847,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5848,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5849,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5850,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5851,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5852,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5853,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5854,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5855,851246,Asilisaurus,246.7,242.0,Ruvuma,1
+5957,921159,Stenaulorhynchus,246.7,242.0,Iringa,1
+5958,921162,Stagonosuchus,246.7,242.0,Ruvuma,1
+5959,921163,Ruhuhuaria,246.7,242.0,Ruvuma,1
+5961,923790,Stagonosuchus,246.7,242.0,Ruvuma,1
+5962,923790,Stagonosuchus,246.7,242.0,Ruvuma,1
+5975,1071678,Stenaulorhynchus,246.7,242.0,Ruvuma,1
+5977,1089127,Nyasasaurus,246.7,242.0,Ruvuma,1
+5978,1089130,Nyasasaurus,246.7,242.0,Ruvuma,1
+5979,1089825,Stagonosuchus,246.7,242.0,Ruvuma,1
+6017,1134313,Asperoris,246.7,242.0,Ruvuma,1
+6025,1340356,Asilisaurus,246.7,242.0,Ruvuma,1
+6026,1340357,Asilisaurus,246.7,242.0,Ruvuma,1
+6027,1340358,Asilisaurus,246.7,242.0,Ruvuma,1
+6028,1340358,Asilisaurus,246.7,242.0,Ruvuma,1
+6030,1363319,Teleocrater,246.7,242.0,Ruvuma,1
+6031,1375740,Teleocrater,246.7,242.0,Ruvuma,1
+6037,1397832,Mandaphon,246.7,242.0,Ruvuma,1
+6038,1397833,Teleocrater,246.7,242.0,Ruvuma,1
+6046,1406763,Mandasuchus,246.7,242.0,Ruvuma,1
+6047,1406763,Mandasuchus,246.7,242.0,Ruvuma,1
+6048,1406766,Stenaulorhynchus,246.7,242.0,Ruvuma,1
+6049,1406767,Mandasuchus,246.7,242.0,Ruvuma,1
+6050,1406768,Mandasuchus,246.7,242.0,Ruvuma,1
+6051,1407310,Nundasuchus,246.7,242.0,Ruvuma,1
+6077,1428360,Stagonosuchus,246.7,242.0,Iringa,1
+6082,1587701,Mambawakale,246.7,242.0,Ruvuma,1
+6844,1285940,Tangasaurus,254.14,251.902,TZ,1
+6845,1285940,Tangasaurus,254.14,251.902,TZ,1
+6846,1285940,Tangasaurus,254.14,251.902,TZ,1
+4219,690412,Rhombopholis,246.7,237.0,England,3
+4220,690413,Langeronyx,246.7,237.0,England,3
+4302,149237,Clevosaurus,237.0,227.0,England,3
+4303,149239,Diphydontosaurus,237.0,227.0,England,3
+4304,149241,Diphydontosaurus,237.0,227.0,England,3
+4305,149242,Terrestrisuchus,237.0,227.0,England,3
+4306,149243,Planocephalosaurus,237.0,227.0,England,3
+4307,149244,Sigmala,237.0,227.0,England,3
+4308,149246,Kuehneosaurus,237.0,227.0,England,3
+4309,149247,Clevosaurus,237.0,227.0,England,3
+4310,149249,Planocephalosaurus,237.0,227.0,England,3
+4311,149250,Terrestrisuchus,237.0,227.0,England,3
+4312,149251,Diphydontosaurus,237.0,227.0,England,3
+4313,149253,Sigmala,237.0,227.0,England,3
+4314,149254,Planocephalosaurus,237.0,227.0,England,3
+4315,149255,Clevosaurus,237.0,227.0,England,3
+4316,149257,Terrestrisuchus,237.0,227.0,England,3
+4317,149258,Diphydontosaurus,237.0,227.0,England,3
+4318,149260,Sigmala,237.0,227.0,England,3
+4319,149261,Kuehneosaurus,237.0,227.0,England,3
+4320,149262,Sigmala,237.0,227.0,England,3
+4321,149263,Pelecymala,237.0,227.0,England,3
+4322,149264,Planocephalosaurus,237.0,227.0,England,3
+4323,149267,Planocephalosaurus,237.0,227.0,England,3
+4324,149268,Clevosaurus,237.0,227.0,England,3
+4325,149271,Sigmala,237.0,227.0,England,3
+4326,149272,Kuehneosaurus,237.0,227.0,England,3
+4327,149273,Planocephalosaurus,237.0,227.0,England,3
+4328,149274,Clevosaurus,237.0,227.0,England,3
+4329,149276,Sigmala,237.0,227.0,England,3
+4330,149277,Kuehneosaurus,237.0,227.0,England,3
+4331,149278,Planocephalosaurus,237.0,227.0,England,3
+4332,149279,Clevosaurus,237.0,227.0,England,3
+4333,149283,Sigmala,237.0,227.0,England,3
+4334,149284,Kuehneosaurus,237.0,227.0,England,3
+4335,149285,Planocephalosaurus,237.0,227.0,England,3
+4336,149286,Clevosaurus,237.0,227.0,England,3
+4337,149289,Sigmala,237.0,227.0,England,3
+4338,149290,Planocephalosaurus,237.0,227.0,England,3
+4339,149293,Planocephalosaurus,237.0,227.0,England,3
+4340,149294,Clevosaurus,237.0,227.0,England,3
+4341,149295,Terrestrisuchus,237.0,227.0,England,3
+4342,149296,Diphydontosaurus,237.0,227.0,England,3
+4349,261808,Terrestrisuchus,237.0,227.0,England,3
+4350,261810,Agnosphitys,237.0,227.0,England,3
+4352,284027,Pantydraco,237.0,227.0,Wales,3
+4360,465571,Terrestrisuchus,237.0,227.0,Wales,3
+4361,465572,Kuehneosaurus,237.0,227.0,Wales,3
+4362,465573,Clevosaurus,237.0,227.0,Wales,3
+4364,471885,Diphydontosaurus,237.0,227.0,England,3
+4382,558437,Thecodontosaurus,237.0,227.0,England,3
+4394,690337,Hwiccewyrm,237.0,227.0,England,3
+4395,690338,Terrestrisuchus,237.0,227.0,England,3
+4396,690339,Diphydontosaurus,237.0,227.0,England,3
+4397,690340,Terrestrisuchus,237.0,227.0,England,3
+4398,690341,Kuehneosaurus,237.0,227.0,England,3
+4399,690343,Kuehneosaurus,237.0,227.0,England,3
+4400,690344,Pelecymala,237.0,227.0,England,3
+4401,690345,Sigmala,237.0,227.0,England,3
+4402,690346,Pelecymala,237.0,227.0,England,3
+4403,690347,Kuehneosaurus,237.0,227.0,England,3
+4404,712659,Terrestrisuchus,237.0,227.0,England,3
+4405,712661,Thecodontosaurus,237.0,227.0,England,3
+4406,712664,Clevosaurus,237.0,227.0,England,3
+4407,712665,Planocephalosaurus,237.0,227.0,England,3
+4412,778896,Fraserosphenodon,237.0,227.0,England,3
+4467,1093726,Pelecymala,237.0,227.0,England,3
+4468,1093733,Sigmala,237.0,227.0,England,3
+4495,1313374,Clevosaurus,237.0,227.0,England,3
+4496,1313375,Diphydontosaurus,237.0,227.0,England,3
+4497,1313378,Clevosaurus,237.0,227.0,England,3
+4498,1313379,Diphydontosaurus,237.0,227.0,England,3
+4510,1393389,Clevosaurus,237.0,227.0,Wales,3
+4511,1393401,Diphydontosaurus,237.0,227.0,Wales,3
+4534,1486217,Aenigmaspina,237.0,227.0,Wales,3
+4547,1574570,Pendraig,237.0,227.0,Wales,3
+4558,1638608,Hwiccewyrm,237.0,227.0,England,3
+4559,1638608,Hwiccewyrm,237.0,227.0,England,3
+4560,1638608,Hwiccewyrm,237.0,227.0,England,3
+4561,1638608,Hwiccewyrm,237.0,227.0,England,3
+4562,1638608,Hwiccewyrm,237.0,227.0,England,3
+4563,1638608,Hwiccewyrm,237.0,227.0,England,3
+4572,N540,Threordatoth,237.0,227.0,Cromhall,3
+4573,N541,Leptopleuron,237.0,227.0,Scotland,3
+4618,871895,Thalassiodracon,208.5,199.5,England,3
+4619,871897,Thalassiodracon,208.5,199.5,England,3
+4620,871898,Ichthyosaurus,208.5,199.5,England,3
+4621,871899,Ichthyosaurus,208.5,199.5,England,3
+4622,871901,Ichthyosaurus,208.5,199.5,England,3
+4623,871902,Ichthyosaurus,208.5,199.5,England,3
+4624,871903,Ichthyosaurus,208.5,199.5,England,3
+4625,871904,Thalassiodracon,208.5,199.5,England,3
+4626,871905,Ichthyosaurus,208.5,199.5,England,3
+4627,871909,Ichthyosaurus,208.5,199.5,England,3
+5093,146086,Kuehneosuchus,208.5,201.4,England,3
+5094,146087,Kuehneosaurus,208.5,201.4,England,3
+5104,465575,Tricuspisaurus,208.5,201.4,Wales,3
+5105,465579,Planocephalosaurus,208.5,201.4,Wales,3
+5106,465580,Haligonia,208.5,201.4,Wales,3
+5107,465685,Variodens,208.5,201.4,England,3
+5111,486165,Camelotia,208.5,201.4,England,3
+5142,513479,Thecodontosaurus,208.5,201.4,England,3
+5143,513479,Thecodontosaurus,208.5,201.4,England,3
+5144,513479,Thecodontosaurus,208.5,201.4,England,3
+5145,513479,Thecodontosaurus,208.5,201.4,England,3
+5146,513479,Thecodontosaurus,208.5,201.4,England,3
+5147,513479,Thecodontosaurus,208.5,201.4,England,3
+5148,513479,Thecodontosaurus,208.5,201.4,England,3
+5149,513479,Thecodontosaurus,208.5,201.4,England,3
+5150,513479,Thecodontosaurus,208.5,201.4,England,3
+5151,513479,Thecodontosaurus,208.5,201.4,England,3
+5152,513479,Thecodontosaurus,208.5,201.4,England,3
+5153,513481,Diphydontosaurus,208.5,201.4,England,3
+5154,513482,Diphydontosaurus,208.5,201.4,England,3
+5161,527467,Plateosaurus,208.5,201.4,England,3
+5163,534770,Asylosaurus,208.5,201.4,England,3
+5164,534770,Asylosaurus,208.5,201.4,England,3
+5165,534770,Asylosaurus,208.5,201.4,England,3
+5166,534770,Asylosaurus,208.5,201.4,England,3
+5167,534770,Asylosaurus,208.5,201.4,England,3
+5168,534770,Asylosaurus,208.5,201.4,England,3
+5170,558385,Ichthyosaurus,208.5,201.4,England,3
+5171,558388,Camelotia,208.5,201.4,England,3
+5176,587325,Thecodontosaurus,208.5,201.4,Wales,3
+5217,871913,Rhomaleosaurus,208.5,201.4,England,3
+5220,989456,Plesiosaurus,208.5,201.4,England,3
+5221,1005254,Pachystropheus,208.5,201.4,England,3
+5224,1092801,Pachystropheus,208.5,201.4,England,3
+5225,1093393,Clevosaurus,208.5,201.4,England,3
+5243,1110864,Plesiosaurus,208.5,201.4,England,3
+5244,1119323,Thecodontosaurus,208.5,201.4,England,3
+5251,1161985,Ichthyosaurus,208.5,201.4,England,3
+5252,1161986,Plesiosaurus,208.5,201.4,England,3
+5253,1161987,Ichthyosaurus,208.5,201.4,England,3
+5255,1239968,Plesiosaurus,208.5,201.4,England,3
+5256,1239985,Thecodontosaurus,208.5,201.4,England,3
+5258,1313506,Clevosaurus,208.5,201.4,England,3
+5259,1313507,Planocephalosaurus,208.5,201.4,England,3
+5260,1326606,Termatosaurus,208.5,201.4,England,3
+5261,1326607,Plesiosaurus,208.5,201.4,England,3
+5262,1333948,Variodens,208.5,201.4,England,3
+5263,1333949,Gephyrosaurus,208.5,201.4,England,3
+5270,1406954,Variodens,208.5,201.4,England,3
+5271,1406955,Gephyrosaurus,208.5,201.4,England,3
+5278,1419213,Psephoderma,208.5,201.4,England,3
+5283,1534868,Haligonia,208.5,201.4,Wales,3
+5284,1534869,Scoloparia,208.5,201.4,Wales,3
+5285,1534870,Smilodonterpeton,208.5,201.4,Wales,3
+5286,1534871,Hypsognathus,208.5,201.4,Wales,3
+5287,1534872,Diphydontosaurus,208.5,201.4,Wales,3
+5291,1564169,Zanclodon,208.5,201.4,England,3
+5293,1633861,Plesiosaurus,208.5,201.4,England,3
+5294,1651914,Ichthyotitan,208.5,201.4,England,3
+5688,719380,Weigeltisaurus,259.51,254.14,England,3
+5715,799563,Adelosaurus,259.51,254.14,England,3
+5731,1163736,Protorosaurus,259.51,254.14,England,3
+5732,1163739,Protorosaurus,259.51,254.14,England,3
+5757,558341,Rhombopholis,246.7,242.0,England,3
+5758,558342,Bromsgroveia,246.7,242.0,England,3
+5759,558344,Bromsgroveia,246.7,242.0,England,3
+5760,558345,Bromsgroveia,246.7,242.0,England,3
+5761,561984,Langeronyx,246.7,242.0,England,3
+5788,811288,Fodonyx,246.7,242.0,England,3
+5789,811289,Fodonyx,246.7,242.0,England,3
+5790,811299,Fodonyx,246.7,242.0,England,3
+5791,811300,Fodonyx,246.7,242.0,England,3
+5792,811301,Fodonyx,246.7,242.0,England,3
+5793,811302,Fodonyx,246.7,242.0,England,3
+5794,811303,Fodonyx,246.7,242.0,England,3
+5795,811309,Fodonyx,246.7,242.0,England,3
+5796,811310,Fodonyx,246.7,242.0,England,3
+5797,811311,Fodonyx,246.7,242.0,England,3
+5798,811312,Fodonyx,246.7,242.0,England,3
+5799,811313,Fodonyx,246.7,242.0,England,3
+5800,811314,Fodonyx,246.7,242.0,England,3
+5801,811315,Fodonyx,246.7,242.0,England,3
+5802,811316,Fodonyx,246.7,242.0,England,3
+5803,811318,Fodonyx,246.7,242.0,England,3
+5804,811319,Fodonyx,246.7,242.0,England,3
+5805,811320,Fodonyx,246.7,242.0,England,3
+5806,811326,Bentonyx,246.7,242.0,England,3
+5807,811330,Kapes,246.7,242.0,England,3
+5808,811331,Kapes,246.7,242.0,England,3
+5809,811337,Coartaredens,246.7,242.0,England,3
+5810,811338,Coartaredens,246.7,242.0,England,3
+5811,811340,Fodonyx,246.7,242.0,England,3
+5812,811360,Tanystropheus,246.7,242.0,England,3
+5813,811363,Fodonyx,246.7,242.0,England,3
+5814,811364,Fodonyx,246.7,242.0,England,3
+5882,880673,Rhombopholis,246.7,242.0,England,3
+5883,880676,Langeronyx,246.7,242.0,England,3
+5884,880677,Bromsgroveia,246.7,242.0,England,3
+6079,1530023,Feralisaurus,246.7,242.0,England,3
+6838,832705,Elginia,254.14,251.902,Scotland,3
+6839,832708,Elginia,254.14,251.902,Scotland,3
+6840,832708,Elginia,254.14,251.902,Scotland,3
+6850,393085,Sarcosaurus,201.4,199.5,England,3
+6890,830777,Dimorphodon,201.4,199.5,England,3
+6891,882292,Mystriosuchus,201.4,199.5,England,3
+6893,920202,Ichthyosaurus,201.4,199.5,England,3
+6894,946851,Thalassiodracon,201.4,199.5,England,3
+6895,986427,Macroplata,201.4,199.5,England,3
+6896,989446,Thalassiodracon,201.4,199.5,England,3
+6897,989446,Thalassiodracon,201.4,199.5,England,3
+6898,989446,Thalassiodracon,201.4,199.5,England,3
+6899,989446,Thalassiodracon,201.4,199.5,England,3
+6900,989446,Thalassiodracon,201.4,199.5,England,3
+6901,989446,Thalassiodracon,201.4,199.5,England,3
+6902,989451,Rhomaleosaurus,201.4,199.5,England,3
+6903,989454,Eurycleidus,201.4,199.5,England,3
+6904,990033,Rhomaleosaurus,201.4,199.5,England,3
+6905,990034,Rhomaleosaurus,201.4,199.5,England,3
+6906,991109,Thalassiodracon,201.4,199.5,England,3
+6907,991111,Plesiosaurus,201.4,199.5,England,3
+6908,1040454,Avalonnectes,201.4,199.5,England,3
+6909,1040456,Eoplesiosaurus,201.4,199.5,England,3
+6916,1104636,Scelidosaurus,201.4,199.5,Northern Ireland,3
+6917,1108750,Temnodontosaurus,201.4,199.5,England,3
+6918,1108753,Leptonectes,201.4,199.5,England,3
+6919,1125626,Ichthyosaurus,201.4,199.5,England,3
+6920,1125628,Ichthyosaurus,201.4,199.5,England,3
+6921,1125629,Leptonectes,201.4,199.5,England,3
+6922,1162052,Ichthyosaurus,201.4,199.5,England,3
+6923,1162053,Ichthyosaurus,201.4,199.5,England,3
+6924,1162057,Ichthyosaurus,201.4,199.5,England,3
+6925,1162058,Proteosaurus,201.4,199.5,England,3
+6926,1162059,Thalassiodracon,201.4,199.5,England,3
+6927,1162070,Ichthyosaurus,201.4,199.5,England,3
+6928,1190870,Proteosaurus,201.4,199.5,England,3
+6929,1190871,Ichthyosaurus,201.4,199.5,England,3
+6930,1190874,Ichthyosaurus,201.4,199.5,England,3
+6931,1190878,Ichthyosaurus,201.4,199.5,England,3
+6932,1190917,Ichthyosaurus,201.4,199.5,England,3
+6938,1311443,Dracoraptor,201.4,199.5,Wales,3
+6945,1429655,Eurhinosaurus,201.4,199.5,England,3
+6946,1432612,Ichthyosaurus,201.4,199.5,England,3
+6947,1432613,Ichthyosaurus,201.4,199.5,England,3
+6948,1432614,Ichthyosaurus,201.4,199.5,England,3
+6949,1433004,Protoichthyosaurus,201.4,199.5,England,3
+6950,1433006,Ichthyosaurus,201.4,199.5,England,3
+6951,1439364,Wahlisaurus,201.4,199.5,England,3
+6955,1633856,Ichthyosaurus,201.4,199.5,England,3
+6849,N521,Pintosaurus,254.14,251.902,Melo,1
+3141,146084,Icarosaurus,227.0,208.5,New Jersey,4
+3142,146085,Rutiodon,227.0,208.5,New Jersey,4
+3143,149845,Trilophosaurus,227.0,208.5,Texas,4
+3144,149917,Postosuchus,227.0,208.5,Texas,4
+3145,149917,Postosuchus,227.0,208.5,Texas,4
+3146,149918,Desmatosuchus,227.0,208.5,Texas,4
+3147,149919,Trilophosaurus,227.0,208.5,Texas,4
+3171,406864,Desmatosuchus,227.0,208.5,Arizona,4
+3172,406867,Smilosuchus,227.0,208.5,Arizona,4
+3173,406869,Postosuchus,227.0,208.5,Arizona,4
+3174,406872,Camposaurus,227.0,208.5,Arizona,4
+3175,406876,Calyptosuchus,227.0,208.5,Arizona,4
+3176,407766,Tanytrachelos,227.0,208.5,Arizona,4
+3177,407767,Smilosuchus,227.0,208.5,Arizona,4
+3178,407768,Parasuchus,227.0,208.5,Arizona,4
+3179,407776,Acaenasuchus,227.0,208.5,Arizona,4
+3180,423245,Poposaurus,227.0,208.5,Arizona,4
+3181,423280,Shuvosaurus,227.0,208.5,Arizona,4
+3182,423281,Poposaurus,227.0,208.5,Arizona,4
+3183,423285,Trilophosaurus,227.0,208.5,Arizona,4
+3184,423286,Trilophosaurus,227.0,208.5,Arizona,4
+3185,423288,Tanytrachelos,227.0,208.5,Arizona,4
+3187,475078,Machaeroprosopus,227.0,208.5,New Mexico,4
+3188,475079,Machaeroprosopus,227.0,208.5,New Mexico,4
+3189,475081,Typothorax,227.0,208.5,New Mexico,4
+3192,483859,Typothorax,227.0,208.5,Arizona,4
+3193,483884,Trilophosaurus,227.0,208.5,Texas,4
+3194,484673,Revueltosaurus,227.0,208.5,New Mexico,4
+3195,484986,Chindesaurus,227.0,208.5,Arizona,4
+3196,484986,Chindesaurus,227.0,208.5,Arizona,4
+3197,484987,Shuvosaurus,227.0,208.5,Arizona,4
+3210,490747,Gojirasaurus,227.0,208.5,New Mexico,4
+3211,490749,Machaeroprosopus,227.0,208.5,New Mexico,4
+3212,490750,Rutiodon,227.0,208.5,New Mexico,4
+3213,490751,Rioarribasuchus,227.0,208.5,New Mexico,4
+3214,490752,Shuvosaurus,227.0,208.5,New Mexico,4
+3215,490754,Shuvosaurus,227.0,208.5,New Mexico,4
+3216,490757,Typothorax,227.0,208.5,Arizona,4
+3217,490758,Hesperosuchus,227.0,208.5,Arizona,4
+3218,490763,Machaeroprosopus,227.0,208.5,Arizona,4
+3219,490769,Revueltosaurus,227.0,208.5,Arizona,4
+3223,517573,Coelophysis,227.0,208.5,New Mexico,4
+3224,517577,Revueltosaurus,227.0,208.5,Arizona,4
+3225,517578,Typothorax,227.0,208.5,Arizona,4
+3226,517585,Smilosuchus,227.0,208.5,Arizona,4
+3227,517592,Krzyzanowskisaurus,227.0,208.5,Arizona,4
+3228,517595,Calyptosuchus,227.0,208.5,Arizona,4
+3229,517597,Leptosuchus,227.0,208.5,Arizona,4
+3230,517601,Scutarx,227.0,208.5,Arizona,4
+3231,517603,Leptosuchus,227.0,208.5,Arizona,4
+3232,517609,Acaenasuchus,227.0,208.5,Arizona,4
+3233,517610,Leptosuchus,227.0,208.5,Arizona,4
+3234,517611,Revueltosaurus,227.0,208.5,Arizona,4
+3235,517612,Typothorax,227.0,208.5,New Mexico,4
+3236,517613,Paratypothorax,227.0,208.5,New Mexico,4
+3237,517621,Coelophysis,227.0,208.5,New Mexico,4
+3238,517622,Coelophysis,227.0,208.5,New Mexico,4
+3239,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3240,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3241,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3242,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3243,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3244,521669,Revueltosaurus,227.0,208.5,Arizona,4
+3245,521670,Shuvosaurus,227.0,208.5,Arizona,4
+3246,528637,Coelophysis,227.0,208.5,New Mexico,4
+3247,528638,Eucoelophysis,227.0,208.5,New Mexico,4
+3248,528639,Coelophysis,227.0,208.5,New Mexico,4
+3249,528640,Coelophysis,227.0,208.5,New Mexico,4
+3250,528641,Coelophysis,227.0,208.5,New Mexico,4
+3251,528642,Coelophysis,227.0,208.5,New Mexico,4
+3252,528643,Coelophysis,227.0,208.5,New Mexico,4
+3253,528644,Coelophysis,227.0,208.5,New Mexico,4
+3254,528645,Coelophysis,227.0,208.5,New Mexico,4
+3255,530454,Coelophysis,227.0,208.5,New Mexico,4
+3256,530455,Coelophysis,227.0,208.5,New Mexico,4
+3260,536430,Grallator,227.0,208.5,North Carolina,4
+3271,545159,Tecovasaurus,227.0,208.5,Texas,4
+3272,545160,Tecovasaurus,227.0,208.5,Arizona,4
+3273,545161,Lucianosaurus,227.0,208.5,New Mexico,4
+3274,557168,Postosuchus,227.0,208.5,Arizona,4
+3275,557171,Vancleavea,227.0,208.5,Arizona,4
+3276,557172,Typothorax,227.0,208.5,Arizona,4
+3277,557172,Typothorax,227.0,208.5,Arizona,4
+3278,557172,Typothorax,227.0,208.5,Arizona,4
+3279,557173,Postosuchus,227.0,208.5,Arizona,4
+3280,557174,Shuvosaurus,227.0,208.5,Arizona,4
+3281,557175,Revueltosaurus,227.0,208.5,Arizona,4
+3282,557177,Coelophysis,227.0,208.5,Arizona,4
+3283,557177,Coelophysis,227.0,208.5,Arizona,4
+3284,557177,Coelophysis,227.0,208.5,Arizona,4
+3285,557177,Coelophysis,227.0,208.5,Arizona,4
+3286,557182,Postosuchus,227.0,208.5,Arizona,4
+3287,559094,Coelophysis,227.0,208.5,New Mexico,4
+3288,559095,Trilophosaurus,227.0,208.5,Arizona,4
+3290,562834,Technosaurus,227.0,208.5,Texas,4
+3291,562835,Typothorax,227.0,208.5,Texas,4
+3292,562836,Protoavis,227.0,208.5,Texas,4
+3293,562836,Protoavis,227.0,208.5,Texas,4
+3294,562836,Protoavis,227.0,208.5,Texas,4
+3295,562837,Paratypothorax,227.0,208.5,Texas,4
+3296,562843,Typothorax,227.0,208.5,Arizona,4
+3297,562846,Calyptosuchus,227.0,208.5,Arizona,4
+3298,562847,Leptosuchus,227.0,208.5,Arizona,4
+3299,566949,Revueltosaurus,227.0,208.5,Pennsylvania,4
+3300,572546,Trilophosaurus,227.0,208.5,Arizona,4
+3301,572551,Leptosuchus,227.0,208.5,Arizona,4
+3302,572552,Crosbysaurus,227.0,208.5,Arizona,4
+3303,572553,Crosbysaurus,227.0,208.5,Arizona,4
+3304,572562,Rutiodon,227.0,208.5,Arizona,4
+3305,572567,Poposaurus,227.0,208.5,Arizona,4
+3306,572571,Desmatosuchus,227.0,208.5,Arizona,4
+3307,572572,Stagonolepis,227.0,208.5,Arizona,4
+3308,572586,Trilophosaurus,227.0,208.5,New Mexico,4
+3309,572593,Crosbysaurus,227.0,208.5,New Mexico,4
+3310,572595,Crosbysaurus,227.0,208.5,New Mexico,4
+3311,572614,Diphydontosaurus,227.0,208.5,Texas,4
+3312,572615,Planocephalosaurus,227.0,208.5,Texas,4
+3313,572616,Fraserosphenodon,227.0,208.5,Texas,4
+3314,572619,Trilophosaurus,227.0,208.5,Texas,4
+3315,572632,Protecovasaurus,227.0,208.5,Texas,4
+3316,572633,Crosbysaurus,227.0,208.5,Texas,4
+3317,572634,Revueltosaurus,227.0,208.5,Texas,4
+3318,572650,Paleollanosaurus,227.0,208.5,Texas,4
+3319,572651,Trilophosaurus,227.0,208.5,Texas,4
+3320,572673,Protecovasaurus,227.0,208.5,Texas,4
+3321,572674,Protecovasaurus,227.0,208.5,Texas,4
+3322,572675,Crosbysaurus,227.0,208.5,Texas,4
+3323,572676,Crosbysaurus,227.0,208.5,Texas,4
+3324,572677,Revueltosaurus,227.0,208.5,Texas,4
+3325,572678,Tecovasaurus,227.0,208.5,Texas,4
+3326,589407,Revueltosaurus,227.0,208.5,Arizona,4
+3327,590148,Coelophysis,227.0,208.5,New Mexico,4
+3328,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3329,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3330,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3331,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3332,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3333,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3334,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3335,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3336,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3337,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3338,590150,Machaeroprosopus,227.0,208.5,New Mexico,4
+3339,590151,Rioarribasuchus,227.0,208.5,New Mexico,4
+3340,590152,Typothorax,227.0,208.5,New Mexico,4
+3341,593107,Erpetosuchus,227.0,208.5,Connecticut,4
+3342,627521,Shuvosaurus,227.0,208.5,Texas,4
+3343,627729,Shuvosaurus,227.0,208.5,Texas,4
+3344,627731,Coelophysis,227.0,208.5,Texas,4
+3349,690297,Dromomeron,227.0,208.5,New Mexico,4
+3350,690298,Dromomeron,227.0,208.5,New Mexico,4
+3351,690300,Typothorax,227.0,208.5,New Mexico,4
+3352,690301,Rioarribasuchus,227.0,208.5,New Mexico,4
+3353,690302,Vivaron,227.0,208.5,New Mexico,4
+3354,705331,Desmatosuchus,227.0,208.5,New Mexico,4
+3355,705332,Desmatosuchus,227.0,208.5,New Mexico,4
+3356,705341,Stagonolepis,227.0,208.5,New Mexico,4
+3357,705346,Tecovasuchus,227.0,208.5,New Mexico,4
+3358,705367,Stagonolepis,227.0,208.5,New Mexico,4
+3360,735410,Tanytrachelos,227.0,208.5,North Carolina,4
+3361,738863,Colobops,227.0,208.5,Connecticut,4
+3362,745263,Libognathus,227.0,208.5,Texas,4
+3363,755503,Crosbysaurus,227.0,208.5,Texas,4
+3364,755823,Typothorax,227.0,208.5,New Mexico,4
+3365,755824,Machaeroprosopus,227.0,208.5,New Mexico,4
+3366,755825,Typothorax,227.0,208.5,New Mexico,4
+3367,778905,Typothorax,227.0,208.5,New Mexico,4
+3368,778927,Coelophysis,227.0,208.5,New Mexico,4
+3369,778940,Machaeroprosopus,227.0,208.5,New Mexico,4
+3370,778944,Machaeroprosopus,227.0,208.5,New Mexico,4
+3371,778949,Redondasuchus,227.0,208.5,New Mexico,4
+3372,780614,Typothorax,227.0,208.5,Arizona,4
+3373,780615,Machaeroprosopus,227.0,208.5,Arizona,4
+3374,780616,Machaeroprosopus,227.0,208.5,Arizona,4
+3375,780672,Postosuchus,227.0,208.5,Arizona,4
+3376,780673,Shuvosaurus,227.0,208.5,Arizona,4
+3377,780674,Typothorax,227.0,208.5,Arizona,4
+3378,780675,Machaeroprosopus,227.0,208.5,Arizona,4
+3379,780675,Machaeroprosopus,227.0,208.5,Arizona,4
+3380,780676,Machaeroprosopus,227.0,208.5,Arizona,4
+3381,782162,Smilosuchus,227.0,208.5,Arizona,4
+3382,782162,Smilosuchus,227.0,208.5,Arizona,4
+3383,782162,Smilosuchus,227.0,208.5,Arizona,4
+3384,782166,Calyptosuchus,227.0,208.5,Arizona,4
+3385,782168,Rutiodon,227.0,208.5,Arizona,4
+3386,782169,Paratypothorax,227.0,208.5,Arizona,4
+3387,782173,Rutiodon,227.0,208.5,Arizona,4
+3388,782174,Typothorax,227.0,208.5,Arizona,4
+3389,782175,Paratypothorax,227.0,208.5,Arizona,4
+3390,782179,Rutiodon,227.0,208.5,Arizona,4
+3391,782180,Calyptosuchus,227.0,208.5,Arizona,4
+3392,782187,Trilophosaurus,227.0,208.5,Texas,4
+3393,782188,Rutiodon,227.0,208.5,Texas,4
+3394,782208,Machaeroprosopus,227.0,208.5,New Mexico,4
+3395,782209,Redondasuchus,227.0,208.5,New Mexico,4
+3396,785830,Proganochelys,227.0,208.5,New Mexico,4
+3397,806718,Trilophosaurus,227.0,208.5,Texas,4
+3398,806719,Trilophosaurus,227.0,208.5,Texas,4
+3399,806720,Trilophosaurus,227.0,208.5,Texas,4
+3400,806721,Leptosuchus,227.0,208.5,Texas,4
+3401,807815,Trilophosaurus,227.0,208.5,Arizona,4
+3402,807923,Machaeroprosopus,227.0,208.5,Arizona,4
+3403,811765,Stegomus,227.0,208.5,New Jersey,4
+3424,812265,Vancleavea,227.0,208.5,New Mexico,4
+3425,812267,Typothorax,227.0,208.5,New Mexico,4
+3426,818285,Redondavenator,227.0,208.5,New Mexico,4
+3427,819353,Dromomeron,227.0,208.5,New Mexico,4
+3428,819354,Dromomeron,227.0,208.5,Arizona,4
+3430,830855,Hypuronector,227.0,208.5,New Jersey,4
+3431,830859,Hypuronector,227.0,208.5,New Jersey,4
+3432,830860,Tanytrachelos,227.0,208.5,New Jersey,4
+3433,831030,Tanytrachelos,227.0,208.5,New Jersey,4
+3434,832006,Stegomus,227.0,208.5,New Jersey,4
+3460,832116,Rutiodon,227.0,208.5,New Jersey,4
+3461,832687,Stagonolepis,227.0,208.5,Utah,4
+3462,832689,Acaenasuchus,227.0,208.5,Arizona,4
+3463,832690,Calyptosuchus,227.0,208.5,Arizona,4
+3464,832691,Calyptosuchus,227.0,208.5,Arizona,4
+3465,832694,Postosuchus,227.0,208.5,Arizona,4
+3466,832696,Smilosuchus,227.0,208.5,Arizona,4
+3467,837001,Vancleavea,227.0,208.5,Arizona,4
+3468,837004,Doswellia,227.0,208.5,Utah,4
+3469,837005,Vancleavea,227.0,208.5,Utah,4
+3470,837007,Vancleavea,227.0,208.5,Arizona,4
+3471,837008,Vancleavea,227.0,208.5,Arizona,4
+3472,837009,Vancleavea,227.0,208.5,Arizona,4
+3473,837011,Vancleavea,227.0,208.5,Arizona,4
+3474,837012,Vancleavea,227.0,208.5,Arizona,4
+3475,837057,Acallosuchus,227.0,208.5,Arizona,4
+3476,837086,Smilosuchus,227.0,208.5,Arizona,4
+3477,837088,Leptosuchus,227.0,208.5,Arizona,4
+3478,837089,Vancleavea,227.0,208.5,Arizona,4
+3479,837168,Calyptosuchus,227.0,208.5,Arizona,4
+3480,837171,Vancleavea,227.0,208.5,Arizona,4
+3481,837181,Calyptosuchus,227.0,208.5,Arizona,4
+3482,837182,Calyptosuchus,227.0,208.5,Arizona,4
+3483,837213,Leptosuchus,227.0,208.5,Arizona,4
+3484,837214,Postosuchus,227.0,208.5,Arizona,4
+3485,837226,Vancleavea,227.0,208.5,Arizona,4
+3486,837361,Trilophosaurus,227.0,208.5,Arizona,4
+3487,837363,Calyptosuchus,227.0,208.5,Arizona,4
+3488,837364,Acaenasuchus,227.0,208.5,Arizona,4
+3489,837367,Hesperosuchus,227.0,208.5,Arizona,4
+3490,837368,Revueltosaurus,227.0,208.5,Arizona,4
+3491,837372,Vancleavea,227.0,208.5,Arizona,4
+3492,837380,Smilosuchus,227.0,208.5,Arizona,4
+3493,837381,Leptosuchus,227.0,208.5,Arizona,4
+3494,837391,Machaeroprosopus,227.0,208.5,Arizona,4
+3495,837398,Vancleavea,227.0,208.5,Arizona,4
+3496,837546,Hesperosuchus,227.0,208.5,Arizona,4
+3497,837547,Postosuchus,227.0,208.5,Arizona,4
+3498,837548,Leptosuchus,227.0,208.5,Arizona,4
+3499,837550,Leptosuchus,227.0,208.5,Arizona,4
+3500,837550,Leptosuchus,227.0,208.5,Arizona,4
+3501,837550,Leptosuchus,227.0,208.5,Arizona,4
+3502,837551,Acaenasuchus,227.0,208.5,Arizona,4
+3503,837552,Calyptosuchus,227.0,208.5,Arizona,4
+3504,837552,Calyptosuchus,227.0,208.5,Arizona,4
+3505,837556,Leptosuchus,227.0,208.5,Arizona,4
+3506,837558,Smilosuchus,227.0,208.5,Arizona,4
+3507,837559,Poposaurus,227.0,208.5,Arizona,4
+3508,837562,Calyptosuchus,227.0,208.5,Arizona,4
+3509,837563,Leptosuchus,227.0,208.5,Arizona,4
+3510,837565,Leptosuchus,227.0,208.5,Arizona,4
+3511,837593,Calyptosuchus,227.0,208.5,Arizona,4
+3512,837594,Leptosuchus,227.0,208.5,Arizona,4
+3513,837594,Leptosuchus,227.0,208.5,Arizona,4
+3514,837595,Leptosuchus,227.0,208.5,Arizona,4
+3515,837597,Poposaurus,227.0,208.5,Arizona,4
+3516,837598,Postosuchus,227.0,208.5,Arizona,4
+3517,837601,Calyptosuchus,227.0,208.5,Arizona,4
+3518,837637,Smilosuchus,227.0,208.5,Arizona,4
+3519,837639,Leptosuchus,227.0,208.5,Arizona,4
+3520,837642,Leptosuchus,227.0,208.5,Arizona,4
+3521,837653,Tawa,227.0,208.5,New Mexico,4
+3522,837654,Tawa,227.0,208.5,New Mexico,4
+3523,837654,Tawa,227.0,208.5,New Mexico,4
+3524,837654,Tawa,227.0,208.5,New Mexico,4
+3525,837654,Tawa,227.0,208.5,New Mexico,4
+3526,837654,Tawa,227.0,208.5,New Mexico,4
+3527,837654,Tawa,227.0,208.5,New Mexico,4
+3528,837654,Tawa,227.0,208.5,New Mexico,4
+3529,837654,Tawa,227.0,208.5,New Mexico,4
+3530,837655,Tawa,227.0,208.5,New Mexico,4
+3531,838199,Sphodrosaurus,227.0,208.5,Pennsylvania,4
+3532,838827,Leptosuchus,227.0,208.5,Arizona,4
+3533,838828,Smilosuchus,227.0,208.5,Arizona,4
+3534,838829,Leptosuchus,227.0,208.5,Arizona,4
+3535,838832,Leptosuchus,227.0,208.5,Arizona,4
+3536,838834,Leptosuchus,227.0,208.5,Arizona,4
+3537,838837,Calyptosuchus,227.0,208.5,Arizona,4
+3538,838839,Leptosuchus,227.0,208.5,Arizona,4
+3539,838841,Leptosuchus,227.0,208.5,Arizona,4
+3540,838864,Calyptosuchus,227.0,208.5,Arizona,4
+3541,838866,Leptosuchus,227.0,208.5,Arizona,4
+3542,838916,Leptosuchus,227.0,208.5,Arizona,4
+3543,838917,Calyptosuchus,227.0,208.5,Arizona,4
+3544,838919,Calyptosuchus,227.0,208.5,Arizona,4
+3545,838920,Leptosuchus,227.0,208.5,Arizona,4
+3546,838924,Calyptosuchus,227.0,208.5,Arizona,4
+3547,838925,Leptosuchus,227.0,208.5,Arizona,4
+3548,838927,Calyptosuchus,227.0,208.5,Arizona,4
+3549,838928,Calyptosuchus,227.0,208.5,Arizona,4
+3550,838930,Leptosuchus,227.0,208.5,Arizona,4
+3551,838932,Calyptosuchus,227.0,208.5,Arizona,4
+3552,838933,Leptosuchus,227.0,208.5,Arizona,4
+3553,838935,Leptosuchus,227.0,208.5,Arizona,4
+3554,838936,Calyptosuchus,227.0,208.5,Arizona,4
+3555,838937,Leptosuchus,227.0,208.5,Arizona,4
+3556,838955,Calyptosuchus,227.0,208.5,Arizona,4
+3557,838956,Leptosuchus,227.0,208.5,Arizona,4
+3558,838959,Calyptosuchus,227.0,208.5,Arizona,4
+3559,838960,Leptosuchus,227.0,208.5,Arizona,4
+3560,838961,Leptosuchus,227.0,208.5,Arizona,4
+3561,838963,Calyptosuchus,227.0,208.5,Arizona,4
+3562,838965,Leptosuchus,227.0,208.5,Arizona,4
+3563,838966,Smilosuchus,227.0,208.5,Arizona,4
+3564,838967,Leptosuchus,227.0,208.5,Arizona,4
+3565,838969,Leptosuchus,227.0,208.5,Arizona,4
+3566,838998,Leptosuchus,227.0,208.5,Arizona,4
+3567,838999,Calyptosuchus,227.0,208.5,Arizona,4
+3568,840615,Calyptosuchus,227.0,208.5,Arizona,4
+3569,840617,Leptosuchus,227.0,208.5,Arizona,4
+3570,840618,Calyptosuchus,227.0,208.5,Arizona,4
+3571,840619,Calyptosuchus,227.0,208.5,Arizona,4
+3572,840621,Calyptosuchus,227.0,208.5,Arizona,4
+3573,840623,Leptosuchus,227.0,208.5,Arizona,4
+3574,840678,Protome,227.0,208.5,Arizona,4
+3575,840722,Smilosuchus,227.0,208.5,Arizona,4
+3576,840723,Leptosuchus,227.0,208.5,Arizona,4
+3577,840767,Leptosuchus,227.0,208.5,Arizona,4
+3578,840768,Leptosuchus,227.0,208.5,Arizona,4
+3579,840769,Calyptosuchus,227.0,208.5,Arizona,4
+3580,841816,Leptosuchus,227.0,208.5,Arizona,4
+3581,841818,Desmatosuchus,227.0,208.5,Arizona,4
+3582,841820,Calyptosuchus,227.0,208.5,Arizona,4
+3583,841821,Poposaurus,227.0,208.5,Arizona,4
+3584,841822,Desmatosuchus,227.0,208.5,Arizona,4
+3585,841824,Leptosuchus,227.0,208.5,Arizona,4
+3586,841825,Calyptosuchus,227.0,208.5,Arizona,4
+3587,841827,Leptosuchus,227.0,208.5,Arizona,4
+3588,841828,Smilosuchus,227.0,208.5,Arizona,4
+3589,841831,Leptosuchus,227.0,208.5,Arizona,4
+3590,841834,Smilosuchus,227.0,208.5,Arizona,4
+3591,841836,Smilosuchus,227.0,208.5,Arizona,4
+3592,841838,Smilosuchus,227.0,208.5,Arizona,4
+3593,842029,Typothorax,227.0,208.5,Arizona,4
+3594,842030,Postosuchus,227.0,208.5,Arizona,4
+3595,842032,Typothorax,227.0,208.5,Arizona,4
+3596,842034,Typothorax,227.0,208.5,Arizona,4
+3597,842036,Shuvosaurus,227.0,208.5,Arizona,4
+3598,842037,Typothorax,227.0,208.5,Arizona,4
+3599,842039,Typothorax,227.0,208.5,Arizona,4
+3600,842043,Typothorax,227.0,208.5,Arizona,4
+3601,842073,Typothorax,227.0,208.5,Arizona,4
+3602,842077,Postosuchus,227.0,208.5,Arizona,4
+3603,842081,Postosuchus,227.0,208.5,Arizona,4
+3604,842083,Typothorax,227.0,208.5,Arizona,4
+3605,842084,Machaeroprosopus,227.0,208.5,Arizona,4
+3606,842099,Typothorax,227.0,208.5,Arizona,4
+3607,842101,Typothorax,227.0,208.5,Arizona,4
+3608,842103,Typothorax,227.0,208.5,Arizona,4
+3609,842104,Typothorax,227.0,208.5,Arizona,4
+3610,842107,Typothorax,227.0,208.5,Arizona,4
+3611,842110,Machaeroprosopus,227.0,208.5,Arizona,4
+3612,842113,Paratypothorax,227.0,208.5,Arizona,4
+3613,842114,Typothorax,227.0,208.5,Arizona,4
+3614,842115,Machaeroprosopus,227.0,208.5,Arizona,4
+3615,842116,Typothorax,227.0,208.5,Arizona,4
+3616,842117,Postosuchus,227.0,208.5,Arizona,4
+3617,842120,Typothorax,227.0,208.5,Arizona,4
+3618,842121,Paratypothorax,227.0,208.5,Arizona,4
+3619,842122,Postosuchus,227.0,208.5,Arizona,4
+3620,842123,Shuvosaurus,227.0,208.5,Arizona,4
+3621,842124,Machaeroprosopus,227.0,208.5,Arizona,4
+3622,842125,Machaeroprosopus,227.0,208.5,Arizona,4
+3623,842126,Paratypothorax,227.0,208.5,Arizona,4
+3624,842127,Leptosuchus,227.0,208.5,Arizona,4
+3625,842131,Typothorax,227.0,208.5,Arizona,4
+3626,842136,Typothorax,227.0,208.5,Arizona,4
+3627,842139,Typothorax,227.0,208.5,Arizona,4
+3628,842145,Paratypothorax,227.0,208.5,Arizona,4
+3629,842146,Typothorax,227.0,208.5,Arizona,4
+3630,842165,Typothorax,227.0,208.5,Arizona,4
+3631,842169,Typothorax,227.0,208.5,Arizona,4
+3632,842179,Typothorax,227.0,208.5,Arizona,4
+3633,842182,Typothorax,227.0,208.5,Arizona,4
+3634,842184,Paratypothorax,227.0,208.5,Arizona,4
+3635,842185,Typothorax,227.0,208.5,Arizona,4
+3636,842187,Typothorax,227.0,208.5,Arizona,4
+3637,842190,Typothorax,227.0,208.5,Arizona,4
+3638,842193,Paratypothorax,227.0,208.5,Arizona,4
+3639,842194,Typothorax,227.0,208.5,Arizona,4
+3640,842197,Machaeroprosopus,227.0,208.5,Arizona,4
+3641,842198,Machaeroprosopus,227.0,208.5,Arizona,4
+3642,842199,Paratypothorax,227.0,208.5,Arizona,4
+3643,842200,Typothorax,227.0,208.5,Arizona,4
+3644,842201,Machaeroprosopus,227.0,208.5,Arizona,4
+3645,842202,Typothorax,227.0,208.5,Arizona,4
+3646,842204,Typothorax,227.0,208.5,Arizona,4
+3647,842205,Machaeroprosopus,227.0,208.5,Arizona,4
+3648,842209,Typothorax,227.0,208.5,Arizona,4
+3649,842212,Postosuchus,227.0,208.5,Arizona,4
+3650,842223,Leptosuchus,227.0,208.5,Arizona,4
+3651,842224,Leptosuchus,227.0,208.5,Arizona,4
+3652,842228,Paratypothorax,227.0,208.5,Arizona,4
+3653,842229,Poposaurus,227.0,208.5,Arizona,4
+3654,842231,Pravusuchus,227.0,208.5,Arizona,4
+3655,842232,Leptosuchus,227.0,208.5,Arizona,4
+3656,842233,Stagonolepis,227.0,208.5,Arizona,4
+3657,842234,Paratypothorax,227.0,208.5,Arizona,4
+3658,842242,Typothorax,227.0,208.5,Arizona,4
+3659,842245,Rioarribasuchus,227.0,208.5,Arizona,4
+3660,842246,Scutarx,227.0,208.5,Arizona,4
+3661,842248,Paratypothorax,227.0,208.5,Arizona,4
+3662,842249,Paratypothorax,227.0,208.5,Arizona,4
+3663,842255,Revueltosaurus,227.0,208.5,Arizona,4
+3664,842256,Revueltosaurus,227.0,208.5,Arizona,4
+3665,842270,Typothorax,227.0,208.5,Arizona,4
+3666,842309,Machaeroprosopus,227.0,208.5,Arizona,4
+3667,842321,Uatchitodon,227.0,208.5,Arizona,4
+3668,842343,Typothorax,227.0,208.5,Arizona,4
+3669,842374,Adamanasuchus,227.0,208.5,Arizona,4
+3670,842665,Shuvosaurus,227.0,208.5,Arizona,4
+3671,842770,Smilosuchus,227.0,208.5,Arizona,4
+3672,842773,Calyptosuchus,227.0,208.5,Arizona,4
+3673,842775,Postosuchus,227.0,208.5,Arizona,4
+3674,842795,Smilosuchus,227.0,208.5,Arizona,4
+3675,842796,Leptosuchus,227.0,208.5,Arizona,4
+3676,842802,Leptosuchus,227.0,208.5,Arizona,4
+3677,842803,Leptosuchus,227.0,208.5,Arizona,4
+3678,842803,Leptosuchus,227.0,208.5,Arizona,4
+3679,842804,Hesperosuchus,227.0,208.5,Arizona,4
+3680,842807,Machaeroprosopus,227.0,208.5,Arizona,4
+3681,842807,Machaeroprosopus,227.0,208.5,Arizona,4
+3682,842807,Machaeroprosopus,227.0,208.5,Arizona,4
+3683,842874,Angistorhinus,227.0,208.5,Arizona,4
+3684,842875,Calyptosuchus,227.0,208.5,New Mexico,4
+3685,842947,Machaeroprosopus,227.0,208.5,Arizona,4
+3686,842957,Desmatosuchus,227.0,208.5,New Mexico,4
+3687,842967,Rutiodon,227.0,208.5,New Mexico,4
+3688,842973,Stagonolepis,227.0,208.5,New Mexico,4
+3689,842984,Typothorax,227.0,208.5,New Mexico,4
+3690,842985,Typothorax,227.0,208.5,New Mexico,4
+3691,842986,Typothorax,227.0,208.5,New Mexico,4
+3692,842987,Typothorax,227.0,208.5,New Mexico,4
+3693,842988,Typothorax,227.0,208.5,New Mexico,4
+3694,842989,Typothorax,227.0,208.5,New Mexico,4
+3695,843000,Typothorax,227.0,208.5,New Mexico,4
+3696,843001,Typothorax,227.0,208.5,New Mexico,4
+3697,843002,Typothorax,227.0,208.5,New Mexico,4
+3698,843003,Typothorax,227.0,208.5,New Mexico,4
+3699,843004,Typothorax,227.0,208.5,New Mexico,4
+3700,843005,Typothorax,227.0,208.5,New Mexico,4
+3701,843006,Typothorax,227.0,208.5,New Mexico,4
+3702,843034,Shuvosaurus,227.0,208.5,New Mexico,4
+3703,843041,Typothorax,227.0,208.5,New Mexico,4
+3704,843062,Rutiodon,227.0,208.5,New Mexico,4
+3705,843067,Paratypothorax,227.0,208.5,New Mexico,4
+3706,843068,Desmatosuchus,227.0,208.5,New Mexico,4
+3707,843069,Typothorax,227.0,208.5,New Mexico,4
+3708,843073,Postosuchus,227.0,208.5,New Mexico,4
+3709,843074,Paratypothorax,227.0,208.5,New Mexico,4
+3710,843102,Desmatosuchus,227.0,208.5,New Mexico,4
+3711,843103,Calyptosuchus,227.0,208.5,New Mexico,4
+3712,843116,Angistorhinus,227.0,208.5,New Mexico,4
+3713,843121,Rutiodon,227.0,208.5,New Mexico,4
+3714,843132,Machaeroprosopus,227.0,208.5,New Mexico,4
+3715,843152,Redondasuchus,227.0,208.5,New Mexico,4
+3716,843204,Vancleavea,227.0,208.5,New Mexico,4
+3717,843206,Redondasuchus,227.0,208.5,New Mexico,4
+3718,843218,Vancleavea,227.0,208.5,New Mexico,4
+3719,843392,Machaeroprosopus,227.0,208.5,New Mexico,4
+3720,843393,Apachesuchus,227.0,208.5,New Mexico,4
+3721,843424,Machaeroprosopus,227.0,208.5,New Mexico,4
+3722,843442,Dolabrosaurus,227.0,208.5,New Mexico,4
+3723,845884,Rutiodon,227.0,208.5,New Mexico,4
+3724,845912,Typothorax,227.0,208.5,New Mexico,4
+3725,845919,Machaeroprosopus,227.0,208.5,New Mexico,4
+3726,846145,Typothorax,227.0,208.5,New Mexico,4
+3727,846167,Typothorax,227.0,208.5,New Mexico,4
+3728,846168,Typothorax,227.0,208.5,New Mexico,4
+3729,846168,Typothorax,227.0,208.5,New Mexico,4
+3730,846168,Typothorax,227.0,208.5,New Mexico,4
+3731,846306,Postosuchus,227.0,208.5,New Mexico,4
+3732,846308,Caseosaurus,227.0,208.5,New Mexico,4
+3733,847959,Leptosuchus,227.0,208.5,Arizona,4
+3734,850008,Krzyzanowskisaurus,227.0,208.5,Arizona,4
+3735,850012,Trilophosaurus,227.0,208.5,Texas,4
+3736,850016,Calyptosuchus,227.0,208.5,Texas,4
+3737,850048,Desmatosuchus,227.0,208.5,Arizona,4
+3738,853407,Machaeroprosopus,227.0,208.5,New Mexico,4
+3739,853411,Shuvosaurus,227.0,208.5,New Mexico,4
+3745,897122,Uatchitodon,227.0,208.5,North Carolina,4
+3746,897129,Revueltosaurus,227.0,208.5,North Carolina,4
+3747,897134,Revueltosaurus,227.0,208.5,North Carolina,4
+3749,900174,Ichthyosaurus,227.0,208.5,Nevada,4
+3750,900219,Ichthyosaurus,227.0,208.5,Nevada,4
+3781,924743,Rutiodon,227.0,208.5,Pennsylvania,4
+3800,934039,Rutiodon,227.0,208.5,North Carolina,4
+3801,934229,Smilosuchus,227.0,208.5,Arizona,4
+3802,939490,Poposaurus,227.0,208.5,Utah,4
+3807,1079734,Crosbysaurus,227.0,208.5,North Carolina,4
+3808,1079735,Revueltosaurus,227.0,208.5,North Carolina,4
+3809,1083465,Rugarhynchos,227.0,208.5,New Mexico,4
+3810,1084250,Tecovasuchus,227.0,208.5,Arizona,4
+3811,1084251,Tecovasuchus,227.0,208.5,Arizona,4
+3812,1084252,Tecovasuchus,227.0,208.5,New Mexico,4
+3813,1084253,Tecovasuchus,227.0,208.5,Arizona,4
+3814,1084254,Tecovasuchus,227.0,208.5,Arizona,4
+3834,1116574,Poposaurus,227.0,208.5,Arizona,4
+3835,1116575,Shuvosaurus,227.0,208.5,Arizona,4
+3836,1116576,Postosuchus,227.0,208.5,Arizona,4
+3837,1116584,Rutiodon,227.0,208.5,Arizona,4
+3838,1116585,Hesperosuchus,227.0,208.5,Arizona,4
+3845,1237442,Rutiodon,227.0,208.5,Pennsylvania,4
+3847,1330178,Calyptosuchus,227.0,208.5,New Mexico,4
+3848,1330181,Typothorax,227.0,208.5,New Mexico,4
+3849,1332865,Typothorax,227.0,208.5,New Mexico,4
+3851,1347726,Stenomyti,227.0,208.5,Colorado,4
+3852,1347767,Vivaron,227.0,208.5,New Mexico,4
+3853,1347768,Vivaron,227.0,208.5,New Mexico,4
+3859,1347835,Scutarx,227.0,208.5,Arizona,4
+3860,1347836,Scutarx,227.0,208.5,Arizona,4
+3861,1356672,Coelophysis,227.0,208.5,New Mexico,4
+3862,1371708,Tanytrachelos,227.0,208.5,New Jersey,4
+3863,1371944,Tanytrachelos,227.0,208.5,New Jersey,4
+3864,1371949,Tanytrachelos,227.0,208.5,New Jersey,4
+3865,1394218,Smilosuchus,227.0,208.5,Arizona,4
+3866,1400945,Heterodontichnites,227.0,208.5,New Mexico,4
+3867,1406956,Coahomasuchus,227.0,208.5,Texas,4
+3870,1415672,Machaeroprosopus,227.0,208.5,Arizona,4
+3871,1417820,Drepanosaurus,227.0,208.5,New Mexico,4
+3872,1417821,Dromomeron,227.0,208.5,Texas,4
+3873,1417822,Dromomeron,227.0,208.5,Texas,4
+3874,1417823,Dromomeron,227.0,208.5,Texas,4
+3875,1417826,Dromomeron,227.0,208.5,Texas,4
+3876,1417827,Dromomeron,227.0,208.5,Texas,4
+3877,1418638,Machaeroprosopus,227.0,208.5,New Mexico,4
+3878,1418639,Machaeroprosopus,227.0,208.5,Texas,4
+3879,1418643,Postosuchus,227.0,208.5,Texas,4
+3880,1418644,Shuvosaurus,227.0,208.5,Texas,4
+3881,1418646,Machaeroprosopus,227.0,208.5,New Mexico,4
+3882,1418647,Machaeroprosopus,227.0,208.5,New Mexico,4
+3883,1419050,Lepidus,227.0,208.5,Texas,4
+3884,1419097,Palacrodon,227.0,208.5,Arizona,4
+3885,1419098,Palacrodon,227.0,208.5,Arizona,4
+3886,1419529,Spinosuchus,227.0,208.5,Texas,4
+3891,1439335,Soumyasaurus,227.0,208.5,Texas,4
+3894,1472197,Revueltosaurus,227.0,208.5,Arizona,4
+3896,1487831,Ancistronychus,227.0,208.5,Arizona,4
+3897,1495796,Gunakadeit,227.0,208.5,Alaska,4
+3900,1545883,Trilophosaurus,227.0,208.5,Arizona,4
+3901,1546409,Acaenasuchus,227.0,208.5,Arizona,4
+3902,1546421,Skybalonyx,227.0,208.5,Arizona,4
+3903,1546483,Acaenasuchus,227.0,208.5,Arizona,4
+3904,1546783,Typothorax,227.0,208.5,Arizona,4
+3905,1546807,Malerisaurus,227.0,208.5,Texas,4
+3906,1546809,Trilophosaurus,227.0,208.5,Texas,4
+3907,1546810,Trilophosaurus,227.0,208.5,Texas,4
+3908,1546811,Trilophosaurus,227.0,208.5,Texas,4
+3909,1546812,Parasuchus,227.0,208.5,Texas,4
+3910,1546814,Stagonolepis,227.0,208.5,Texas,4
+3911,1546818,Revueltosaurus,227.0,208.5,Texas,4
+3912,1546822,Dromomeron,227.0,208.5,Texas,4
+3913,1546823,Doswellia,227.0,208.5,Texas,4
+3914,1546824,Parasuchus,227.0,208.5,Texas,4
+3915,1546825,Wannia,227.0,208.5,Texas,4
+3916,1546911,Typothorax,227.0,208.5,Texas,4
+3917,1546915,Typothorax,227.0,208.5,Texas,4
+3918,1546918,Machaeroprosopus,227.0,208.5,Texas,4
+3919,1546937,Scutarx,227.0,208.5,Texas,4
+3920,1546940,Malerisaurus,227.0,208.5,Texas,4
+3921,1546943,Rioarribasuchus,227.0,208.5,Texas,4
+3922,1546947,Machaeroprosopus,227.0,208.5,Texas,4
+3923,1546948,Typothorax,227.0,208.5,Texas,4
+3924,1546951,Typothorax,227.0,208.5,Texas,4
+3925,1546968,Wannia,227.0,208.5,Texas,4
+3930,1558115,Grallator,227.0,208.5,North Carolina,4
+3932,1565715,Syntomiprosopus,227.0,208.5,Arizona,4
+3933,1574196,Nicrosaurus,227.0,208.5,New Mexico,4
+3936,1578928,Hesperosuchus,227.0,208.5,Arizona,4
+3937,1578941,Vancleavea,227.0,208.5,Arizona,4
+3938,1579639,Typothorax,227.0,208.5,New Mexico,4
+3939,1579640,Vancleavea,227.0,208.5,New Mexico,4
+3940,1579641,Chindesaurus,227.0,208.5,New Mexico,4
+3941,1580066,Revueltosaurus,227.0,208.5,New Mexico,4
+3942,1580212,Calyptosuchus,227.0,208.5,Texas,4
+3943,1581446,Doswellia,227.0,208.5,Arizona,4
+3944,1581447,Desmatosuchus,227.0,208.5,Arizona,4
+3945,1581449,Acaenasuchus,227.0,208.5,Arizona,4
+3946,1581452,Vancleavea,227.0,208.5,Arizona,4
+3947,1581453,Crosbysaurus,227.0,208.5,Arizona,4
+3986,1589317,Paratypothorax,227.0,208.5,New Mexico,4
+3987,1589319,Vancleavea,227.0,208.5,New Mexico,4
+3993,1611321,Rutiodon,227.0,208.5,North Carolina,4
+3994,1611324,Apatopus,227.0,208.5,North Carolina,4
+3995,1611391,Tanytrachelos,227.0,208.5,New Jersey,4
+3996,1611396,Apatopus,227.0,208.5,New Jersey,4
+4001,1659629,Unguinychus,227.0,208.5,New Mexico,4
+4002,1660033,Garzapelta,227.0,208.5,Texas,4
+4126,N534,Puercosuchus,227.0,208.5,Arizona,4
+4128,832057,Typothorax,227.0,213.2,New Mexico,4
+4129,N537,Sumidadectes,283.5,274.4,Texas,4
+4130,221283,Captorhinus,283.5,274.4,Texas,4
+4131,221283,Captorhinus,283.5,274.4,Texas,4
+4132,290383,Captorhinoides,283.5,274.4,Texas,4
+4133,296008,Labidosaurus,283.5,274.4,Texas,4
+4134,296038,Captorhinus,283.5,274.4,Texas,4
+4135,296039,Captorhinus,283.5,274.4,Texas,4
+4136,296040,Captorhinus,283.5,274.4,Texas,4
+4137,296041,Captorhinus,283.5,274.4,Texas,4
+4138,296041,Captorhinus,283.5,274.4,Texas,4
+4139,296042,Labidosaurus,283.5,274.4,Texas,4
+4140,296043,Labidosaurus,283.5,274.4,Texas,4
+4141,296060,Captorhinus,283.5,274.4,Texas,4
+4142,296063,Captorhinus,283.5,274.4,Texas,4
+4143,296064,Labidosaurus,283.5,274.4,Texas,4
+4144,296073,Captorhinus,283.5,274.4,Texas,4
+4145,296074,Labidosaurus,283.5,274.4,Texas,4
+4146,296099,Bolosaurus,283.5,274.4,Texas,4
+4147,296100,Araeoscelis,283.5,274.4,Texas,4
+4148,296100,Araeoscelis,283.5,274.4,Texas,4
+4149,296100,Araeoscelis,283.5,274.4,Texas,4
+4150,296100,Araeoscelis,283.5,274.4,Texas,4
+4151,296100,Araeoscelis,283.5,274.4,Texas,4
+4152,296107,Captorhinus,283.5,274.4,Texas,4
+4153,296108,Labidosaurus,283.5,274.4,Texas,4
+4154,296109,Labidosaurus,283.5,274.4,Texas,4
+4155,296117,Captorhinus,283.5,274.4,Texas,4
+4156,367508,Captorhinus,283.5,274.4,Texas,4
+4157,631445,Captorhinus,283.5,274.4,Oklahoma,4
+4158,631446,Labidosaurus,283.5,274.4,Oklahoma,4
+4159,631447,Acleistorhinus,283.5,274.4,Oklahoma,4
+4160,739839,Captorhinikos,283.5,274.4,Oklahoma,4
+4161,739840,Captorhinikos,283.5,274.4,Oklahoma,4
+4162,739840,Captorhinikos,283.5,274.4,Oklahoma,4
+4163,740384,Labidosaurikos,283.5,274.4,Oklahoma,4
+4164,748676,Labidosaurikos,283.5,274.4,Texas,4
+4165,748677,Captorhinikos,283.5,274.4,Texas,4
+4166,748678,Captorhinikos,283.5,274.4,Texas,4
+4167,788176,Labidosaurikos,283.5,274.4,Texas,4
+4168,788176,Labidosaurikos,283.5,274.4,Texas,4
+4169,789396,Captorhinus,283.5,274.4,Texas,4
+4170,789397,Labidosaurus,283.5,274.4,Texas,4
+4171,789398,Captorhinus,283.5,274.4,Texas,4
+4172,789398,Captorhinus,283.5,274.4,Texas,4
+4173,789746,Captorhinus,283.5,274.4,Texas,4
+4174,790356,Captorhinus,283.5,274.4,Texas,4
+4175,790366,Labidosaurus,283.5,274.4,Texas,4
+4176,790369,Captorhinus,283.5,274.4,Texas,4
+4177,790388,Labidosaurikos,283.5,274.4,Texas,4
+4178,790388,Labidosaurikos,283.5,274.4,Texas,4
+4179,790389,Labidosaurikos,283.5,274.4,Texas,4
+4180,790482,Captorhinikos,283.5,274.4,Texas,4
+4181,790483,Captorhinikos,283.5,274.4,Texas,4
+4182,800077,Captorhinikos,283.5,274.4,Oklahoma,4
+4183,800077,Captorhinikos,283.5,274.4,Oklahoma,4
+4184,800077,Captorhinikos,283.5,274.4,Oklahoma,4
+4185,800078,Captorhinikos,283.5,274.4,Oklahoma,4
+4186,806953,Labidosaurus,283.5,274.4,Texas,4
+4187,1317922,Labidosaurikos,283.5,274.4,Texas,4
+4188,1317923,Captorhinus,283.5,274.4,Texas,4
+4189,1317925,Captorhinikos,283.5,274.4,Texas,4
+4190,1317975,Captorhinikos,283.5,274.4,Texas,4
+4191,1317976,Captorhinus,283.5,274.4,Texas,4
+4192,1317988,Labidosaurikos,283.5,274.4,Texas,4
+4193,1328473,Captorhinus,283.5,274.4,Texas,4
+4194,1328474,Captorhinikos,283.5,274.4,Texas,4
+4195,1328475,Captorhinoides,283.5,274.4,Texas,4
+4196,1328476,Labidosaurikos,283.5,274.4,Texas,4
+4197,1328484,Labidosaurikos,283.5,274.4,Texas,4
+4198,1328485,Captorhinus,283.5,274.4,Texas,4
+4199,1328486,Captorhinikos,283.5,274.4,Texas,4
+4200,1328487,Labidosaurikos,283.5,274.4,Texas,4
+4201,1328488,Labidosaurus,283.5,274.4,Texas,4
+4203,900302,Ichthyosaurus,227.0,216.7,Nevada,4
+4204,908629,Shonisaurus,227.0,216.7,Nevada,4
+4205,1419479,Shonisaurus,227.0,216.7,Nevada,4
+4206,1419480,Shonisaurus,227.0,216.7,Nevada,4
+4211,361674,Omphalosaurus,246.7,237.0,Nevada,4
+4212,361674,Omphalosaurus,246.7,237.0,Nevada,4
+4215,467069,Cymbospondylus,246.7,237.0,Nevada,4
+4216,467070,Cymbospondylus,246.7,237.0,Nevada,4
+4217,467071,Cymbospondylus,246.7,237.0,Nevada,4
+4218,467073,Phalarodon,246.7,237.0,Nevada,4
+4241,908660,Mixosaurus,246.7,237.0,Nevada,4
+4242,908661,Mixosaurus,246.7,237.0,Nevada,4
+4247,934002,Cymbospondylus,246.7,237.0,Nevada,4
+4298,1639892,Anisodontosaurus,246.7,237.0,Arizona,4
+4299,1639894,Anisodontosaurus,246.7,237.0,Arizona,4
+4355,406854,Euscolosuchus,237.0,227.0,Virginia,4
+4356,406855,Uatchitodon,237.0,227.0,Virginia,4
+4357,406858,Gomphiosauridion,237.0,227.0,Virginia,4
+4358,406859,Xenodiphyodon,237.0,227.0,Virginia,4
+4359,460787,Parasuchus,237.0,227.0,Texas,4
+4363,468647,Lucasuchus,237.0,227.0,North Carolina,4
+4386,640054,Doswellia,237.0,227.0,Virginia,4
+4387,640054,Doswellia,237.0,227.0,Virginia,4
+4388,640068,Doswellia,237.0,227.0,Virginia,4
+4389,640075,Doswellia,237.0,227.0,Virginia,4
+4390,640077,Doswellia,237.0,227.0,Virginia,4
+4391,640084,Doswellia,237.0,227.0,Virginia,4
+4392,640084,Doswellia,237.0,227.0,Virginia,4
+4393,690311,Revueltosaurus,237.0,227.0,North Carolina,4
+4408,738862,Poposaurus,237.0,227.0,Texas,4
+4414,806122,Doswellia,237.0,227.0,Virginia,4
+4417,829103,Heptasuchus,237.0,227.0,Wyoming,4
+4418,829424,Parasuchus,237.0,227.0,Wyoming,4
+4419,829485,Hyperodapedon,237.0,227.0,Wyoming,4
+4420,829496,Poposaurus,237.0,227.0,Wyoming,4
+4421,829496,Poposaurus,237.0,227.0,Wyoming,4
+4422,829679,Angistorhinus,237.0,227.0,Wyoming,4
+4423,829680,Angistorhinus,237.0,227.0,Wyoming,4
+4424,829816,Angistorhinus,237.0,227.0,Wyoming,4
+4425,829989,Dolichobrachium,237.0,227.0,Wyoming,4
+4426,829996,Poposaurus,237.0,227.0,Wyoming,4
+4428,842931,Lucasuchus,237.0,227.0,North Carolina,4
+4458,933978,Angistorhinus,237.0,227.0,Wyoming,4
+4459,933979,Angistorhinus,237.0,227.0,Wyoming,4
+4460,933983,Parasuchus,237.0,227.0,Wyoming,4
+4461,933984,Angistorhinus,237.0,227.0,Wyoming,4
+4462,933985,Angistorhinus,237.0,227.0,Wyoming,4
+4463,933990,Desmatosuchus,237.0,227.0,Wyoming,4
+4464,934045,Rutiodon,237.0,227.0,North Carolina,4
+4491,1280502,Carnufex,237.0,227.0,North Carolina,4
+4499,1347712,Gorgetosuchus,237.0,227.0,North Carolina,4
+4500,1347713,Lucasuchus,237.0,227.0,North Carolina,4
+4501,1347716,Coahomasuchus,237.0,227.0,North Carolina,4
+4512,1400946,Heterodontichnites,237.0,227.0,New Mexico,4
+4517,1418480,Trilophosaurus,237.0,227.0,Texas,4
+4518,1418483,Spinosuchus,237.0,227.0,Texas,4
+4519,1418484,Vancleavea,237.0,227.0,Texas,4
+4520,1418485,Postosuchus,237.0,227.0,Texas,4
+4521,1418487,Smilosuchus,237.0,227.0,Texas,4
+4522,1418489,Calyptosuchus,237.0,227.0,Texas,4
+4543,1550422,Vinitasaura,237.0,227.0,Virginia,4
+4548,1580068,Krzyzanowskisaurus,237.0,227.0,New Mexico,4
+4549,1580069,Krzyzanowskisaurus,237.0,227.0,New Mexico,4
+4565,1657016,Idiosaura,237.0,227.0,Virginia,4
+4571,N533,Beesiiwo,237.0,227.0,Wyoming,4
+4574,N544,Ahvaytum,237.0,227.0,Fremont,4
+4615,467312,Protosuchus,208.5,199.5,Arizona,4
+4617,513907,Syntarsus,208.5,199.5,Arizona,4
+4628,1091860,Protosuchus,208.5,199.5,Arizona,4
+4629,1092046,Protosuchus,208.5,199.5,Arizona,4
+4630,1092047,Batrachopus,208.5,199.5,Arizona,4
+4631,1092054,Protosuchus,208.5,199.5,Arizona,4
+4632,346294,Bolosaurus,298.9,290.1,Texas,4
+4633,287287,Rothianiscus,274.4,264.28,Oklahoma,4
+4634,287715,Rothianiscus,274.4,264.28,Oklahoma,4
+4635,287715,Rothianiscus,274.4,264.28,Oklahoma,4
+4636,287715,Rothianiscus,274.4,264.28,Oklahoma,4
+4637,287747,Rothianiscus,274.4,264.28,Oklahoma,4
+4638,287764,Rothianiscus,274.4,264.28,Oklahoma,4
+4639,287827,Rothianiscus,274.4,264.28,Oklahoma,4
+4640,287904,Rothianiscus,274.4,264.28,Oklahoma,4
+4641,287929,Rothianiscus,274.4,264.28,Oklahoma,4
+4642,289331,Rothianiscus,274.4,264.28,Oklahoma,4
+4643,289337,Rothianiscus,274.4,264.28,Oklahoma,4
+4649,792722,Macroleter,274.4,264.28,Oklahoma,4
+5066,N538,Kahneria,274.4,266.9,Texas,4
+5108,483867,Coelophysis,208.5,201.4,New Mexico,4
+5109,483868,Machaeroprosopus,208.5,201.4,New Mexico,4
+5155,521673,Vancleavea,208.5,201.4,New Mexico,4
+5156,521673,Vancleavea,208.5,201.4,New Mexico,4
+5157,521673,Vancleavea,208.5,201.4,New Mexico,4
+5158,521674,Whitakersaurus,208.5,201.4,New Mexico,4
+5159,521679,Hesperosuchus,208.5,201.4,New Mexico,4
+5160,521679,Hesperosuchus,208.5,201.4,New Mexico,4
+5169,534971,Drepanosaurus,208.5,201.4,New Mexico,4
+5172,560165,Effigia,208.5,201.4,New Mexico,4
+5173,560165,Effigia,208.5,201.4,New Mexico,4
+5174,560165,Effigia,208.5,201.4,New Mexico,4
+5175,560165,Effigia,208.5,201.4,New Mexico,4
+5181,780623,Typothorax,208.5,201.4,Arizona,4
+5182,780624,Machaeroprosopus,208.5,201.4,Arizona,4
+5183,780625,Machaeroprosopus,208.5,201.4,Arizona,4
+5184,780630,Machaeroprosopus,208.5,201.4,Arizona,4
+5185,780633,Typothorax,208.5,201.4,Arizona,4
+5186,780634,Machaeroprosopus,208.5,201.4,Arizona,4
+5187,780635,Machaeroprosopus,208.5,201.4,Arizona,4
+5188,780638,Typothorax,208.5,201.4,Arizona,4
+5189,780639,Machaeroprosopus,208.5,201.4,Arizona,4
+5190,780640,Machaeroprosopus,208.5,201.4,Arizona,4
+5191,780641,Shuvosaurus,208.5,201.4,Arizona,4
+5192,780642,Typothorax,208.5,201.4,Arizona,4
+5193,780643,Machaeroprosopus,208.5,201.4,Arizona,4
+5194,780644,Machaeroprosopus,208.5,201.4,Arizona,4
+5195,780648,Postosuchus,208.5,201.4,Arizona,4
+5196,780649,Shuvosaurus,208.5,201.4,Arizona,4
+5197,780650,Typothorax,208.5,201.4,Arizona,4
+5198,780651,Machaeroprosopus,208.5,201.4,Arizona,4
+5199,780652,Machaeroprosopus,208.5,201.4,Arizona,4
+5200,780655,Postosuchus,208.5,201.4,Arizona,4
+5201,780656,Shuvosaurus,208.5,201.4,Arizona,4
+5202,780657,Typothorax,208.5,201.4,Arizona,4
+5203,780658,Machaeroprosopus,208.5,201.4,Arizona,4
+5204,780659,Machaeroprosopus,208.5,201.4,Arizona,4
+5205,811782,Hypsognathus,208.5,201.4,Connecticut,4
+5210,837010,Vancleavea,208.5,201.4,Arizona,4
+5211,842670,Shuvosaurus,208.5,201.4,Arizona,4
+5212,842671,Shuvosaurus,208.5,201.4,Arizona,4
+5213,842717,Postosuchus,208.5,201.4,Arizona,4
+5214,842718,Poposaurus,208.5,201.4,Arizona,4
+5216,849947,Eucoelophysis,208.5,201.4,New Mexico,4
+5218,935231,Daemonosaurus,208.5,201.4,New Mexico,4
+5223,1091846,Machaeroprosopus,208.5,201.4,Utah,4
+5269,1406773,Avicranium,208.5,201.4,New Mexico,4
+5275,1418648,Machaeroprosopus,208.5,201.4,New Mexico,4
+5279,1427995,Typothorax,208.5,201.4,Arizona,4
+5280,1427999,Dromomeron,208.5,201.4,Arizona,4
+5298,147523,Araeoscelis,290.1,283.5,Texas,4
+5299,147523,Araeoscelis,290.1,283.5,Texas,4
+5300,295924,Bolosaurus,290.1,283.5,Texas,4
+5301,295924,Bolosaurus,290.1,283.5,Texas,4
+5302,295924,Bolosaurus,290.1,283.5,Texas,4
+5303,295924,Bolosaurus,290.1,283.5,Texas,4
+5304,295924,Bolosaurus,290.1,283.5,Texas,4
+5305,295924,Bolosaurus,290.1,283.5,Texas,4
+5306,295924,Bolosaurus,290.1,283.5,Texas,4
+5307,295925,Bolosaurus,290.1,283.5,Texas,4
+5308,295928,Bolosaurus,290.1,283.5,Texas,4
+5313,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5314,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5315,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5316,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5317,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5318,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5319,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5320,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5321,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5322,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5323,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5324,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5325,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5326,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5327,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5328,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5329,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5330,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5331,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5332,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5333,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5334,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5335,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5336,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5337,629473,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5338,629476,Colobomycter,290.1,283.5,Oklahoma,4
+5339,629476,Colobomycter,290.1,283.5,Oklahoma,4
+5340,629476,Colobomycter,290.1,283.5,Oklahoma,4
+5341,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5342,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5343,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5344,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5345,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5346,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5347,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5348,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5349,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5350,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5351,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5352,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5353,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5354,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5355,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5356,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5357,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5358,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5359,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5360,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5361,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5362,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5363,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5364,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5365,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5366,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5367,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5368,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5369,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5370,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5371,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5372,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5373,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5374,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5375,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5376,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5377,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5378,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5379,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5380,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5381,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5382,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5383,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5384,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5385,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5386,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5387,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5388,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5389,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5390,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5391,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5392,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5393,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5394,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5395,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5396,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5397,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5398,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5399,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5400,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5401,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5402,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5403,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5404,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5405,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5406,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5407,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5408,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5409,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5410,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5411,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5412,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5413,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5414,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5415,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5416,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5417,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5418,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5419,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5420,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5421,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5422,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5423,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5424,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5425,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5426,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5427,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5428,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5429,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5430,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5431,629477,Captorhinus,290.1,283.5,Oklahoma,4
+5432,629480,Baeotherates,290.1,283.5,Oklahoma,4
+5433,629481,Bolosaurus,290.1,283.5,Oklahoma,4
+5434,629482,Delorhynchus,290.1,283.5,Oklahoma,4
+5435,739044,Protocaptorhinus,290.1,283.5,Oklahoma,4
+5436,753830,Captorhinus,290.1,283.5,Texas,4
+5437,785851,Protocaptorhinus,290.1,283.5,Texas,4
+5438,787464,Captorhinus,290.1,283.5,Oklahoma,4
+5439,787989,Protocaptorhinus,290.1,283.5,Texas,4
+5449,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5450,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5451,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5452,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5453,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5454,789104,Captorhinus,290.1,283.5,Oklahoma,4
+5598,853693,Captorhinus,290.1,283.5,Oklahoma,4
+5599,990494,Microleter,290.1,283.5,Oklahoma,4
+5600,1071216,Feeserpeton,290.1,283.5,Oklahoma,4
+5601,1098337,Orovenator,290.1,283.5,Oklahoma,4
+5602,1098337,Orovenator,290.1,283.5,Oklahoma,4
+5603,1285988,Delorhynchus,290.1,283.5,Oklahoma,4
+5604,1286005,Abyssomedon,290.1,283.5,Oklahoma,4
+5605,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5606,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5607,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5608,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5609,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5610,1310220,Opisthodontosaurus,290.1,283.5,Oklahoma,4
+5611,1335995,Colobomycter,290.1,283.5,Oklahoma,4
+5612,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5613,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5614,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5615,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5616,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5617,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5618,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5619,1406771,Labidosauriscus,290.1,283.5,Oklahoma,4
+5621,1429166,Metamosaurus,290.1,283.5,Texas,4
+5622,1545288,Captorhinus,290.1,283.5,Oklahoma,4
+5623,1564218,Captorhinus,290.1,283.5,Oklahoma,4
+5636,1587803,Delorhynchus,290.1,283.5,Oklahoma,4
+5664,1561478,Micromenodon,233.4,227.0,Virginia,4
+5670,788570,Protorothyris,298.9,293.52,West Virginia,4
+5671,788570,Protorothyris,298.9,293.52,West Virginia,4
+5672,788570,Protorothyris,298.9,293.52,West Virginia,4
+5673,788570,Protorothyris,298.9,293.52,West Virginia,4
+5674,788570,Protorothyris,298.9,293.52,West Virginia,4
+5675,788570,Protorothyris,298.9,293.52,West Virginia,4
+5676,788570,Protorothyris,298.9,293.52,West Virginia,4
+5677,790486,Protorothyris,298.9,293.52,Texas,4
+5678,790486,Protorothyris,298.9,293.52,Texas,4
+5679,790486,Protorothyris,298.9,293.52,Texas,4
+5680,790486,Protorothyris,298.9,293.52,Texas,4
+5681,790486,Protorothyris,298.9,293.52,Texas,4
+5682,790487,Romeria,298.9,293.52,Texas,4
+6064,1417529,Cymbospondylus,246.7,242.0,Nevada,4
+6090,1658965,Benggwigwishingasuchus,246.7,242.0,Nevada,4
+6502,821002,Cymbospondylus,251.2,246.7,Idaho,4
+6598,830904,Stegomus,216.7,213.2,Connecticut,4
+6755,368798,Arizonasaurus,246.7,244.7,Arizona,4
+6756,368799,Anisodontosaurus,246.7,244.7,Arizona,4
+6757,493537,Ammorhynchus,246.7,244.7,Arizona,4
+6758,493538,Ammorhynchus,246.7,244.7,Arizona,4
+6759,493539,Ammorhynchus,246.7,244.7,Arizona,4
+6760,493540,Ammorhynchus,246.7,244.7,Arizona,4
+6763,855747,Arizonasaurus,246.7,244.7,Arizona,4
+6764,855754,Arizonasaurus,246.7,244.7,Arizona,4
+6765,855755,Arizonasaurus,246.7,244.7,Arizona,4
+6766,855796,Anisodontosaurus,246.7,244.7,Arizona,4
+6767,855799,Arizonasaurus,246.7,244.7,Arizona,4
+6775,1080116,Arizonasaurus,246.7,244.7,New Mexico,4
+6852,477082,Coelophysis,201.4,199.5,Connecticut,4
+6934,1209934,Megapnosaurus,201.4,199.5,Utah,4
+6967,884125,Augustasaurus,246.7,242.0,Nevada,4
+6969,906287,Cymbospondylus,246.7,242.0,Nevada,4
+6970,909076,Mixosaurus,246.7,242.0,Nevada,4
+6981,1186493,Cymbospondylus,246.7,242.0,Nevada,4
+6988,1419160,Phalarodon,246.7,242.0,Nevada,4
+6995,1504406,Cymbospondylus,246.7,242.0,Nevada,4
+6998,792533,Corosaurus,251.2,246.7,Wyoming,4
+7006,1094776,Corosaurus,251.2,246.7,Wyoming,4
+7007,1094777,Corosaurus,251.2,246.7,Wyoming,4
+7008,1094778,Corosaurus,251.2,246.7,Wyoming,4
+7018,1412645,Utatsusaurus,251.2,246.7,Nevada,4
+7031,1419019,Omphalosaurus,251.2,246.7,Nevada,4
+7062,1095497,Thalattoarchon,246.7,243.8,Nevada,4
+5593,824822,Mesosaurus,290.1,283.5,Cerro Largo,1
+5594,824823,Mesosaurus,290.1,283.5,Cerro Largo,1
+5595,824825,Mesosaurus,290.1,283.5,Cerro Largo,1
+5596,824826,Mesosaurus,290.1,283.5,Cerro Largo,1
+6862,534508,Laquintasaura,201.4,199.5,Táchira,1
+6937,1306174,Tachiraptor,201.4,199.5,Táchira,1
+3165,385301,Melanorosaurus,227.0,208.5,Eastern Cape,1
+3166,385607,Plateosauravus,227.0,208.5,Eastern Cape,1
+3167,385607,Plateosauravus,227.0,208.5,Eastern Cape,1
+3168,385607,Plateosauravus,227.0,208.5,Eastern Cape,1
+3169,385607,Plateosauravus,227.0,208.5,Eastern Cape,1
+4301,1320530,Bradysaurus,264.28,254.14,Western Cape,1
+4575,N206,Eohyosaurus,246.7,237.0,Free State,1
+4576,N207,Eohyosaurus,246.7,237.0,Free State,1
+4577,N208,Erythrosuchus,246.7,237.0,Eastern Cape,1
+4578,N209,Erythrosuchus,246.7,237.0,Eastern Cape,1
+4579,N210,Erythrosuchus,246.7,237.0,Eastern Cape,1
+4580,N211,Erythrosuchus,246.7,237.0,Western Cape,1
+4581,N212,Erythrosuchus,246.7,237.0,Eastern Cape,1
+4582,N213,Erythrosuchus,246.7,237.0,Western Cape,1
+4583,N214,Erythrosuchus,246.7,237.0,Western Cape,1
+4584,N215,Erythrosuchus,246.7,237.0,Western Cape,1
+4585,N358,Mesosuchus,246.7,237.0,Eastern Cape,1
+4586,N359,Mesosuchus,246.7,237.0,Eastern Cape,1
+4587,N360,Mesosuchus,246.7,237.0,Eastern Cape,1
+4588,N361,Mesosuchus,246.7,237.0,Eastern Cape,1
+4679,749595,Milleropsis,259.51,251.902,Western Cape,1
+4680,749595,Milleropsis,259.51,251.902,Western Cape,1
+4681,749595,Milleropsis,259.51,251.902,Western Cape,1
+4682,749595,Milleropsis,259.51,251.902,Western Cape,1
+4683,749595,Milleropsis,259.51,251.902,Western Cape,1
+4684,749595,Milleropsis,259.51,251.902,Western Cape,1
+4685,749595,Milleropsis,259.51,251.902,Western Cape,1
+4686,749595,Milleropsis,259.51,251.902,Western Cape,1
+4687,749610,Milleretta,259.51,251.902,Western Cape,1
+4688,749933,Milleretta,259.51,251.902,Eastern Cape,1
+4689,749933,Milleretta,259.51,251.902,Eastern Cape,1
+4690,749933,Milleretta,259.51,251.902,Eastern Cape,1
+4691,749973,Milleropsis,259.51,251.902,Eastern Cape,1
+4692,749974,Milleretta,259.51,251.902,Eastern Cape,1
+4693,749975,Millerosaurus,259.51,251.902,Eastern Cape,1
+4694,749976,Millerosaurus,259.51,251.902,Eastern Cape,1
+4695,749977,Milleretta,259.51,251.902,Eastern Cape,1
+4696,749996,Milleretta,259.51,251.902,Eastern Cape,1
+4697,750019,Millerinoides,259.51,251.902,Eastern Cape,1
+4717,807814,Youngina,259.51,251.902,Eastern Cape,1
+4718,807814,Youngina,259.51,251.902,Eastern Cape,1
+4719,808133,Youngina,259.51,251.902,Western Cape,1
+4720,816641,Millerosaurus,259.51,251.902,Western Cape,1
+4721,816651,Milleretta,259.51,251.902,Western Cape,1
+4722,816682,Millerosaurus,259.51,251.902,Eastern Cape,1
+4735,833588,Owenetta,259.51,251.902,Eastern Cape,1
+4736,854902,Youngina,259.51,251.902,Eastern Cape,1
+4738,1285176,Spondylolestes,259.51,251.902,Eastern Cape,1
+4739,1285177,Youngina,259.51,251.902,Eastern Cape,1
+4740,1285178,Youngina,259.51,251.902,Eastern Cape,1
+4741,1285182,Youngina,259.51,251.902,Eastern Cape,1
+4742,1285184,Youngina,259.51,251.902,Eastern Cape,1
+4743,1285185,Youngina,259.51,251.902,Western Cape,1
+4744,1285186,Pareiasaurus,259.51,251.902,Western Cape,1
+4745,1285191,Youngina,259.51,251.902,Eastern Cape,1
+4746,1285194,Youngina,259.51,251.902,Eastern Cape,1
+4747,1285194,Youngina,259.51,251.902,Eastern Cape,1
+4748,1285822,Saurosternon,259.51,251.902,Eastern Cape,1
+5049,1304576,Owenetta,259.51,251.902,Western Cape,1
+5050,1304576,Owenetta,259.51,251.902,Western Cape,1
+5051,1304767,Owenetta,259.51,251.902,Eastern Cape,1
+5052,1310102,Owenetta,259.51,251.902,Eastern Cape,1
+5053,1314179,Pareiasaurus,259.51,251.902,Eastern Cape,1
+5054,1314180,Spondylolestes,259.51,251.902,Eastern Cape,1
+5055,1314298,Pareiasaurus,259.51,251.902,Eastern Cape,1
+5056,1316956,Owenetta,259.51,251.902,Eastern Cape,1
+5057,1320596,Pareiasaurus,259.51,251.902,Eastern Cape,1
+5058,1338339,Pareiasaurus,259.51,251.902,Western Cape,1
+5059,1338350,Pareiasaurus,259.51,251.902,Eastern Cape,1
+5060,1338406,Pareiasaurus,259.51,251.902,Eastern Cape,1
+5061,1338904,Youngina,259.51,251.902,Eastern Cape,1
+5063,1418846,Nanoparia,259.51,251.902,Northern Cape,1
+5295,N526,Blikanasaurus,208.5,201.4,Free State,1
+5455,814519,Mesosaurus,290.1,283.5,Northern Cape,1
+5514,820888,Stereosternum,290.1,283.5,Northern Cape,1
+5515,820897,Mesosaurus,290.1,283.5,Northern Cape,1
+5516,820898,Mesosaurus,290.1,283.5,Northern Cape,1
+5588,823729,Mesosaurus,290.1,283.5,Northern Cape,1
+5597,846640,Mesosaurus,290.1,283.5,Northern Cape,1
+5684,N369,Pareiasaurus,259.51,254.14,Eastern Cape,1
+5685,N370,Pareiasuchus,259.51,254.14,Western Cape,1
+5687,368043,Pareiasuchus,259.51,254.14,Northern Cape,1
+5690,785834,Saurorictus,259.51,254.14,Western Cape,1
+5705,790511,Pareiasuchus,259.51,254.14,Eastern Cape,1
+5706,790511,Pareiasuchus,259.51,254.14,Eastern Cape,1
+5707,790511,Pareiasuchus,259.51,254.14,Eastern Cape,1
+5708,790511,Pareiasuchus,259.51,254.14,Eastern Cape,1
+5709,790511,Pareiasuchus,259.51,254.14,Eastern Cape,1
+5716,808154,Youngina,259.51,254.14,Western Cape,1
+5717,808154,Youngina,259.51,254.14,Western Cape,1
+5718,808154,Youngina,259.51,254.14,Western Cape,1
+5719,808154,Youngina,259.51,254.14,Western Cape,1
+5720,808154,Youngina,259.51,254.14,Western Cape,1
+5722,833640,Owenetta,259.51,254.14,Eastern Cape,1
+5729,973441,Galesphyrus,259.51,254.14,Northern Cape,1
+5730,973442,Galesphyrus,259.51,254.14,Eastern Cape,1
+5734,1286077,Pumiliopareia,259.51,254.14,Eastern Cape,1
+5735,1286079,Anthodon,259.51,254.14,Graaff-Reinet,1
+5736,1286080,Anthodon,259.51,254.14,Western Cape,1
+5738,1286092,Nanoparia,259.51,254.14,Eastern Cape,1
+5742,1304554,Pareiasaurus,259.51,254.14,Western Cape,1
+5743,1315262,Anthodon,259.51,254.14,Eastern Cape,1
+5744,1317315,Pareiasuchus,259.51,254.14,Western Cape,1
+5745,1317316,Pareiasaurus,259.51,254.14,Western Cape,1
+5746,1332746,Pareiasaurus,259.51,254.14,Eastern Cape,1
+5747,1337217,Pareiasaurus,259.51,254.14,Eastern Cape,1
+5748,1337218,Milleretta,259.51,254.14,Eastern Cape,1
+5749,1337453,Pareiasaurus,259.51,254.14,Western Cape,1
+5751,1386980,Pareiasaurus,259.51,254.14,Northern Cape,1
+5753,1418143,Milleretta,259.51,254.14,Western Cape,1
+5754,1418153,Owenetta,259.51,254.14,Eastern Cape,1
+5767,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5768,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5769,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5770,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5771,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5772,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5773,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5774,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5775,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5776,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5777,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5778,792535,Euparkeria,246.7,242.0,Eastern Cape,1
+5779,792536,Mesosuchus,246.7,242.0,Eastern Cape,1
+5780,792536,Mesosuchus,246.7,242.0,Eastern Cape,1
+5781,792536,Mesosuchus,246.7,242.0,Eastern Cape,1
+5782,792536,Mesosuchus,246.7,242.0,Eastern Cape,1
+5783,792537,Euparkeria,246.7,242.0,Eastern Cape,1
+5824,820895,Erythrosuchus,246.7,242.0,Eastern Cape,1
+5825,832667,Teratophon,246.7,242.0,Free State,1
+5826,832667,Teratophon,246.7,242.0,Free State,1
+5827,832667,Teratophon,246.7,242.0,Free State,1
+5828,832667,Teratophon,246.7,242.0,Free State,1
+5829,832667,Teratophon,246.7,242.0,Free State,1
+5830,832669,Thelephon,246.7,242.0,Eastern Cape,1
+5831,832670,Thelerpeton,246.7,242.0,Free State,1
+5832,832670,Thelerpeton,246.7,242.0,Free State,1
+5833,832670,Thelerpeton,246.7,242.0,Free State,1
+5834,832671,Theledectes,246.7,242.0,Free State,1
+5840,843770,Teratophon,246.7,242.0,Free State,1
+5960,923785,Erythrosuchus,246.7,242.0,Eastern Cape,1
+5970,986756,Erythrosuchus,246.7,242.0,Eastern Cape,1
+5971,986756,Erythrosuchus,246.7,242.0,Eastern Cape,1
+5972,986756,Erythrosuchus,246.7,242.0,Eastern Cape,1
+6015,1134215,Howesia,246.7,242.0,Eastern Cape,1
+6016,1134215,Howesia,246.7,242.0,Eastern Cape,1
+6019,1242875,Erythrosuchus,246.7,242.0,Eastern Cape,1
+6020,1266936,Palacrodon,246.7,242.0,Eastern Cape,1
+6021,1284944,Eohyosaurus,246.7,242.0,Free State,1
+6022,1284945,Erythrosuchus,246.7,242.0,Free State,1
+6024,1332742,Erythrosuchus,246.7,242.0,Eastern Cape,1
+6315,279623,Bradysaurus,264.28,259.51,Western Cape,1
+6324,808649,Eunotosaurus,264.28,259.51,Northern Cape,1
+6325,808649,Eunotosaurus,264.28,259.51,Northern Cape,1
+6326,814159,Australothyris,264.28,259.51,Northern Cape,1
+6336,815480,Broomia,264.28,259.51,Eastern Cape,1
+6337,815481,Broomia,264.28,259.51,Western Cape,1
+6338,820640,Eunotosaurus,264.28,259.51,Western Cape,1
+6339,820640,Eunotosaurus,264.28,259.51,Western Cape,1
+6340,833055,Eunotosaurus,264.28,259.51,Eastern Cape,1
+6341,833854,Eunotosaurus,264.28,259.51,Western Cape,1
+6342,833855,Eunotosaurus,264.28,259.51,Western Cape,1
+6343,833864,Eunotosaurus,264.28,259.51,Western Cape,1
+6347,838586,Bradysaurus,264.28,259.51,Western Cape,1
+6348,838605,Bradysaurus,264.28,259.51,Western Cape,1
+6349,838606,Bradysaurus,264.28,259.51,Western Cape,1
+6350,838608,Bradysaurus,264.28,259.51,Western Cape,1
+6351,838614,Bradysaurus,264.28,259.51,Western Cape,1
+6352,838651,Bradysaurus,264.28,259.51,Western Cape,1
+6353,838652,Bradysaurus,264.28,259.51,Western Cape,1
+6354,838666,Bradysaurus,264.28,259.51,Western Cape,1
+6355,838668,Bradysaurus,264.28,259.51,Western Cape,1
+6356,838670,Bradysaurus,264.28,259.51,Western Cape,1
+6357,838670,Bradysaurus,264.28,259.51,Western Cape,1
+6358,838692,Bradysaurus,264.28,259.51,Western Cape,1
+6360,1313329,Pareiasaurus,264.28,259.51,Northern Cape,1
+6361,1313330,Pareiasuchus,264.28,259.51,Northern Cape,1
+6362,1317363,Bradysaurus,264.28,259.51,Western Cape,1
+6363,1325014,Bradysaurus,264.28,259.51,Western Cape,1
+6364,1328819,Pareiasaurus,264.28,259.51,Western Cape,1
+6365,1340461,Bradysaurus,264.28,259.51,Western Cape,1
+6366,1340462,Bradysaurus,264.28,259.51,Western Cape,1
+6367,1340493,Bradysaurus,264.28,259.51,Northern Cape,1
+6371,1417834,Eunotosaurus,264.28,259.51,Philippolis,1
+6372,1425418,Nochelesaurus,264.28,259.51,Western Cape,1
+6373,1425560,Embrithosaurus,264.28,259.51,Western Cape,1
+6374,1428084,Styracocephalus,264.28,259.51,Western Cape,1
+6375,1428085,Styracocephalus,264.28,259.51,Western Cape,1
+6376,1428086,Styracocephalus,264.28,259.51,Western Cape,1
+6377,1428389,Bradysaurus,264.28,259.51,Northern Cape,1
+6378,1428394,Bradysaurus,264.28,259.51,Western Cape,1
+6379,1428401,Nochelesaurus,264.28,259.51,Western Cape,1
+6380,1428412,Nochelesaurus,264.28,259.51,Western Cape,1
+6381,1428413,Nochelesaurus,264.28,259.51,Western Cape,1
+6382,1428414,Embrithosaurus,264.28,259.51,Western Cape,1
+6383,1428415,Nochelesaurus,264.28,259.51,Western Cape,1
+6384,1428484,Bradysaurus,264.28,259.51,Western Cape,1
+6385,1428485,Bradysaurus,264.28,259.51,Western Cape,1
+6386,1428486,Embrithosaurus,264.28,259.51,Western Cape,1
+6387,1428524,Bradysaurus,264.28,259.51,Western Cape,1
+6388,1428526,Bradysaurus,264.28,259.51,Western Cape,1
+6389,1428527,Bradysaurus,264.28,259.51,Western Cape,1
+6390,1428528,Pareiasaurus,264.28,259.51,Western Cape,1
+6391,1428531,Bradysaurus,264.28,259.51,Western Cape,1
+6392,1428847,Bradysaurus,264.28,259.51,Western Cape,1
+6393,1428987,Bradysaurus,264.28,259.51,Western Cape,1
+6394,1428988,Embrithosaurus,264.28,259.51,Western Cape,1
+6395,1428995,Nochelesaurus,264.28,259.51,Western Cape,1
+6396,1429005,Bradysaurus,264.28,259.51,Western Cape,1
+6399,147521,Procolophon,251.902,246.7,Eastern Cape,1
+6403,792593,Sauropareion,251.902,246.7,Eastern Cape,1
+6404,792593,Sauropareion,251.902,246.7,Eastern Cape,1
+6410,806914,Procolophon,251.902,246.7,Eastern Cape,1
+6411,807183,Paliguana,251.902,246.7,Eastern Cape,1
+6415,843780,Procolophon,251.902,246.7,Eastern Cape,1
+6416,843781,Procolophon,251.902,246.7,Eastern Cape,1
+6417,843782,Procolophon,251.902,246.7,Eastern Cape,1
+6418,843782,Procolophon,251.902,246.7,Eastern Cape,1
+6420,847947,Procolophon,251.902,246.7,Eastern Cape,1
+6421,847948,Procolophon,251.902,246.7,Eastern Cape,1
+6422,847949,Procolophon,251.902,246.7,Eastern Cape,1
+6423,848381,Procolophon,251.902,246.7,Free State,1
+6428,922663,Procolophon,251.902,246.7,Free State,1
+6429,922664,Prolacerta,251.902,246.7,Free State,1
+6430,922664,Prolacerta,251.902,246.7,Free State,1
+6431,922665,Proterosuchus,251.902,246.7,Free State,1
+6432,922666,Aenigmasaurus,251.902,246.7,Free State,1
+6433,922675,Procolophon,251.902,246.7,Free State,1
+6434,922676,Prolacerta,251.902,246.7,Free State,1
+6439,922697,Prolacerta,251.902,246.7,Eastern Cape,1
+6440,922701,Prolacerta,251.902,246.7,Free State,1
+6441,922706,Prolacerta,251.902,246.7,Free State,1
+6442,922716,Proterosuchus,251.902,246.7,Eastern Cape,1
+6443,922721,Proterosuchus,251.902,246.7,Eastern Cape,1
+6444,980035,Proterosuchus,251.902,246.7,Eastern Cape,1
+6445,980036,Procolophon,251.902,246.7,Eastern Cape,1
+6446,980047,Proterosuchus,251.902,246.7,Free State,1
+6447,980048,Proterosuchus,251.902,246.7,Free State,1
+6448,980055,Proterosuchus,251.902,246.7,Free State,1
+6449,980055,Proterosuchus,251.902,246.7,Free State,1
+6450,980061,Proterosuchus,251.902,246.7,Eastern Cape,1
+6451,980064,Proterosuchus,251.902,246.7,Eastern Cape,1
+6452,1286068,Sauropareion,251.902,246.7,Eastern Cape,1
+6453,1286068,Sauropareion,251.902,246.7,Eastern Cape,1
+6454,1286068,Sauropareion,251.902,246.7,Eastern Cape,1
+6455,1320336,Proterosuchus,251.902,246.7,Free State,1
+6456,1343000,Owenetta,251.902,246.7,Eastern Cape,1
+6457,1343001,Prolacerta,251.902,246.7,Eastern Cape,1
+6459,1347615,Proterosuchus,251.902,246.7,Eastern Cape,1
+6460,1347617,Proterosuchus,251.902,246.7,Eastern Cape,1
+6461,1347619,Proterosuchus,251.902,246.7,Eastern Cape,1
+6462,1347620,Proterosuchus,251.902,246.7,Free State,1
+6463,1380554,Proterosuchus,251.902,246.7,East Cape,1
+6464,1380555,Prolacerta,251.902,246.7,East Cape,1
+6465,1380556,Sauropareion,251.902,246.7,East Cape,1
+6466,1380557,Saurodektes,251.902,246.7,East Cape,1
+6472,1589167,Procolophonichnium,251.902,246.7,East Cape,1
+6497,733515,Coletta,251.2,246.7,Eastern Cape,1
+6503,832665,Kitchingnathus,251.2,246.7,Eastern Cape,1
+6504,832666,Procolophon,251.2,246.7,Eastern Cape,1
+6549,1142139,Procolophon,251.2,246.7,Eastern Cape,1
+6550,1142841,Palacrodon,251.2,246.7,Free State,1
+6553,1349935,Garjainia,251.2,246.7,Free State,1
+6554,1349936,Garjainia,251.2,246.7,Free State,1
+6555,1349937,Garjainia,251.2,246.7,Free State,1
+6556,1349938,Garjainia,251.2,246.7,Free State,1
+6557,1349939,Garjainia,251.2,246.7,Free State,1
+6558,1349940,Garjainia,251.2,246.7,Free State,1
+6559,1349941,Garjainia,251.2,246.7,Free State,1
+6646,1284962,Palaeagama,254.14,251.2,Eastern Cape,1
+6832,749982,Milleretta,254.14,251.902,Western Cape,1
+7005,1091077,Garjainia,251.2,246.7,Free State,1
+7092,747968,Saurodektes,251.902,251.2,Eastern Cape,1
+7093,749261,Saurodektes,251.902,251.2,Free State,1
+7094,749261,Saurodektes,251.902,251.2,Free State,1
+7095,749261,Saurodektes,251.902,251.2,Free State,1
+7096,749261,Saurodektes,251.902,251.2,Free State,1
+7101,792534,Noteosuchus,251.902,251.2,Eastern Cape,1
+7115,922705,Prolacerta,251.902,251.2,Free State,1
+7116,923197,Phonodus,251.902,251.2,Northern Cape,1
+5693,786831,Captorhinus,259.51,254.14,Eastern,1
+5714,794729,Pareiasuchus,259.51,254.14,Eastern,1
+5750,1358998,Pareiasaurus,259.51,254.14,Eastern,1
+4368,484408,Hyperodapedon,237.0,227.0,Mashonaland Central,1
+4369,484409,Saturnalia,237.0,227.0,Mashonaland Central,1
+4429,853387,Hyperodapedon,237.0,227.0,Mashonaland Central,1
+4430,853388,Hyperodapedon,237.0,227.0,Mashonaland Central,1
+4545,1562556,Massospondylus,237.0,227.0,Mashonaland West,1
+4551,1614363,Mbiresaurus,237.0,227.0,Mashonaland Central,1
+4552,1614363,Mbiresaurus,237.0,227.0,Mashonaland Central,1
+4553,1614367,Mbiresaurus,237.0,227.0,Mashonaland Central,1
+4554,1614369,Mbiresaurus,237.0,227.0,Mashonaland Central,1
+4555,1614372,Mbiresaurus,237.0,227.0,Mashonaland Central,1

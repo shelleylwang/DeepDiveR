@@ -1,0 +1,177 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load_packages}
+library(remotes)
+library(dplyr)
+remotes::install_github("DeepDive-project/DeepDiveR")
+library(DeepDiveR)
+
+```
+
+## Prepping Input File
+
+### Loading in Data + EDA
+
+```{r}
+data <- read.csv("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_all/rep_all_dd_final.csv", header = TRUE, sep = ",")
+head(data)
+```
+
+```{r}
+# Only keeping select columns
+data <- data[, c('Locality', 'Taxon', 'Area', 'MinAge', 'MaxAge')]
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+sapply(data, class)
+```
+
+```{r}
+str(data)
+```
+
+```{r}
+summary(data)
+```
+
+Checking if there are nulls
+
+```{r}
+data$Area[is.na(data$Area)]
+```
+
+```{r}
+anyNA(data)
+```
+
+### Defining time bins by stages
+
+Time bins should start at the max MaxAge and go down to just below the min MinAge
+
+```{r}
+range(data$MaxAge)
+range(data$MinAge)
+
+```
+
+
+```{r}
+bins <- c(max(data$MaxAge),290.1, 283.5, 274.4, 264.3, 259.5, 252, 246.7, 242, 237, 227, 217, 208, 199.3)
+
+bins
+```
+
+Ages needed to be shifted to the present, otherwise the simulations would freeze. If using extant taxa, this is not necessary obviously
+
+```{r}
+data_shifted_ages <- data
+data_shifted_ages$MinAge <- data_shifted_ages$MinAge - 199
+data_shifted_ages$MaxAge <- data_shifted_ages$MaxAge - 199
+
+head(data_shifted_ages)
+
+```
+
+```{r}
+
+# Actually, just made last bin = 0 to mimic present day. 199.3 - 199 would've been basically 0 anyway
+bins_shifted <- c(max(data_shifted_ages$MaxAge),290.1 - 199, 283.5 - 199, 274.4 - 199, 264.3 - 199, 259.5 - 199, 252 - 199, 246.7 - 199, 242 - 199, 237 - 199, 227 - 199, 217 - 199, 208 - 199, 0)
+bins_shifted
+
+```
+## There's an error in the program. Instructions say to use 'Area' column, but code requires it to be called 'Region'. So, renaming 'Area' to 'Region' in the data frame before calling prep_dd_input
+
+```{r}
+# rename 'Area' to 'Region'
+data_shifted_ages <- data_shifted_ages %>%
+  rename(Region = Area)
+```
+
+
+### Calling prep_dd_input
+
+```{r}
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_all/")
+# Create input file for DeepDive
+prep_dd_input(
+  # Specify occurrence data.frame
+  dat = data_shifted_ages,
+  # Specify vector containing time bin boundaries
+  bins = bins_shifted,
+  # Specify number of replicates
+  r = 100,
+  # Specify name of created file
+  output_file = "rep_all_deepdive_input.csv")
+```
+
+```{r}
+# Create configuration file for DeepDive
+config_test <- create_config(
+  # Specify name for the simulations
+  name = "rep_all",
+  # Name of data file
+  data_file = "rep_all_deepdive_input.csv",
+  bins = bins_shifted,
+  n_regions = length(unique(data_shifted_ages$Region)),
+  )
+```
+
+```{r}
+# Set number of training simulations to 100
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "n_training_simulations", 
+            value = 10000)
+
+# Set number of test simulations to 10
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "n_test_simulations", 
+            value = 1000)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "extant_sp", 
+            value = 0)
+
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "pr_extant_clade", 
+            value = 0)
+
+# Optional: p_mass_extinction parameter sets the probability of a mass extinction per my
+# My study spans ~100 mys, so a p_mass_extinction = 0.02/my = 2 mass extinctions in the
+# time frame of my study, which is about what we're expecting
+# Default value is 0.01
+edit_config(config = config_test,
+            module = "simulations",
+            parameter = "p_mass_extinction", 
+            value = 0.02)
+
+
+```
+
+```{r}
+config_test$write("rep_all_config.ini")
+
+```
+
+## Calling Config: Terminal Command
+
+We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
+
+```{python run, eval = FALSE}
+python ../deepdive/run_dd_config.py reptilia/reptilia_config.ini -wd reptilia
+```
+
+### Outputs:
+
+-   rep
+
+-   
