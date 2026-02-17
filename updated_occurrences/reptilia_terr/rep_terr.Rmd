@@ -15,7 +15,7 @@ library(DeepDiveR)
 ### Loading in Data + EDA
 
 ```{r}
-data <- read.csv("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_all/rep_all_dd_final.csv", header = TRUE, sep = ",")
+data <- read.csv("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_terr/rep_terr_dd_final.csv", header = TRUE, sep = ",")
 head(data)
 ```
 
@@ -97,7 +97,7 @@ data_shifted_ages <- data_shifted_ages %>%
 ### Calling prep_dd_input
 
 ```{r}
-setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_all/")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/updated_occurrences/reptilia_terr/")
 # Create input file for DeepDive
 prep_dd_input(
   # Specify occurrence data.frame
@@ -107,23 +107,22 @@ prep_dd_input(
   # Specify number of replicates
   r = 100,
   # Specify name of created file
-  output_file = "rep_all_deepdive_input.csv")
+  output_file = "rep_terr_deepdive_input.csv")
 ```
 
 ```{r}
 # Create configuration file for DeepDive
 config <- create_config(
   # Specify name for the simulations
-  name = "rep_all",
+  name = "rep_terr",
   # Name of data file
-  data_file = "rep_all_deepdive_input.csv",
+  data_file = "rep_terr_deepdive_input.csv",
   bins = bins_shifted,
   n_regions = length(unique(data_shifted_ages$Region)),
   )
 ```
 
 ```{r}
-
 # Modify the number of extant species ("present_diversity") in simulations
 edit_config(config = config,
             module = "general",
@@ -165,7 +164,7 @@ edit_config(config = config,
 ```
 
 ```{r}
-config$write("rep_all_config.ini")
+config$write("rep_terr_config.ini")
 
 ```
 
@@ -174,6 +173,6 @@ config$write("rep_all_config.ini")
 We will access the programs in the "deepdive" repo (not this repo) in order to run the simulations. The **Terminal** command:print(config$data$simulations\$carrying_capacity_multiplier)
 
 ```{python run, eval = FALSE}
-python ../deepdive/run_dd_config.py updated_occurrences/reptilia_all/rep_all_config.ini -wd updated_occurrences/reptilia_all
+python ../deepdive/run_dd_config.py updated_occurrences/reptilia_terr/rep_terr_config.ini -wd updated_occurrences/reptilia_terr
 ```
 
