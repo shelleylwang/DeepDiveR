@@ -51,7 +51,7 @@ apply_standard_theme <- function(plot, show_legend = FALSE) {
       plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
       axis.title.x = element_text(size = 14, face = "bold", margin = margin(t = 10)),
       axis.title.y = element_text(size = 14, face = "bold", margin = margin(r = 10)),
-      axis.text = element_text(size = 12, face = "bold")
+      axis.text = element_text(size = 12, face = "bold")   
     )
   
   if (show_legend) {
@@ -286,7 +286,9 @@ empty_plot <- ggplot() + theme_void()
 # plot_n_occs_region = n occs by region (raw fossil occs)
 # plot_n_species_region = diversity through time (# genera) by region
 
-combined_plot <- plot_grid(plot_spec_ext_events, empty_plot, plot_net_div_events, plot_n_occs_region, plot_emp_preds, plot_n_species_region, plot_spec_rate, plot_ext_rate, plot_net_div_rate, ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20)
+combined_plot <- plot_grid(
+  plot_spec_ext_events, empty_plot, plot_net_div_events, plot_n_occs_region, plot_emp_preds, plot_n_species_region, plot_spec_rate, plot_ext_rate, plot_net_div_rate,
+  ncol = 2, nrow = 3, labels = c("A", "", "B", "C", "D", "E"), label_size = 20, align = "hv", axis = "tblr")
 
 # Save the combined plot as a PDF
 ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 25, height = 20)
