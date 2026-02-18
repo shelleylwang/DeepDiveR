@@ -123,11 +123,10 @@ config <- create_config(
 ```
 
 ```{r}
-# Modify the number of extant species ("present_diversity") in simulations
-edit_config(config = config,
-            module = "general",
-            parameter = "present_diversity", 
-            value = 0)
+# Note: present_diversity = 0 → implies that at the last time bin (youngest/most recent), you reach clade death, no fossil occurrences
+# So if you do have fossil occurrences in that last time bin, and set this = 0, it will cause simulations to freeze
+# Since we shifted all the bins forwards, we have fossil occurrences in a lsat time bin that ends in 0, which means I won't set present_diversity = 0
+
 
 # Set number of training simulations to 100
 edit_config(config = config,

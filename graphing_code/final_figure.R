@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\deepdive_project_main_branch_runs\\dicynodon\\dicynodon_models\\simulations_20250313_lstm64_32_d64_32")
+setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\updated_occurrences\\synapsida\\syn_models\\simulations_20260217_lstm64_32_d64_32")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -27,11 +27,11 @@ data<- rbind(data[1, ], data)
 # COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
 # The first value in the year vector corresponds to the minimum MinAge value in the dataset
 # It needs to be added so that the first data point in the features_conditional csv is plotted
-# Temnospondyli and Synapsida year vector
+# Temnospondyli year vector
 # year <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
 
-# Reptilia year vector:
-year <- c(199.5, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
+# Synapsida and Reptilia
+year <- c(199, 208, 217, 227, 237, 242, 246.7, 252, 259.5, 264.3, 274.4, 283.5, 290.1, 298.9)
 
 # Make the year vector negative
 year <- -year

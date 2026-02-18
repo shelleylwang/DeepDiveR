@@ -8,13 +8,13 @@ library(gridExtra)
 
 setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/deepdive_project_main_branch_runs")
 
-# Temnospondyli and Synapsida year vector
-year_tem_syn <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
-year_tem_syn <- -year_tem_syn
+# Temnospondyli year vector
+year_tem <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+year_tem <- -year_tem
 
-# Reptilia year vector:
-year_rep <- c(199.5, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 298.9)
-year_rep <- -year_rep
+# Synapsida and Reptilia year vector
+year_rep_syn <- c(199, 208, 217, 227, 237, 242, 246.7, 252, 259.5, 264.3, 274.4, 283.5, 290.1, 298.9)
+year_rep_syn <- -year_rep_syn
 
 # Format axis labels function
 format_labels <- function(x) {
@@ -46,7 +46,7 @@ stats_df_tem$range_lower <- apply(emp_preds_tem_t, 1, min, na.rm = TRUE)
 stats_df_tem$range_upper <- apply(emp_preds_tem_t, 1, max, na.rm = TRUE)
 
 plot_data_tem <- data.frame(
-  year = year_tem_syn,
+  year = year_tem,
   mean = stats_df_tem$mean,
   ci95_lower = stats_df_tem$ci95_lower,
   ci95_upper = stats_df_tem$ci95_upper,
@@ -70,7 +70,7 @@ stats_df_syn$range_lower <- apply(emp_preds_syn_t, 1, min, na.rm = TRUE)
 stats_df_syn$range_upper <- apply(emp_preds_syn_t, 1, max, na.rm = TRUE)
 
 plot_data_syn <- data.frame(
-  year = year_tem_syn,
+  year = year_syn,
   mean = stats_df_syn$mean,
   ci95_lower = stats_df_syn$ci95_lower,
   ci95_upper = stats_df_syn$ci95_upper,
