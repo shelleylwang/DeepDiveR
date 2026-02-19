@@ -8,7 +8,7 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\updated_occurrences\\synapsida\\syn_models\\simulations_20260217_lstm64_32_d64_32")
+setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\updated_occurrences\\reptilia_terr\\rep_terr_models\\simulations_20260218_lstm64_32_d64_32_autotuned")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one

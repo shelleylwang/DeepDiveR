@@ -1,0 +1,93 @@
+[general]
+wd = .\updated_occurrences\synapsida\
+time_bins = 99.9 91.1 84.5 75.4 65.3 60.5 53 47.7 43 38 28 18 9 0
+n_regions = 4
+autotune = FALSE
+present_diversity = NA
+simulate = TRUE
+model_training = TRUE
+empirical_predictions = TRUE
+
+[simulations]
+sim_name = simulations
+n_cpus = 1
+n_training_simulations = 10000
+training_seed = 123
+test_seed = 432
+n_test_simulations = 1000
+s_species = 1
+total_sp = 290 11220
+root_r = 79.92 99.9
+min_extinct_sp = 0
+extant_sp = 0
+rangel = 0.02 0.5
+rangem = 0.02 0.5
+log_uniform_rates = FALSE
+p_mass_extinction = 0.02
+fixed_mass_extinction = NA
+magnitude_mass_ext = 0.5 1
+p_equilibrium = 0.01
+p_constant_bd = 0.01
+p_mass_speciation = 0.01
+p_dd_model = 0.05
+dd_k = 21 725
+dd_maxl = 1
+pr_extant_clade = 0
+poil = 4
+poim = 4
+scale = 10
+vectorize = TRUE
+eta = 1 1.75
+p_gap = 0 0.3269230769230769
+dispersal_rate = None
+max_dist = 1
+disp_rate_mean = 0.02958599551518877 0.7396498878797192
+disp_rate_variance = 1
+region_mean = 3.980769230769231
+region_variance = 24.903476331360952
+size_concentration_parameter = 0.1 3
+link_region_size_carrying_capacity = 1 10
+p_origination_a_slope_mean = 2
+p_origination_a_slope_sd = 0.5
+sp_mean = 0.22413793103448276 0.6236324805628216
+sp_variance = 2
+slope = -0.025069654898847448 0
+intercept = 0.6266539398033465 13.452370962846745
+sd_through_time = 0.001 0.01
+sd_through_time_skyline = 0.9790884588348183
+mean_n_epochs_skyline = 4
+fraction_skyline_sampling = 0.5
+mean_skyline_sampling = 0.6883278941239964 2.074622255243887
+maximum_localities_per_bin = 22
+species_per_locality_multiplier = 1
+singletons_frequency = 0.3564497466037505 0.5517241379310345
+sims_folder = syn_simulations
+target_n_occs = 3181.0
+target_n_occs_range = 1.2
+bin_mean_rates = 0.8109302162163288 0.22314355131420976 0.22314355131420976 1.3217558399823195 0.8109302162163288 1.791759469228055 1.8718021769015913 2.1972245773362196 1.8325814637483102 1.7047480922384253 0.4054651081081644 1.0986122886681098 1.1786549963416462
+bin_std_rates = 1.7943485259161855 0.897657346002596 1.2589959300749276 1.6800359974299501 1.3660592038582513 1.5885145148849666 2.0495183207300505 2.275410552528435 2.59878313375002 1.7204182582864394 1.4013762456493928 1.9481828480598198 2.016483946305764
+locality_rate_multiplier = 1.655039692085639 0.7620880442626896 0.9670435410151552 0.6158287226365168
+bin_sampling = 0.67
+min_n_occurrences = 636
+survive_age_condition = NA
+
+[model_training]
+sims_folder = NA
+model_folder = syn_models
+lstm_model_1 = 64 32
+dense_model_1 = 64 32
+dropout = 0
+max_epochs = 1000
+patience = 10
+batch_size = 100
+validation_split = 0.2
+f = syn_feature
+l = syn_label
+
+[empirical_predictions]
+empirical_input_file = syn_deepdive_input.csv
+model_folder = syn_models
+n_predictions = 1
+replicates = 100
+output_file = syn_output
+

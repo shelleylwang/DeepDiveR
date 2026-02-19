@@ -1,0 +1,93 @@
+[general]
+wd = .\updated_occurrences\reptilia_all\
+time_bins = 99.9 91.1 84.5 75.4 65.3 60.5 53 47.7 43 38 28 18 9 0
+n_regions = 4
+autotune = FALSE
+present_diversity = NA
+simulate = TRUE
+model_training = TRUE
+empirical_predictions = TRUE
+
+[simulations]
+sim_name = simulations
+n_cpus = 1
+n_training_simulations = 10000
+training_seed = 123
+test_seed = 432
+n_test_simulations = 1000
+s_species = 1
+total_sp = 260 17480
+root_r = 79.92 99.9
+min_extinct_sp = 0
+extant_sp = 0
+rangel = 0.02 0.5
+rangem = 0.02 0.5
+log_uniform_rates = FALSE
+p_mass_extinction = 0.02
+fixed_mass_extinction = NA
+magnitude_mass_ext = 0.5 1
+p_equilibrium = 0.01
+p_constant_bd = 0.01
+p_mass_speciation = 0.01
+p_dd_model = 0.05
+dd_k = 35 680
+dd_maxl = 1
+pr_extant_clade = 0
+poil = 4
+poim = 4
+scale = 10
+vectorize = TRUE
+eta = 1 1.75
+p_gap = 0 0.15384615384615385
+dispersal_rate = None
+max_dist = 1
+disp_rate_mean = 0.02942952599173514 0.7357381497933785
+disp_rate_variance = 1
+region_mean = 7.673076923076923
+region_variance = 90.37389053254438
+size_concentration_parameter = 0.1 3
+link_region_size_carrying_capacity = 1 10
+p_origination_a_slope_mean = 2
+p_origination_a_slope_sd = 0.5
+sp_mean = 0.25 0.6081171283997726
+sp_variance = 2
+slope = -0.06152819188443456 0
+intercept = 2.740005617185288 116.30216077094241
+sd_through_time = 0.001 0.01
+sd_through_time_skyline = 1.0567714638448558
+mean_n_epochs_skyline = 4
+fraction_skyline_sampling = 0.5
+mean_skyline_sampling = 1.3445705177484908 2.7308648788683816
+maximum_localities_per_bin = 44
+species_per_locality_multiplier = 1
+singletons_frequency = 0.35713639817220916 0.5
+sims_folder = rep_all_simulations
+target_n_occs = 3960.0
+target_n_occs_range = 1.2
+bin_mean_rates = 2.302585092994046 2.0149030205422647 1.749199854809259 2.277267285009756 2.740840023925201 2.9311937524164198 2.5649493574615367 2.1102132003465894 1.252762968495368 1.0116009116784799 -0.2876820724517809 1.1786549963416462 0.0
+bin_std_rates = 2.1046724356728066 1.5391665438016235 1.0794720251771257 1.3476399205928857 1.9408075047033226 1.354396033851027 1.026872647188594 2.298323690286854 2.0787943037966454 0.9129685497667928 0.9406388657921185 1.7461391696234945 1.1494545612050326
+locality_rate_multiplier = 1.0449046545007175 0.4691408652860365 1.8675415214271067 0.618412958786139
+bin_sampling = 0.67
+min_n_occurrences = 792
+survive_age_condition = NA
+
+[model_training]
+sims_folder = NA
+model_folder = rep_all_models
+lstm_model_1 = 64 32
+dense_model_1 = 64 32
+dropout = 0
+max_epochs = 1000
+patience = 10
+batch_size = 100
+validation_split = 0.2
+f = rep_all_feature
+l = rep_all_label
+
+[empirical_predictions]
+empirical_input_file = rep_all_deepdive_input.csv
+model_folder = rep_all_models
+n_predictions = 1
+replicates = 100
+output_file = rep_all_output
+
