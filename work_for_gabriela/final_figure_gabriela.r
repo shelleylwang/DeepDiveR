@@ -8,7 +8,9 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("C:\\Users\\SimoesLabAdmin\\Documents\\DeepDiveR\\updated_occurrences\\reptilia_terr\\rep_terr_models\\simulations_20260218_lstm64_32_d64_32_autotuned")
+setwd("C:/Users/SimoesLabAdmin/Downloads/simulations_20250612_lstm64_32_d64_32_conditional-20260219T154240Z-3-001_1ma/simulations_20250612_lstm64_32_d64_32_conditional_1ma")
+
+# setwd("C:/Users/SimoesLabAdmin/Downloads/simulations_20250714_lstm64_32_d64_32_conditional-20260219T154225Z-3-001/simulations_20250714_lstm64_32_d64_32_conditional")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -17,21 +19,26 @@ if (!dir.exists("feature_plots_formatted")) {
 }
 
 # Read the CSV file into a data frame
-data <- read.csv("Empirical_features_.csv")
+data <- read.csv("Empirical_features__conditional.csv")
 
 # Duplicate the first row of data, so that the first two rows are identical
 # If you don't do this + add that first value in the year vector below, the very first value (first row) will not be plotted
 data<- rbind(data[1, ], data)
 
 
-# COMMENT OUT YEAR VECTOR DEPENDING ON GENUS
-# The first value in the year vector corresponds to the minimum MinAge value in the dataset
-# It needs to be added so that the first data point in the features_conditional csv is plotted
-# Temnospondyli year vector
-# year <- c(201.4, 208, 217, 227, 237, 242, 247, 252, 259.5, 264.3, 273, 283.5, 290.1, 309.8)
+# 1 Ma Year Vector
+year <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 
+    34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 
+    67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 
+    100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 
+    127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 
+    154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168.2)
 
-# Synapsida and Reptilia
-year <- c(199, 208, 217, 227, 237, 242, 246.7, 252, 259.5, 264.3, 274.4, 283.5, 290.1, 298.9)
+# # Stage Year Vector
+# year <- c(0, 0.129, 0.774, 2.58, 3.6, 5.333, 7.246, 11.63, 13.82, 15.98,
+#   20.45, 23.04, 27.30, 33.9, 33.71, 41.03, 48.07, 56.0, 59.24, 61.66,
+#   66.0, 72.2, 83.6, 85.7, 89.8, 93.9, 100.5, 113.2, 121.4, 125.77,
+#   132.6, 137.05, 143.1, 145.0, 149.2, 154.8, 161.5, 165.3, 168.2)
 
 # Make the year vector negative
 year <- -year
@@ -66,7 +73,7 @@ apply_standard_theme <- function(plot, show_legend = FALSE) {
 }
 
 # Apply standard coordinate system and scales
-apply_standard_coords <- function(plot, xlim = c(-300, -200), # CHANGE THIS IF YOU WANT TO CHANGE THE X AXIS LIMITS
+apply_standard_coords <- function(plot, xlim = c(-170, 0), # CHANGE THIS IF YOU WANT TO CHANGE THE X AXIS LIMITS
                                   x_breaks_by = 10) {
   plot <- plot +
     scale_x_reverse() +
@@ -74,14 +81,14 @@ apply_standard_coords <- function(plot, xlim = c(-300, -200), # CHANGE THIS IF Y
       xlim = xlim,
       expand = FALSE,
       clip = "on",
-      dat = list("international ages", "international periods"),
+      dat = list("international ages", "international periods"), # using ages will cut off the text in the x axis labels, but since Gabriela cares about stage boundary shifts I'll leave it for now   
       abbrv = list(TRUE, FALSE),
       pos = list("bottom", "bottom"),
       alpha = 1,
       height = unit(1.5, "line"),
       rot = 0,
       # size = list(6, 5),
-      size = list(3, 5),
+      size = list(2, 5),
       neg = TRUE
     ) +
     scale_x_continuous(
@@ -171,7 +178,7 @@ plot_net_div_rate <- create_single_plot(year, net_div_rate, "Net Diversification
 ######################### PLOT EMPIRICAL PREDICTIONS #############################
 
 # Read data
-emp_preds <- read.csv("Empirical_predictions_.csv")
+emp_preds <- read.csv("Empirical_predictions__conditional.csv")
 
 # The first two columns of Empirical_predictions_.csv are exactly the same/repeats
 # Which is what we need for graphing, so that that duplicated value gets plotted
@@ -240,41 +247,49 @@ plot_emp_preds <- apply_standard_theme(plot_emp_preds, show_legend = FALSE)
 # PLOT N_OCCS BY REGION GRAPH
 plot_n_occs_region <- create_multiline_plot(
   year = year,
-  data_columns = list(data$n_occs_1.0, data$n_occs_2.0, 
-                      data$n_occs_3.0, data$n_occs_4.0),
-  line_labels = c("Region 1", "Region 2", "Region 3", "Region 4"), # Obvi change this if regions change
-  colors = c("Region 1" = "red", "Region 2" = "blue", 
-             "Region 3" = "turquoise", "Region 4" = "orange1"),
+  data_columns = lapply(list(data$n_occs_Africa, data$n_occs_Asia, data$n_occs_Australia, data$n_occs_EasternAsia, 
+                      data$n_occs_Europe, data$n_occs_India, data$n_occs_Madagascar, data$n_occs_MiddleEast, data$n_occs_NorthAmerica, data$n_occs_SouthAmerica),
+                      function(x) pmax(x, 0.01)), # add a small value to avoid log(0) issues when we log transform the y axis later, 0.01 is the smallest occurring value in the empirical_features__conditional.csv
+  line_labels = c("Africa", "Asia", "Australia", "Eastern Asia", "Europe", "India", "Madagascar", "Middle East", "North America", "South America"),
+  colors = c("Africa" = "red", "Asia" = "blue", 
+             "Australia" = "turquoise", "Eastern Asia" = "orange1", "Europe" = "green", "India" = "purple", "Madagascar" = "hotpink", "Middle East" = "brown", "North America" = "#656464", "South America" = "cyan"),
   x_label = "Time (Ma)",
-  y_label = "Raw Fossil Occurrences by Region",
+  y_label = "Raw Fossil Occurrences by Region (Log Scale)",
   legend_title = "Region"
 )
 
+plot_n_occs_region <- plot_n_occs_region + scale_y_log10(labels = scales::label_number()) 
 # PLOT N_SPECIES BY REGION GRAPH 
 plot_n_species_region <- create_multiline_plot(
   year = year,
-  data_columns = list(data$n_species_1.0, data$n_species_2.0, 
-                      data$n_species_3.0, data$n_species_4.0),
-  line_labels = c("Region 1", "Region 2", "Region 3", "Region 4"),
-  colors = c("Region 1" = "red", "Region 2" = "blue", 
-             "Region 3" = "turquoise", "Region 4" = "orange1"),
+  data_columns = lapply(list(data$n_species_Africa, data$n_species_Asia, data$n_species_Australia, data$n_species_EasternAsia, 
+                      data$n_species_Europe, data$n_species_India, data$n_species_Madagascar, data$n_species_MiddleEast, data$n_species_NorthAmerica, data$n_species_SouthAmerica),
+                      function(x) pmax(x, 0.01)), # add a small value to avoid log(0) issues when we log transform the y axis later, 0.01 is the smallest occurring value in the empirical_features__conditional.csv
+  line_labels = c("Africa", "Asia", "Australia", "Eastern Asia", "Europe", "India", "Madagascar", "Middle East", "North America", "South America"),
+  colors = c("Africa" = "red", "Asia" = "blue", 
+             "Australia" = "turquoise", "Eastern Asia" = "orange1", "Europe" = "green", "India" = "purple", "Madagascar" = "hotpink", "Middle East" = "brown", "North America" = "#656464", "South America" = "cyan"),
   x_label = "Time (Ma)",
-  y_label = "Diversity Through Time (# Genera) by Region",
+  y_label = "Diversity Through Time (# Genera) by Region (Log Scale)",
   legend_title = "Region"
 )
+
+plot_n_species_region <- plot_n_species_region + scale_y_log10(labels = scales::label_number()) 
 
 # PLOT N_LOCS BY REGION GRAPH
 plot_n_locs_region <- create_multiline_plot(
   year = year,
-  data_columns = list(data$n_locs_1.0, data$n_locs_2.0, 
-                      data$n_locs_3.0, data$n_locs_4.0),
-  line_labels = c("Region 1", "Region 2", "Region 3", "Region 4"),
-  colors = c("Region 1" = "red", "Region 2" = "blue", 
-             "Region 3" = "turquoise", "Region 4" = "orange1"),
+  data_columns = lapply(list(data$n_locs_Africa, data$n_locs_Asia, data$n_locs_Australia, data$n_locs_EasternAsia, 
+                      data$n_locs_Europe, data$n_locs_India, data$n_locs_Madagascar, data$n_locs_MiddleEast, data$n_locs_NorthAmerica, data$n_locs_SouthAmerica),
+                      function(x) pmax(x, 0.01)), # add a small value to avoid log(0) issues when we log transform the y axis later, 0.01 is the smallest occurring value in the empirical_features__conditional.csv
+  line_labels = c("Africa", "Asia", "Australia", "Eastern Asia", "Europe", "India", "Madagascar", "Middle East", "North America", "South America"),
+  colors = c("Africa" = "red", "Asia" = "blue", 
+             "Australia" = "turquoise", "Eastern Asia" = "orange1", "Europe" = "green", "India" = "purple", "Madagascar" = "hotpink", "Middle East" = "brown", "North America" = "#656464", "South America" = "cyan"),
   x_label = "Time (Ma)",
-  y_label = "Number of Localities by Region",
+  y_label = "Number of Localities by Region (Log Scale)",
   legend_title = "Region"
 )
+
+plot_n_locs_region <- plot_n_locs_region + scale_y_log10(labels = scales::label_number()) 
 
 ######################### GROUPED GRAPH #############################
 
@@ -294,13 +309,55 @@ combined_plot <- plot_grid(
 ggsave("feature_plots_formatted/final_figure.pdf", combined_plot, width = 25, height = 20)
 
 
+######################### REGION PLOTS ALL ON ONE PDF PER PARAMETER #############################
+region_grouped_plot <- function(parameter, parameter_suffixes, title, data, year) {
+  plot_list <- list()
+
+  # Calculate global max once, outside the loop
+  all_values <- unlist(lapply(parameter_suffixes, function(s) {
+    col <- paste0(parameter, "_", s)
+    return(data[[col]])
+  }))
+  y_max <- max(all_values, na.rm = TRUE) * 1.1
+
+  for (suffix in parameter_suffixes) {
+    data_column <- paste0(parameter, "_", suffix)
+
+    plot <- create_single_plot(year, pmax(data[[data_column]], 0.01), suffix) +
+      scale_y_log10(
+        labels = scales::label_number(),
+        limits = c(0.01, y_max)
+      )
+    plot_list[[suffix]] <- plot
+  }
+
+  # Combine the plots into a grid (5 rows x 2 columns for 10 regions)
+  combined_plot <- plot_grid(plotlist = plot_list, ncol = 2, nrow = 5, label_size = 20, align = "hv", axis = "tblr")
+
+  # Create a title grob and combine it with the plot grid
+  title_grob <- ggdraw() + draw_label(title, fontface = "bold", size = 20)
+  combined_with_title <- plot_grid(title_grob, combined_plot, ncol = 1, rel_heights = c(0.05, 1))
+
+  # Save the combined plot as a PDF
+  ggsave(paste0("feature_plots_formatted/", parameter, "_region_separate.pdf"), combined_with_title, width = 18, height = 25)
+
+  return(combined_with_title)
+}
+
+parameter_suffixes <- c("Africa", "Asia", "Australia", "EasternAsia", "Europe", "India", "Madagascar", "MiddleEast", "NorthAmerica", "SouthAmerica")
+region_grouped_plot("n_occs", parameter_suffixes, "Number of Occurrences by Region (Log Scale)", data, year)
+region_grouped_plot("n_species", parameter_suffixes, "Diversity Through Time (# Genera) by Region (Log Scale)", data, year)
+region_grouped_plot("n_locs", parameter_suffixes, "Number of Localities by Region (Log Scale)", data, year)
+
+
 ######################### SAVING EACH INDIVIDUAL GRAPH #############################
+# grouped region plots are saved in the function above
 ggsave("feature_plots_formatted/spec_ext_events.pdf", plot_spec_ext_events, width = 10, height = 6)
 ggsave("feature_plots_formatted/net_div_events.pdf", plot_net_div_events, width = 10, height = 6)
 ggsave("feature_plots_formatted/emp_preds.pdf", plot_emp_preds, width = 10, height = 6)
-ggsave("feature_plots_formatted/n_locs_region.pdf", plot_n_locs_region, width = 12, height = 6) #increasing width to accommodate legend
-ggsave("feature_plots_formatted/n_occs_region.pdf", plot_n_occs_region, width = 12, height = 6) #increasing width to accommodate legend
-ggsave("feature_plots_formatted/n_species_region.pdf", plot_n_species_region, width = 12, height = 6) #increasing width to accommodate legend
+ggsave("feature_plots_formatted/n_locs_region.pdf", plot_n_locs_region, width = 12, height = 6)
+ggsave("feature_plots_formatted/n_occs_region.pdf", plot_n_occs_region, width = 12, height = 6)
+ggsave("feature_plots_formatted/n_species_region.pdf", plot_n_species_region, width = 12, height = 6)
 ggsave("feature_plots_formatted/speciation_rate.pdf", plot_spec_rate, width = 10, height = 6)
 ggsave("feature_plots_formatted/extinction_rate.pdf", plot_ext_rate, width = 10, height = 6)
 ggsave("feature_plots_formatted/net_div_rate.pdf", plot_net_div_rate, width = 10, height = 6)
