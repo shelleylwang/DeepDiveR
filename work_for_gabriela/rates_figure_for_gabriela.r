@@ -132,11 +132,11 @@ create_single_plot <- function(year, y, y_label, line_color = "black") {
 ############################ SINGLE GRAPHS ################################
 
 # Speciation rate
-speciation_rate = data$origination_events / (data$n_species)*data$time_bin_duration
+speciation_rate = data$origination_events / ((data$n_species)*data$time_bin_duration)
 plot_spec_rate <- create_single_plot(year, speciation_rate, "Speciation Rate", line_color = "blue")
 
 # Extinction rate
-extinction_rate = data$extinction_events / (data$n_species)*data$time_bin_duration
+extinction_rate = data$extinction_events / ((data$n_species)*data$time_bin_duration)
 plot_ext_rate <- create_single_plot(year, extinction_rate, "Extinction Rate", line_color = "red")
 # Net diversification rate
 net_div_rate = speciation_rate - extinction_rate

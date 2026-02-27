@@ -8,9 +8,9 @@ library(dplyr)
 library(pammtools)
 library(cowplot)
 
-setwd("C:/Users/SimoesLabAdmin/Downloads/simulations_20250612_lstm64_32_d64_32_conditional-20260219T154240Z-3-001_1ma/simulations_20250612_lstm64_32_d64_32_conditional_1ma")
+# setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/work_for_gabriela/simulations_20250612_lstm64_32_d64_32_conditional-20260219T154240Z-3-001_1ma/simulations_20250612_lstm64_32_d64_32_conditional_1ma")
 
-# setwd("C:/Users/SimoesLabAdmin/Downloads/simulations_20250714_lstm64_32_d64_32_conditional-20260219T154225Z-3-001/simulations_20250714_lstm64_32_d64_32_conditional")
+setwd("C:/Users/SimoesLabAdmin/Documents/DeepDiveR/work_for_gabriela/simulations_20250714_lstm64_32_d64_32_conditional-20260219T154225Z-3-001/simulations_20250714_lstm64_32_d64_32_conditional")
 
 # Check if there is a folder called "feature_plots_formatted" in the working directory
 # If there isn't, make one
@@ -26,19 +26,19 @@ data <- read.csv("Empirical_features__conditional.csv")
 data<- rbind(data[1, ], data)
 
 
-# 1 Ma Year Vector
-year <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 
-    34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 
-    67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 
-    100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 
-    127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 
-    154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168.2)
+# # 1 Ma Year Vector
+# year <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 
+#     34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 
+#     67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 
+#     100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 
+#     127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 
+#     154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168.2)
 
-# # Stage Year Vector
-# year <- c(0, 0.129, 0.774, 2.58, 3.6, 5.333, 7.246, 11.63, 13.82, 15.98,
-#   20.45, 23.04, 27.30, 33.9, 33.71, 41.03, 48.07, 56.0, 59.24, 61.66,
-#   66.0, 72.2, 83.6, 85.7, 89.8, 93.9, 100.5, 113.2, 121.4, 125.77,
-#   132.6, 137.05, 143.1, 145.0, 149.2, 154.8, 161.5, 165.3, 168.2)
+# Stage Year Vector
+year <- c(0, 0.129, 0.774, 2.58, 3.6, 5.333, 7.246, 11.63, 13.82, 15.98,
+  20.45, 23.04, 27.30, 33.9, 33.71, 41.03, 48.07, 56.0, 59.24, 61.66,
+  66.0, 72.2, 83.6, 85.7, 89.8, 93.9, 100.5, 113.2, 121.4, 125.77,
+  132.6, 137.05, 143.1, 145.0, 149.2, 154.8, 161.5, 165.3, 168.2)
 
 # Make the year vector negative
 year <- -year
@@ -164,11 +164,11 @@ net_diversity = data$origination_events - data$extinction_events
 plot_net_div_events <- create_single_plot(year, net_diversity, "Net Diversification Events")
 
 # Speciation rate 
-speciation_rate = data$origination_events / (data$n_species)*data$time_bin_duration
+speciation_rate = data$origination_events / ((data$n_species)*data$time_bin_duration)
 plot_spec_rate <- create_single_plot(year, speciation_rate, "Speciation Rate", line_color = "blue")
 
 # Extinction rate
-extinction_rate = data$extinction_events / (data$n_species)*data$time_bin_duration
+extinction_rate = data$extinction_events / ((data$n_species)*data$time_bin_duration)
 plot_ext_rate <- create_single_plot(year, extinction_rate, "Extinction Rate", line_color = "red")
 # Net diversification rate
 net_div_rate = speciation_rate - extinction_rate

@@ -123,7 +123,9 @@ create_single_plot <- function(year, y, y_label, line_color = "black") {
   
   plot <- ggplot(plot_data, aes(x = year, y = y)) +
     geom_step(size = 1, color = line_color) +
-    labs(x = "Time (Ma)", y = y_label)
+    labs(x = "Time (Ma)", y = y_label) +
+    # line through y = 0 if the data has both positive and negative values (e.g. net diversification rate)
+    geom_hline(yintercept = 0, linetype = "dashed", color = "gray")
   
   plot <- apply_standard_coords(plot)
   plot <- apply_standard_theme(plot, show_legend = FALSE)
@@ -157,11 +159,11 @@ net_diversity = data$origination_events - data$extinction_events
 plot_net_div_events <- create_single_plot(year, net_diversity, "Net Diversification Events")
 
 # Speciation rate 
-speciation_rate = data$origination_events / (data$n_species)*data$time_bin_duration
+speciation_rate = data$origination_events / ((data$n_species)*data$time_bin_duration)
 plot_spec_rate <- create_single_plot(year, speciation_rate, "Speciation Rate", line_color = "blue")
 
 # Extinction rate
-extinction_rate = data$extinction_events / (data$n_species)*data$time_bin_duration
+extinction_rate = data$extinction_events / ((data$n_species)*data$time_bin_duration)
 plot_ext_rate <- create_single_plot(year, extinction_rate, "Extinction Rate", line_color = "red")
 # Net diversification rate
 net_div_rate = speciation_rate - extinction_rate
